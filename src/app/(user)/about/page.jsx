@@ -23,7 +23,7 @@ const team = [
 ];
 
 const reasons = [
-  { t: "Vetted Network", d: "Less than 2% of applicants make it onto MXPERTZ." },
+  { t: "Vetted Network", d: "Less than 2% of applicants make it onto Hire Top Coder." },
   { t: "Speed",          d: "Most matches are made in under 48 hours." },
   { t: "Outcomes",       d: "Measured on impact, not hours." },
   { t: "Global Coverage", d: "Experts across every timezone, ready when you are." },
@@ -55,7 +55,7 @@ export default function AboutPage() {
           </h1>
           <Reveal delay={0.3}>
             <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
-              MXPERTZ is a curated network of elite digital experts helping the
+              Hire Top Coder is a curated network of elite digital experts helping the
               world's most ambitious teams design, build and scale.
             </p>
           </Reveal>
@@ -74,12 +74,12 @@ export default function AboutPage() {
           <Reveal delay={0.15}>
             <div className="space-y-4 text-foreground/80 font-medium leading-relaxed">
               <p>
-                MXPERTZ started in 2019 as a tiny collective of designers and
+                Hire Top Coder started in 2019 as a tiny collective of designers and
                 engineers shipping products for venture-backed startups. Within
                 three years it grew into a global network spanning 40+ countries.
               </p>
               <p>
-                Today, MXPERTZ powers digital teams at fast-moving startups and
+                Today, Hire Top Coder powers digital teams at fast-moving startups and
                 enterprises alike — combining boutique craft with on-demand scale.
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
 
       {/* TEAM */}
       <section className="relative py-24 px-4 sm:px-6">
-        <SectionHead eyebrow="Leadership" title={<>Meet the team behind <span className="text-gradient-purple">MXPERTZ</span></>} />
+        <SectionHead eyebrow="Leadership" title={<>Meet the team behind <span className="text-gradient-purple">Hire Top Coder</span></>} />
         <Stagger className="mt-14 mx-auto max-w-6xl grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {team.map((m) => (
             <StaggerItem key={m.n}>

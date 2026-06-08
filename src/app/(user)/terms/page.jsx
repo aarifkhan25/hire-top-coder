@@ -3,25 +3,25 @@ import { Reveal } from "@/components/site/Reveal";
 
 
  const   meta= [
-      { title: "Terms of Service — MXPERTZ" },
-      { name: "description", content: "MXPERTZ terms of service. Read the rules and guidelines for using our platform." },
-      { property: "og:title", content: "Terms of Service — MXPERTZ" },
-      { property: "og:description", content: "Read the rules and guidelines for using the MXPERTZ platform." },
+      { title: "Terms of Service — Hire Top Coder" },
+      { name: "description", content: "Hire Top Coder terms of service. Read the rules and guidelines for using our platform." },
+      { property: "og:title", content: "Terms of Service — Hire Top Coder" },
+      { property: "og:description", content: "Read the rules and guidelines for using the Hire Top Coder platform." },
     ];
 
 
 const sections = [
   {
     title: "Acceptance of Terms",
-    body: "By accessing or using the Mxpertz platform, you agree to be bound by these Terms. If you do not agree, please do not use our services.",
+    body: "By accessing or using the Hire Top Coder platform, you agree to be bound by these Terms. If you do not agree, please do not use our services.",
   },
   {
     title: "Use of the Platform",
-    body: "You may use Mxpertz to discover and hire digital experts for legitimate business purposes. You agree not to misuse the platform, post false information, or attempt to circumvent our matching process.",
+    body: "You may use Hire Top Coder to discover and hire digital experts for legitimate business purposes. You agree not to misuse the platform, post false information, or attempt to circumvent our matching process.",
   },
   {
     title: "Expert Engagements",
-    body: "Mxpertz facilitates connections between clients and independent experts. All project agreements are between you and the expert directly. Mxpertz is not a party to those agreements but provides tools to manage them.",
+    body: "Hire Top Coder facilitates connections between clients and independent experts. All project agreements are between you and the expert directly. Hire Top Coder is not a party to those agreements but provides tools to manage them.",
   },
   {
     title: "Payments & Refunds",
@@ -29,11 +29,11 @@ const sections = [
   },
   {
     title: "Intellectual Property",
-    body: "All content and work product delivered by experts through Mxpertz becomes your property upon full payment. Mxpertz platform content, branding, and code remain our intellectual property.",
+    body: "All content and work product delivered by experts through Hire Top Coder becomes your property upon full payment. Hire Top Coder platform content, branding, and code remain our intellectual property.",
   },
   {
     title: "Limitation of Liability",
-    body: "Mxpertz is not liable for the quality of work delivered by independent experts beyond the dispute resolution process provided on the platform. Our maximum liability is limited to fees paid in the last 3 months.",
+    body: "Hire Top Coder is not liable for the quality of work delivered by independent experts beyond the dispute resolution process provided on the platform. Our maximum liability is limited to fees paid in the last 3 months.",
   },
   {
     title: "Termination",
@@ -41,7 +41,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: "For legal enquiries: legal@mxpertz.com\nMxpertz Pvt. Ltd., Indore, Madhya Pradesh, India.",
+    body: "For legal enquiries: legal@hiretopcoder.com\nHire Top Coder Pvt. Ltd., Indore, Madhya Pradesh, India.",
   },
 ];
 

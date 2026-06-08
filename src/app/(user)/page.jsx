@@ -67,7 +67,7 @@ const steps = [
 ];
 
 const testimonials = [
-  { q: "MXPERTZ matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault" },
+  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault" },
   { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs" },
   { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam" },
 ];
@@ -198,7 +198,7 @@ function Marquee() {
   return (
     <section className="relative py-12 border-y border-border/40 overflow-hidden">
       <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
-        Trusted by teams shipping with MXPERTZ
+        Trusted by teams shipping with Hire Top Coder
       </div>
       <div className="flex animate-marquee whitespace-nowrap">
         {[...brands, ...brands].map((b, i) => (
@@ -260,7 +260,7 @@ function Portfolio() {
         <SectionHead
           eyebrow="Featured work"
           title={<>Selected work that <span className="text-gradient-purple">speaks for itself.</span></>}
-          sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by MXPERTZ experts."
+          sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] gap-5">
           {works.map((w) => (
@@ -317,7 +317,7 @@ function How() {
     <section id="how" className="relative py-28 px-4 sm:px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHead
-          eyebrow="How MXPERTZ works"
+          eyebrow="How Hire Top Coder works"
           title={<>From brief to <span className="text-gradient-purple">brilliance</span> in minutes.</>}
           sub="A cinematic hiring experience, powered by AI-curated matching."
         />

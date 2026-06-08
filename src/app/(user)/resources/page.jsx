@@ -42,7 +42,7 @@ export default function ResourcesPage() {
         <div className="relative mx-auto max-w-5xl text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
-              The MXPERTZ Field Notes
+              The Hire Top Coder Field Notes
             </div>
           </Reveal>
           <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-tight">
@@ -77,7 +77,7 @@ export default function ResourcesPage() {
                   <div className="mt-6 flex items-center gap-4 text-sm text-foreground/65 font-medium">
                     <span className="inline-flex items-center gap-1.5"><Clock className="size-3.5" />{featured.time}</span>
                     <span>·</span>
-                    <span>By the MXPERTZ Studio</span>
+                    <span>By the Hire Top Coder Studio</span>
                   </div>
                   <div className="mt-8">
                     <PrimaryButton>Read the Report</PrimaryButton>
@@ -158,7 +158,7 @@ export default function ResourcesPage() {
           <div className="relative">
             <Mail className="size-7 mx-auto text-primary mb-4" />
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-              The <span className="text-gradient-purple">MXPERTZ Brief</span>
+              The <span className="text-gradient-purple">Hire Top Coder Brief</span>
             </h2>
             <p className="mt-3 text-foreground/75 font-medium">
               One sharp essay every Sunday. Built for operators.

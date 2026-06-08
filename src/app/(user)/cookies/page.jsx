@@ -3,10 +3,10 @@ import Link from "next/link"
 import { Reveal } from "@/components/site/Reveal";
 
  const   meta=[
-      { title: "Cookie Policy — MXPERTZ" },
-      { name: "description", content: "MXPERTZ cookie policy. Learn how we use cookies and how you can manage them." },
-      { property: "og:title", content: "Cookie Policy — MXPERTZ" },
-      { property: "og:description", content: "Learn how MXPERTZ uses cookies and how you can manage your preferences." },
+      { title: "Cookie Policy — Hire Top Coder" },
+      { name: "description", content: "Hire Top Coder cookie policy. Learn how we use cookies and how you can manage them." },
+      { property: "og:title", content: "Cookie Policy — Hire Top Coder" },
+      { property: "og:description", content: "Learn how Hire Top Coder uses cookies and how you can manage your preferences." },
     ];
 
 
@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: "For cookie-related questions: privacy@mxpertz.com",
+    body: "For cookie-related questions: privacy@hiretopcoder.com",
   },
 ];
 
@@ -74,7 +74,7 @@ const sections = [
           {/* Notice Banner */}
           <Reveal>
             <div className="bg-[rgba(167,139,250,0.08)] border border-[rgba(167,139,250,0.25)] rounded-[10px] px-5 py-3.5 text-[13px] text-white/[0.6] font-medium">
-              By continuing to use Mxpertz, you consent to our use of cookies as described below.
+              By continuing to use Hire Top Coder, you consent to our use of cookies as described below.
             </div>
           </Reveal>
 

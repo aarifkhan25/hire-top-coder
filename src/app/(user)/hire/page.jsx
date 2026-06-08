@@ -39,7 +39,7 @@ const why = [
 ];
 
 const tests = [
-  { q: "MXPERTZ matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park", r: "Head of Product, Vault" },
+  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park", r: "Head of Product, Vault" },
   { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs" },
   { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.",        a: "Priya Shah", r: "COO, Northbeam" },
 ];
@@ -149,7 +149,7 @@ export default function HirePage() {
           <div className="absolute top-1/3 right-0 size-[500px] rounded-full bg-accent/15 blur-[140px]" />
         </Parallax>
         <SectionHead
-          eyebrow="Why MXPERTZ"
+          eyebrow="Why Hire Top Coder"
           title={<>Built for teams that <span className="text-gradient-purple">ship faster</span></>}
         />
         <Stagger className="mt-14 mx-auto max-w-6xl grid md:grid-cols-3 gap-4">

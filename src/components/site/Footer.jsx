@@ -42,12 +42,12 @@ export function Footer() {
         >
          <Link href="/" >
                     <Image 
-                      width={150} 
-                      height={60} 
+                      width={500} 
+                      height={500} 
                       src="/assets/logo1.png" 
                       alt="logo" 
                    laoding="lazy"
-                      className="hover:opacity-80 cursor-pointer object-contain" 
+                      className=" w-[110px] h-[50px] lg:w-[130px] lg:h-[80px] hover:opacity-80 cursor-pointer object-contain" 
                     />
                   </Link>
         </div>
@@ -69,10 +69,10 @@ export function Footer() {
           </div>
           {cols.map((c) => (
             <div key={c.title}>
-              <div className="text-xs font-mono uppercase tracking-[0.25em] text-primary font-bold mb-4">
+              <div className="text-sm font-mono uppercase tracking-[0.25em] text-primary font-bold mb-4">
                 {c.title}
               </div>
-              <ul className="space-y-3 text-sm text-foreground/75 font-medium">
+              <ul className="space-y-3 text-base text-foreground/75 font-medium">
                 {c.links.map((l, i) => (
                   <li key={i}>
                     <Link href={l.to} className="hover:text-white transition">

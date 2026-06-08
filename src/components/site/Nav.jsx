@@ -61,17 +61,17 @@ export function Nav() {
         >
          <Link href="/" >
                     <Image 
-                      width={120} 
-                      height={40} 
+                      width={500} 
+                      height={500} 
                       src="/assets/logo1.png" 
                       alt="logo" 
                    
-                      className="hover:opacity-80 cursor-pointer object-contain" 
+                      className=" w-[110px] h-[50px] lg:w-[130px] lg:h-[80px] hover:opacity-80 cursor-pointer object-contain" 
                     />
                   </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 text-sm  lg:text-base font-bold text-foreground/85">
+        <div className="hidden md:flex items-center gap-8 text-sm  lg:text-lg font-bold text-foreground/85">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -86,12 +86,12 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-2">
-          <Link href="/auth/login" className="hidden sm:inline-flex text-sm font-bold px-5 py-2.5 rounded-full btn-glass text-white">
+          <Link href="/auth/login" className="hidden sm:inline-flex text-sm lg:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
             Sign In
           </Link>
           <Link
             href="/starthiring"
-            className="inline-flex items-center gap-1.5 text-sm font-bold bg-white text-black rounded-full px-4 py-2 md:px-5 md:py-2.5 hover:bg-white/90 transition shadow-lg"
+            className="inline-flex items-center gap-1.5 text-sm lg:text-lg font-bold bg-white text-black rounded-full px-4 py-2 md:px-5 md:py-2.5 hover:bg-white/90 transition shadow-lg"
           >
             Start Hiring
           </Link>

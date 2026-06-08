@@ -77,7 +77,7 @@ export default function WorkPage() {
           <Reveal delay={0.3}>
             <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
               Explore digital products, AI systems, SaaS platforms, websites,
-              branding projects and modern experiences built by MXPERTZ experts.
+              branding projects and modern experiences built by Hire Top Coder experts.
             </p>
           </Reveal>
         </div>

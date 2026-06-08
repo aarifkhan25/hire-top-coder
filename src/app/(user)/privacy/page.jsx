@@ -4,10 +4,10 @@ import { Reveal } from "@/components/site/Reveal";
 
 
     const meta= [
-      { title: "Privacy Policy — MXPERTZ" },
-      { name: "description", content: "MXPERTZ privacy policy. Learn how we collect, use, and protect your personal data." },
-      { property: "og:title", content: "Privacy Policy — MXPERTZ" },
-      { property: "og:description", content: "Learn how MXPERTZ collects, uses, and protects your personal data." },
+      { title: "Privacy Policy — Hire Top Coder" },
+      { name: "description", content: "Hire Top Coder privacy policy. Learn how we collect, use, and protect your personal data." },
+      { property: "og:title", content: "Privacy Policy — Hire Top Coder" },
+      { property: "og:description", content: "Learn how Hire Top Coder collects, uses, and protects your personal data." },
     ];
   
 
@@ -30,11 +30,11 @@ const sections = [
   },
   {
     title: "Your Rights",
-    body: "You have the right to access, correct, or delete your personal data at any time. To exercise these rights, contact us at privacy@mxpertz.com.",
+    body: "You have the right to access, correct, or delete your personal data at any time. To exercise these rights, contact us at privacy@Hire Top Coder.com.",
   },
   {
     title: "Contact Us",
-    body: "For privacy-related questions: privacy@mxpertz.com\nMxpertz Pvt. Ltd., Indore, Madhya Pradesh, India.",
+    body: "For privacy-related questions: privacy@hiretopcoder.com\nHire Top Coder Pvt. Ltd., Indore, Madhya Pradesh, India.",
   },
 ];
 
