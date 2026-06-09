@@ -12,7 +12,6 @@ const navLinks = [
   { to: "/hire", label: "Hire" },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
-  { to: "/careers", label: "Careers" },
   { to: "/resources", label: "Resources" },
 ];
 
