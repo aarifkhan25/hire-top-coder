@@ -54,16 +54,13 @@ export function Nav() {
       }`}
     >
       <nav
-        className={`mx-auto max-w-7xl flex items-center justify-between rounded-full transition-all duration-500 ${
+        className={`w-full flex items-center justify-between rounded-full transition-all duration-500 ${
           scrolled
             ? "glass px-5  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : "px-1 "
         }`}
       >
-        <div
-         
-          className="flex items-center "
-        >
+      <div className="flex items-center gap-8 text-sm  1xl:text-lg font-bold text-foreground/85">
          <Link href="/" >
                     <Image 
                       width={500} 
@@ -73,14 +70,14 @@ export function Nav() {
                    loading="eager"
                       className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px]  cursor-pointer object-contain" />
                   </Link>
-        </div>
+        
 
-        <div className="hidden md:flex items-center gap-8 text-sm  1xl:text-lg font-bold text-foreground/85">
+        
           {navLinks.map((l) => (
             <Link data-aos="fade-down"
               key={l.to}
               href={l.to}
-              className="relative hover:text-white transition group"
+              className="relative hover:text-white transition group hidden md:flex"
               activeprops={{ className: "text-white" }}
             >
               {l.label}
@@ -91,7 +88,7 @@ export function Nav() {
 
         <div data-aos="fade-down" className="flex items-center gap-2">
           <Link href="/signin" className="hidden sm:inline-flex text-sm 1xl:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
-            Sign In
+            Talk to Expert
           </Link>
           <Link
             href="/starthiring"

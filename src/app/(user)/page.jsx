@@ -129,17 +129,17 @@ function Hero() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[900px] rounded-full bg-primary/25 blur-[160px] animate-pulse-glow pointer-events-none" />
       <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-5xl text-center">
-        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
+      <div className="relative w-full text-center">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs 2xl:text-base font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
           Build faster with elite digital experts
         </div>
 
-        <h1 className="font-display font-extrabold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)]">
+        <h1 className="font-display font-extrabold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3.5rem,10vw,9rem)]">
           Hire elite <br />
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-8 text-base md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p className="mt-8 text-base md:text-xl 2xl:text-2xl text-foreground/80 max-w-2xl mx-auto leading-relaxed font-medium">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly available.
         </p>
@@ -163,7 +163,7 @@ function Hero() {
 
 function ExpertsRow() {
   return (
-    <section id="experts" className="relative -mt-4 pb-24 overflow-hidden">
+    <section id="experts" className="relative  py-24 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-32  z-10 pointer-events-none" />
       <div className="flex gap-5 animate-scroll-cards w-max px-4">
         {[...experts, ...experts].map((e, i) => (
@@ -202,7 +202,7 @@ function ExpertCard({ expert }) {
 
 function Marquee() {
   return (
-    <section className="relative py-12 border-y border-border/40 overflow-hidden">
+    <section className="relative py-12  border-y border-border/40 overflow-hidden">
       <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
         Trusted by teams shipping with Hire Top Coder
       </div>
