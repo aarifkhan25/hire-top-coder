@@ -12,8 +12,8 @@ const expert4 = "/assets/expert-4.jpg";
 const expert5 = "/assets/expert-5.jpg";
 const work1 = "/assets/work-1.jpg";
 const work2 = "/assets/work-2.jpg";
-const work3 = "/assets/work-3.jpg";
-const work4 = "/assets/work-4.jpg";
+const work3 = "/assets/work-3.png";
+const work4 = "/assets/work-4.png";
 const work5 = "/assets/work-5.jpg";
 const work6 = "/assets/work-6.jpg";
 const blog1 = "/assets/blog-1.jpg";
@@ -39,20 +39,25 @@ const services = [
   { tag: "New",        title: "Conversion Audit & Growth", price: "from $1,200", rating: 4.8, by: "Pareto Co." },
 ];
 
-const works = [
-  { title: "Nebula AI Analytics", category: "AI Dashboard", desc: "Realtime insights platform with predictive intelligence for global SaaS teams.",
-    img: work1, stat1: "+312% activation", stat2: "12 wk delivery", span: "lg:col-span-2 lg:row-span-2" },
-  { title: "Vault Cloud", category: "SaaS Website", desc: "High-conversion marketing site for an enterprise security platform.",
-    img: work2, stat1: "2.4x signups", stat2: "9 days", span: "lg:col-span-2" },
-  { title: "Halo Pay", category: "Mobile App Design", desc: "A premium banking app redesigned end-to-end with neon dark UI.",
-    img: work3, stat1: "4.9★ app store", stat2: "iOS + Android", span: "" },
-  { title: "Heron & Co.", category: "Branding Project", desc: "Editorial-grade visual identity for a luxury lifestyle agency.",
-    img: work4, stat1: "12 deliverables", stat2: "6 wk sprint", span: "" },
-  { title: "Orbit Workspace", category: "Web Platform", desc: "All-in-one collaboration platform built for elite product teams.",
-    img: work5, stat1: "+58% retention", stat2: "B2B SaaS", span: "lg:col-span-2" },
-  { title: "Pulse Flows", category: "AI Automation System", desc: "Multi-agent automation engine wiring tools into one workflow brain.",
-    img: work6, stat1: "1.2M runs/mo", stat2: "API-first", span: "lg:col-span-2" },
-];
+const works= [
+  { title: "Broker Remarks", category: "SaaS Web App",
+    desc: "Real estate listing platform that eliminates repetitive agent questions with a streamlined property details system.",
+    img:work1, stat1: "3x faster", stat2: "listing workflow", span: "lg:col-span-2 lg:row-span-2" },
+  { title: "Code Conspirators", category: "Web Design",
+    desc: "Bold agency website with immersive 3D hero and strong brand storytelling for a digital marketing and development firm.",
+    img: work2, stat1: "High-impact", stat2: "brand presence", span: "lg:col-span-2" },
+ 
+  { title: "Rolling Star Casino", category: "Web App",
+    desc: "Full-featured online casino platform built in React JS with games including Roulette, Blackjack, Slots and Aviator.",
+    img: work4, stat1: "React JS", stat2: "Multi-game platform", span: "lg:col-span-2" },
+  { title: "Wizz Air Integration", category: "Travel Platform",
+    desc: "Flight booking and deals platform with multi-city search, fare finder, hotel integration and promotional campaign pages.",
+    img: work5, stat1: "Multi-service", stat2: "booking platform", span: "lg:col-span-2" },
+  { title: "Workla", category: "Mobile App",
+    desc: "Task management mobile app with quick notes, tasklist, calendar view and team collaboration features built for productivity.",
+    img: work6, stat1: "Cross-platform", stat2: "team productivity", span: "lg:col-span-2"
+  }];
+   
 
 const posts = [
   { cat: "AI Design",    title: "The Future of AI Design Is Adaptive",       excerpt: "How generative interfaces are reshaping every product surface.",     img: blog1, read: "6 min" },
@@ -68,9 +73,9 @@ const steps = [
 ];
 
 const testimonials = [
-  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault" },
-  { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs" },
-  { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam" },
+  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault",img:expert1 },
+  { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs",img:expert4 },
+  { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam",img:expert2 },
 ];
 
 export default function Index() {

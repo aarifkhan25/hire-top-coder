@@ -8,23 +8,28 @@ import Image from "next/image"
 import  Link from  "next/link"
 const work1 = "/assets/work-1.jpg";
 const work2 = "/assets/work-2.jpg";
-const work3 = "/assets/work-3.jpg";
-const work4 = "/assets/work-4.jpg";
+const work3 = "/assets/work-3.png";
+const work4 = "/assets/work-4.png";
 const work5 = "/assets/work-5.jpg";
 const work6 = "/assets/work-6.jpg";
+const work7 = "/assets/work-7.jpg";
+const work8 = "/assets/work-8.jpg";
+const work9 = "/assets/work-9.jpg";
+const work10 = "/assets/work-10.png";
+const work11 = "/assets/work-11.jpg";
 
 const projects = [
   { title: "Broker Remarks", category: "SaaS Web App", desc: "Real estate listing platform that eliminates repetitive agent questions.", img: work1, results: "3x faster workflow", span: "lg:col-span-2 lg:row-span-2" },
   { title: "Code Conspirators", category: "Web Design", desc: "Bold agency website with immersive 3D hero and brand storytelling.", img: work2, results: "High-impact brand", span: "" },
   { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" },
   { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2" },
-  { title: "Wizz Air Integration", category: "Travel Platform", desc: "Flight booking and deals platform with multi-city search.", img: work1, results: "Booking platform", span: "" },
+  { title: "Wizz Air Integration", category: "Travel Platform", desc: "Flight booking and deals platform with multi-city search.", img: work5, results: "Booking platform", span: "" },
   { title: "Workla", category: "Mobile App", desc: "Task management mobile app with calendar and team collaboration.", img: work6, results: "Cross-platform", span: "" },
-  { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work2, results: "High-conversion event LP", span: "lg:col-span-2" },
-  { title: "Tairo Real Estate", category: "Real Estate Platform", desc: "Property search platform with listings, agent profiles and geolocation filters.", img: work3, results: "24 yrs expertise", span: "" },
-  { title: "Cheshire Cats Club", category: "NFT / Web3", desc: "NFT collectibles launch site with countdown, roadmap and OpenSea integration.", img: work5, results: "Web3 launch", span: "" },
-  { title: "Olesya Cloud Technology", category: "IT / Cloud", desc: "Multi-page IT solutions and managed services website for cloud infrastructure.", img: work1, results: "Cloud infrastructure", span: "lg:col-span-2" },
-  { title: "Themi — Truth Platform", category: "Content Platform", desc: "Dark editorial content website with cinematic image layouts and immersive storytelling.", img: work2, results: "Editorial design", span: "" },
+  { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work7, results: "High-conversion event LP", span: "lg:col-span-2" },
+  { title: "Tairo Real Estate", category: "Real Estate Platform", desc: "Property search platform with listings, agent profiles and geolocation filters.", img: work8, results: "24 yrs expertise", span: "" },
+  { title: "Cheshire Cats Club", category: "NFT / Web3", desc: "NFT collectibles launch site with countdown, roadmap and OpenSea integration.", img: work9, results: "Web3 launch", span: "" },
+  { title: "Olesya Cloud Technology", category: "IT / Cloud", desc: "Multi-page IT solutions and managed services website for cloud infrastructure.", img: work10, results: "Cloud infrastructure", span: "lg:col-span-2" },
+  { title: "Themi — Truth Platform", category: "Content Platform", desc: "Dark editorial content website with cinematic image layouts and immersive storytelling.", img: work11, results: "Editorial design", span: "" },
 ];
 
 const industries = [
@@ -34,7 +39,7 @@ const industries = [
 
 const caseStudies = [
   { c: "Broker Remarks", t: "Eliminating repetitive questions for real estate agents", d: "A streamlined listing workflow that 3x'd agent throughput and reduced repetitive Q&A.", img: work1},
-  { c: "Rolling Star",   t: "Shipping a full multi-game casino platform in React", d: "Roulette, Blackjack, Slots and Aviator integrated under one premium frontend.", img: work2},
+  { c: "Rolling Star",   t: "Shipping a full multi-game casino platform in React", d: "Roulette, Blackjack, Slots and Aviator integrated under one premium frontend.", img: work4},
 ];
 
 function Counter({ to, suffix = "" }) {
@@ -95,7 +100,7 @@ export default function WorkPage() {
               {projects?.map((p) => (
                 <StaggerItem key={p.title} className={p?.span}>
                   <TiltCard className="group relative h-full min-h-[280px] rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
-                    <Image width={500} height={500} src={p?.img} alt={p?.title} loading="lazy"
+                    <Image width={500} height={500} src={p?.img} alt={p?.title}   loading="eager"
                       className="absolute inset-0 size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1200ms]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
                     <div className="absolute inset-0 p-7 flex flex-col justify-end">
@@ -123,7 +128,7 @@ export default function WorkPage() {
                 <Reveal key={cs.t} delay={i * 0.1}>
                   <div className="group relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden glass hover-glow-card">
                     <div className={`relative h-72 md:h-[420px] overflow-hidden ${i % 2 ? "md:order-2" : ""}`}>
-                      <Image width={500} height={500} src={cs?.img} alt={cs?.t}
+                      <Image width={500} height={500} src={cs?.img} alt={cs?.t}   loading="eager"
                         className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                     </div>
