@@ -76,7 +76,7 @@ export default function HirePage() {
                 placeholder="Try ‘senior product designer for fintech SaaS’"
                 className="flex-1 bg-transparent outline-none text-sm py-3 placeholder:text-foreground/45"
               />
-              <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3 text-sm">
+              <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3  text-xs md:text-sm 1xl:text-base">
                 Match me
               </button>
             </div>

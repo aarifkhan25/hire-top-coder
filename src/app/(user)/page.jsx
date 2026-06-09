@@ -102,7 +102,7 @@ export default function Index() {
 
 function PrimaryButton({ children, className = "" }) {
   return (
-    <button className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] ${className}`}>
+    <button className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
       {children}
       <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
     </button>
@@ -111,7 +111,7 @@ function PrimaryButton({ children, className = "" }) {
 
 function GhostButton({ children, className = "" }) {
   return (
-    <button className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] ${className}`}>
+    <button className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
       {children}
     </button>
   );
@@ -143,10 +143,10 @@ function Hero() {
           <GhostButton>Browse Experts</GhostButton>
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-3 text-xs text-foreground/60 font-medium">
+        <div className="mt-10 flex items-center justify-center gap-3 text-sm 1xl:text-base text-foreground/60 font-medium">
           <span>Backed by</span>
           <span className="inline-flex items-center gap-1.5 font-display font-bold text-white">
-            <span className="size-5 grid place-items-center rounded bg-white text-black font-extrabold text-[11px]">Y</span>
+            <span className="size-5 grid place-items-center rounded bg-white text-black font-extrabold text-xs 1xl:text-sm">Y</span>
             Combinator
           </span>
         </div>

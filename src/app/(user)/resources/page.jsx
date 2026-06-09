@@ -169,7 +169,7 @@ export default function ResourcesPage() {
                 placeholder="you@company.com"
                 className="flex-1 w-full glass rounded-full px-5 py-3 text-sm outline-none focus:border-primary/60 placeholder:text-foreground/45"
               />
-              <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3 text-sm w-full sm:w-auto">
+              <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3 text-xs md:text-sm 1xl:text-base w-full sm:w-auto">
                 Subscribe
               </button>
             </form>

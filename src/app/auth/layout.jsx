@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/assets/logo.svg" />
+        <link rel="icon" type="image" href="/assets/logo1.png"/>
       </head>
       <body  className="color-background">
         {children}
