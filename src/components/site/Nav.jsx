@@ -9,7 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import Image from "next/image"
 const navLinks = [
-  { to: "/hire", label: "Hire" },
+  { to: "/hire", label: "Hire Developers" },
   { to: "/work", label: "Work" },
   { to: "/about", label: "About" },
   { to: "/resources", label: "Resources" },
@@ -49,18 +49,16 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 px-4 sm:px-6 transition-all duration-500 ${
-        scrolled ? "pt-3" : "pt-5"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50  transition-all duration-500`}
     >
       <nav
-        className={`w-full flex items-center justify-between rounded-full transition-all duration-500 ${
+        className={`w-full flex items-center justify-between  transition-all duration-500 py-2 px-4 sm:px-6 lg:px-15 1xl:px-25 2xl:px-35 ${
           scrolled
-            ? "glass px-5  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
+            ? "glass  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : "px-1 "
         }`}
       >
-      <div className="flex items-center gap-8 text-sm  1xl:text-lg font-bold text-foreground/85">
+      <div className="flex items-center gap-5 lg:gap-8 text-xs lg:text-sm  1xl:text-lg font-bold text-foreground/85">
          <Link href="/" >
                     <Image 
                       width={500} 
@@ -68,7 +66,7 @@ export function Nav() {
                       src="/assets/logo1.png" 
                       alt="logo" 
                    loading="eager"
-                      className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px]  cursor-pointer object-contain" />
+                      className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px]  cursor-pointer object-contain" />
                   </Link>
         
 
@@ -87,12 +85,12 @@ export function Nav() {
         </div>
 
         <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden sm:inline-flex text-sm 1xl:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
+          <Link href="/signin" className="hidden sm:inline-flex text-xs lg:text-sm 1xl:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
             Talk to Expert
           </Link>
           <Link
             href="/starthiring"
-            className="inline-flex items-center gap-1.5 text-sm 1xl:text-lg font-bold bg-white text-black rounded-full px-4 py-2 md:px-5 md:py-2.5 hover:bg-white/90 transition shadow-lg"
+            className="inline-flex items-center gap-1.5 text-xs lg:text-sm 1xl:text-lg font-bold bg-white text-black rounded-full px-4 py-2 md:px-5 md:py-2.5 hover:bg-white/90 transition shadow-lg"
           >
             Start Hiring
           </Link>

@@ -47,7 +47,7 @@ export function Footer() {
                       src="/assets/logo1.png" 
                       alt="logo" 
             loading="eager"
-                      className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px]  cursor-pointer object-contain" 
+                      className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
                     />
                   </Link>
         </div>
