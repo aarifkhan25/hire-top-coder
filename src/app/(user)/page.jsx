@@ -73,9 +73,9 @@ const steps = [
 ];
 
 const testimonials = [
-  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault",img:expert1 },
-  { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs",img:expert4 },
-  { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam",img:expert2 },
+  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault",img:expert4 },
+  { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs",img:expert2 },
+  { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam",img:expert1 },
 ];
 
 export default function Index() {
@@ -382,7 +382,9 @@ function Testimonials() {
               <LuQuote className="size-7 text-primary/70 mb-4" />
               <blockquote className="text-lg leading-relaxed font-medium">"{t.q}"</blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <div className="size-10 rounded-full bg-gradient-to-br from-primary to-accent" />
+                <div className="size-10   " >
+                     <Image width={500} height={500} priority={false} className="w-full h-full rounded-full object-cover" loading ="lazy" src={t.img} alt={t.r} />
+                </div>
                 <div>
                   <div className="font-bold text-sm">{t.a}</div>
                   <div className="text-xs text-foreground/70 font-medium">{t.r}</div>
@@ -410,7 +412,7 @@ function Blog() {
           {posts.map((p) => (
             <article key={p.title} className="group glass rounded-2xl overflow-hidden hover-glow-card flex flex-col">
               <div className="aspect-[4/3] overflow-hidden relative">
-                <Image width={500} height={500} priority={false} loading ="lazy" src={p.img} alt={p.title} loading="lazy" width={1024} height={1024}
+                <Image  priority={false} loading ="lazy" src={p.img} alt={p.title}  width={1024} height={1024}
                   className="size-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
