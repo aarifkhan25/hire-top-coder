@@ -70,7 +70,7 @@ export function Nav() {
                       height={500} 
                       src="/assets/logo1.png" 
                       alt="logo" 
-                   
+                   loading="eager
                       className=" w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px]  cursor-pointer object-contain" 
                     />
                   </Link>

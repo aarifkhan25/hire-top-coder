@@ -115,7 +115,7 @@ export default function SignInPage() {
         <div className="w-full max-w-[420px] mx-auto">
           <div className="text-right mb-8" style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>
             Don't have an account?{" "}
-            <Link to="/signup" style={{ color: "#a78bfa" }}>
+            <Link href="/signup" style={{ color: "#a78bfa" }}>
               Sign up →
             </Link>
           </div>
