@@ -66,7 +66,7 @@ export default function ResourcesPage() {
             <TiltCard className="group relative rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
               <div className="grid md:grid-cols-2">
                 <div className="relative aspect-[16/11] md:aspect-auto overflow-hidden">
-                  <Image  priority={false}  src={featured.img} alt={featured.title}
+                  <Image width={500} height={500}   priority={false}  src={featured.img} alt={featured.title}
                     className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
                 </div>
@@ -110,7 +110,7 @@ export default function ResourcesPage() {
             <StaggerItem key={a.t}>
               <TiltCard className="group glass rounded-3xl overflow-hidden hover-glow-card cursor-pointer h-full">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image  priority={false}  src={a.img} alt={a.t}
+                  <Image width={500} height={500}   priority={false}  src={a.img} alt={a.t}
                     className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1200ms]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>

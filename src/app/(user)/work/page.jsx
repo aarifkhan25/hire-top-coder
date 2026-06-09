@@ -117,7 +117,7 @@ export default function WorkPage() {
             <Reveal key={cs.t} delay={i * 0.1}>
               <div className="group relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden glass hover-glow-card">
                 <div className={`relative h-72 md:h-[420px] overflow-hidden ${i % 2 ? "md:order-2" : ""}`}>
-                  <Image  priority={false}  src={cs.img} alt={cs.t}
+                  <Image width={500} height={500}   priority={false}  src={cs.img} alt={cs.t}
                     className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 </div>

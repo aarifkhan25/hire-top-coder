@@ -1,29 +1,48 @@
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
-
-    const meta= [
-      { title: "Forgot Password — Hire Top Coder" },
-      { name: "description", content: "Reset your Hire Top Coder password." },
-    ];
-
+const meta = [
+  { title: "Forgot Password — Hire Top Coder" },
+  { name: "description", content: "Reset your Hire Top Coder password." },
+];
 
 export default function ForgotPasswordPage() {
   return (
- 
     <div
       className="min-h-[calc(100vh-80px)] flex items-center justify-center px-6"
       style={{ backgroundColor: "#070707", fontFamily: "Inter, sans-serif" }}
     >
       <div className="w-full max-w-[420px]">
-        <h1 style={{ fontSize: 28, fontWeight: 500, color: "#fff", letterSpacing: "-0.8px" }}>
+        <h1
+          style={{
+            fontSize: 28,
+            fontWeight: 500,
+            color: "#fff",
+            letterSpacing: "-0.8px",
+          }}
+        >
           Reset your password
         </h1>
-        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", marginTop: 8, marginBottom: 24 }}>
+        <p
+          style={{
+            fontSize: 14,
+            color: "rgba(255,255,255,0.4)",
+            marginTop: 8,
+            marginBottom: 24,
+          }}
+        >
           Enter your email and we'll send you a reset link.
         </p>
         <form onSubmit={(e) => e.preventDefault()}>
-          <label style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginBottom: 6, display: "block" }}>
+          <label
+            style={{
+              fontSize: 12,
+              color: "rgba(255,255,255,0.5)",
+              marginBottom: 6,
+              display: "block",
+            }}
+          >
             Email address
           </label>
           <input
@@ -62,7 +81,5 @@ export default function ForgotPasswordPage() {
         </div>
       </div>
     </div>
-    
   );
 }
-

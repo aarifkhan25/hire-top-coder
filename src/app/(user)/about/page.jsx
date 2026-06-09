@@ -130,7 +130,7 @@ export default function AboutPage() {
             <StaggerItem key={m.n}>
               <TiltCard className="group glass rounded-3xl overflow-hidden hover-glow-card">
                 <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image  priority={false}  src={m.img} alt={m.n}
+                  <Image width={500} height={500}    priority={false}  src={m.img} alt={m.n}
                     className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1200ms]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </div>

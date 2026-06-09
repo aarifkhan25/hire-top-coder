@@ -15,7 +15,7 @@ const cols = [
     title: "Company",
     links: [
       { to: "/about", label: "About" },
-      { to: "/about", label: "Careers" },
+      { to: "/careers", label: "Careers" },
       { to: "/about", label: "Press" },
     ],
   },
@@ -38,7 +38,7 @@ export function Footer() {
           <div className="col-span-2">
             <div
          
-          className="flex items-center "
+          className="flex items-start "
         >
          <Link href="/" >
                     <Image 

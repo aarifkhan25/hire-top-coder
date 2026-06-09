@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { motion } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
@@ -102,18 +103,18 @@ export default function Index() {
 
 function PrimaryButton({ children, className = "" }) {
   return (
-    <button className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
+    <Link href="/starthiring" className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
       {children}
       <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-    </button>
+    </Link >
   );
 }
 
 function GhostButton({ children, className = "" }) {
   return (
-    <button className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
+    <Link href=""  className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
       {children}
-    </button>
+    </Link >
   );
 }
 

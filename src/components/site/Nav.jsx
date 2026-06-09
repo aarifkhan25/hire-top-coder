@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
 import { FiAlignJustify } from "react-icons/fi";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 import Image from "next/image"
 const navLinks = [
   { to: "/hire", label: "Hire" },
@@ -31,11 +33,14 @@ export function Nav() {
   
   const toggleMobileMenu = () => {
     setOpen(!open);
-   
   };
 
-  
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -73,7 +78,7 @@ export function Nav() {
 
         <div className="hidden md:flex items-center gap-8 text-sm  1xl:text-lg font-bold text-foreground/85">
           {navLinks.map((l) => (
-            <Link
+            <Link data-aos="fade-down"
               key={l.to}
               href={l.to}
               className="relative hover:text-white transition group"
@@ -85,7 +90,7 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div data-aos="fade-down" className="flex items-center gap-2">
           <Link href="/signin" className="hidden sm:inline-flex text-sm 1xl:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
             Sign In
           </Link>
