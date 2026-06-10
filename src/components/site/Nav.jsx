@@ -14,9 +14,18 @@ import 'aos/dist/aos.css';
 
 
 const navData = [
+  
+  { 
+    name: "Services", 
+    href: '/about', 
+    subItems: [
+      { name: "Our Mission", href: "/about/mission" },
+      { name: "Press", href: "/about/press" },
+    ]
+  }, 
   { 
     name: "Hire Developers", 
-    href: "#", 
+    href: "/hire", 
     isMega: true, 
     subItems: [
       { 
@@ -39,26 +48,20 @@ const navData = [
       }
     ]
   }, 
-  { 
-    name: "Work",
-    href: '/work',
-  }, 
-  { 
-    name: "About", 
-    href: '#', 
-    subItems: [
-      { name: "Our Mission", href: "/about/mission" },
-      { name: "Press", href: "/about/press" },
-    ]
-  }, 
+  
+  
   { 
     name: "Resources", 
-    href: '#',
+    href: '/resources',
     subItems: [ 
       { name: "Blogs", href: "/resources/blogs" },
       { name: "FAQ", href: "/resources/faq" },
     ]
-  }
+  },
+   { 
+    name: "Company",
+    href: '/work',
+  }, 
 ];
 
 // 🟢 Top Scroll Progress Component
@@ -117,18 +120,18 @@ export  function Nav() {
     <header className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-500">
       {/* स्क्रॉल प्रोग्रेस बार */}
       <ScrollProgress />
-      <div  className="w-full h-auto">
+      <div  className="w-full h-auto hidden md:block border  border-b border-border/80 ">
 <div className="flex justify-between items-center  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
-  <div className="text-xs lg:text-sm 1xl:text-lg font-sans  text-foreground/85">
+  <div className="text-xs lg:text-sm  font-sans  text-foreground/85">
 Trusted by 500+ clients worldwide
   </div>
 
   <div className="flex justfiy-between items-center font-sans gap-2 lg:gap-5 ">
-<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm 1xl:text-lg  text-foreground/85">
-<MdOutlinePhoneInTalk className="w-5 h-5 1xl:w-10 1xl:h-10"  /> <p>+91 12345 67890</p>
+<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm   text-foreground/85">
+<MdOutlinePhoneInTalk className="w-5 h-5  "  /> <p>+91 12345 67890</p>
 </div>
-<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm 1xl:text-lg  text-foreground/85">
-<MdOutlineMarkEmailUnread className="w-5 h-5 1xl:w-10 1xl:h-10" /> <p>contact@hiretopcoder.com</p>
+<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm   text-foreground/85">
+<MdOutlineMarkEmailUnread className="w-5 h-5  " /> <p>contact@hiretopcoder.com</p>
 </div>
   </div>
 </div></div>
@@ -184,7 +187,7 @@ Trusted by 500+ clients worldwide
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className={`fixed left-0 top-[100px] w-full z-50 transition-all duration-300 bg-white px-6 sm:px-10 lg:px-20 1xl:px-25 2xl:px-30 py-8`}
+                      className={`fixed left-0 top-[100px] 2xl:top-[138px] w-full z-50 transition-all duration-300 bg-white px-6 sm:px-10 lg:px-20 1xl:px-25 2xl:px-30 py-35`}
                     >
                       <div className="max-w-7xl mx-auto">
                         {item.isMega ? (
@@ -216,7 +219,7 @@ Trusted by 500+ clients worldwide
                                 key={subIdx}
                                 href={subItem.href || "#"}
                                 onClick={() => setHoveredIndex(null)}
-                                className="text-sm lg:text-base font-semibold font-mulish text-gray-300 hover:text-white transition-colors"
+                                className="text-sm lg:text-base font-semibold font-mulish text-gray-300 hover:text-black transition-colors"
                               >
                                 {subItem.name}
                               </Link>
@@ -234,7 +237,7 @@ Trusted by 500+ clients worldwide
 
         {/* राइट साइड एक्शन बटन्स (जैसा आपके पुराने डिज़ाइन में था) */}
         <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-black">
+          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-[#381385]">
             Talk to Expert
           </Link>
         

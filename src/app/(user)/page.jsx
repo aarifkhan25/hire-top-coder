@@ -1,10 +1,12 @@
 "use client"
-import Link from "next/link"
-import { motion } from "framer-motion";
+import Link from "next/link";
+import {useRef} from "react"
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
 } from "react-icons/lu";
 import Image from 'next/image'
+import Testimonial from "./Testimonial.jsx"
 const expert1 = "/assets/expert-1.jpg";
 const expert2 = "/assets/expert-2.jpg";
 const expert3 = "/assets/expert-3.jpg";
@@ -23,11 +25,11 @@ const blog4 = "/assets/blog-4.jpg";
 
 
 const experts = [
-  { name: "Jane",   role: "GRAPHIC DESIGNER", img: expert1, accent: "oklch(0.70 0.22 305)" },
-  { name: "Mark",   role: "DEVELOPER",        img: expert2, accent: "oklch(0.65 0.26 295)" },
-  { name: "Mary",   role: "UI DESIGNER",      img: expert3, accent: "oklch(0.68 0.28 325)" },
-  { name: "Amanda", role: "GROWTH MARKETER",  img: expert4, accent: "oklch(0.62 0.30 315)" },
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: expert5, accent: "oklch(0.55 0.28 305)" },
+  { name: "Jane",   role: "GRAPHIC DESIGNER", img: expert1, accent: "oklch(0.65 0.28 320)",move:"-200px" },
+  { name: "Mark",   role: "DEVELOPER",        img: expert2, accent: "oklch(0.65 0.28 320)",move:"-130px"  },
+  { name: "Mary",   role: "UI DESIGNER",      img: expert3, accent: "oklch(0.65 0.28 320)", move:"-20px" },
+  { name: "Amanda", role: "GROWTH MARKETER",  img: expert4, accent: "oklch(0.65 0.28 320)", move:"-130px" },
+  { name: "Sam",    role: "CHIEF OF STAFF",   img: expert5, accent: "oklch(0.65 0.28 320)",move:"-200px" },
 ];
 
 const brands = ["NORTHWIND", "VAULT", "HALO", "NEXUS", "PARETO", "ORBIT", "MERIDIAN", "AXIOM"];
@@ -91,13 +93,14 @@ export default function Index() {
         <Hero />
         <ExpertsRow />
         <Marquee />
-        <Services />
+        {/* <Services /> */}
         <Portfolio />
-        <How />
-        <Stats />
+        {/* <How /> */}
+        {/* <Stats /> */}
         <Testimonials />
         <Blog />
         <CTA />
+        {/* <Testimonial/> */}
       </motion.main>
   
     </div>
@@ -125,30 +128,30 @@ function GhostButton({ children, className = "" }) {
 
 function Hero() {
   return (
-    <section className="relative pt-40 pb-20 px-4">
+    <section className="relative pt-40 2xl:pt-50 pb-20 px-4">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[900px] rounded-full bg-primary/25 blur-[160px] animate-pulse-glow pointer-events-none" />
       <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] pointer-events-none" />
 
       <div className="relative w-full text-center">
-        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs 2xl:text-base font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
           Build faster with elite digital experts
         </div>
 
-        <h1 className="font-display font-extrabold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3.5rem,10vw,9rem)]">
+        <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
           Hire elite <br />
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-8 text-base md:text-xl 2xl:text-2xl text-foreground/80 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p className="mt-12 text-base md:text-xl 2xl:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly available.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-black">
-                      Talk to Expert
+          <Link href="/starthiring" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-8 py-4 rounded-full expert-btn text-[#381385]">
+                      Start Hiring
                     </Link>
-          <GhostButton>Browse Experts</GhostButton>
+          <GhostButton>Talk to Experts</GhostButton>
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-3 text-sm 1xl:text-base text-foreground/60 font-medium">
@@ -165,10 +168,10 @@ function Hero() {
 
 function ExpertsRow() {
   return (
-    <section id="experts" className="relative  py-24 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-32  z-10 pointer-events-none" />
-      <div className="flex gap-5 animate-scroll-cards w-max px-4">
-        {[...experts, ...experts].map((e, i) => (
+    <section id="experts" className="relative w-full grid items-center justify-center overflow-hidden py-40">
+
+      <div className="flex gap-3 md:gap-7 lg:gap-10 justify-center ">
+        {experts.map((e, i) => (
           <ExpertCard key={i} expert={e} />
         ))}
       </div>
@@ -177,40 +180,52 @@ function ExpertsRow() {
 }
 
 function ExpertCard({ expert }) {
+    const cardRef = useRef(null);
+  
+    // Har ek card ki apni coordinate position track karne ke liye useScroll instance
+    const { scrollYProgress } = useScroll({
+      target: cardRef,
+      // Jaise hi card viewport ke bottom se enter karega aur top se exit hoga
+      offset: ["start end", "end start"],
+    });
+  
+    // item.move (jaise '-170px') ko progression array ke mutabiq vertical Y axis par dynamically animate karega
+    const yTransform = useTransform(scrollYProgress, [0, 1], ["0px", expert.move]);
   return (
-    <article
+    <motion.div
+     ref={cardRef}
       className="relative shrink-0 w-[280px] sm:w-[320px] rounded-3xl p-2 overflow-hidden"
-      style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)` }}
+      style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)`,y:yTransform }}
     >
       <div className="rounded-[1.25rem] overflow-hidden bg-black relative">
         <div
-          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[10px] font-mono uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
-          style={{ color: expert.accent, background: "rgba(0,0,0,0.55)", border: `1px solid ${expert.accent}` }}
+          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[8px] md:text-[9px]  font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
+          style={{ color: expert.accent, background: "#f9e5ff", border: `1px solid ${expert.accent}` }}
         >
           {expert.role}
         </div>
         <Image priority={false}  src={expert.img} alt={`${expert.name}, ${expert.role}`} width={640} height={800} loading="lazy"
           className="w-full aspect-[4/5] object-cover" />
-        <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
+        <div className="absolute inset-x-0 bottom-0 p-5 bg-gradienot-to-t from-black via-black/70 to-transparent">
           <div className="font-display text-3xl font-extrabold">{expert.name}</div>
           <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
             <LuStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
           </div>
         </div>
       </div>
-    </article>
+    </motion.div>
   );
 }
 
 function Marquee() {
   return (
-    <section className="relative py-12  border-y border-border/40 overflow-hidden">
+    <section className="relative py-12 border  border-y border-border/80 overflow-hidden">
       <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
         Trusted by teams shipping with Hire Top Coder
       </div>
       <div className="flex animate-marquee whitespace-nowrap">
         {[...brands, ...brands].map((b, i) => (
-          <span key={i} className="mx-10 font-display font-bold text-xl text-foreground/50 tracking-[0.3em]">
+          <span key={i} className="mx-10 font-display font-bold text-xl text-gray-800 hover:text-gray-600 tracking-[0.3em]">
             {b}
           </span>
         ))}
@@ -261,7 +276,7 @@ function Services() {
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-28 px-4 sm:px-6 overflow-hidden">
+    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
       <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
       <div className="relative mx-auto max-w-7xl">
@@ -305,7 +320,7 @@ function WorkCard({ w }) {
       <div className="absolute inset-x-0 bottom-0 p-6 space-y-3">
         <h3 className="font-display text-2xl md:text-3xl font-extrabold leading-tight">{w.title}</h3>
         <p className="text-sm text-foreground/80 leading-relaxed max-w-md font-medium">{w.desc}</p>
-        <div className="flex items-center gap-4 text-[11px] text-foreground/70 font-mono uppercase tracking-wider pt-1">
+        <div className="flex items-center gap-4 text-[11px] text-foreground/70  font-sans uppercase tracking-wider pt-1">
           <span className="flex items-center gap-1.5"><span className="size-1 rounded-full bg-primary" />{w.stat1}</span>
           <span className="flex items-center gap-1.5"><span className="size-1 rounded-full bg-accent" />{w.stat2}</span>
         </div>
@@ -333,7 +348,7 @@ function How() {
           <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           {steps.map((s) => (
             <div key={s.n} className="relative glass rounded-2xl p-8">
-              <div className="font-mono text-xs text-primary mb-4 font-bold">{s.n}</div>
+              <div className=" font-sans text-xs text-primary mb-4 font-bold">{s.n}</div>
               <h3 className="text-2xl font-bold mb-3">{s.t}</h3>
               <p className="text-foreground/75 font-medium leading-relaxed">{s.d}</p>
             </div>
@@ -352,7 +367,7 @@ function Stats() {
     { i: LuCheck,       t: "Outcome guarantee", d: "Pay only when milestones land." },
   ];
   return (
-    <section id="enterprise" className="relative py-20 px-4 sm:px-6">
+    <section id="enterprise" className="relative py-20 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
       <div className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {items.map((x) => (
           <div key={x.t} className="glass rounded-2xl p-6 flex gap-4 items-start">
@@ -372,7 +387,7 @@ function Stats() {
 
 function Testimonials() {
   return (
-    <section className="relative py-28 px-4 sm:px-6">
+    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
       <div className="mx-auto max-w-7xl">
         <SectionHead
           eyebrow="Trusted by builders"
@@ -402,7 +417,7 @@ function Testimonials() {
 
 function Blog() {
   return (
-    <section id="blog" className="relative py-28 px-4 sm:px-6 overflow-hidden">
+    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHead
@@ -445,7 +460,7 @@ function Blog() {
 
 function CTA() {
   return (
-    <section className="relative py-28 px-4 sm:px-6">
+    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">
@@ -472,7 +487,7 @@ function SectionHead({
 }) {
   return (
     <div className="text-center max-w-2xl mx-auto">
-      <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] text-primary mb-4 font-bold">
+      <div className="inline-flex items-center gap-2 text-[11px]  font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
       </div>
       <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.05]">{title}</h2>
