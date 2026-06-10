@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { FiAlignJustify, FiChevronDown } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
+import { MdOutlinePhoneInTalk } from "react-icons/md";
+import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -112,21 +114,35 @@ export  function Nav() {
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+    <header className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-500">
       {/* स्क्रॉल प्रोग्रेस बार */}
       <ScrollProgress />
+      <div  className="w-full h-auto">
+<div className="flex justify-between items-center  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
+  <div className="text-xs lg:text-sm 1xl:text-lg font-sans  text-foreground/85">
+Trusted by 500+ clients worldwide
+  </div>
 
+  <div className="flex justfiy-between items-center font-sans gap-2 lg:gap-5 ">
+<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm 1xl:text-lg  text-foreground/85">
+<MdOutlinePhoneInTalk className="w-5 h-5 1xl:w-10 1xl:h-10"  /> <p>+91 12345 67890</p>
+</div>
+<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm 1xl:text-lg  text-foreground/85">
+<MdOutlineMarkEmailUnread className="w-5 h-5 1xl:w-10 1xl:h-10" /> <p>contact@hiretopcoder.com</p>
+</div>
+  </div>
+</div></div>
       <nav
         onMouseLeave={() => setHoveredIndex(null)}
-        className={`w-full flex items-center justify-between transition-all duration-500 py-2 px-4 sm:px-6 lg:px-15 1xl:px-25 2xl:px-35 ${
+        className={`w-full flex items-center justify-between transition-all duration-500  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  ${
           isScrolled
             ? "glass shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : "px-1 bg-[#0d0d0d]/10"
         }`}
       >
         {/* Logo & Desktop Nav Links */}
-        <div className="flex items-center gap-5 lg:gap-8 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
-          <Link href="/" onClick={closeMobileMenu}>
+        <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
+        <div> <Link href="/" onClick={closeMobileMenu}>
             <Image 
               width={500} 
               height={500} 
@@ -135,7 +151,7 @@ export  function Nav() {
               loading="eager"
               className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
             />
-          </Link>
+          </Link></div> 
 
           {/* डेस्कटॉप मेनू */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6 relative h-full">
@@ -148,7 +164,7 @@ export  function Nav() {
                 <Link 
                   href={item.href || "#"}
                   data-aos="fade-down"
-                  className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base font-mulish font-semibold cursor-pointer text-foreground/85"
+                  className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer text-foreground/85"
                 >
                  
                     <span className="flex justify-center items-center gap-1">
@@ -157,9 +173,6 @@ export  function Nav() {
                         <FiChevronDown className={`w-3 h-3  transition-transform duration-200 ${hoveredIndex === i ? 'rotate-180' : ''}`} />
                       )}
                     </span>
-               
-                  
-                  {/* आपके पुराने डिज़ाइन की एनिमेटेड अंडरलाइन लाइन */}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
                 </Link>
 
@@ -171,18 +184,14 @@ export  function Nav() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className={`fixed left-0 top-[60px] w-full z-50 transition-all duration-300${
-          isScrolled
-            ? "glass shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
-            : "px-1 bg-[#0d0d0d]/10"
-        } px-6 md:px-10 lg:px-20 py-8`}
+                      className={`fixed left-0 top-[100px] w-full z-50 transition-all duration-300 bg-white px-6 sm:px-10 lg:px-20 1xl:px-25 2xl:px-30 py-8`}
                     >
                       <div className="max-w-7xl mx-auto">
                         {item.isMega ? (
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {item.subItems.map((group, groupIdx) => (
                               <div key={groupIdx} className="flex flex-col gap-3">
-                                <h3 className="text-xs uppercase tracking-wider font-jb-mono text-white font-bold">
+                                <h3 className="text-xs uppercase tracking-wider font-jb-mono text-black font-bold">
                                   {group.title}
                                 </h3>
                                 <div className="flex flex-col gap-2">
@@ -191,7 +200,7 @@ export  function Nav() {
                                       key={subIdx}
                                       href={subLink.href || "#"}
                                       onClick={() => setHoveredIndex(null)}
-                                      className="text-sm font-medium font-mulish text-gray-300 hover:text-white transition-colors py-1 block"
+                                      className="text-sm font-medium font-mulish text-gray-300 hover:text-gray-600 transition-colors py-1 block"
                                     >
                                       {subLink.name}
                                     </Link>
@@ -225,15 +234,10 @@ export  function Nav() {
 
         {/* राइट साइड एक्शन बटन्स (जैसा आपके पुराने डिज़ाइन में था) */}
         <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden sm:inline-flex text-xs lg:text-sm 1xl:text-lg font-bold px-5 py-2.5 rounded-full btn-glass text-white">
+          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-black">
             Talk to Expert
           </Link>
-          <Link
-            href="/starthiring"
-            className="inline-flex items-center gap-1.5 text-xs lg:text-sm 1xl:text-lg font-bold bg-white text-black rounded-full px-4 py-2 md:px-5 md:py-2.5 hover:bg-white/90 transition shadow-lg"
-          >
-            Start Hiring
-          </Link>
+        
           
           {/* हैमबर्गर मोबाइल टॉगल बटन */}
           <button

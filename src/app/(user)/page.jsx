@@ -145,7 +145,9 @@ function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <PrimaryButton>Start Hiring</PrimaryButton>
+          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-black">
+                      Talk to Expert
+                    </Link>
           <GhostButton>Browse Experts</GhostButton>
         </div>
 
