@@ -25,11 +25,11 @@ const blog4 = "/assets/blog-4.jpg";
 
 
 const experts = [
-  { name: "Jane",   role: "GRAPHIC DESIGNER", img: expert1, accent: "oklch(0.65 0.28 320)",move:"-200px" },
-  { name: "Mark",   role: "DEVELOPER",        img: expert2, accent: "oklch(0.65 0.28 320)",move:"-130px"  },
-  { name: "Mary",   role: "UI DESIGNER",      img: expert3, accent: "oklch(0.65 0.28 320)", move:"-20px" },
-  { name: "Amanda", role: "GROWTH MARKETER",  img: expert4, accent: "oklch(0.65 0.28 320)", move:"-130px" },
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: expert5, accent: "oklch(0.65 0.28 320)",move:"-200px" },
+  { name: "Jane",   role: "GRAPHIC DESIGNER", img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
+  { name: "Mark",   role: "DEVELOPER",        img: '/assets/dev.jpg', accent: "oklch(0.65 0.28 320)",move:"-130px"  },
+  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/kajal.jpg', accent: "oklch(0.65 0.28 320)", move:"-20px" },
+  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)", move:"-130px" },
+  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
 ];
 
 const brands = ["NORTHWIND", "VAULT", "HALO", "NEXUS", "PARETO", "ORBIT", "MERIDIAN", "AXIOM"];
@@ -237,7 +237,7 @@ function Marquee() {
 function Services() {
   return (
     <section id="services" className="relative py-28 px-4 sm:px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="w-full">
         <SectionHead
           eyebrow="Signature services"
           title={<>Hand-picked, <span className="text-gradient-purple">ready to ship.</span></>}
@@ -276,10 +276,10 @@ function Services() {
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
+    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden border-b border-gray-600">
       <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative w-full">
         <SectionHead
           eyebrow="Featured work"
           title={<>Selected work that <span className="text-gradient-purple">speaks for itself.</span></>}
@@ -338,7 +338,7 @@ function WorkCard({ w }) {
 function How() {
   return (
     <section id="how" className="relative py-28 px-4 sm:px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="w-full">
         <SectionHead
           eyebrow="How Hire Top Coder works"
           title={<>From brief to <span className="text-gradient-purple">brilliance</span> in minutes.</>}
@@ -368,7 +368,7 @@ function Stats() {
   ];
   return (
     <section id="enterprise" className="relative py-20 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
-      <div className="mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {items.map((x) => (
           <div key={x.t} className="glass rounded-2xl p-6 flex gap-4 items-start">
             <div className="size-10 rounded-lg bg-primary/20 grid place-items-center shrink-0 border border-primary/30">
@@ -387,8 +387,8 @@ function Stats() {
 
 function Testimonials() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 border-b border-gray-600">
+      <div className="w-full">
         <SectionHead
           eyebrow="Trusted by builders"
           title={<>The new standard for <span className="text-gradient-purple">hiring talent.</span></>}
@@ -417,9 +417,9 @@ function Testimonials() {
 
 function Blog() {
   return (
-    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
+    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden border-b border-gray-600">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative w-full">
         <SectionHead
           eyebrow="Insights & innovation"
           title={<>Insights, trends & <span className="text-gradient-purple">digital innovation.</span></>}
@@ -460,7 +460,7 @@ function Blog() {
 
 function CTA() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 border-b border-gray-600">
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">
@@ -490,7 +490,7 @@ function SectionHead({
       <div className="inline-flex items-center gap-2 text-[11px]  font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
       </div>
-      <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.05]">{title}</h2>
+      <h2 className="text-4xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
       {sub && <p className="mt-4 text-foreground/75 text-lg font-medium">{sub}</p>}
     </div>
   );

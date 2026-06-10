@@ -189,7 +189,7 @@ Trusted by 500+ clients worldwide
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className={`fixed left-0 top-[100px] 2xl:top-[138px] w-full z-50 transition-all duration-300 bg-white px-6 sm:px-10 lg:px-20 1xl:px-25 2xl:px-30 py-35`}
                     >
-                      <div className="max-w-7xl mx-auto">
+                      <div className="w-full">
                         {item.isMega ? (
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {item.subItems.map((group, groupIdx) => (
@@ -237,7 +237,7 @@ Trusted by 500+ clients worldwide
 
         {/* राइट साइड एक्शन बटन्स (जैसा आपके पुराने डिज़ाइन में था) */}
         <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2.5 rounded-full expert-btn text-[#381385]">
+          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
             Talk to Expert
           </Link>
         
