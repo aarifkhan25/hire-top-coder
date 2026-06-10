@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { LuSparkles, LuMail, LuGlobe } from "react-icons/lu";
+import { HiSparkles, HiEnvelope, HiOutlineGlobeAlt } from "react-icons/hi2";
 import Image from "next/image"
 const cols = [
   {
@@ -31,7 +31,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border/40 px-4 sm:px-6 pt-20 pb-10 mt-10 overflow-hidden">
+    <footer className="relative border-t border-border/40 ppx-4 sm:px-6 lg:px-15 1xl:px-25 2xl:px-35 pt-20 pb-10 mt-10 overflow-hidden">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
@@ -56,7 +56,7 @@ export function Footer() {
               The curated marketplace where ambitious teams meet elite digital experts.
             </p>
             <div className="mt-6 flex gap-2">
-              {[LuSparkles, LuMail, LuGlobe].map((Icon, i) => (
+              {[HiSparkles, HiEnvelope, HiOutlineGlobeAlt].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
