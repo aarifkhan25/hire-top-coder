@@ -26,14 +26,14 @@ const blog4 = "/assets/blog-4.jpg";
 
 
 const experts = [
-  { name: "Jane",   role: "GRAPHIC DESIGNER", img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
-  { name: "Mark",   role: "DEVELOPER",        img: '/assets/dev.jpg', accent: "oklch(0.65 0.28 320)",move:"-130px"  },
-  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/kajal.jpg', accent: "oklch(0.65 0.28 320)", move:"-80px" },
-  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)", move:"-20px" },
+  { name: "Jane",   role: "GRAPHIC DESIGNER", img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)",move:"-200px" },
+  { name: "Mark",   role: "DEVELOPER",        img: '/assets/kajal.png', accent: "oklch(0.65 0.28 320)",move:"-130px"  },
+  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/Aakansha.png', accent: "oklch(0.65 0.28 320)", move:"-80px" },
+  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)", move:"-20px" },
 
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/aarif.png', accent: "oklch(0.65 0.28 320)",move:"-80px" },
+  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)",move:"-80px" },
 
-    { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/sales.jpg', accent: "oklch(0.65 0.28 320)", move:"-130px" },
+    { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)", move:"-130px" },
       { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
 ];
 
@@ -186,10 +186,10 @@ function Hero() {
 
 function ExpertsRow() {
   return (
-    <section id="experts" className="relative w-full grid items-center justify-center overflow-hidden py-40  ">
-
-      <div className="flex gap-3 md:gap-7 lg:gap-10 justify-center ">
-        {experts.map((e, i) => (
+    <section id="experts" className="relative -mt-4 pb-24 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-32  z-10 pointer-events-none" />
+      <div className="flex gap-5 animate-scroll-cards w-max px-4">
+        {[...experts, ...experts].map((e, i) => (
           <ExpertCard key={i} expert={e} />
         ))}
       </div>
@@ -198,40 +198,28 @@ function ExpertsRow() {
 }
 
 function ExpertCard({ expert }) {
-    const cardRef = useRef(null);
-  
-    // Har ek card ki apni coordinate position track karne ke liye useScroll instance
-    const { scrollYProgress } = useScroll({
-      target: cardRef,
-      // Jaise hi card viewport ke bottom se enter karega aur top se exit hoga
-      offset: ["start end", "end start"],
-    });
-  
-    // item.move (jaise '-170px') ko progression array ke mutabiq vertical Y axis par dynamically animate karega
-    const yTransform = useTransform(scrollYProgress, [0, 1], ["0px", expert.move]);
   return (
-    <motion.div
-     ref={cardRef}
+    <article
       className="relative shrink-0 w-[280px] sm:w-[320px] rounded-3xl p-2 overflow-hidden"
-      style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)`,y:yTransform }}
+      style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)` }}
     >
       <div className="rounded-[1.25rem] overflow-hidden bg-black relative">
         <div
-          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[8px] md:text-[9px]  font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
+          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[9px] font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
           style={{ color: expert.accent, background: "#f9e5ff", border: `1px solid ${expert.accent}` }}
         >
           {expert.role}
         </div>
-        <Image priority={false}  src={expert.img} alt={`${expert.name}, ${expert.role}`} width={640} height={800} loading="lazy"
+        <img src={expert.img} alt={`${expert.name}, ${expert.role}`} width={640} height={800} loading="lazy"
           className="w-full aspect-[4/5] object-cover" />
-        <div className="absolute inset-x-0 bottom-0 p-5 bg-gradienot-to-t from-black via-black/70 to-transparent">
+        <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
           <div className="font-display text-3xl font-extrabold">{expert.name}</div>
           <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
-            <LuStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
+            <FaStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
           </div>
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 }
 

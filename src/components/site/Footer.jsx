@@ -67,9 +67,9 @@ export  function Footer() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 ">
 
           {/* Brand */}
-<div className="lg:col-span-4">
-<Link href="/" className="inline-flex items-center">
-<Image width={500} height={500} laoding="lazy" src={logo} alt="HireTopCoder logo" className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[190px] 2xl:h-[100px]" />
+<div className=" w-full lg:col-span-4">
+<Link href="/" >
+<Image width={500} height={500} laoding="lazy" src={logo} alt="HireTopCoder logo" className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px]" />
 </Link>
 <p className="mt-4 text-[14px] text-white/45 hover:text-[#F0EDFF] leading-[1.8] w-full">
 
