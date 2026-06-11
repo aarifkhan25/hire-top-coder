@@ -48,59 +48,68 @@ export default function HirePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-40 pb-24 px-4 overflow-hidden">
-        <AmbientGlow />
-        <div className="relative mx-auto max-w-5xl text-center">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
-              Hire in 48 hours · Vetted · On demand
-            </div>
-          </Reveal>
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-tight">
-            <WordReveal text="Hire Elite Digital" />
-            <br />
-            <span className="text-gradient-purple">
-              <WordReveal text="Experts On Demand" />
-            </span>
-          </h1>
-          <Reveal delay={0.3}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
-              Connect with top-tier developers, designers, AI specialists,
-              marketers and consultants — matched to your brief in minutes.
-            </p>
-          </Reveal>
-          <Reveal delay={0.45}>
-            <div className="mt-10 mx-auto max-w-2xl glass rounded-full p-2 pl-5 flex items-center gap-2 ring-purple">
-              <Search className="size-5 text-foreground/60 shrink-0" />
-              <input
-                placeholder="Try ‘senior product designer for fintech SaaS’"
-                className="flex-1 bg-transparent outline-none text-sm py-3 placeholder:text-foreground/45"
-              />
-              <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3  text-xs md:text-sm 1xl:text-base">
-                Match me
-              </button>
-            </div>
-          </Reveal>
-          <Reveal delay={0.6}>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              {["Designers", "Engineers", "AI Experts", "Marketers", "PMs"].map((t) => (
-                <span key={t} className="text-xs font-semibold px-3.5 py-1.5 rounded-full glass text-foreground/80">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+ <section className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden flex items-center justify-center min-h-[80vh]">
+  <AmbientGlow />
+  {/* यहाँ text-center, max-w, और mx-auto को ऐड किया गया है ताकि सब कुछ सटीक रूप से सेंटर अलाइन हो सके */}
+  <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+    
+    <Reveal>
+      <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold mx-auto">
+        Hire in 48 hours · Vetted · On demand
+      </div>
+    </Reveal>
+
+    <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-tight w-full">
+      <WordReveal text="Hire Elite Digital" />
+      <br />
+      <span className="text-gradient-purple">
+        <WordReveal text="Experts On Demand" />
+      </span>
+    </h1>
+
+    <Reveal delay={0.3}>
+      {/* mx-auto और max-w-2xl से पैराग्राफ टेक्स्ट सेंटर में रहेगा और ज्यादा फैलेगा नहीं */}
+      <p className="mt-6 w-full max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
+        Connect with top-tier developers, designers, AI specialists,
+        marketers and consultants — matched to your brief in minutes.
+      </p>
+    </Reveal>
+
+    <Reveal delay={0.45}>
+      {/* max-w-xl से सर्च बार की विड्थ (Width) एकदम परफेक्ट और सेंटर में दिखेगी */}
+      <div className="mt-10 w-full  glass rounded-full p-2 pl-5 flex items-center gap-2 ring-purple">
+        <Search className="size-5 text-foreground/60 shrink-0" />
+        <input
+          placeholder="Try ‘senior product designer for fintech SaaS’"
+          className="flex-1 bg-transparent outline-none text-sm py-3 placeholder:text-foreground/45"
+        />
+        <button className="btn-primary-glow text-white font-bold rounded-full px-6 py-3 text-xs md:text-sm 1xl:text-base whitespace-nowrap">
+          Match me
+        </button>
+      </div>
+    </Reveal>
+
+    <Reveal delay={0.6}>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-3 w-full">
+        {["Designers", "Engineers", "AI Experts", "Marketers", "PMs"].map((t) => (
+          <span key={t} className="text-xs font-semibold px-3.5 py-1.5 rounded-full glass text-foreground/80">
+            {t}
+          </span>
+        ))}
+      </div>
+    </Reveal>
+
+  </div>
+</section>
 
       {/* CATEGORIES */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead
           eyebrow="Expert Categories"
           title={<>The full spectrum of <span className="text-gradient-purple">digital expertise</span></>}
           sub="Hand-picked specialists across every discipline your roadmap demands."
         />
-        <Stagger className="mt-14 mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <Stagger className="mt-14 w-full grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {categories.map((c) => (
             <StaggerItem key={c.label}>
               <TiltCard className="hover-glow-card glass rounded-2xl p-6 h-full cursor-pointer">
@@ -119,12 +128,12 @@ export default function HirePage() {
       </section>
 
       {/* HOW IT WORKS - timeline */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead
           eyebrow="How Hiring Works"
           title={<>From brief to <span className="text-gradient-purple">hired</span> in 5 steps</>}
         />
-        <div className="relative mt-16 mx-auto max-w-4xl">
+        <div className="relative mt-16 w-full">
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
           <Stagger className="space-y-10">
             {steps.map((s, i) => (
@@ -144,7 +153,7 @@ export default function HirePage() {
       </section>
 
       {/* WHY */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <Parallax speed={40} className="absolute inset-0 -z-10">
           <div className="absolute top-1/3 right-0 size-[500px] rounded-full bg-accent/15 blur-[140px]" />
         </Parallax>
@@ -152,7 +161,7 @@ export default function HirePage() {
           eyebrow="Why Hire Top Coder"
           title={<>Built for teams that <span className="text-gradient-purple">ship faster</span></>}
         />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid md:grid-cols-3 gap-4">
+        <Stagger className="mt-14 w-full grid md:grid-cols-3 gap-4">
           {why.map((w) => (
             <StaggerItem key={w.t}>
               <TiltCard className="glass rounded-2xl p-7 h-full hover-glow-card">
@@ -166,9 +175,9 @@ export default function HirePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Client Voices" title="Loved by teams shipping at the frontier" />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid md:grid-cols-3 gap-4">
+        <Stagger className="mt-14 w-full grid md:grid-cols-3 gap-4">
           {tests.map((t) => (
             <StaggerItem key={t.a}>
               <div className="glass rounded-2xl p-7 h-full hover-glow-card">
@@ -189,12 +198,12 @@ export default function HirePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-4 sm:px-6">
-        <div className="relative mx-auto max-w-4xl glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="relative w-full glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-accent/25 pointer-events-none" />
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[140px] animate-pulse-glow pointer-events-none" />
           <div className="relative">
-            <Clock className="size-8 mx-auto text-primary mb-4" />
+            <Clock className="size-8 w-full  text-primary mb-4" />
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               Your next hire is <span className="text-gradient-purple">48 hours away</span>
             </h2>

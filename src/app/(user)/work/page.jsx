@@ -74,7 +74,7 @@ export default function WorkPage() {
       {/* HERO */}
       <section className="relative pt-40 pb-20 px-4 overflow-hidden">
         <AmbientGlow />
-        <div className="relative mx-auto max-w-5xl text-center">
+        <div className="relative w-full text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
               Selected Work · 2024–2026
@@ -86,7 +86,7 @@ export default function WorkPage() {
             <span className="text-gradient-purple"><WordReveal text="Delivers Results" /></span>
           </h1>
           <Reveal delay={0.3}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
+            <p className="mt-6 w-full text-lg text-foreground/75 font-medium">
               Explore digital products, AI systems, SaaS platforms, websites,
               branding projects and modern experiences built by Hire Top Coder experts.
             </p>
@@ -95,8 +95,8 @@ export default function WorkPage() {
       </section>
 
        {/* PROJECTS BENTO */}
-          <section className="relative py-16 px-4 sm:px-6">
-            <Stagger className="mx-auto max-w-7xl grid lg:grid-cols-3 lg:auto-rows-[280px] gap-4">
+          <section className="relative py-16 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+            <Stagger className="w-full grid lg:grid-cols-3 lg:auto-rows-[280px] gap-4">
               {projects?.map((p) => (
                 <StaggerItem key={p.title} className={p?.span}>
                   <TiltCard className="group relative h-full min-h-[280px] rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
@@ -121,9 +121,9 @@ export default function WorkPage() {
           </section>
     
           {/* CASE STUDIES */}
-          <section className="relative py-24 px-4 sm:px-6">
+          <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
             <SectionHead eyebrow="Case Studies" title={<>Stories behind the <span className="text-gradient-purple">outcomes</span></>} />
-            <div className="mt-14 mx-auto max-w-6xl space-y-6">
+            <div className="mt-14 w-full space-y-6">
               {caseStudies?.map((cs, i) => (
                 <Reveal key={cs.t} delay={i * 0.1}>
                   <div className="group relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden glass hover-glow-card">
@@ -147,9 +147,9 @@ export default function WorkPage() {
           </section>
 
       {/* INDUSTRIES */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Industries Served" title="Trusted across every vertical" />
-        <Stagger className="mt-14 mx-auto max-w-5xl flex flex-wrap justify-center gap-3">
+        <Stagger className="mt-14 w-full flex flex-wrap justify-center gap-3">
           {industries.map((ind) => (
             <StaggerItem key={ind}>
               <div className="glass rounded-full px-5 py-2.5 text-sm font-semibold text-foreground/85 hover:text-white hover:border-primary/60 transition">
@@ -161,16 +161,16 @@ export default function WorkPage() {
       </section>
 
       {/* METRICS */}
-      <section className="relative py-24 px-4 sm:px-6 overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
         <Parallax speed={50} className="absolute inset-0 -z-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px]" />
         </Parallax>
         <SectionHead eyebrow="By the Numbers" title={<>Outcomes at <span className="text-gradient-purple">scale</span></>} />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Stagger className="mt-14 w-full grid grid-cols-2 md:grid-cols-4 gap-4">
           {metrics?.map((m) => (
             <StaggerItem key={m.l}>
               <div className="glass rounded-2xl p-7 text-center hover-glow-card">
-                <m.Icon className="size-5 mx-auto text-primary mb-3" />
+                <m.Icon className="size-5 w-full  text-primary mb-3" />
                 <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-gradient-purple">
                   <Counter to={m.v} suffix={m.suf} />
                 </div>
@@ -182,8 +182,8 @@ export default function WorkPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-4 sm:px-6">
-        <div className="relative mx-auto max-w-4xl glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="relative w-full glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-accent/25 pointer-events-none" />
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[140px] animate-pulse-glow pointer-events-none" />
           <div className="relative">

@@ -5,8 +5,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
 } from "react-icons/lu";
+import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+
 import Image from 'next/image'
-import Testimonial from "./Testimonial.jsx"
 const expert1 = "/assets/expert-1.jpg";
 const expert2 = "/assets/expert-2.jpg";
 const expert3 = "/assets/expert-3.jpg";
@@ -27,9 +28,13 @@ const blog4 = "/assets/blog-4.jpg";
 const experts = [
   { name: "Jane",   role: "GRAPHIC DESIGNER", img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
   { name: "Mark",   role: "DEVELOPER",        img: '/assets/dev.jpg', accent: "oklch(0.65 0.28 320)",move:"-130px"  },
-  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/kajal.jpg', accent: "oklch(0.65 0.28 320)", move:"-20px" },
-  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)", move:"-130px" },
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
+  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/kajal.jpg', accent: "oklch(0.65 0.28 320)", move:"-80px" },
+  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)", move:"-20px" },
+
+  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/khushi.jfif', accent: "oklch(0.65 0.28 320)",move:"-80px" },
+
+    { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/sales.jpg', accent: "oklch(0.65 0.28 320)", move:"-130px" },
+      { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
 ];
 
 const brands = ["NORTHWIND", "VAULT", "HALO", "NEXUS", "PARETO", "ORBIT", "MERIDIAN", "AXIOM"];
@@ -74,10 +79,23 @@ const steps = [
   { n: "03", t: "Hire & ship",        d: "Chat, scope and launch — contracts, milestones and payments built-in." },
 ];
 
-const testimonials = [
-  { q: "Hire Top Coder matched us with a senior team in 14 minutes. Shipped in 9 days.", a: "Lena Park",   r: "Head of Product, Vault",img:expert4 },
-  { q: "The quality bar is unreal. It feels like a private members club for talent.", a: "Marcus Reid", r: "Founder, Halo Labs",img:expert2 },
-  { q: "Cut our procurement cycle from 6 weeks to 2 days. Game over.", a: "Priya Shah", r: "COO, Northbeam",img:expert1 },
+const testimonials=[
+  {
+    id: 1,
+    stars: 5,
+    quote: '"HireTopCoder transformed our development cycle. We went from a 3-month hiring process to shipping in under 48 hours. The caliber of talent is truly world-class."',
+    avatar: expert2, // High-quality avatar placeholder
+    name: 'James Wilson',
+    role: 'CTO, TechScale AI',
+  },
+  {
+    id: 2,
+    stars: 5,
+    quote: '"Finding high-quality UI designers was our biggest bottleneck. HireTopCoder matched us with a senior lead who understood our vision from day one. Highly recommended for fast-growing startups."',
+    avatar:expert1, // High-quality avatar placeholder
+    name: 'Sarah Chen',
+    role: 'Product Lead, Velocity Labs',
+  },
 ];
 
 export default function Index() {
@@ -111,7 +129,7 @@ export default function Index() {
 
 function PrimaryButton({ children, className = "" }) {
   return (
-    <Link href="/starthiring" className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
+    <Link href="/starthiring" className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
       {children}
       <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
     </Link >
@@ -142,15 +160,15 @@ function Hero() {
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-12 text-base md:text-xl 2xl:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="mt-12 text-base md:text-xl 2xl:text-[22px] text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-medium">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly available.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/starthiring" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-8 py-4 rounded-full expert-btn text-[#381385]">
+          <PrimaryButton >
                       Start Hiring
-                    </Link>
+                    </PrimaryButton>
           <GhostButton>Talk to Experts</GhostButton>
         </div>
 
@@ -168,7 +186,7 @@ function Hero() {
 
 function ExpertsRow() {
   return (
-    <section id="experts" className="relative w-full grid items-center justify-center overflow-hidden py-40">
+    <section id="experts" className="relative w-full grid items-center justify-center overflow-hidden py-40  ">
 
       <div className="flex gap-3 md:gap-7 lg:gap-10 justify-center ">
         {experts.map((e, i) => (
@@ -225,7 +243,8 @@ function Marquee() {
       </div>
       <div className="flex animate-marquee whitespace-nowrap">
         {[...brands, ...brands].map((b, i) => (
-          <span key={i} className="mx-10 font-display font-bold text-xl text-gray-800 hover:text-gray-600 tracking-[0.3em]">
+          <span key={i} className="mx-10 font-display font-bold text-xl text-[
+oklab(0.979998 0.000858366 -0.00490087 / 0.5)] tracking-[0.3em]">
             {b}
           </span>
         ))}
@@ -276,7 +295,7 @@ function Services() {
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden border-b border-gray-600">
+    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]    ">
       <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
       <div className="relative w-full">
@@ -387,28 +406,74 @@ function Stats() {
 
 function Testimonials() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 border-b border-gray-600">
+    <section className="relative  py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
       <div className="w-full">
         <SectionHead
           eyebrow="Trusted by builders"
           title={<>The new standard for <span className="text-gradient-purple">hiring talent.</span></>}
         />
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {testimonials.map((t) => (
-            <figure key={t.a} className="glass rounded-2xl p-7 relative hover-glow-card">
-              <LuQuote className="size-7 text-primary/70 mb-4" />
-              <blockquote className="text-lg leading-relaxed font-medium">"{t.q}"</blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <div className="size-10   " >
-                     <Image width={500} height={500} priority={false} className="w-full h-full rounded-full object-cover" loading ="lazy" src={t.img} alt={t.r} />
+       <div className="grid grid-cols-1 pt-20 md:grid-cols-2 gap-5 lg:gap-10 items-stretch">
+          
+          {testimonials.map((review) => (
+            <div
+              key={review.id}
+              className="group relative bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 "
+            >
+              <div>
+                {/* 5-Star Rating Section */}
+                <div className="flex items-center gap-2 mb-6">
+                  {[...Array(review.stars)].map((_, index) => (
+                    <FaStar 
+                      key={index} 
+                      className="text-[#f5a623] text-base lg:text-2xl 2xl:text-3xl" 
+                      aria-hidden="true"
+                    />
+                  ))}
                 </div>
-                <div>
-                  <div className="font-bold text-sm">{t.a}</div>
-                  <div className="text-xs text-foreground/70 font-medium">{t.r}</div>
+
+                {/* Styled Big Quote Icon */}
+                <div className="text-primary text-2xl lg:text-3xl mb-4">
+                  <FaQuoteLeft className="" />
                 </div>
-              </figcaption>
-            </figure>
+
+                {/* Review Text Body */}
+                <p className="text-[#b1afb8] text-[15px] sm:text-base lg:text-lg 2xl:text-xl leading-[1.7] tracking-wide font-normal italic">
+                  {review.quote}
+                </p>
+              </div>
+
+              {/* Bottom Profile Footer Section */}
+              <div className="mt-10">
+                {/* Separator Line */}
+                <div className="w-full h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-6" />
+                
+              
+                <div className="flex items-center gap-4">
+             
+                  <div className="w-12 h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
+                    <Image  width={500} height={500}
+                      src={review.avatar}
+                      alt={review.name}
+                      className="w-full h-full object-cover "
+                    />
+                  </div>
+                  
+                  {/* Name and Designation */}
+                  <div>
+                    <h3 className="text-white text-[16px] font-semibold tracking-wide leading-snug">
+                      {review.name}
+                    </h3>
+                    <p className="text-[#726e7e] text-[13px] font-medium mt-0.5 group-hover:text-[#908b9c] transition-colors duration-500">
+                      {review.role}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           ))}
+
         </div>
       </div>
     </section>
@@ -417,7 +482,7 @@ function Testimonials() {
 
 function Blog() {
   return (
-    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden border-b border-gray-600">
+    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   ">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
       <div className="relative w-full">
         <SectionHead
@@ -460,7 +525,7 @@ function Blog() {
 
 function CTA() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 border-b border-gray-600">
+    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">

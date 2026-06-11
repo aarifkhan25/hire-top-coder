@@ -39,7 +39,7 @@ export default function ResourcesPage() {
       {/* HERO */}
       <section className="relative pt-40 pb-20 px-4 overflow-hidden">
         <AmbientGlow />
-        <div className="relative mx-auto max-w-5xl text-center">
+        <div className="relative w-full   text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
               The Hire Top Coder Field Notes
@@ -51,7 +51,7 @@ export default function ResourcesPage() {
             <span className="text-gradient-purple"><WordReveal text="Digital Innovation" /></span>
           </h1>
           <Reveal delay={0.3}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
+            <p className="mt-6 w-full   text-lg text-foreground/75 font-medium">
               Playbooks, essays, and downloadable resources from the experts
               building the next generation of digital products.
             </p>
@@ -60,8 +60,8 @@ export default function ResourcesPage() {
       </section>
 
       {/* FEATURED ARTICLE */}
-      <section className="relative py-10 px-4 sm:px-6">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative py-10 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="w-full  ">
           <Reveal>
             <TiltCard className="group relative rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
               <div className="grid md:grid-cols-2">
@@ -90,8 +90,8 @@ export default function ResourcesPage() {
       </section>
 
       {/* CATEGORIES */}
-      <section className="relative py-16 px-4 sm:px-6">
-        <Stagger className="mx-auto max-w-5xl flex flex-wrap justify-center gap-2">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <Stagger className="w-full   flex flex-wrap justify-center gap-2">
           {categories.map((c) => (
             <StaggerItem key={c}>
               <button className="glass rounded-full px-5 py-2 text-sm font-semibold text-foreground/85 hover:text-white transition">
@@ -103,9 +103,9 @@ export default function ResourcesPage() {
       </section>
 
       {/* LATEST BLOGS */}
-      <section className="relative py-16 px-4 sm:px-6">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Latest" title={<>Fresh from the <span className="text-gradient-purple">network</span></>} />
-        <Stagger className="mt-14 mx-auto max-w-7xl grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Stagger className="mt-14 w-full   grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {articles.map((a) => (
             <StaggerItem key={a.t}>
               <TiltCard className="group glass rounded-3xl overflow-hidden hover-glow-card cursor-pointer h-full">
@@ -130,9 +130,9 @@ export default function ResourcesPage() {
       </section>
 
       {/* GUIDES */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Guides & Resources" title="Tools your team can actually use" />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid md:grid-cols-3 gap-4">
+        <Stagger className="mt-14 w-full   grid md:grid-cols-3 gap-4">
           {guides.map((g) => (
             <StaggerItem key={g.t}>
               <TiltCard className="glass rounded-2xl p-7 h-full hover-glow-card flex flex-col">
@@ -152,18 +152,18 @@ export default function ResourcesPage() {
       </section>
 
       {/* NEWSLETTER */}
-      <section className="relative py-24 px-4 sm:px-6">
-        <div className="relative mx-auto max-w-3xl glass rounded-[2rem] p-10 md:p-14 text-center overflow-hidden ring-purple">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="relative w-full   max-w-3xl glass rounded-[2rem] p-10 md:p-14 text-center overflow-hidden ring-purple">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 pointer-events-none" />
           <div className="relative">
-            <Mail className="size-7 mx-auto text-primary mb-4" />
+            <Mail className="size-7 w-full   text-primary mb-4" />
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
               The <span className="text-gradient-purple">Hire Top Coder Brief</span>
             </h2>
             <p className="mt-3 text-foreground/75 font-medium">
               One sharp essay every Sunday. Built for operators.
             </p>
-            <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 max-w-md mx-auto">
+            <form className="mt-8 flex flex-col sm:flex-row items-center gap-2 max-w-md w-full  ">
               <input
                 type="email"
                 placeholder="you@company.com"
@@ -178,8 +178,8 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 px-4 sm:px-6">
-        <div className="relative mx-auto max-w-4xl text-center">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="relative w-full   text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
             Ready to put these ideas to <span className="text-gradient-purple">work?</span>
           </h2>

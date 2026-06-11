@@ -3,10 +3,10 @@ import { Compass, Target, Heart, Sparkles, Globe2, Users, Award, Building2 } fro
 import { PrimaryButton, GhostButton, SectionHead, AmbientGlow } from "@/components/site/PageShell";
 import { Reveal, Stagger, StaggerItem, WordReveal, TiltCard, Parallax } from "@/components/site/Reveal";
 import Image from 'next/image'
-const expert1 = "/assets/expert-1.jpg";
-const expert2 = "/assets/expert-2.jpg";
-const expert3 = "/assets/expert-3.jpg";
-const expert4 = "/assets/expert-4.jpg";
+const expert1 = "/assets/kajal.jpg";
+const expert2 = "/assets/dev.jpg";
+const expert3 = "/assets/rahul.jpg";
+const expert4 = "/assets/sales.jpg";
 
 const values = [
   { Icon: Award,    t: "Craft Above All",     d: "We obsess over the details others overlook." },
@@ -42,7 +42,7 @@ export default function AboutPage() {
       {/* HERO */}
       <section className="relative pt-40 pb-24 px-4 overflow-hidden">
         <AmbientGlow />
-        <div className="relative mx-auto max-w-5xl text-center">
+        <div className="relative  w-full text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
               Our Story
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <span className="text-gradient-purple"><WordReveal text="Excellence Globally" /></span>
           </h1>
           <Reveal delay={0.3}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/75 font-medium">
+            <p className="mt-6   w-full text-lg text-foreground/75 font-medium">
               Hire Top Coder is a curated network of elite digital experts helping the
               world's most ambitious teams design, build and scale.
             </p>
@@ -63,8 +63,8 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="relative py-20 px-4 sm:px-6">
-        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className=" w-full grid md:grid-cols-2 gap-12 items-center">
           <Reveal>
             <div className="text-[11px] font-mono uppercase tracking-[0.25em] text-primary font-bold mb-3">Our Story</div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
@@ -88,9 +88,9 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION + VISION */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Mission & Vision" title={<>What drives us <span className="text-gradient-purple">forward</span></>} />
-        <Stagger className="mt-14 mx-auto max-w-5xl grid md:grid-cols-2 gap-4">
+        <Stagger className="mt-14  w-full grid md:grid-cols-2 gap-4">
           {[
             { Icon: Target, t: "Mission", d: "Make world-class digital talent instantly accessible to every ambitious team on Earth." },
             { Icon: Compass, t: "Vision", d: "A future where geography no longer limits what a small team can build." },
@@ -107,9 +107,9 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Core Values" title="The principles we live by" />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Stagger className="mt-14  w-full grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {values.map((v) => (
             <StaggerItem key={v.t}>
               <TiltCard className="glass rounded-2xl p-7 h-full hover-glow-card">
@@ -123,9 +123,9 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <SectionHead eyebrow="Leadership" title={<>Meet the team behind <span className="text-gradient-purple">Hire Top Coder</span></>} />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Stagger className="mt-14  w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {team.map((m) => (
             <StaggerItem key={m.n}>
               <TiltCard className="group glass rounded-3xl overflow-hidden hover-glow-card">
@@ -145,12 +145,12 @@ export default function AboutPage() {
       </section>
 
       {/* WHY */}
-      <section className="relative py-24 px-4 sm:px-6">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
         <Parallax speed={40} className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-0 size-[480px] rounded-full bg-accent/15 blur-[140px]" />
         </Parallax>
         <SectionHead eyebrow="Why Clients Choose Us" title="Built for serious teams" />
-        <Stagger className="mt-14 mx-auto max-w-6xl grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Stagger className="mt-14  w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {reasons.map((r) => (
             <StaggerItem key={r.t}>
               <div className="glass rounded-2xl p-6 hover-glow-card h-full">
@@ -164,13 +164,13 @@ export default function AboutPage() {
       </section>
 
       {/* GLOBAL REACH */}
-      <section className="relative py-24 px-4 sm:px-6 overflow-hidden">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
         <SectionHead eyebrow="Global Reach" title={<>A network <span className="text-gradient-purple">without borders</span></>} />
-        <Stagger className="mt-14 mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Stagger className="mt-14  w-full grid grid-cols-2 md:grid-cols-4 gap-4">
           {reach.map((m) => (
             <StaggerItem key={m.l}>
               <div className="glass rounded-2xl p-7 text-center hover-glow-card">
-                <Globe2 className="size-5 mx-auto text-primary mb-3" />
+                <Globe2 className="size-5  w-full text-primary mb-3" />
                 <div className="text-4xl font-extrabold tracking-tight text-gradient-purple">{m.v}</div>
                 <div className="mt-2 text-sm text-foreground/70 font-medium">{m.l}</div>
               </div>
@@ -180,12 +180,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-4 sm:px-6">
-        <div className="relative mx-auto max-w-4xl glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+        <div className="relative  w-full  glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-accent/25 pointer-events-none" />
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[140px] animate-pulse-glow pointer-events-none" />
           <div className="relative">
-            <Users className="size-8 mx-auto text-primary mb-4" />
+            <Users className="size-8  w-full text-primary mb-4" />
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
               Let's build <span className="text-gradient-purple">something together</span>
             </h2>

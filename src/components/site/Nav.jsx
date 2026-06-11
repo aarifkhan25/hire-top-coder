@@ -7,14 +7,11 @@ import { FiAlignJustify, FiChevronDown } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
+import { ArrowRight } from "lucide-react";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
-
-
-
 const navData = [
-  
   { 
     name: "Services", 
     href: '/about', 
@@ -48,8 +45,6 @@ const navData = [
       }
     ]
   }, 
-  
-  
   { 
     name: "Resources", 
     href: '/resources',
@@ -58,13 +53,12 @@ const navData = [
       { name: "FAQ", href: "/resources/faq" },
     ]
   },
-   { 
+  { 
     name: "Company",
     href: '/work',
   }, 
 ];
 
-// 🟢 Top Scroll Progress Component
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const x = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
@@ -76,27 +70,17 @@ export function ScrollProgress() {
   );
 }
 
-export  function Nav() {
+export function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
 
   useEffect(() => {
-    // AOS ऐनिमेशन इनिशियलाइज़ेशन
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-
+    AOS.init({ duration: 1000, once: false });
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
-
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -118,68 +102,69 @@ export  function Nav() {
 
   return (
     <header className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-500">
-      {/* स्क्रॉल प्रोग्रेस बार */}
       <ScrollProgress />
-      <div  className="w-full h-auto hidden md:block border  border-b border-border/80 ">
-<div className="flex justify-between items-center  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
-  <div className="text-xs lg:text-sm  font-sans  text-foreground/85">
-Trusted by 500+ clients worldwide
-  </div>
+      
+      {/* टॉप बार */}
+      <div className="w-full h-auto hidden md:block border-b border-white/5">
+        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
+          <div className="text-xs lg:text-sm font-sans text-foreground/85">
+            Trusted by 500+ clients worldwide
+          </div>
+          <div className="flex justify-between items-center font-sans gap-2 lg:gap-5">
+            <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
+              <MdOutlinePhoneInTalk className="w-5 h-5" /> <p>+91 12345 67890</p>
+            </div>
+            <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
+              <MdOutlineMarkEmailUnread className="w-5 h-5" /> <p>contact@hiretopcoder.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div className="flex justfiy-between items-center font-sans gap-2 lg:gap-5 ">
-<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm   text-foreground/85">
-<MdOutlinePhoneInTalk className="w-5 h-5  "  /> <p>+91 12345 67890</p>
-</div>
-<div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm   text-foreground/85">
-<MdOutlineMarkEmailUnread className="w-5 h-5  " /> <p>contact@hiretopcoder.com</p>
-</div>
-  </div>
-</div></div>
+      {/* मुख्य नेविगेशन */}
       <nav
         onMouseLeave={() => setHoveredIndex(null)}
-        className={`w-full flex items-center justify-between transition-all duration-500  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  ${
+        className={`w-full flex items-center justify-between transition-all duration-500 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 ${
           isScrolled
             ? "glass shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : "px-1 bg-[#0d0d0d]/10"
         }`}
       >
-        {/* Logo & Desktop Nav Links */}
         <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
-        <div> <Link href="/" onClick={closeMobileMenu}>
+          <Link href="/" onClick={closeMobileMenu}>
             <Image 
               width={500} 
               height={500} 
-              src="/assets/logo1.png" // पुराना ओरिजिनल लोगो पाथ
+              src="/assets/logo1.png" 
               alt="logo" 
               loading="eager"
               className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
             />
-          </Link></div> 
+          </Link>
 
           {/* डेस्कटॉप मेनू */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6 relative h-full">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
             {navData?.map((item, i) => (
               <div
                 key={i}
                 onMouseEnter={() => setHoveredIndex(i)}
-                className="py-2"
+                className="py-5" // थोड़ा पैडिंग स्पेस ताकि माउस न हटे
               >
                 <Link 
                   href={item.href || "#"}
                   data-aos="fade-down"
                   className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer text-foreground/85"
                 >
-                 
-                    <span className="flex justify-center items-center gap-1">
-                      {item.name}
-                      {item.subItems && (
-                        <FiChevronDown className={`w-3 h-3  transition-transform duration-200 ${hoveredIndex === i ? 'rotate-180' : ''}`} />
-                      )}
-                    </span>
+                  <span className="flex justify-center items-center gap-1">
+                    {item.name}
+                    {item.subItems && (
+                      <FiChevronDown className={`w-3 h-3 transition-transform duration-200 ${hoveredIndex === i ? 'rotate-180' : ''}`} />
+                    )}
+                  </span>
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
                 </Link>
 
-                {/* ड्रॉपडाउन / मेगा-मेन्यू सिस्टम */}
+                {/* 🛠️ फुल-विड्थ ग्लोइंग ड्रॉपडाउन सिस्टम */}
                 <AnimatePresence>
                   {hoveredIndex === i && item.subItems && (
                     <motion.div
@@ -187,14 +172,17 @@ Trusted by 500+ clients worldwide
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className={`fixed left-0 top-[100px] 2xl:top-[138px] w-full z-50 transition-all duration-300 bg-white px-6 sm:px-10 lg:px-20 1xl:px-25 2xl:px-30 py-35`}
+                      className="fixed left-0 right-0 top-[100px] 2xl:top-[120px] w-full z-50 pointer-events-auto bg-black/40 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-12 overflow-hidden"
                     >
-                      <div className="w-full">
+                      {/* 🌌 आपके कोड का ओरिजिनल ग्रेडिएंट ब्लर इफ़ेक्ट (बैकग्राउंड में रहेगा) */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
+                      {/* 📄 कंटेंट बॉक्स (ग्रेडिएंट ग्लो के ऊपर साफ दिखेगा) */}
+                      <div className="relative max-w-7xl mx-auto z-10 py-20">
                         {item.isMega ? (
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
                             {item.subItems.map((group, groupIdx) => (
                               <div key={groupIdx} className="flex flex-col gap-3">
-                                <h3 className="text-xs uppercase tracking-wider font-jb-mono text-black font-bold">
+                                <h3 className="text-xs uppercase tracking-wider font-jb-mono text-primary font-bold">
                                   {group.title}
                                 </h3>
                                 <div className="flex flex-col gap-2">
@@ -203,7 +191,7 @@ Trusted by 500+ clients worldwide
                                       key={subIdx}
                                       href={subLink.href || "#"}
                                       onClick={() => setHoveredIndex(null)}
-                                      className="text-sm font-medium font-mulish text-gray-300 hover:text-gray-600 transition-colors py-1 block"
+                                      className="text-sm font-medium font-mulish text-foreground/80 hover:text-white transition-colors py-1 block"
                                     >
                                       {subLink.name}
                                     </Link>
@@ -213,13 +201,14 @@ Trusted by 500+ clients worldwide
                             ))}
                           </div>
                         ) : (
-                          <div className="flex flex-row items-center gap-4 md:gap-20 lg:gap-30 1xl:gap-40">
+                          // नॉर्मल सर्विसेज/रिसोर्सेज के लिए भी फुल विड्थ में हॉरिजॉन्टल लेआउट
+                          <div className="flex flex-row items-center gap-12 lg:gap-16">
                             {item.subItems.map((subItem, subIdx) => (
                               <Link
                                 key={subIdx}
                                 href={subItem.href || "#"}
                                 onClick={() => setHoveredIndex(null)}
-                                className="text-sm lg:text-base font-semibold font-mulish text-gray-300 hover:text-black transition-colors"
+                                className="text-sm lg:text-base font-semibold font-mulish text-gray-300 hover:text-white transition-colors"
                               >
                                 {subItem.name}
                               </Link>
@@ -235,29 +224,22 @@ Trusted by 500+ clients worldwide
           </div>
         </div>
 
-        {/* राइट साइड एक्शन बटन्स (जैसा आपके पुराने डिज़ाइन में था) */}
+        {/* राइट साइड बटन्स */}
         <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden sm:inline-flex text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
-            Talk to Expert
+          <Link href="/signin" className="hidden group sm:inline-flex items-center gap-2 text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
+            Talk to Expert <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-        
-          
-          {/* हैमबर्गर मोबाइल टॉगल बटन */}
           <button
             className="md:hidden grid place-items-center size-10 rounded-full btn-glass text-white cursor-pointer"
             aria-label="Menu"
             onClick={toggleMobileMenu}
           >
-            {isMobileMenuOpen ? (
-              <MdOutlineClose className="w-6 h-6" />
-            ) : (
-              <FiAlignJustify className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <MdOutlineClose className="w-6 h-6" /> : <FiAlignJustify className="w-6 h-6" />}
           </button>
         </div>
       </nav>
 
-      {/* मोबाइल रेस्पॉन्सिव ओवरले मेनू */}
+      {/* मोबाइल रेस्पॉन्सिव ओवरले */}
       <div 
         className={`md:hidden fixed inset-0 top-[64px] h-[calc(100vh-64px)] w-full bg-black/95 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
@@ -280,7 +262,6 @@ Trusted by 500+ clients worldwide
                 )}
               </div>
               
-              {/* मोबाइल ड्रॉपडाउन सिस्टेमेटिक ओपनिंग */}
               {item.subItems && mobileDropdownOpen === i && (
                 <div className="pl-4 flex flex-col gap-2 mt-1 bg-white/5 p-3 rounded-lg transition-all">
                   {item.isMega ? (
@@ -288,12 +269,7 @@ Trusted by 500+ clients worldwide
                       <div key={gIdx} className="mb-2">
                         <p className="text-[10px] font-jb-mono text-gray-500 uppercase tracking-wider mb-1">{group.title}</p>
                         {group.links.map((subLink, sIdx) => (
-                          <Link
-                            key={sIdx}
-                            href={subLink.href || "#"}
-                            onClick={closeMobileMenu}
-                            className="text-sm font-mulish text-gray-400 hover:text-white py-1 block"
-                          >
+                          <Link key={sIdx} href={subLink.href || "#"} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block">
                             {subLink.name}
                           </Link>
                         ))}
@@ -301,12 +277,7 @@ Trusted by 500+ clients worldwide
                     ))
                   ) : (
                     item.subItems.map((subItem, subIdx) => (
-                      <Link
-                        key={subIdx}
-                        href={subItem.href || "#"}
-                        onClick={closeMobileMenu}
-                        className="text-sm font-mulish text-gray-400 hover:text-white py-1 block"
-                      >
+                      <Link key={subIdx} href={subItem.href || "#"} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block">
                         {subItem.name}
                       </Link>
                     ))
@@ -315,12 +286,7 @@ Trusted by 500+ clients worldwide
               )}
             </div>
           ))}
-          
-          <Link
-            href="/starthiring"
-            onClick={closeMobileMenu}
-            className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer"
-          >
+          <Link href="/starthiring" onClick={closeMobileMenu} className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer">
             Start Hiring Talents
           </Link>
         </div>
