@@ -31,7 +31,7 @@ const experts = [
   { name: "Mary",   role: "UI DESIGNER",      img: '/assets/kajal.jpg', accent: "oklch(0.65 0.28 320)", move:"-80px" },
   { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul.jpg', accent: "oklch(0.65 0.28 320)", move:"-20px" },
 
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/khushi.jfif', accent: "oklch(0.65 0.28 320)",move:"-80px" },
+  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/aarif.png', accent: "oklch(0.65 0.28 320)",move:"-80px" },
 
     { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/sales.jpg', accent: "oklch(0.65 0.28 320)", move:"-130px" },
       { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
