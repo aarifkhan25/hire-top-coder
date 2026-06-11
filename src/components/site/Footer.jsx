@@ -63,15 +63,15 @@ export  function Footer() {
 
   return (
 <footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] mt-20">
-<div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 pt-20">
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+<div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-20">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 ">
 
           {/* Brand */}
 <div className="lg:col-span-4">
 <Link href="/" className="inline-flex items-center">
-<Image width={500} height={500} laoding="lazy" src={logo} alt="HireTopCoder logo" className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px]" />
+<Image width={500} height={500} laoding="lazy" src={logo} alt="HireTopCoder logo" className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[190px] 2xl:h-[100px]" />
 </Link>
-<p className="mt-4 text-[14px] text-white/45 hover:text-[#F0EDFF] leading-[1.8] max-w-[280px]">
+<p className="mt-4 text-[14px] text-white/45 hover:text-[#F0EDFF] leading-[1.8] w-full">
 
               We match elite offshore developers, designers, and AI engineers to startups and businesses worldwide. Human-vetted, AI-matched, ready in 24 hours.
 </p>
