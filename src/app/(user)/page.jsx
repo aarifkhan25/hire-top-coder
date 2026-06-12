@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
 } from "react-icons/lu";
+import { FiTrendingUp, FiClock, FiUsers, FiArrowRight } from 'react-icons/fi';
+import {GhostButton} from "@/components/site/PageShell.jsx"
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 
 import Image from 'next/image'
@@ -26,15 +28,19 @@ const blog4 = "/assets/blog-4.jpg";
 
 
 const experts = [
-  { name: "Jane",   role: "GRAPHIC DESIGNER", img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)",move:"-200px" },
-  { name: "Mark",   role: "DEVELOPER",        img: '/assets/kajal.png', accent: "oklch(0.65 0.28 320)",move:"-130px"  },
-  { name: "Mary",   role: "UI DESIGNER",      img: '/assets/Aakansha.png', accent: "oklch(0.65 0.28 320)", move:"-80px" },
-  { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)", move:"-20px" },
+  { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
+  { name: "Rahul Jaiswal",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
+  { name: "Maynak Yadav",   role: "angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
+  { name: "Khushi Gupta", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
 
-  { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)",move:"-80px" },
+  { name: "Aarif Khan",    role: "Ract js trainee",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)" },
 
-    { name: "Amanda", role: "GROWTH MARKETER",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)", move:"-130px" },
-      { name: "Sam",    role: "CHIEF OF STAFF",   img: '/assets/img.jpeg', accent: "oklch(0.65 0.28 320)",move:"-200px" },
+    { name: "Arun Singh", role: "Team Head",  img: '/assets/arun.png', accent: "oklch(0.65 0.28 320)" },
+      { name: "Kajal Gurjar",    role: "full stack developer",   img: '/assets/kajal.png', accent: "oklch(0.65 0.28 320)" },
+        { name: "Akansha Soni",    role: "ui/ux designer",   img: '/assets/Aakansha.png', accent: "oklch(0.65 0.28 320)" },
+
+    { name: "Neha Rathore", role: "wordpress developer",  img: '/assets/neha.png', accent: "oklch(0.65 0.28 320)" },
+      { name: "Sumit Varma",    role: "BDE",   img: '/assets/sumit.png', accent: "oklch(0.65 0.28 320)" },
 ];
 
 const brands = ["NORTHWIND", "VAULT", "HALO", "NEXUS", "PARETO", "ORBIT", "MERIDIAN", "AXIOM"];
@@ -136,22 +142,16 @@ function PrimaryButton({ children, className = "" }) {
   );
 }
 
-function GhostButton({ children, className = "" }) {
-  return (
-    <Link href=""  className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
-      {children}
-    </Link >
-  );
-}
+
 
 function Hero() {
   return (
-    <section className="relative pt-40 2xl:pt-50 pb-20 px-4">
+    <section className="relative pt-20 md:pt-40 2xl:pt-50 pb-20 px-4">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[900px] rounded-full bg-primary/25 blur-[160px] animate-pulse-glow pointer-events-none" />
       <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] pointer-events-none" />
 
       <div className="relative w-full text-center">
-        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
           Build faster with elite digital experts
         </div>
 
@@ -160,7 +160,7 @@ function Hero() {
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-12 text-base md:text-xl 2xl:text-[22px] text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="mt-12 text-sm md:text-base lg:text-xl 2xl:text-[22px] text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-medium">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly available.
         </p>
@@ -200,12 +200,12 @@ function ExpertsRow() {
 function ExpertCard({ expert }) {
   return (
     <article
-      className="relative shrink-0 w-[280px] sm:w-[320px] rounded-3xl p-2 overflow-hidden"
+      className="relative shrink-0 w-[280px] sm:w-[320px] md:w-[350px] 1xl:w-[380px] rounded-3xl p-2 overflow-hidden"
       style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)` }}
     >
       <div className="rounded-[1.25rem] overflow-hidden bg-black relative">
         <div
-          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[9px] font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
+          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[6px] md:text-[7px] lg:text-[8px] font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
           style={{ color: expert.accent, background: "#f9e5ff", border: `1px solid ${expert.accent}` }}
         >
           {expert.role}
@@ -213,10 +213,8 @@ function ExpertCard({ expert }) {
         <img src={expert.img} alt={`${expert.name}, ${expert.role}`} width={640} height={800} loading="lazy"
           className="w-full aspect-[4/5] object-cover" />
         <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
-          <div className="font-display text-3xl font-extrabold">{expert.name}</div>
-          <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
-            <FaStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
-          </div>
+          <div className="font-display  text-3xl font-extrabold">{expert.name}</div>
+         
         </div>
       </div>
     </article>
@@ -283,64 +281,115 @@ function Services() {
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]    ">
-      <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
+    <section id="portfolio" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]    ">
+        <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
       <div className="relative w-full">
         <SectionHead
           eyebrow="Featured work"
-          title={<>Selected work that <span className="text-gradient-purple">speaks for itself.</span></>}
+          title={<>Selected work that <span className="text-gradient-purple">speaks <br className="hidden md:block"/> for itself.</span></>}
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] gap-5">
-          {works.map((w) => (
-            <WorkCard key={w.title} w={w} />
-          ))}
+   <div className=" mt-10 lg:mt-20 w-full h-full md:h-[600px] 2xl:h-[800px]  btn-glass rounded-[24px] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-2">
+        
+        {/* =========================================================
+            LEFT COLUMN - CONTENT & METRICS SECTION
+            ========================================================= */}
+        <div className="p-5 md:p-8 lg:p-12 2xl:p-16 flex flex-col justify-between space-y-10 order-2">
+          
+          {/* टॉप टैग और हेडिंग */}
+          <div className="space-y-5">
+            <span className="uppercase bg-primary/25 text-white border border-primary/50 backdrop-blur text-[10px] 1xl:text-xs font-semibold px-3 py-1.5 rounded-md tracking-wide">
+              CRM Transformation
+            </span>
+            <h2 className="text-white text-xl md:text-2xl lg:text-3xl 2xl:text-[36px] font-bold leading-[1.3] mt-5 tracking-tight">
+              Sales CRM Modernization: 30% Faster Deal Cycles &amp; Reduced Operational Costs
+            </h2>
+            <p className="text-[#a0b3cc] text-xs lg:text-[15px] 1xl:text-[16px] leading-[1.6] font-normal">
+              The client was struggling with a fragmented CRM system, duplicate leads, and lack of visibility into their sales pipeline. We re-architected their CRM using a scalable cloud-based solution, streamlined workflows, and integrated all customer touchpoints into a unified system.
+            </p>
+          </div>
+
+          {/* मिडिल सेक्शन - 3 ब्लॉक मैट्रिक्स ग्रिड */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* मीट्रिक 1 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
+              <FiTrendingUp className="text-primary text-xs lg:text-base 2xl:text-xl" />
+              <div>
+                <span className="block text-white text text-base lg:text-xl-2xl:2xl font-bold tracking-tight">30%</span>
+                <span className="block text-[#a0b3cc] text text-[10px] -1xl:xs mt-1 font-medium">Faster Deal Cycles</span>
+              </div>
+            </div>
+
+            {/* मीट्रिक 2 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
+              <FiClock className="text-primary text-xs lg:text-base 2xl:text-xl" />
+              <div>
+                <span className="block text-white text-base lg:text-xl 2xl:text-2xl font-bold tracking-tight">99.5%</span>
+                <span className="block text-[#a0b3cc] text-[10px]  1xl:text-xs mt-1 font-medium">Forecast Accuracy</span>
+              </div>
+            </div>
+
+            {/* मीट्रिक 3 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
+              <FiUsers className="text-primary text-xs lg:text-base 2xl:text-xl" />
+              <div>
+                <span className="block text-white text-base lg:text-xl 2xl:text-2xl font-bold tracking-tight">0</span>
+                <span className="block text-[#a0b3cc] text-[10px]  1xl:text-xs mt-1 font-medium">Duplicate Leads</span>
+              </div>
+            </div>
+          </div>
+
+          {/* बॉटम सेक्शन - टेस्टीमोनियल ब्लॉक */}
+          {/* <div className="bg-[#0f2545] border-l-2 border-[#ff6a42] rounded-r-xl p-6 space-y-3">
+            <p className="text-[#d0e0f5] text-[14px] sm:text-[15px] leading-[1.6] italic font-normal">
+              &ldquo;HireDeveloper didn&apos;t just send us a developer — they sent us a problem solver. The onboarding was seamless and within 48 hours he was already pushing commits.&rdquo;
+            </p>
+            <span className="block text-primary text-sm font-semibold tracking-wide">
+              Eduardo Rangel
+            </span>
+          </div> */}
+
+          {/* एक्शन लिंक */}
+          <div className="pt-2">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-primary  font-semibold text-xs lg:text-sm tracking-wide group transition-colors duration-200"
+            >
+              Read Full Case Study
+              <FiArrowRight className="transform group-hover:translate-x-1 transition-transform duration-200" />
+            </a>
+          </div>
+
         </div>
-        <div className="mt-12 flex justify-center">
+
+        {/* =========================================================
+            RIGHT COLUMN - IMAGE OVERLAY SECTION
+            ========================================================= */}
+        <div className="relative min-h-[400px] sm:min-h-[500px] lg:min-h-full w-full bg-[#0d1f39] order-1">
+          {/* इमेज लेयर */}
+          <Image width={500} height={500} loading="lazy"
+            src={work1} 
+            alt="Hand holding a smartphone showing analytics app dashboard"
+            className="w-full h-full object-cover object-center"
+          />
+          
+          {/* टॉप राइट फ़्लोटिंग बैच */}
+          <div className="absolute top-6 right-6 z-10">
+            <span className="uppercase bg-primary/25 text-white border border-primary/50 backdrop-blur text-[10px] 1xl:text-xs font-semibold px-3 py-1.5 rounded-md tracking-wide">
+              Sales CRM
+            </span>
+          </div>
+        </div>
+</div>
+      </div>
+  <div className="mt-12 flex justify-center">
           <GhostButton>View All Case Studies</GhostButton>
         </div>
-      </div>
     </section>
   );
 }
 
-function WorkCard({ w }) {
-  return (
-    <article
-      className={`group relative rounded-3xl overflow-hidden glass hover-glow-card ${w.span}`}
-    >
-      <Image  priority={false} loading ="lazy"
-        src={w.img}
-        alt={w.title}
-   
-        width={1024}
-        height={1024}
-        className="absolute inset-0 size-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-110 transition-all duration-700"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-      <div className="absolute inset-x-0 top-0 p-5 flex items-start justify-between">
-        <span className="text-[10px] uppercase tracking-[0.25em] font-bold bg-primary/25 text-white border border-primary/50 backdrop-blur px-3 py-1.5 rounded-full">
-          {w.category}
-        </span>
-      </div>
-      <div className="absolute inset-x-0 bottom-0 p-6 space-y-3">
-        <h3 className="font-display text-2xl md:text-3xl font-extrabold leading-tight">{w.title}</h3>
-        <p className="text-sm text-foreground/80 leading-relaxed max-w-md font-medium">{w.desc}</p>
-        <div className="flex items-center gap-4 text-[11px] text-foreground/70  font-sans uppercase tracking-wider pt-1">
-          <span className="flex items-center gap-1.5"><span className="size-1 rounded-full bg-primary" />{w.stat1}</span>
-          <span className="flex items-center gap-1.5"><span className="size-1 rounded-full bg-accent" />{w.stat2}</span>
-        </div>
-        <div className="pt-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-          <span className="inline-flex items-center gap-1.5 text-sm font-bold text-primary">
-            View Case Study <LuArrowRight className="size-4" />
-          </span>
-        </div>
-      </div>
-      <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/5 group-hover:ring-primary/40 transition-all duration-500 pointer-events-none" />
-    </article>
-  );
-}
 
 function How() {
   return (
@@ -394,7 +443,7 @@ function Stats() {
 
 function Testimonials() {
   return (
-    <section className="relative  py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+    <section className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
       <div className="w-full">
         <SectionHead
           eyebrow="Trusted by builders"
@@ -470,7 +519,7 @@ function Testimonials() {
 
 function Blog() {
   return (
-    <section id="blog" className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   ">
+    <section id="blog" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   ">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
       <div className="relative w-full">
         <SectionHead
@@ -513,7 +562,7 @@ function Blog() {
 
 function CTA() {
   return (
-    <section className="relative py-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+    <section className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">
@@ -540,11 +589,11 @@ function SectionHead({
 }) {
   return (
     <div className="text-center max-w-2xl mx-auto">
-      <div className="inline-flex items-center gap-2 text-[11px]  font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
+      <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
       </div>
-      <h2 className="text-4xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
-      {sub && <p className="mt-4 text-foreground/75 text-lg font-medium">{sub}</p>}
+      <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
+      {sub && <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl 2xl:text-[22px] font-medium">{sub}</p>}
     </div>
   );
 }

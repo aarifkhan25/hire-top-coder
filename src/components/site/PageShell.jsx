@@ -29,7 +29,7 @@ export function PrimaryButton({
   return (
     <button
       {...rest}
-      className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] ${className}`}
+      className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-xs md:text-[15px] ${className}`}
     >
       {children}
       <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
@@ -45,7 +45,7 @@ export function GhostButton({
   return (
     <button
       {...rest}
-      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-8 py-4 text-[15px] ${className}`}
+      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-xs md:text-[15px] ${className}`}
     >
       {children}
     </button>
