@@ -3,6 +3,10 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Nav, ScrollProgress } from "./Nav.jsx";
 import { Footer } from "./Footer.jsx";
+import Link from "next/link";
+import {
+  LuArrowRight
+} from "react-icons/lu";
 
 export function PageShell({ children }) {
   return (
@@ -24,31 +28,30 @@ export function PageShell({ children }) {
 export function PrimaryButton({
   children,
   className = "",
+  href="/",
   ...rest
 }) {
   return (
-    <button
-      {...rest}
-      className={`group inline-flex items-center gap-2 btn-primary-glow text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-xs md:text-[15px] ${className}`}
-    >
+     <Link href={href} className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-[8px] md:text-[15px] 1xl:text-lg ${className}`}>
       {children}
-      <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-    </button>
+      <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+    </Link >
   );
 }
 
 export function GhostButton({
+  href="/",
   children,
   className = "",
   ...rest
 }) {
   return (
-    <button
+    <Link href={href}
       {...rest}
-      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-xs md:text-[15px] ${className}`}
+      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-[8px] md:text-[15px]  1xl:text-lg ${className}`}
     >
       {children}
-    </button>
+    </Link>
   );
 }
 

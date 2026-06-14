@@ -5,8 +5,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
 } from "react-icons/lu";
-import { FiTrendingUp, FiClock, FiUsers, FiArrowRight } from 'react-icons/fi';
-import {GhostButton} from "@/components/site/PageShell.jsx"
+
+import { FiTrendingUp } from 'react-icons/fi';
+import { BsStopwatch, BsPeople } from 'react-icons/bs'
+import {GhostButton,PrimaryButton} from "@/components/site/PageShell.jsx"
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 
 import Image from 'next/image'
@@ -43,7 +45,7 @@ const experts = [
       { name: "Sumit Varma",    role: "BDE",   img: '/assets/sumit.png', accent: "oklch(0.65 0.28 320)" },
 ];
 
-const brands = ["NORTHWIND", "VAULT", "HALO", "NEXUS", "PARETO", "ORBIT", "MERIDIAN", "AXIOM"];
+const brands = [{img:"/assets/clogo1.png"},{img:"/assets/clogo2.png"},{img:"/assets/clogo3.png"},{img:"/assets/clogo4.png"},{img:"/assets/clogo5.png"},{img:"/assets/clogo6.png"},{img:"/assets/clogo7.png"},{img:"/assets/clogo8.png"},];
 
 const services = [
   { tag: "Most Hired", title: "Brand Identity System", price: "from $1,800", rating: 4.9, by: "Aria Studio" },
@@ -133,14 +135,7 @@ export default function Index() {
 
 
 
-function PrimaryButton({ children, className = "" }) {
-  return (
-    <Link href="/starthiring" className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-8 py-4 text-[15px] 1xl:text-lg ${className}`}>
-      {children}
-      <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-    </Link >
-  );
-}
+
 
 
 
@@ -227,14 +222,23 @@ function Marquee() {
       <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
         Trusted by teams shipping with Hire Top Coder
       </div>
-      <div className="flex animate-marquee whitespace-nowrap">
-        {[...brands, ...brands].map((b, i) => (
-          <span key={i} className="mx-10 font-display font-bold text-xl text-[
-oklab(0.979998 0.000858366 -0.00490087 / 0.5)] tracking-[0.3em]">
-            {b}
-          </span>
-        ))}
-      </div>
+     
+        <div className="flex gap-16 md:gap-24 animate-scroll-cards  w-max">
+          {[...brands, ...brands].map((b, i) => (
+            <div 
+              key={i} 
+              className="flex items-center justify-center shrink-0 w-[120px] h-[50px] relative gray-scale-logo"
+            >
+              <Image 
+                src={b.img} 
+                alt="company logo" 
+                fill
+                sizes="120px"
+                className="object-contain filter grayscale opacity-70 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          ))}
+        </div>
     </section>
   );
 }
@@ -290,98 +294,100 @@ function Portfolio() {
           title={<>Selected work that <span className="text-gradient-purple">speaks <br className="hidden md:block"/> for itself.</span></>}
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
-   <div className=" mt-10 lg:mt-20 w-full h-full md:h-[600px] 2xl:h-[800px]  btn-glass rounded-[24px] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-2">
+
+
+ <div className="mt-14 w-full mx-auto grid grid-cols-1 lg:grid-cols-12  items-stretch  p-5 btn-glass rounded-sm">
         
         {/* =========================================================
-            LEFT COLUMN - CONTENT & METRICS SECTION
+            LEFT CONTENT SIDE (Takes 7 Columns on Large Screens)
             ========================================================= */}
-        <div className="p-5 md:p-8 lg:p-12 2xl:p-16 flex flex-col justify-between space-y-10 order-2">
+        <div className="lg:col-span-7 flex flex-col justify-between space-y-8 pl-5 py-10 lg:pl-10">
           
-          {/* टॉप टैग और हेडिंग */}
-          <div className="space-y-5">
-            <span className="uppercase bg-primary/25 text-white border border-primary/50 backdrop-blur text-[10px] 1xl:text-xs font-semibold px-3 py-1.5 rounded-md tracking-wide">
-              CRM Transformation
-            </span>
-            <h2 className="text-white text-xl md:text-2xl lg:text-3xl 2xl:text-[36px] font-bold leading-[1.3] mt-5 tracking-tight">
+          {/* Main Typography Header Section */}
+          <div className="space-y-4">
+            <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[42px] font-bold tracking-tight text-white leading-[1.2]">
               Sales CRM Modernization: 30% Faster Deal Cycles &amp; Reduced Operational Costs
             </h2>
-            <p className="text-[#a0b3cc] text-xs lg:text-[15px] 1xl:text-[16px] leading-[1.6] font-normal">
-              The client was struggling with a fragmented CRM system, duplicate leads, and lack of visibility into their sales pipeline. We re-architected their CRM using a scalable cloud-based solution, streamlined workflows, and integrated all customer touchpoints into a unified system.
-            </p>
+            
+            {/* Split paragraph lines precisely as depicted in the layout image */}
+            <div className="text-[#a1a1aa] text-[10px] lg:text-[13px] 1xl:text-base leading-[1.6] space-y-1">
+              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
+              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
+              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
+            </div>
           </div>
 
-          {/* मिडिल सेक्शन - 3 ब्लॉक मैट्रिक्स ग्रिड */}
+          {/* Metric Stats Cards Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {/* मीट्रिक 1 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
-              <FiTrendingUp className="text-primary text-xs lg:text-base 2xl:text-xl" />
+            
+            {/* Metric Box 1 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[8px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
+              <div className="text-primary text-3xl">
+                <FiTrendingUp />
+              </div>
               <div>
-                <span className="block text-white text text-base lg:text-xl-2xl:2xl font-bold tracking-tight">30%</span>
-                <span className="block text-[#a0b3cc] text text-[10px] -1xl:xs mt-1 font-medium">Faster Deal Cycles</span>
+                <span className="block text-2xl font-bold text-white tracking-tight">30%</span>
+                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Faster Deal Cycles</span>
               </div>
             </div>
 
-            {/* मीट्रिक 2 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
-              <FiClock className="text-primary text-xs lg:text-base 2xl:text-xl" />
+            {/* Metric Box 2 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
+              <div className="text-primary text-3xl">
+                <BsStopwatch />
+              </div>
               <div>
-                <span className="block text-white text-base lg:text-xl 2xl:text-2xl font-bold tracking-tight">99.5%</span>
-                <span className="block text-[#a0b3cc] text-[10px]  1xl:text-xs mt-1 font-medium">Forecast Accuracy</span>
+                <span className="block text-2xl font-bold text-white tracking-tight">99.5%</span>
+                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Forecast Accuracy</span>
               </div>
             </div>
 
-            {/* मीट्रिक 3 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-2  md:p-3 1xl:p-5 flex flex-col justify-between space-y-4 ">
-              <FiUsers className="text-primary text-xs lg:text-base 2xl:text-xl" />
+            {/* Metric Box 3 */}
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
+              <div className="text-primary text-3xl">
+                <BsPeople />
+              </div>
               <div>
-                <span className="block text-white text-base lg:text-xl 2xl:text-2xl font-bold tracking-tight">0</span>
-                <span className="block text-[#a0b3cc] text-[10px]  1xl:text-xs mt-1 font-medium">Duplicate Leads</span>
+                <span className="block text-2xl font-bold text-white tracking-tight">99.5%</span>
+                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Forecast Accuracy</span>
               </div>
             </div>
+
           </div>
 
-          {/* बॉटम सेक्शन - टेस्टीमोनियल ब्लॉक */}
-          {/* <div className="bg-[#0f2545] border-l-2 border-[#ff6a42] rounded-r-xl p-6 space-y-3">
-            <p className="text-[#d0e0f5] text-[14px] sm:text-[15px] leading-[1.6] italic font-normal">
-              &ldquo;HireDeveloper didn&apos;t just send us a developer — they sent us a problem solver. The onboarding was seamless and within 48 hours he was already pushing commits.&rdquo;
+          {/* Testimonial Box with Blue Indicator Stroke */}
+          <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[8px] border-l-[6px] border-primary  hover-glow-card rounded-xl p-6 relative overflow-hidden ">
+            <p className="text-[#d4d4d8] text-xs lg:text-[13px] 1xl:text-base leading-[1.6] font-normal">
+              &ldquo;HireDeveloper didn&apos;t just send us a developer - they sent us a problem solver. The onboarding was seamless amd with 48 hours he was already pushing commits.&rdquo;
             </p>
-            <span className="block text-primary text-sm font-semibold tracking-wide">
-              Eduardo Rangel
-            </span>
-          </div> */}
+          </div>
 
-          {/* एक्शन लिंक */}
+          {/* Bottom Custom Link Trigger */}
           <div className="pt-2">
             <a
               href="#"
-              className="inline-flex items-center gap-2 text-primary  font-semibold text-xs lg:text-sm tracking-wide group transition-colors duration-200"
+              className="inline-block  text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary  transition-all duration-200"
             >
               Read Full Case Study
-              <FiArrowRight className="transform group-hover:translate-x-1 transition-transform duration-200" />
             </a>
           </div>
 
         </div>
 
         {/* =========================================================
-            RIGHT COLUMN - IMAGE OVERLAY SECTION
+            RIGHT VISUAL SIDE (Now using 1 Single Premium Image)
             ========================================================= */}
-        <div className="relative min-h-[400px] sm:min-h-[500px] lg:min-h-full w-full bg-[#0d1f39] order-1">
-          {/* इमेज लेयर */}
-          <Image width={500} height={500} loading="lazy"
-            src={work1} 
-            alt="Hand holding a smartphone showing analytics app dashboard"
-            className="w-full h-full object-cover object-center"
+        <div className="lg:col-span-5  flex justify-center items-center overflow-hidden shadow-2xl  min-h-[300px] lg:min[400px] ">
+          <Image width={500} height={500}
+loading="lazy"
+src="/assets/work-12.png"
+            alt="CRM Analytics Dashboard Showcase"
+            className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm      "
           />
-          
-          {/* टॉप राइट फ़्लोटिंग बैच */}
-          <div className="absolute top-6 right-6 z-10">
-            <span className="uppercase bg-primary/25 text-white border border-primary/50 backdrop-blur text-[10px] 1xl:text-xs font-semibold px-3 py-1.5 rounded-md tracking-wide">
-              Sales CRM
-            </span>
-          </div>
+
         </div>
-</div>
+
+      </div>
       </div>
   <div className="mt-12 flex justify-center">
           <GhostButton>View All Case Studies</GhostButton>
@@ -566,10 +572,10 @@ function CTA() {
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">
-          <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
             Your next hire is <br /><span className="text-gradient-purple">one search away.</span>
           </h2>
-          <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-medium text-lg">
+          <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-medium text-sm md:text-base lg:text-xl 2xl:text-[22px]">
             Join thousands of teams shipping faster with the world's most curated talent network.
           </p>
           <div className="mt-9 flex flex-wrap gap-3 justify-center">

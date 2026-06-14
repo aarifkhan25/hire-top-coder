@@ -4,7 +4,36 @@ import { FaLinkedinIn, FaTwitter, FaGithub, FaInstagram, FaDribbble, FaMapMarker
 import {GhostButton} from "./PageShell.jsx"
 import Image from "next/image"
 import logo from "@/assets/logo1.png";
- 
+ import { FiCalculator, FiBookOpen, FiFileText } from 'react-icons/fi';
+
+const resourceLinks = [
+  {
+    id: 1,
+    title: 'Get a Developer Cost Estimate',
+    description: 'Calculate your team\'s total cost of engagement',
+    icon: <FiCalculator />,
+  },
+  {
+    id: 2,
+    title: 'Engineering Hiring Insights',
+    description: 'Monthly guide for CTOs, founders, and tech leads',
+    icon: <FiBookOpen />,
+  },
+  {
+    id: 3,
+    title: 'Free Project Scoping Template',
+    description: 'Define scope before your first expert call',
+    icon: <FiFileText />,
+  },
+];
+
+const trustMetrics = [
+  '500+ Projects Delivered Across All Technologies',
+  '100+ Happy Enterprise Clients',
+  'ISO 9001 Quality Certified',
+  'GDPR &amp; NDA Protected',
+  'Serving Clients in 15+ Countries',
+];
 const services = [
 
   "UI/UX Design", "Full-Stack Development", "Mobile App Development",
@@ -64,12 +93,75 @@ export  function Footer() {
   return (
 <footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] mt-20">
 <div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-20">
+  <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        {/* =========================================================
+            LEFT COLUMN - INTERACTIVE RESOURCES (Takes 8 Columns)
+            ========================================================= */}
+        <div className="lg:col-span-8 w-full flex flex-col">
+          {resourceLinks.map((item, index) => (
+            <div key={item.id} className="w-full">
+              {/* Row Link Item Container */}
+              <a
+                href="#"
+                className="group flex items-center gap-5 py-6 w-full text-left transition-all duration-300 rounded-xl hover:bg-white/[0.02] hover:px-2"
+              >
+                {/* Translucent Dark Purple Icon Box wrapper */}
+                <div className="w-14 h-14 shrink-0 bg-[#161224]/60 border border-[#2e234d]/60 rounded-[12px] flex items-center justify-center text-[#9987d9] text-xl transition-all duration-300 group-hover:border-[#4c3591] group-hover:bg-[#1a142e] group-hover:text-[#b1a2f0] shadow-inner">
+                  {item.icon}
+                </div>
+
+                {/* Vertical Stacked Text Info */}
+                <div className="space-y-1">
+                  <h3 className="text-white font-semibold text-[16px] sm:text-[17px] tracking-wide transition-colors duration-200 group-hover:text-[#c5b3fa]">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#696575] text-[13px] sm:text-[14px] font-normal leading-normal group-hover:text-[#8d889e] transition-colors duration-200">
+                    {item.description}
+                  </p>
+                </div>
+              </a>
+
+              {/* Faint Horizontal Divider between elements (Excluding the last item) */}
+              {index < resourceLinks.length - 1 && (
+                <div className="w-full h-[1px] bg-[#14121c]/80" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* =========================================================
+            RIGHT COLUMN - TRUST & CREDIBILITY METRICS (Takes 4 Columns)
+            ========================================================= */}
+        <div className="lg:col-span-4 w-full lg:border-l lg:border-[#14121c]/80 lg:pl-12 flex flex-col justify-center space-y-5 py-4">
+          {trustMetrics.map((metric, index) => (
+            <div 
+              key={index}
+              className="text-[#84818c] text-[14px] sm:text-[15px] font-medium tracking-wide transition-colors duration-300 hover:text-white flex items-center gap-3 cursor-default"
+            >
+              {/* Subtle list indicator dot */}
+              <span className="w-1 h-1 rounded-full bg-[#403b52]" />
+              <span dangerouslySetInnerHTML={{ __html: metric }} />
+            </div>
+          ))}
+        </div>
+
+      </div>
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 ">
 
           {/* Brand */}
 <div className=" w-full lg:col-span-4">
-<Link href="/" >
-<Image width={500} height={500} laoding="lazy" src={logo} alt="HireTopCoder logo" className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px]" />
+<Link href="/" className="block">
+  {/* लोगो को दबने से बचाने के लिए wrapper div */}
+  <div className="relative w-[140px] h-[45px] sm:w-[160px] sm:h-[50px] md:w-[180px] md:h-[55px] lg:w-[200px] lg:h-[60px]">
+    <Image 
+      src={logo} 
+      alt="HireTopCoder logo" 
+      fill
+      loading="lazy" 
+      className="object-contain object-left" 
+    />
+  </div>
 </Link>
 <p className="mt-4 text-[14px] text-white/45 hover:text-[#F0EDFF] leading-[1.8] w-full">
 
