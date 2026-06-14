@@ -284,8 +284,8 @@ export  function Footer() {
  
         {/* Bottom bar */}
 <div className="border-t border-white/[0.07] py-6 flex flex-wrap items-center justify-between gap-3 text-[13px]">
-<div className="text-white/30">© 2025 HireTopCoder. All rights reserved.</div>
-<div className="text-white/20 text-[12px]">Made with ❤️ in Indore, India</div>
+<div className="text-white ">© 2025 HireTopCoder. All rights reserved.</div>
+<div className="text-white text-[12px]">Made with ❤️ in Indore, India</div>
 <div className="flex gap-5 text-white/35">
 <Link href="/privacy" className="hover:text-[#F0EDFF]">Privacy Policy</Link>
 <Link href="/terms" className="hover:text-[#F0EDFF]">Terms of Service</Link>

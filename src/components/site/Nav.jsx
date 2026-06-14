@@ -126,7 +126,7 @@ export function Nav() {
         onMouseLeave={() => setHoveredIndex(null)}
         className={`w-full flex items-center justify-between transition-all duration-500 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 ${
           isScrolled
-            ? "glass shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
+            ? "bg-[oklch(0.14_0.02_290/0.6)] backdrop-blur-[18px] [-webkit-backdrop-filter:blur(18px)] border-b border-[oklch(0.62_0.26_305/0.15)]  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : "px-1 bg-[#0d0d0d]/10"
         }`}
       >
