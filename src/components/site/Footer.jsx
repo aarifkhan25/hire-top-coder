@@ -1,39 +1,12 @@
 import Link from "next/link"
-
+import {useState} from "react"
 import { FaLinkedinIn, FaTwitter, FaGithub, FaInstagram, FaDribbble, FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
 import {GhostButton} from "./PageShell.jsx"
 import Image from "next/image"
 import logo from "@/assets/logo1.png";
- import { FiCalculator, FiBookOpen, FiFileText } from 'react-icons/fi';
+ import { FiCheck } from 'react-icons/fi';
 
-const resourceLinks = [
-  {
-    id: 1,
-    title: 'Get a Developer Cost Estimate',
-    description: 'Calculate your team\'s total cost of engagement',
-    icon: <FiCalculator />,
-  },
-  {
-    id: 2,
-    title: 'Engineering Hiring Insights',
-    description: 'Monthly guide for CTOs, founders, and tech leads',
-    icon: <FiBookOpen />,
-  },
-  {
-    id: 3,
-    title: 'Free Project Scoping Template',
-    description: 'Define scope before your first expert call',
-    icon: <FiFileText />,
-  },
-];
 
-const trustMetrics = [
-  '500+ Projects Delivered Across All Technologies',
-  '100+ Happy Enterprise Clients',
-  'ISO 9001 Quality Certified',
-  'GDPR &amp; NDA Protected',
-  'Serving Clients in 15+ Countries',
-];
 const services = [
 
   "UI/UX Design", "Full-Stack Development", "Mobile App Development",
@@ -88,65 +61,115 @@ const stats = [
  
 const socials = [FaLinkedinIn, FaTwitter, FaGithub, FaInstagram, FaDribbble];
  
+const resourceLinks = [
+  {
+    id: 1,
+    title: 'Get a Developer Cost Estimate',
+    description: 'Calculate your team\'s total cost of engagement',
+  },
+  {
+    id: 2,
+    title: 'Engineering Hiring Insights',
+    description: 'Monthly guide for CTOs, founders, and tech leads',
+  },
+  {
+    id: 3,
+    title: 'Free Project Scoping Template',
+    description: 'Define scope before your first expert call',
+  },
+];
+
+const trustMetrics = [
+  '500+ Projects Delivered Across All Technologies',
+  '100+ Happy Enterprise Clients',
+  'ISO 9001 Quality Certified',
+  'GDPR &amp; NDA Protected',
+  'Serving Clients in 15+ Countries',
+];
 export  function Footer() {
 
+
+ 
+  const [checkedItems, setCheckedItems] = useState({
+    1: false,
+    2: false,
+    3: false,
+  });
+
+  // चेकबॉक्स टॉगल हैंडलर
+  const handleToggle = (id, e) => {
+    e.preventDefault(); // लिंक एंकर टैग के डिफ़ॉल्ट बिहेवियर को रोकने के लिए
+    setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
   return (
-<footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] mt-20">
-<div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-20">
-  <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] ">
+<div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-10">
+<div className=" w-full mb-10 mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 items-center">
         
         {/* =========================================================
-            LEFT COLUMN - INTERACTIVE RESOURCES (Takes 8 Columns)
+            LEFT COLUMN - INTERACTIVE RESOURCES WITH CHECKBOXES
             ========================================================= */}
-        <div className="lg:col-span-8 w-full flex flex-col">
-          {resourceLinks.map((item, index) => (
-            <div key={item.id} className="w-full">
-              {/* Row Link Item Container */}
-              <a
-                href="#"
-                className="group flex items-center gap-5 py-6 w-full text-left transition-all duration-300 rounded-xl hover:bg-white/[0.02] hover:px-2"
-              >
-                {/* Translucent Dark Purple Icon Box wrapper */}
-                <div className="w-14 h-14 shrink-0 bg-[#161224]/60 border border-[#2e234d]/60 rounded-[12px] flex items-center justify-center text-[#9987d9] text-xl transition-all duration-300 group-hover:border-[#4c3591] group-hover:bg-[#1a142e] group-hover:text-[#b1a2f0] shadow-inner">
-                  {item.icon}
-                </div>
+        <div className="md:col-span-8 w-full flex flex-col">
+          {resourceLinks.map((item, index) => {
+            const isChecked = checkedItems[item.id];
 
-                {/* Vertical Stacked Text Info */}
-                <div className="space-y-1">
-                  <h3 className="text-white font-semibold text-[16px] sm:text-[17px] tracking-wide transition-colors duration-200 group-hover:text-[#c5b3fa]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#696575] text-[13px] sm:text-[14px] font-normal leading-normal group-hover:text-[#8d889e] transition-colors duration-200">
-                    {item.description}
-                  </p>
-                </div>
-              </a>
+            return (
+              <div key={item.id} className="w-full">
+                {/* Row Item Link */}
+                <button
+                  onClick={(e) => handleToggle(item.id, e)}
+                  className="group flex items-center gap-5 py-2 w-full text-left transition-all duration-300 rounded-[12px] hover:bg-white/[0.01] focus:outline-none"
+                >
+                  {/* Outer Frame (इमेज `image (4).png` के बॉक्स साइज को बनाए रखने के लिए) */}
+                
+                    {/* Inner Custom Checkbox Square */}
+                    <div className={`w-9 h-9 rounded-[4px] border flex items-center justify-center transition-all duration-200 
+                      ${isChecked 
+                        ? 'bg-[#ac45ff] border-[#ac45ff] text-[#2e1d4d] scale-100' 
+                        : 'border-[#4a4557] bg-transparent text-transparent scale-95 group-hover:border-[#7b6f9e]'}`}
+                    >
+                      <FiCheck className="text-xs w-5  h-5" />
+                    </div>
+                  
 
-              {/* Faint Horizontal Divider between elements (Excluding the last item) */}
-              {index < resourceLinks.length - 1 && (
-                <div className="w-full h-[1px] bg-[#14121c]/80" />
-              )}
-            </div>
-          ))}
+                  {/* Vertical Stacked Text Info */}
+                  <div className="space-y-[2px]">
+                    <h3 className={`font-semibold text-[10px] md:text-xs tracking-wide transition-colors duration-200 
+                      ${isChecked ? 'text-[#ac45ff]' : 'text-white group-hover:text-[#ac45ff]'}`}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className={`text-[8px] md:text-[10px] font-normal leading-normal transition-colors duration-200
+                      ${isChecked ? 'text-[#8d889e]' : 'text-[#696575] group-hover:text-[#8d889e]'}`}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </button>
+
+               
+              </div>
+            );
+          })}
         </div>
 
         {/* =========================================================
-            RIGHT COLUMN - TRUST & CREDIBILITY METRICS (Takes 4 Columns)
+            RIGHT COLUMN - TRUST & CREDIBILITY METRICS
             ========================================================= */}
-        <div className="lg:col-span-4 w-full lg:border-l lg:border-[#14121c]/80 lg:pl-12 flex flex-col justify-center space-y-5 py-4">
+        <div className="md:col-span-4 w-full  lg:pl-12 flex flex-col justify-center space-y-2 py-4">
           {trustMetrics.map((metric, index) => (
             <div 
               key={index}
-              className="text-[#84818c] text-[14px] sm:text-[15px] font-medium tracking-wide transition-colors duration-300 hover:text-white flex items-center gap-3 cursor-default"
+              className="text-[#84818c] text-[8px] md:text-[10px] font-medium tracking-wide transition-colors duration-300 hover:text-white flex items-center gap-3 cursor-default"
             >
-              {/* Subtle list indicator dot */}
-              <span className="w-1 h-1 rounded-full bg-[#403b52]" />
+              <span className="w-1 h-1 rounded-full bg-[#ac45ff]" />
               <span dangerouslySetInnerHTML={{ __html: metric }} />
             </div>
           ))}
         </div>
 
       </div>
+      
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 ">
 
           {/* Brand */}

@@ -130,7 +130,7 @@ export function Nav() {
             : "px-1 bg-[#0d0d0d]/10"
         }`}
       >
-        <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
+        <div className="">
           <Link href="/" onClick={closeMobileMenu}>
             <Image 
               width={500} 
@@ -141,7 +141,7 @@ export function Nav() {
               className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
             />
           </Link>
-
+</div>
           {/* डेस्कटॉप मेनू */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
             {navData?.map((item, i) => (
@@ -222,7 +222,7 @@ export function Nav() {
               </div>
             ))}
           </div>
-        </div>
+    
 
         {/* राइट साइड बटन्स */}
         <div data-aos="fade-down" className="flex items-center gap-2">

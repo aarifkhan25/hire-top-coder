@@ -168,9 +168,20 @@
   @keyframes scroll-cards {
     from { transform: translateX(0) }
     to { transform: translateX(calc(-50% - 1rem)) }
+   
   }
   .animate-float { animation: float-slow 6s ease-in-out infinite; }
   .animate-pulse-glow { animation: pulse-glow 5s ease-in-out infinite; }
   .animate-marquee { animation: marquee 40s linear infinite; }
   .animate-scroll-cards { animation: scroll-cards 50s linear infinite; }
+
+  .animate-float:hover,
+.animate-pulse-glow:hover{
+  transform: scale(1.05)}; 
+.animate-marquee:hover,
+.animate-scroll-cards:hover {
+  animation-play-state: paused;
 }
+}
+
+

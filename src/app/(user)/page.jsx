@@ -1,15 +1,16 @@
 "use client"
 import Link from "next/link";
-import {useRef} from "react"
+import {useRef,useState,useEffect} from "react"
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
 } from "react-icons/lu";
 
 import { FiTrendingUp } from 'react-icons/fi';
-import { BsStopwatch, BsPeople } from 'react-icons/bs'
+import { BsStopwatch, BsPeople, BsLightningCharge, BsShieldCheck, BsGraphUp } from 'react-icons/bs'
 import {GhostButton,PrimaryButton} from "@/components/site/PageShell.jsx"
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+
 
 import Image from 'next/image'
 const expert1 = "/assets/expert-1.jpg";
@@ -105,7 +106,56 @@ const testimonials=[
     role: 'Product Lead, Velocity Labs',
   },
 ];
-
+const portfolioItems = [
+  {
+    id: 1,
+    image: "/assets/work-12.png",
+    title: "Sales CRM Modernization: 30% Faster Deal Cycles & Reduced Operational Costs",
+    paragraphs: [
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their",
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their",
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their"
+    ],
+    metrics: [
+      { id: "m1", value: "30%", label: "Faster Deal Cycles", icon: <FiTrendingUp /> },
+      { id: "m2", value: "99.5%", label: "Forecast Accuracy", icon: <BsStopwatch /> },
+      { id: "m3", value: "99.5%", label: "Forecast Accuracy", icon: <BsPeople /> }
+    ],
+    testimonial: "“HireDeveloper didn't just send us a developer - they sent us a problem solver. The onboarding was seamless amd with 48 hours he was already pushing commits.”"
+  },
+  {
+    id: 2,
+    image: "/assets/work-10.png", // अपनी दूसरी इमेज का पाथ यहाँ डालें
+    title: "AI Financial Analytics: 45% Increase in Operational Portfolio Yields",
+    paragraphs: [
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines",
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines",
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines"
+    ],
+    metrics: [
+      { id: "m4", value: "45%", label: "Portfolio Yield", icon: <BsGraphUp /> },
+      { id: "m5", value: "4x", label: "Processing Speed", icon: <BsLightningCharge /> },
+      { id: "m6", value: "Zero", label: "Compliance Risk", icon: <BsShieldCheck /> }
+    ],
+    testimonial: "“The enterprise AI solution delivered by their engineering branch completely overhauled our predictive indexing latency benchmarks within the targeted deadline.”"
+  },
+  {
+    id: 3,
+    image: "/assets/work-12.png", // अपनी तीसरी इमेज का पाथ यहाँ डालें
+    title: "Next-Gen E-Commerce Stack: Scaled to 10M+ Monthly Active Sessions",
+    paragraphs: [
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges",
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges",
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges"
+    ],
+    metrics: [
+      { id: "m7", value: "10M+", label: "Active Sessions", icon: <BsPeople /> },
+      { id: "m8", value: "92%", label: "Server Cost Cut", icon: <FiTrendingUp /> },
+      { id: "m9", value: "0.4s", label: "TTFB Performance", icon: <BsLightningCharge /> }
+    ],
+    testimonial: "“Our transaction capacity quadrupled overnight without a single microservice failure. Absolute mastery over cloud-native serverless system design.”"
+  }
+];
 export default function Index() {
   return (
     <div className="min-h-screen bg-black text-foreground overflow-hidden">
@@ -282,12 +332,30 @@ function Services() {
     </section>
   );
 }
-
 function Portfolio() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  // ऑटोमैटिक स्क्रॉल/चेंज मैकेनिज्म (हर 5 सेकंड में)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true); // फ़ेड आउट शुरू करें
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % portfolioItems.length);
+        setIsFading(false); // फ़ेड इन करें
+      }, 300); // 300ms ट्रांजिशन डिले
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentCard = portfolioItems[currentIndex];
+
   return (
-    <section id="portfolio" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]    ">
-        <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
+    <section id="portfolio" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]">
+      <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
+      
       <div className="relative w-full">
         <SectionHead
           eyebrow="Featured work"
@@ -295,103 +363,104 @@ function Portfolio() {
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
 
-
- <div className="mt-14 w-full mx-auto grid grid-cols-1 lg:grid-cols-12  items-stretch  p-5 btn-glass rounded-sm">
-        
         {/* =========================================================
-            LEFT CONTENT SIDE (Takes 7 Columns on Large Screens)
+            SLIDER VIEWPORT (बिना साइज़ बदले हॉरिजॉन्टल स्लाइड एनीमेशन के लिए)
             ========================================================= */}
-        <div className="lg:col-span-7 flex flex-col justify-between space-y-8 pl-5 py-10 lg:pl-10">
-          
-          {/* Main Typography Header Section */}
-          <div className="space-y-4">
-            <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[42px] font-bold tracking-tight text-white leading-[1.2]">
-              Sales CRM Modernization: 30% Faster Deal Cycles &amp; Reduced Operational Costs
-            </h2>
-            
-            {/* Split paragraph lines precisely as depicted in the layout image */}
-            <div className="text-[#a1a1aa] text-[10px] lg:text-[13px] 1xl:text-base leading-[1.6] space-y-1">
-              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
-              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
-              <p>The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their</p>
-            </div>
+        <div className="w-full overflow-hidden mt-14">
+          <div 
+            className="flex w-full transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {portfolioItems.map((item) => (
+              <div 
+                key={item.id} 
+                className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch p-5 btn-glass rounded-sm"
+              >
+                
+                {/* left VISUAL SIDE */}
+                <div className="lg:col-span-5 flex justify-center items-center overflow-hidden shadow-2xl min-h-[300px] lg:min-h-[400px]">
+                  <Image 
+                    width={500} 
+                    height={500}
+                    loading="lazy"
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm"
+                  />
+                </div>
+
+                {/* right CONTENT SIDE */}
+                <div className="lg:col-span-7 flex flex-col justify-between space-y-8 pl-5 py-10 lg:pl-10">
+                  
+                  {/* Typography Header Section */}
+                  <div className="space-y-4">
+                    <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[42px] font-bold tracking-tight text-white leading-[1.2]">
+                      {item.title}
+                    </h2>
+                    
+                    <div className="text-[#a1a1aa] text-[10px] lg:text-[13px] 1xl:text-base leading-[1.6] space-y-1">
+                      {item.paragraphs.map((p, pIndex) => (
+                        <p key={pIndex}>{p}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Metric Stats Cards Layout */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {item.metrics.map((metric) => (
+                      <div key={metric.id} className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
+                        <div className="text-primary text-3xl">
+                          {metric.icon}
+                        </div>
+                        <div>
+                          <span className="block text-2xl font-bold text-white tracking-tight">{metric.value}</span>
+                          <span className="block text-[#71717a] text-xs font-medium mt-0.5">{metric.label}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Testimonial Box */}
+                  <div className="bg-gradient-to-t from-black/80 to-transparent border-l-[6px] border-primary hover-glow-card rounded-xl p-6 relative overflow-hidden">
+                    <p className="text-[#d4d4d8] text-xs lg:text-[13px] 1xl:text-base leading-[1.6] font-normal">
+                      {item.testimonial}
+                    </p>
+                  </div>
+
+                  {/* Bottom Link Trigger & Dot Indicators */}
+                  <div className="pt-2 flex items-center justify-between">
+                    <a
+                      href="#"
+                      className="inline-block text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary transition-all duration-200"
+                    >
+                      Read Full Case Study
+                    </a>
+
+                    {/* स्लाइडिंग इंडिकेटर डॉट्स (नीचे दाईं तरफ) */}
+                    <div className="flex items-center gap-1.5 pr-2">
+                      {portfolioItems.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentIndex(idx)}
+                          className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            ))}
           </div>
-
-          {/* Metric Stats Cards Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            
-            {/* Metric Box 1 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[8px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
-              <div className="text-primary text-3xl">
-                <FiTrendingUp />
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-white tracking-tight">30%</span>
-                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Faster Deal Cycles</span>
-              </div>
-            </div>
-
-            {/* Metric Box 2 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
-              <div className="text-primary text-3xl">
-                <BsStopwatch />
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-white tracking-tight">99.5%</span>
-                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Forecast Accuracy</span>
-              </div>
-            </div>
-
-            {/* Metric Box 3 */}
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
-              <div className="text-primary text-3xl">
-                <BsPeople />
-              </div>
-              <div>
-                <span className="block text-2xl font-bold text-white tracking-tight">99.5%</span>
-                <span className="block text-[#71717a] text-xs font-medium mt-0.5">Forecast Accuracy</span>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Testimonial Box with Blue Indicator Stroke */}
-          <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[8px] border-l-[6px] border-primary  hover-glow-card rounded-xl p-6 relative overflow-hidden ">
-            <p className="text-[#d4d4d8] text-xs lg:text-[13px] 1xl:text-base leading-[1.6] font-normal">
-              &ldquo;HireDeveloper didn&apos;t just send us a developer - they sent us a problem solver. The onboarding was seamless amd with 48 hours he was already pushing commits.&rdquo;
-            </p>
-          </div>
-
-          {/* Bottom Custom Link Trigger */}
-          <div className="pt-2">
-            <a
-              href="#"
-              className="inline-block  text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary  transition-all duration-200"
-            >
-              Read Full Case Study
-            </a>
-          </div>
-
-        </div>
-
-        {/* =========================================================
-            RIGHT VISUAL SIDE (Now using 1 Single Premium Image)
-            ========================================================= */}
-        <div className="lg:col-span-5  flex justify-center items-center overflow-hidden shadow-2xl  min-h-[300px] lg:min[400px] ">
-          <Image width={500} height={500}
-loading="lazy"
-src="/assets/work-12.png"
-            alt="CRM Analytics Dashboard Showcase"
-            className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm      "
-          />
-
         </div>
 
       </div>
+
+      <div className="mt-12 flex justify-center">
+        <GhostButton>View All Case Studies</GhostButton>
       </div>
-  <div className="mt-12 flex justify-center">
-          <GhostButton>View All Case Studies</GhostButton>
-        </div>
     </section>
   );
 }
