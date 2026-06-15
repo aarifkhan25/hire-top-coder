@@ -32,7 +32,7 @@ const blog4 = "/assets/blog-4.png";
 
 
 const experts = [
-  { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
+  // { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
   { name: "Rahul Jaiswal",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
   { name: "Maynak Yadav",   role: "angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
   { name: "Khushi Gupta", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
@@ -113,9 +113,9 @@ const portfolioItems = [
     image: "/assets/work-12.png",
     title: "Sales CRM Modernization: 30% Faster Deal Cycles & Reduced Operational Costs",
     paragraphs: [
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their",
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their",
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility into their"
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    ",
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    ",
+      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    "
     ],
     metrics: [
       { id: "m1", value: "30%", label: "Faster Deal Cycles", icon: <FiTrendingUp /> },
@@ -129,9 +129,9 @@ const portfolioItems = [
     image: "/assets/work-10.png", // अपनी दूसरी इमेज का पाथ यहाँ डालें
     title: "AI Financial Analytics: 45% Increase in Operational Portfolio Yields",
     paragraphs: [
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines",
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines",
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional pipelines"
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   ",
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   ",
+      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   "
     ],
     metrics: [
       { id: "m4", value: "45%", label: "Portfolio Yield", icon: <BsGraphUp /> },
@@ -145,9 +145,9 @@ const portfolioItems = [
     image: "/assets/work-12.png", // अपनी तीसरी इमेज का पाथ यहाँ डालें
     title: "Next-Gen E-Commerce Stack: Scaled to 10M+ Monthly Active Sessions",
     paragraphs: [
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges",
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges",
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent user surges"
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    ",
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    ",
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    "
     ],
     metrics: [
       { id: "m7", value: "10M+", label: "Active Sessions", icon: <BsPeople /> },
@@ -297,23 +297,51 @@ function Marquee() {
 
 
 function Portfolio() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
+const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const timeoutRef = useRef(null);
 
-  // ऑटोमैटिक स्क्रॉल/चेंज मैकेनिज्म (हर 5 सेकंड में)
+  // अनंत लूप के लिए: अंत में पहले आइटम की एक कॉपी जोड़ रहे हैं
+  const extendedItems = [...portfolioItems, portfolioItems[0]];
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsFading(true); // फ़ेड आउट शुरू करें
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % portfolioItems.length);
-        setIsFading(false); // फ़ेड इन करें
-      }, 300); // 300ms ट्रांजिशन डिले
+    // ऑटोमैटिक स्लाइडर शुरू करें
+    timeoutRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+      setIsTransitioning(true);
     }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
+    };
+  }, [portfolioItems.length]);
 
-  const currentCard = portfolioItems[currentIndex];
+  // जब स्लाइडर डुप्लिकेट (आखिरी) कार्ड पर पहुँच जाए, तो बिना एनीमेशन के तुरंत पहले कार्ड पर कूदें
+  useEffect(() => {
+    if (currentIndex === extendedItems.length - 1) {
+      setTimeout(() => {
+        setIsTransitioning(false); // एनीमेशन बंद करें
+        setCurrentIndex(0);        // चुपके से पहले कार्ड पर जाएँ
+      }, 700); // यह समय transition-duration (700ms) के बराबर होना चाहिए
+    }
+  }, [currentIndex, extendedItems.length]);
+
+  // जब एनीमेशन बंद करके इंडेक्स 0 किया जाए, तो अगले फ्रेम में एनीमेशन वापस चालू करें
+  useEffect(() => {
+    if (!isTransitioning && currentIndex === 0) {
+      // एक छोटे से डिले के बाद एनीमेशन वापस ऑन करें ताकि अगला मोशन स्मूथ हो
+      const raf = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [isTransitioning, currentIndex]);
+
+  // डॉट्स पर क्लिक करने का हैंडलर
+  const handleDotClick = (idx) => {
+    setIsTransitioning(true);
+    setCurrentIndex(idx);
+  };
 
   return (
     <section id="portfolio" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]">
@@ -327,99 +355,101 @@ function Portfolio() {
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
 
-        <div className="w-full overflow-hidden mt-14">
-        
-
+    <div className="w-full overflow-hidden mt-14">
+      
+      {/* मुख्य स्लाइडिंग कंटेनर */}
+      <div 
+        className={`flex   w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : "transition-none"}`}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {extendedItems.map((item, index) => (
           <div 
-            className="flex w-full transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-            {portfolioItems.map((item) => (
-              <div 
-              key={item.id} 
-              className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch p-5 btn-glass rounded-sm"
-              >
+            // चूंकि पहले आइटम की डुप्लिकेट है, इसलिए key को सुरक्षित रखने के लिए index का उपयोग कर रहे हैं
+            key={`${item.id}-${index}`} 
+            className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch   py-10 px-20 btn-glass rounded-sm"
+          >
+            
+            {/* left VISUAL SIDE */}
+            <div className="lg:col-span-5 flex justify-center items-center overflow-hidden shadow-2xl min-h-[300px] lg:min-h-[400px]">
+              <img 
+                loading="lazy"
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm"
+              />
+            </div>
+
+            {/* right CONTENT SIDE */}
+            <div className="lg:col-span-7 flex flex-col justify-between p-10  2xl:p-20  space-y-8 ">
+              
+              {/* Typography Header Section */}
+              <div className="space-y-4">
+                <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[40px] font-medium tracking-tight text-white leading-[1.2]">
+                  {item.title}
+                </h2>
                 
-                {/* left VISUAL SIDE */}
-                <div className="lg:col-span-5 flex justify-center items-center overflow-hidden shadow-2xl min-h-[300px] lg:min-h-[400px]">
-                  <Image 
-                    width={500} 
-                    height={500}
-                    loading="lazy"
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm"
-                  />
+                <div className="text-[#a1a1aa] text-[10px] lg:text-[11px] 1xl:text-base leading-[1.6] space-y-1">
+                  {item.paragraphs.map((p, pIndex) => (
+                    <p key={pIndex}>{p}</p>
+                  ))}
                 </div>
-
-                {/* right CONTENT SIDE */}
-                <div className="lg:col-span-7 flex flex-col justify-between space-y-8 pl-5 py-10 lg:pl-10">
-                  
-                  {/* Typography Header Section */}
-                  <div className="space-y-4">
-                    <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[42px] font-bold tracking-tight text-white leading-[1.2]">
-                      {item.title}
-                    </h2>
-                    
-                    <div className="text-[#a1a1aa] text-[10px] lg:text-[13px] 1xl:text-base leading-[1.6] space-y-1">
-                      {item.paragraphs.map((p, pIndex) => (
-                        <p key={pIndex}>{p}</p>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Metric Stats Cards Layout */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {item.metrics.map((metric) => (
-                      <div key={metric.id} className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
-                        <div className="text-primary text-3xl">
-                          {metric.icon}
-                        </div>
-                        <div>
-                          <span className="block text-2xl font-bold text-white tracking-tight">{metric.value}</span>
-                          <span className="block text-[#71717a] text-xs font-medium mt-0.5">{metric.label}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Testimonial Box */}
-                  <div className="bg-gradient-to-t from-black/80 to-transparent border-l-[6px] border-primary hover-glow-card rounded-xl p-6 relative overflow-hidden">
-                    <p className="text-[#d4d4d8] text-xs lg:text-[13px] 1xl:text-base leading-[1.6] font-normal">
-                      {item.testimonial}
-                    </p>
-                  </div>
-
-                  {/* Bottom Link Trigger & Dot Indicators */}
-                  <div className="pt-2 flex items-center justify-between">
-                    <a
-                      href="#"
-                      className="inline-block text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary transition-all duration-200"
-                    >
-                      Read Full Case Study
-                    </a>
-
-                    {/* स्लाइडिंग इंडिकेटर डॉट्स (नीचे दाईं तरफ) */}
-                    <div className="flex items-center gap-1.5 pr-2">
-                      {portfolioItems.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setCurrentIndex(idx)}
-                          className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
-                          aria-label={`Go to slide ${idx + 1}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                </div>
-
               </div>
-            ))}
-          </div>
-           
 
-        </div>
+              {/* Metric Stats Cards Layout */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {item.metrics.map((metric) => (
+                  <div key={metric.id} className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4">
+                    <div className="text-primary text-3xl">
+                      {metric.icon}
+                    </div>
+                    <div>
+                      <span className="block text-2xl font-bold text-white tracking-tight">{metric.value}</span>
+                      <span className="block text-[#71717a] text-[11px] font-medium mt-0.5">{metric.label}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Testimonial Box */}
+              <div className="bg-gradient-to-t from-black/80 to-transparent border-l-[6px] border-primary hover-glow-card rounded-xl p-6 relative overflow-hidden">
+                <p className="text-[#d4d4d8] text-[10px] lg:text-[12px] 1xl:text-base leading-[1.6] font-normal">
+                  {item.testimonial}
+                </p>
+              </div>
+
+              {/* Bottom Link Trigger & Dot Indicators */}
+              <div className="pt-2 flex items-center justify-between">
+                <a
+                  href="#"
+                  className="inline-block text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary transition-all duration-200"
+                >
+                  Read Full Case Study
+                </a>
+
+                {/* स्लाइडिंग इंडिकेटर डॉट्स */}
+                <div className="flex items-center gap-1.5 pr-2">
+                  {portfolioItems.map((_, idx) => {
+                    // अगर हम आखरी डुप्लिकेट कार्ड पर हैं, तो पहला डॉट एक्टिव दिखना चाहिए
+                    const isActive = idx === currentIndex || (currentIndex === portfolioItems.length && idx === 0);
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => handleDotClick(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
 
       </div>
 
