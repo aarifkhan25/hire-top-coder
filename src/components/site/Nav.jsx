@@ -130,6 +130,7 @@ export function Nav() {
             : " bg-[#0d0d0d]/10"
         }`}
       >
+         <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
         <div className="">
           <Link href="/" onClick={closeMobileMenu}>
             <Image 
@@ -222,7 +223,7 @@ export function Nav() {
                 </AnimatePresence>
               </div>
             ))}
-          </div>
+          </div></div>
     
 
         {/* राइट साइड बटन्स */}

@@ -170,10 +170,10 @@ export  function Footer() {
 
       </div>
       
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-t border-white/[0.07]">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pt-10 border-t border-white/[0.07]">
 
           {/* Brand */}
-<div className=" w-full lg:col-span-4">
+<div className="   w-full lg:col-span-4">
 <Link href="/" className="block">
   {/* लोगो को दबने से बचाने के लिए wrapper div */}
   <div className="relative w-[140px] h-[45px] sm:w-[160px] sm:h-[50px] md:w-[180px] md:h-[55px] lg:w-[200px] lg:h-[60px]">

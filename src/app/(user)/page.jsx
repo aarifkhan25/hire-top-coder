@@ -668,7 +668,7 @@ function SectionHead({
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
       </div>
       <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
-      {sub && <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl 2xl:text-[22px] font-medium">{sub}</p>}
+      {sub && <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">{sub}</p>}
     </div>
   );
 }
