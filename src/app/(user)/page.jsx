@@ -8,7 +8,8 @@ import {
 
 import { FiTrendingUp } from 'react-icons/fi';
 import { BsStopwatch, BsPeople, BsLightningCharge, BsShieldCheck, BsGraphUp } from 'react-icons/bs'
-import {GhostButton,PrimaryButton} from "@/components/site/PageShell.jsx"
+import {GhostButton,PrimaryButton} from "@/components/site/PageShell.jsx";
+import {Reveal} from "@/components/site/Reveal.jsx"
 import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 
 
@@ -166,17 +167,18 @@ export default function Index() {
         animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
+
         <Hero />
         <ExpertsRow />
         <Marquee />
-        {/* <Services /> */}
+      
         <Portfolio />
-        {/* <How /> */}
-        {/* <Stats /> */}
+       
         <Testimonials />
         <Blog />
         <CTA />
-        {/* <Testimonial/> */}
+    
+      
       </motion.main>
   
     </div>
@@ -293,45 +295,7 @@ function Marquee() {
   );
 }
 
-function Services() {
-  return (
-    <section id="services" className="relative py-28 px-4 sm:px-6">
-      <div className="w-full">
-        <SectionHead
-          eyebrow="Signature services"
-          title={<>Hand-picked, <span className="text-gradient-purple">ready to ship.</span></>}
-          sub="Fixed-scope packages from our top 1% — launch in days, not quarters."
-        />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((s) => (
-            <article key={s.title} className="group relative glass rounded-2xl overflow-hidden hover-glow-card">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/40 via-accent/20 to-black relative overflow-hidden">
-                <div className="absolute inset-0 bg-dots opacity-40" />
-                <div className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-white text-black px-2.5 py-1 rounded-full font-extrabold">
-                  {s.tag}
-                </div>
-                <div className="absolute inset-0 grid place-items-center">
-                  < LuSparkles className="size-14 text-white/80 animate-float" />
-                </div>
-              </div>
-              <div className="p-5">
-                <div className="text-xs text-foreground/60 mb-1 font-medium">{s.by}</div>
-                <h3 className="font-bold text-lg mb-3 group-hover:text-primary transition">{s.title}</h3>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-xs">
-                    <LuStar className="size-3.5 fill-primary text-primary" />
-                    <span className="font-semibold">{s.rating}</span>
-                  </div>
-                  <div className="text-sm font-display font-extrabold text-white">{s.price}</div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 function Portfolio() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
@@ -363,18 +327,17 @@ function Portfolio() {
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
 
-        {/* =========================================================
-            SLIDER VIEWPORT (बिना साइज़ बदले हॉरिजॉन्टल स्लाइड एनीमेशन के लिए)
-            ========================================================= */}
         <div className="w-full overflow-hidden mt-14">
+        
+
           <div 
             className="flex w-full transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
+            >
             {portfolioItems.map((item) => (
               <div 
-                key={item.id} 
-                className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch p-5 btn-glass rounded-sm"
+              key={item.id} 
+              className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch p-5 btn-glass rounded-sm"
               >
                 
                 {/* left VISUAL SIDE */}
@@ -454,67 +417,22 @@ function Portfolio() {
               </div>
             ))}
           </div>
+           
+
         </div>
 
       </div>
 
       <div className="mt-12 flex justify-center">
+        <Reveal>
+
         <GhostButton>View All Case Studies</GhostButton>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-
-function How() {
-  return (
-    <section id="how" className="relative py-28 px-4 sm:px-6">
-      <div className="w-full">
-        <SectionHead
-          eyebrow="How Hire Top Coder works"
-          title={<>From brief to <span className="text-gradient-purple">brilliance</span> in minutes.</>}
-          sub="A cinematic hiring experience, powered by AI-curated matching."
-        />
-        <div className="mt-16 grid md:grid-cols-3 gap-5 relative">
-          <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-          {steps.map((s) => (
-            <div key={s.n} className="relative glass rounded-2xl p-8">
-              <div className=" font-sans text-xs text-primary mb-4 font-bold">{s.n}</div>
-              <h3 className="text-2xl font-bold mb-3">{s.t}</h3>
-              <p className="text-foreground/75 font-medium leading-relaxed">{s.d}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Stats() {
-  const items = [
-    { i: LuShieldCheck, t: "Vetted & verified", d: "Every expert passes a 5-stage screening." },
-    { i: LuZap,         t: "47s avg. match",    d: "AI matching, human curation." },
-    { i: LuGlobe,      t: "Worldwide reach",   d: "Talent across 72 countries, 24/7." },
-    { i: LuCheck,       t: "Outcome guarantee", d: "Pay only when milestones land." },
-  ];
-  return (
-    <section id="enterprise" className="relative py-20 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
-      <div className="w-full grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {items.map((x) => (
-          <div key={x.t} className="glass rounded-2xl p-6 flex gap-4 items-start">
-            <div className="size-10 rounded-lg bg-primary/20 grid place-items-center shrink-0 border border-primary/30">
-              <x.i className="size-5 text-primary" />
-            </div>
-            <div>
-              <div className="font-bold">{x.t}</div>
-              <div className="text-sm text-foreground/70 mt-1 font-medium">{x.d}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 function Testimonials() {
   return (
@@ -655,6 +573,7 @@ function Blog() {
 function CTA() {
   return (
     <section className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+      <Reveal>
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative">
@@ -669,7 +588,7 @@ function CTA() {
             <GhostButton>Become an Expert</GhostButton>
           </div>
         </div>
-      </div>
+      </div></Reveal>
     </section>
   );
 }
@@ -680,6 +599,7 @@ function SectionHead({
   eyebrow, title, sub,
 }) {
   return (
+    <Reveal>
     <div className="text-center max-w-2xl mx-auto">
       <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
@@ -687,5 +607,6 @@ function SectionHead({
       <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
       {sub && <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">{sub}</p>}
     </div>
+    </Reveal>
   );
 }

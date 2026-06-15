@@ -127,7 +127,7 @@ export function Nav() {
         onMouseLeave={() => setHoveredIndex(null)}
         className={`w-full flex items-center justify-between transition-all duration-500 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 ${
           isScrolled
-            ? "bg-[oklch(0.14_0.02_290/0.6)] backdrop-blur-[18px] [-webkit-backdrop-filter:blur(18px)] border-b border-[oklch(0.62_0.26_305/0.15)]  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
+            ? "bg-[oklch(0.14_0.02_290/0.6)] md:-mt-[2px] backdrop-blur-[18px] [-webkit-backdrop-filter:blur(18px)] border-b border-[oklch(0.62_0.26_305/0.15)]  shadow-[0_8px_40px_-12px_oklch(0.62_0.26_305/0.5)]"
             : " bg-[#0d0d0d]/10"
         }`}
       >
@@ -175,7 +175,7 @@ export function Nav() {
                       exit={{ opacity: 0, y: 15 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className={`fixed left-0 right-0 ${isScrolled
-            ?"top-[63px] 2xl:top-[83px]":"top-[100px] 2xl:top-[120px]"}   w-full z-50 pointer-events-auto bg-black/40 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-12 overflow-hidden`}
+            ?"top-[63px] 2xl:top-[100px]":"top-[100px] 2xl:top-[120px]"}   w-full z-50 pointer-events-auto bg-black/40 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-12 overflow-hidden`}
                     >
                       {/* 🌌 आपके कोड का ओरिजिनल ग्रेडिएंट ब्लर इफ़ेक्ट (बैकग्राउंड में रहेगा) */}
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
