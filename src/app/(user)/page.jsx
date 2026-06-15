@@ -602,34 +602,51 @@ function Blog() {
           title={<>Insights, trends & <span className="text-gradient-purple">digital innovation.</span></>}
           sub="Explore the latest thoughts on design, AI, branding, product development and modern digital experiences."
         />
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {posts.map((p) => (
-            <article key={p.title} className="group glass rounded-2xl overflow-hidden hover-glow-card flex flex-col">
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <Image  priority={false} loading ="lazy" src={p.img} alt={p.title}  width={1024} height={1024}
-                  className="size-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
-                  {p.cat}
-                </span>
-              </div>
-              <div className="p-5 flex-1 flex flex-col">
-                <h3 className="font-display text-lg font-extrabold leading-snug group-hover:text-primary transition">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/75 font-medium leading-relaxed flex-1">{p.excerpt}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 text-xs text-foreground/60 font-medium">
-                    <LuClock className="size-3.5" /> {p.read}
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-sm font-bold text-primary group-hover:gap-2 transition-all">
-                    Read More <LuArrowRight className="size-3.5" />
-                  </span>
-                </div>
-              </div>
-            </article>
-          ))}
+    <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  {posts.map((p) => (
+
+    <article key={p.title} className="group glass rounded-2xl hover-glow-card flex flex-col isolation-isolate">
+      
+
+      <div className="aspect-[4/3] rounded-t-2xl overflow-hidden relative bg-[#0A0A0A] select-none">
+        <Image  
+          priority={false} 
+          loading="lazy" 
+          src={p.img} 
+          alt={p.title}  
+          width={1024} 
+          height={1024}
+          /* 3. 'will-change-transform' और 'style' में backface-visibility जोड़ने से ब्राउज़र पिक्सल को कभी मिस-अलाइन नहीं करेगा */
+          className="size-full object-cover group-hover:scale-110 will-change-transform transition-transform duration-700 pointer-events-none" 
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+        <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
+          {p.cat}
+        </span>
+      </div>
+
+   
+      <div className="p-5 flex-1 flex flex-col rounded-b-2xl bg-[#0A0A0A]/40 mt-[-2px] relative z-20 pt-[22px]">
+        <h3 className="font-display text-lg font-extrabold leading-snug group-hover:text-primary transition">
+          {p.title}
+        </h3>
+        <p className="mt-2 text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">
+          {p.excerpt}
+        </p>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="inline-flex items-center gap-1.5 text-xs text-foreground/60 font-medium">
+            <LuClock className="size-3.5" /> {p.read}
+          </span>
+          <span className="inline-flex items-center gap-1 text-sm font-bold text-primary group-hover:gap-2 transition-all">
+            Read More <LuArrowRight className="size-3.5" />
+          </span>
         </div>
+      </div>
+
+    </article>
+  ))}
+</div>
       </div>
     </section>
   );

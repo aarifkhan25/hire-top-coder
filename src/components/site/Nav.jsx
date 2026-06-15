@@ -243,7 +243,7 @@ export function Nav() {
 
       {/* मोबाइल रेस्पॉन्सिव ओवरले */}
       <div 
-        className={`md:hidden fixed inset-0 top-[64px] h-[calc(100vh-64px)] w-full bg-black/95 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 top-[50px] h-[calc(100vh-50px)] w-full bg-black/95 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -289,7 +289,7 @@ export function Nav() {
             </div>
           ))}
           <Link href="/starthiring" onClick={closeMobileMenu} className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer">
-            Start Hiring Talents
+            Talk To Expert
           </Link>
         </div>
       </div>
