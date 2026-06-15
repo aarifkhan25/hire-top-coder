@@ -58,21 +58,42 @@ const navData = [
     },
     columns: [
       {
-        title: "By Domain & Roles",
+        title: "Delivery Models",
         links: [
-          { name: "Early-Stage Startups Talent", desc: "Flexible, agile engineers expert in product iteration", href: "/hire/stages/early-stage-startups" },
-          { name: "UI/UX & Product Designers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
-          { name: "Full Stack Engineers", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" }
+     
+          { name: "UI/UX  Designers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
+          { name: "Full Stack Developer", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
+          
+          { name: "AI-ML Engeeners", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
+           { name: "Mobile Developers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
         ]
       },
       {
-        title: "By Industry Specialization",
+        title: "Hire By Technology",
         links: [
-          { name: "AI & Machine Learning", desc: "Engineers specializing in LLMs, PyTorch, and NLP models", href: "/hire/industries/ai-machine-learning" },
-          { name: "Fintech & Blockchain", desc: "Secure architecture expert developers for financial apps", href: "/hire/industries/fintech" },
-          { name: "SaaS & Cloud Platforms", desc: "Scaling microservices and distributed cloud networks", href: "/hire/industries/saas" }
+          { name: "React", desc:"",href:"/" },
+          { name: "Python/AI", desc:"",href:"/" },
+          { name: "Android", desc:"",href:"/" },
+        
+          
+          
+          
+          
         ]
-      }
+      },
+         {
+        title: "Hire By Technology",
+        links: [
+          { name: "Node JS", desc:"",href:"/" },
+          { name: "AWS", desc:"",href:"/" },
+          { name: "AI & Machine Learning", desc:"",href:"/" },
+          { name: "Webflow", desc:"",href:"/" },
+          
+          
+          
+          
+        ]
+      },
     ]
   }, 
   { 
@@ -219,81 +240,84 @@ export function Nav() {
                 </Link>
 
                 {/* 🛠️ डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
-                <AnimatePresence>
-                  {hoveredIndex === i && item.columns && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className={`fixed left-0 right-0 ${isScrolled
-                        ? "top-[63px] 2xl:top-[100px]" : "top-[100px] 2xl:top-[120px]"} w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-10 overflow-hidden`}
-                    >
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
-                      
-                      <div className="relative w-full z-10 text-left">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                          
-                          {/* 1. Left Column: Title & Dynamic Featured Box */}
-                          <div className="lg:col-span-4 border-r border-white/10 pr-8 flex flex-col w-full  max-w-xs justify-between text-left">
-                            <div>
-                              <h3 className="text-xl font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
-                              <p className="text-xs text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
-                                {item.dropdownDesc}
-                              </p>
-                            </div>
-                            
-                            {/* Featured Card UI Box */}
-                            {item.featuredCard && (
-                              <div className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col gap-2.5 text-left">
-                                <span className="text-[10px] font-bold text-primary tracking-wider uppercase">
-                                  {item.featuredCard.tag}
-                                </span>
-                                <h4 className="text-sm font-bold text-white leading-snug font-mulish">
-                                  {item.featuredCard.title}
-                                </h4>
-                                <p className="text-[11px] text-gray-400 leading-normal font-sans">
-                                  {item.featuredCard.desc}
-                                </p>
-                                <Link href={item.featuredCard.href} className="text-[11px] font-bold text-primary hover:underline mt-2 inline-block">
-                                  {item.featuredCard.actionText}
-                                </Link>
-                              </div>
-                            )}
-                          </div>
+          <AnimatePresence>
+  {hoveredIndex === i && item.columns && (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 15 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      className={`fixed left-0 right-0 ${
+        isScrolled ? "top-[63px] 2xl:top-[100px]" : "top-[100px] 2xl:top-[120px]"
+      } w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-10 overflow-hidden`}
+    >
+      {/* बैकग्राउंड ग्लो इफेक्ट */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
+      
+      <div className="relative w-full z-10 text-left">
+        {/* पूरे लेआउट को 12 कॉलम्स में बांटा ताकि 1:3 का सही अनुपात (Ratio) मिले */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* 1. Left Column: Title & Dynamic Featured Box (अब col-span-3 लिया है ताकि राइट साइड को ज़्यादा जगह मिले) */}
+          <div className="lg:col-span-3 border-r border-white/10 pr-6 flex flex-col w-full justify-between text-left">
+            <div>
+              <h3 className="text-xl font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
+              <p className="text-xs text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
+                {item.dropdownDesc}
+              </p>
+            </div>
+            
+            {/* Featured Card UI Box */}
+            {item.featuredCard && (
+              <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
+                <span className="text-[10px] font-bold text-primary tracking-wider uppercase">
+                  {item.featuredCard.tag}
+                </span>
+                <h4 className="text-sm font-bold text-white leading-snug font-mulish">
+                  {item.featuredCard.title}
+                </h4>
+                <p className="text-[11px] text-gray-400 leading-normal font-sans">
+                  {item.featuredCard.desc}
+                </p>
+                <Link href={item.featuredCard.href} className="text-[11px] font-bold text-primary hover:underline mt-2 inline-block">
+                  {item.featuredCard.actionText}
+                </Link>
+              </div>
+            )}
+          </div>
 
-                          {/* 2. Right Columns: Standardized Split Layout (2 Columns) */}
-                          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 pl-4">
-                            {item.columns.map((col, colIdx) => (
-                              <div key={colIdx} className="flex flex-col gap-5 text-left">
-                                <h4 className="text-xs font-semibold tracking-wider text-gray-500 uppercase font-sans">
-                                  {col.title}
-                                </h4>
-                                <div className="flex flex-col gap-5">
-                                  {col.links.map((link, linkIdx) => (
-                                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left">
-                                      {/* स्क्वायर डिज़ाइन बॉक्स (जैसे इमेज में है) */}
-                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
-                                      <div>
-                                        <h5 className="text-sm font-bold text-white group-hover:text-primary transition-colors font-mulish">
-                                          {link.name}
-                                        </h5>
-                                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
-                                          {link.desc}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-
-                        </div>
+          {/* 2. Right Columns: 3 Columns Layout (col-span-9 और grid-cols-3 किया गया है) */}
+          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6 pl-2">
+            {item.columns.map((col, colIdx) => (
+              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
+                <h4 className="text-xs font-semibold tracking-wider text-gray-500 uppercase font-sans">
+                  {col.title}
+                </h4>
+                <div className="flex flex-col gap-5">
+                  {col.links.map((link, linkIdx) => (
+                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-3 group text-left">
+                      {/* स्क्वायर डिज़ाइन बॉक्स */}
+                      <div className="w-9 h-9 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
+                      <div>
+                        <h5 className="text-sm font-bold text-white group-hover:text-primary transition-colors font-mulish">
+                          {link.name}
+                        </h5>
+                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
+                          {link.desc}
+                        </p>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
               </div>
             ))}
           </div>
