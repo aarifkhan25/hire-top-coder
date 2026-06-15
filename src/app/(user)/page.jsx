@@ -628,7 +628,7 @@ function Blog() {
 
    
       <div className="p-5 flex-1 flex flex-col rounded-b-2xl bg-[#0A0A0A]/40 mt-[-2px] relative z-20 pt-[22px]">
-        <h3 className="font-display text-lg font-extrabold leading-snug group-hover:text-primary transition">
+        <h3 className=" text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition">
           {p.title}
         </h3>
         <p className="mt-2 text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">

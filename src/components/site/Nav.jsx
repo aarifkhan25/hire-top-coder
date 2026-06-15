@@ -104,8 +104,9 @@ export function Nav() {
     <header className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-500">
       <ScrollProgress />
       
-      {/* टॉप बार */}
+     
       <div className="w-full h-auto hidden md:block border-b border-white/5">
+       {/* contact section */}
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
           <div className="text-xs lg:text-sm font-sans text-foreground/85">
             Trusted by 500+ clients worldwide
@@ -121,7 +122,7 @@ export function Nav() {
         </div>
       </div>
 
-      {/* मुख्य नेविगेशन */}
+      {/* navbar*/}
       <nav
         onMouseLeave={() => setHoveredIndex(null)}
         className={`w-full flex items-center justify-between transition-all duration-500 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 ${
