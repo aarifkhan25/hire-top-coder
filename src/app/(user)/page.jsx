@@ -354,7 +354,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
           title={<>Selected work that <span className="text-gradient-purple">speaks <br className="hidden md:block"/> for itself.</span></>}
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
-
+<Reveal>
     <div className="w-full overflow-hidden mt-14">
       
       {/* मुख्य स्लाइडिंग कंटेनर */}
@@ -364,9 +364,9 @@ const [currentIndex, setCurrentIndex] = useState(0);
       >
         {extendedItems.map((item, index) => (
           <div 
-            // चूंकि पहले आइटम की डुप्लिकेट है, इसलिए key को सुरक्षित रखने के लिए index का उपयोग कर रहे हैं
+       
             key={`${item.id}-${index}`} 
-            className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch   py-10 px-20 btn-glass rounded-sm"
+            className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch   py-5 px-10 2xl:px-20 bg-[oklch(0.18_0.02_290_/_0.7)] backdrop-filter backdrop-blur-[18px] border-[1px] border-[solid] border-[oklch(0.62 0.26 305 / 0.7)] [transition:all_0.3s_cubic-bezier(0.4,_0,_0.2,_1)] rounded-sm"
           >
             
             {/* left VISUAL SIDE */}
@@ -384,7 +384,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
               
               {/* Typography Header Section */}
               <div className="space-y-4">
-                <h2 className="text-xl md:text-3xl lg:text-4xl 2xl:text-[40px] font-medium tracking-tight text-white leading-[1.2]">
+                <h2 className="text-xl md:text-3xl lg:text[34px] 2xl:text-[40px] font-medium tracking-tight text-white leading-[1.2]">
                   {item.title}
                 </h2>
                 
@@ -450,7 +450,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       </div>
 
     </div>
-
+</Reveal>
       </div>
 
       <div className="mt-12 flex justify-center">
@@ -472,6 +472,7 @@ function Testimonials() {
           eyebrow="Trusted by builders"
           title={<>The new standard for <span className="text-gradient-purple">hiring talent.</span></>}
         />
+        <Reveal>
        <div className="grid grid-cols-1 pt-20 md:grid-cols-2 gap-5 lg:gap-10 items-stretch">
           
           {testimonials.map((review) => (
@@ -535,6 +536,7 @@ function Testimonials() {
           ))}
 
         </div>
+</Reveal>
       </div>
     </section>
   );
@@ -550,6 +552,7 @@ function Blog() {
           title={<>Insights, trends & <span className="text-gradient-purple">digital innovation.</span></>}
           sub="Explore the latest thoughts on design, AI, branding, product development and modern digital experiences."
         />
+        <Reveal>
     <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
   {posts.map((p) => (
 
@@ -594,7 +597,7 @@ function Blog() {
 
     </article>
   ))}
-</div>
+</div></Reveal>
       </div>
     </section>
   );

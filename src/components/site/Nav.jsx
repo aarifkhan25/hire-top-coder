@@ -47,8 +47,8 @@ const navData = [
   { 
     name: "Hire Developers", 
     href: "/hire", 
-    dropdownTitle: "Hire Talent.",
-    dropdownDesc: "Access the top 1% elite developers, fully vetted and ready to scale.",
+    dropdownTitle: "Hire Developers.",
+    dropdownDesc: "End-to end digital engineering built around your product goals.",
     featuredCard: {
       tag: "Vetting Process",
       title: "Rigorous 5-Step Talent Assessment",
@@ -235,10 +235,10 @@ export function Nav() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                           
                           {/* 1. Left Column: Title & Dynamic Featured Box */}
-                          <div className="lg:col-span-4 border-r border-white/10 pr-8 flex flex-col justify-between text-left">
+                          <div className="lg:col-span-4 border-r border-white/10 pr-8 flex flex-col w-full  max-w-xs justify-between text-left">
                             <div>
                               <h3 className="text-xl font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
-                              <p className="text-xs text-gray-400 font-medium leading-relaxed font-mulish mb-6">
+                              <p className="text-xs text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
                                 {item.dropdownDesc}
                               </p>
                             </div>
@@ -246,7 +246,7 @@ export function Nav() {
                             {/* Featured Card UI Box */}
                             {item.featuredCard && (
                               <div className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col gap-2.5 text-left">
-                                <span className="text-[10px] font-bold text-[#b07eff] tracking-wider uppercase">
+                                <span className="text-[10px] font-bold text-primary tracking-wider uppercase">
                                   {item.featuredCard.tag}
                                 </span>
                                 <h4 className="text-sm font-bold text-white leading-snug font-mulish">
@@ -255,7 +255,7 @@ export function Nav() {
                                 <p className="text-[11px] text-gray-400 leading-normal font-sans">
                                   {item.featuredCard.desc}
                                 </p>
-                                <Link href={item.featuredCard.href} className="text-[11px] font-bold text-[#b07eff] hover:underline mt-2 inline-block">
+                                <Link href={item.featuredCard.href} className="text-[11px] font-bold text-primary hover:underline mt-2 inline-block">
                                   {item.featuredCard.actionText}
                                 </Link>
                               </div>
@@ -273,12 +273,12 @@ export function Nav() {
                                   {col.links.map((link, linkIdx) => (
                                     <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left">
                                       {/* स्क्वायर डिज़ाइन बॉक्स (जैसे इमेज में है) */}
-                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-md bg-white/5 transition-colors group-hover:border-[#b07eff]/40" />
+                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
                                       <div>
                                         <h5 className="text-sm font-bold text-white group-hover:text-primary transition-colors font-mulish">
                                           {link.name}
                                         </h5>
-                                        <p className="text-xs text-gray-400 mt-0.5 leading-normal">
+                                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
                                           {link.desc}
                                         </p>
                                       </div>
