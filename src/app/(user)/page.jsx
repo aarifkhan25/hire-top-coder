@@ -24,10 +24,10 @@ const work3 = "/assets/work-3.png";
 const work4 = "/assets/work-4.png";
 const work5 = "/assets/work-5.jpg";
 const work6 = "/assets/work-6.jpg";
-const blog1 = "/assets/blog-1.jpg";
-const blog2 = "/assets/blog-2.jpg";
-const blog3 = "/assets/blog-3.jpg";
-const blog4 = "/assets/blog-4.jpg";
+const blog1 = "/assets/blog-1.png";
+const blog2 = "/assets/blog-2.png";
+const blog3 = "/assets/blog-3.png";
+const blog4 = "/assets/blog-4.png";
 
 
 const experts = [
@@ -205,7 +205,7 @@ function Hero() {
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-12 text-sm md:text-base lg:text-xl 2xl:text-[22px] text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="mt-12 text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly available.
         </p>
@@ -644,7 +644,7 @@ function CTA() {
           <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
             Your next hire is <br /><span className="text-gradient-purple">one search away.</span>
           </h2>
-          <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-medium text-sm md:text-base lg:text-xl 2xl:text-[22px]">
+          <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-sm md:text-base lg:text-xl ">
             Join thousands of teams shipping faster with the world's most curated talent network.
           </p>
           <div className="mt-9 flex flex-wrap gap-3 justify-center">
