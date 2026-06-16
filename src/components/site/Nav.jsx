@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
-// 🌌 पूरी तरह डायनामिक 3-कॉलम मेगा मेनू डेटा स्ट्रक्चर
+// 🌌 पूरी तरह डायनामिक मेगा मेनू डेटा स्ट्रक्चर (As per resources.png specs)
 const navData = [
   { 
     name: "Services", 
@@ -60,12 +60,10 @@ const navData = [
       {
         title: "Delivery Models",
         links: [
-     
           { name: "UI/UX  Designers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
           { name: "Full Stack Developer", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
-          
           { name: "AI-ML Engeeners", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
-           { name: "Mobile Developers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
+          { name: "Mobile Developers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
         ]
       },
       {
@@ -74,57 +72,45 @@ const navData = [
           { name: "React", desc:"",href:"/" },
           { name: "Python/AI", desc:"",href:"/" },
           { name: "Android", desc:"",href:"/" },
-        
-          
-          
-          
-          
-        ]
-      },
-         {
-        title: "Hire By Technology",
-        links: [
-          { name: "Node JS", desc:"",href:"/" },
+           { name: "Node JS", desc:"",href:"/" },
           { name: "AWS", desc:"",href:"/" },
-          { name: "AI & Machine Learning", desc:"",href:"/" },
+ 
           { name: "Webflow", desc:"",href:"/" },
-          
-          
-          
-          
         ]
       },
+   
     ]
   }, 
   { 
     name: "Resources", 
     href: '/resources',
-    dropdownTitle: "Resources.",
-    dropdownDesc: "Gain insights, read updates, and explore technical breakdowns.",
-    featuredCard: {
-      tag: "Latest Insights",
-      title: "The 2026 Tech Stack Playbook",
-      desc: "An in-depth whitepaper on which frameworks are driving maximum ROI for enterprise projects.",
-      actionText: "Download playbook",
-      href: "/resources/playbook"
-    },
+    dropdownTitle: "Resources",
+    dropdownDesc: "Guides, Tools, and insights to help you hire smarter and build faster",
+    isResourcesTemplate: true, // स्पेशल लेआउट को ट्रिगर करने के लिए फ्लैग
+    leftSubTitle: "Delivery Models",
+    leftLinks: [
+      { name: "Developer", desc: "Calculate your Total cost of hire", href: "/" },
+      { name: "Free Scoping template", desc: "Define your project before the first call", href: "/" }
+    ],
     columns: [
       {
-        title: "Knowledge Hub",
+        title: "LEARN",
         links: [
-          { name: "Engineering Blogs", desc: "Deep dives into architecture, performance, and code", href: "/resources/blogs" },
-          { name: "Client Case Studies", desc: "Real success stories from global tech companies", href: "/resources/case-studies" },
-          { name: "Whitepapers", desc: "Technical guides on security and microservices", href: "/resources/whitepapers" }
-        ]
-      },
-      {
-        title: "Support & Help",
-        links: [
-          { name: "Frequently Asked Questions", desc: "Clear answers about hiring, billing, and trial phases", href: "/resources/faq" },
-          { name: "Developer Documentation", desc: "Integration protocols and infrastructure standards", href: "/resources/docs" }
+          { name: "Hiring Guides& FAQs", desc: "Everything you need before hiring", href: "/" },
+          { name: "Offshore Dev Rates 2025", desc: "India vs eastern Europe vs LATAM", href: "/" },
+          { name: "Blog & Insights", desc: "Tech tips Hiring guides industry trends", href: "/" }
         ]
       }
-    ]
+    ],
+    proofSection: {
+      title: "PROOF AND COMPARISION",
+      cards: [
+        { tag: "CASE STUDY", title: "Broker Remarks - listing Platform Rebuild", meta: "Flutter - Firebase  6weeks", href: "/" },
+        { tag: "GUIDE 2025", title: "Dedicated Dev vs Freelancer - The Real difference", meta: "8 min read", href: "/" },
+        { tag: "COMPARISION", title: "Staff Augmentation vs dedicated Team", meta: "5 min Read", href: "/" },
+        { tag: "CASE STUDY", title: "Rolling Star Casino-Full React Platform", meta: "React JS  10 weeks", href: "/" }
+      ]
+    }
   },
   { 
     name: "Company",
@@ -203,8 +189,9 @@ export function Nav() {
             : " bg-[#0d0d0d]/10"
         }`}
       >
-        <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
-          <div>
+        <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85 w-full">
+                  <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
+
             <Link href="/" onClick={closeMobileMenu}>
               <Image 
                 width={500} 
@@ -215,7 +202,7 @@ export function Nav() {
                 className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
               />
             </Link>
-          </div>
+          
 
           {/* डेस्कटॉप मेनू */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
@@ -232,109 +219,197 @@ export function Nav() {
                 >
                   <span className="flex justify-center items-center gap-1">
                     {item.name}
-                    {item.columns && (
+                    {(item.columns || item.isResourcesTemplate) && (
                       <FiChevronDown className={`w-3 h-3 transition-transform duration-200 ${hoveredIndex === i ? 'rotate-180' : ''}`} />
                     )}
                   </span>
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
                 </Link>
 
-                {/* 🛠️ डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
-          <AnimatePresence>
-  {hoveredIndex === i && item.columns && (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 15 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`fixed left-0 right-0 ${
-        isScrolled ? "top-[63px] 2xl:top-[100px]" : "top-[100px] 2xl:top-[120px]"
-      } w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-10 overflow-hidden`}
-    >
-      {/* बैकग्राउंड ग्लो इफेक्ट */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
-      
-      <div className="relative w-full z-10 text-left">
-        {/* पूरे लेआउट को 12 कॉलम्स में बांटा ताकि 1:3 का सही अनुपात (Ratio) मिले */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* 1. Left Column: Title & Dynamic Featured Box (अब col-span-3 लिया है ताकि राइट साइड को ज़्यादा जगह मिले) */}
-          <div className="lg:col-span-3 border-r border-white/10 pr-6 flex flex-col w-full justify-between text-left">
-            <div>
-              <h3 className="text-xl font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
-              <p className="text-xs text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
-                {item.dropdownDesc}
-              </p>
-            </div>
-            
-            {/* Featured Card UI Box */}
-            {item.featuredCard && (
-              <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
-                <span className="text-[10px] font-bold text-primary tracking-wider uppercase">
-                  {item.featuredCard.tag}
-                </span>
-                <h4 className="text-sm font-bold text-white leading-snug font-mulish">
-                  {item.featuredCard.title}
-                </h4>
-                <p className="text-[11px] text-gray-400 leading-normal font-sans">
-                  {item.featuredCard.desc}
-                </p>
-                <Link href={item.featuredCard.href} className="text-[11px] font-bold text-primary hover:underline mt-2 inline-block">
-                  {item.featuredCard.actionText}
-                </Link>
-              </div>
-            )}
-          </div>
+                {/* डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
+                <AnimatePresence>
+                  {hoveredIndex === i && (item.columns || item.isResourcesTemplate) && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 15 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className={`fixed left-0 right-0 ${
+                        isScrolled ? "top-[63px] 2xl:top-[100px]" : "top-[100px] 2xl:top-[120px]"
+                      } w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-10 overflow-hidden`}
+                    >
+                      {/* बैकग्राउंड ग्लो इफेक्ट */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
+                      
+                      <div className="relative w-full  z-10 text-left">
+                        
+                        {/* 🛠️ कंडीशनल रेंडरिंग: नया स्पेशल Resources टेम्पलेट (As per resources.png) */}
+                        {item.isResourcesTemplate ? (
+                          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-stretch">
+                            
+                            {/* 1. Left Section: Title + Delivery Models Links */}
+                            <div className="flex flex-col w-full justify-start text-left">
+                              <div>
+                                <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-2">{item.dropdownTitle}</h3>
+                                <p className="text-xs 2xl:text-sm text-gray-400 font-medium leading-relaxed font-mulish mb-8">
+                                  {item.dropdownDesc}
+                                </p>
+                              </div>
+                              
+                              {/* एक्स्ट्रा सब-यूनिट: Delivery Models */}
+                              <div className="flex flex-col gap-5 mt-2">
+                                <h4 className="text-xs font-semibold tracking-wider text-white uppercase font-sans">
+                                  {item.leftSubTitle}
+                                </h4>
+                                <div className="flex flex-col gap-5">
+                                  {item.leftLinks.map((link, lIdx) => (
+                                    <Link key={lIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left w-full">
+                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-md bg-white/5 transition-colors group-hover:border-primary" />
+                                      <div className="flex-1">
+                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                          {link.name}
+                                        </h5>
+                                        <p className="text-xs text-gray-400 mt-1 leading-normal group-hover:text-white">
+                                          {link.desc}
+                                        </p>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
 
-          {/* 2. Right Columns: 3 Columns Layout (col-span-9 और grid-cols-3 किया गया है) */}
-          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6 pl-2">
-            {item.columns.map((col, colIdx) => (
-              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
-                <h4 className="text-xs font-semibold tracking-wider text-gray-500 uppercase font-sans">
-                  {col.title}
-                </h4>
-                <div className="flex flex-col gap-5">
-                  {col.links.map((link, linkIdx) => (
-                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-3 group text-left">
-                      {/* स्क्वायर डिज़ाइन बॉक्स */}
-                      <div className="w-9 h-9 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
-                      <div>
-                        <h5 className="text-sm font-bold text-white group-hover:text-primary transition-colors font-mulish">
-                          {link.name}
-                        </h5>
-                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
-                          {link.desc}
-                        </p>
+                            {/* 2. Middle Section: LEARN Column */}
+                            {item.columns.map((col, colIdx) => (
+                              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
+                                <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                  {col.title}
+                                </h4>
+                                <div className="flex flex-col gap-5">
+                                  {col.links.map((link, linkIdx) => (
+                                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left w-full">
+                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-md bg-white/5 transition-colors group-hover:border-primary" />
+                                      <div className="flex-1">
+                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                          {link.name}
+                                        </h5>
+                                        <p className="text-xs text-gray-400 mt-1 leading-normal group-hover:text-white">
+                                          {link.desc}
+                                        </p>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+
+                            {/* 3. Right Section: PROOF AND COMPARISION 2x2 Grid (Takes 2 Columns of layout) */}
+                            <div className="lg:col-span-2 flex flex-col gap-5 w-full">
+                              <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                {item.proofSection.title}
+                              </h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
+                                {item.proofSection.cards.map((card, cIdx) => (
+                                  <div key={cIdx} className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group">
+                                    <div className="w-full">
+                                      <span className="text-[10px] font-bold text-primary tracking-wider uppercase block mb-1">
+                                        {card.tag}
+                                      </span>
+                                      <h4 className="text-sm font-bold text-white leading-snug font-mulish mb-2 group-hover:text-primary transition-colors">
+                                        {card.title}
+                                      </h4>
+                                      {card.meta && (
+                                        <p className="text-[11px] text-gray-500 font-sans flex items-center gap-1.5 before:content-['•'] before:text-primary">
+                                          {card.meta}
+                                        </p>
+                                      )}
+                                    </div>
+                                    <Link href={card.href} className="text-[11px] font-bold text-primary hover:underline mt-4 inline-block">
+                                      Read case study
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                          </div>
+                        ) : (
+                          /* 🌟 पुराने ऑप्शंस (Services & Hire Developers) का मूल 4-कॉलम लेआउट सुरक्षित */
+                          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-stretch">
+                            
+                            <div className="border-r border-white/10 pr-10 flex flex-col w-full justify-between text-left">
+                              <div>
+                                <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
+                                <p className="text-xs 2xl:text-sm text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
+                                  {item.dropdownDesc}
+                                </p>
+                              </div>
+                              
+                              {item.featuredCard && (
+                                <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
+                                  <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
+                                    {item.featuredCard.tag}
+                                  </span>
+                                  <h4 className="text-sm 2xl:text-base font-bold text-white leading-snug font-mulish">
+                                    {item.featuredCard.title}
+                                  </h4>
+                                  <p className="text-[11px] 2xl:text-xs text-gray-400 leading-normal font-sans">
+                                    {item.featuredCard.desc}
+                                  </p>
+                                  <Link href={item.featuredCard.href} className="text-[11px] 2xl:text-xs font-bold text-primary hover:underline mt-2 inline-block">
+                                    {item.featuredCard.actionText}
+                                  </Link>
+                                </div>
+                              )}
+                            </div>
+
+                            {item.columns.map((col, colIdx) => (
+                              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
+                                <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white/90 uppercase font-sans">
+                                  {col.title}
+                                </h4>
+                                <div className="flex flex-col gap-5">
+                                  {col.links.map((link, linkIdx) => (
+                                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-center gap-3 group text-left">
+                                      <div className="w-9 h-9 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
+                                      <div>
+                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                          {link.name}
+                                        </h5>
+                                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
+                                          {link.desc}
+                                        </p>
+                                      </div>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+
+                          </div>
+                        )}
+                        
                       </div>
-                    </Link>
-                  ))}
-                </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
-
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-              </div>
-            ))}
+</div>
+          {/* राइट साइड बटन्स */}
+          <div data-aos="fade-down" className="flex items-center gap-2">
+            <Link href="/signin" className="hidden group sm:inline-flex items-center gap-2 text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
+              Talk to Expert <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <button
+              className="md:hidden grid place-items-center size-10 rounded-full btn-glass text-white cursor-pointer"
+              aria-label="Menu"
+              onClick={toggleMobileMenu}
+            >
+              {isMobileMenuOpen ? <MdOutlineClose className="w-6 h-6" /> : <FiAlignJustify className="w-6 h-6" />}
+            </button>
           </div>
-        </div>
-
-        {/* राइट साइड बटन्स */}
-        <div data-aos="fade-down" className="flex items-center gap-2">
-          <Link href="/signin" className="hidden group sm:inline-flex items-center gap-2 text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
-            Talk to Expert <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <button
-            className="md:hidden grid place-items-center size-10 rounded-full btn-glass text-white cursor-pointer"
-            aria-label="Menu"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? <MdOutlineClose className="w-6 h-6" /> : <FiAlignJustify className="w-6 h-6" />}
-          </button>
         </div>
       </nav>
 
@@ -348,10 +423,10 @@ export function Nav() {
           {navData?.map((item, i) => (
             <div key={i} className="flex flex-col w-full border-b border-white/5 py-2 text-left">
               <div 
-                onClick={() => item.columns ? toggleMobileDropdown(i) : closeMobileMenu()}
+                onClick={() => (item.columns || item.isResourcesTemplate) ? toggleMobileDropdown(i) : closeMobileMenu()}
                 className="p-2 hover:text-gray-400 cursor-pointer text-white w-full text-lg font-mulish font-semibold flex justify-between items-center text-left"
               >
-                {item.columns ? (
+                {(item.columns || item.isResourcesTemplate) ? (
                   <span className="w-full flex justify-between items-center text-left">
                     {item.name}
                     <FiChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen === i ? 'rotate-180' : ''}`} />
@@ -361,18 +436,36 @@ export function Nav() {
                 )}
               </div>
               
-              {item.columns && mobileDropdownOpen === i && (
+              {/* मोबाइल सब-मेन्यू */}
+              {(item.columns || item.isResourcesTemplate) && mobileDropdownOpen === i && (
                 <div className="pl-4 flex flex-col gap-2 mt-1 bg-white/5 p-3 rounded-lg transition-all text-left">
-                  {item.columns.map((col, cIdx) => (
-                    <div key={cIdx} className="mb-3 text-left">
-                      <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">{col.title}</p>
-                      {col.links.map((link, lIdx) => (
+                  {item.isResourcesTemplate ? (
+                    <>
+                      <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">Delivery Models</p>
+                      {item.leftLinks.map((link, lIdx) => (
                         <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
                           {link.name}
                         </Link>
                       ))}
-                    </div>
-                  ))}
+                      <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mt-2 mb-1">Learn</p>
+                      {item.columns[0].links.map((link, lIdx) => (
+                        <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
+                          {link.name}
+                        </Link>
+                      ))}
+                    </>
+                  ) : (
+                    item.columns.map((col, cIdx) => (
+                      <div key={cIdx} className="mb-3 text-left">
+                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">{col.title}</p>
+                        {col.links.map((link, lIdx) => (
+                          <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ))
+                  )}
                 </div>
               )}
             </div>

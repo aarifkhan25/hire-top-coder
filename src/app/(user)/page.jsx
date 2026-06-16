@@ -3,7 +3,7 @@ import Link from "next/link";
 import {useRef,useState,useEffect} from "react"
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  LuArrowRight,  LuSparkles, LuCheck, LuStar, LuZap, LuShieldCheck, LuGlobe, LuQuote, LuClock,
+  LuArrowRight,   LuStar, LuClock,
 } from "react-icons/lu";
 
 import { FiTrendingUp } from 'react-icons/fi';
@@ -33,18 +33,18 @@ const blog4 = "/assets/blog-4.png";
 
 const experts = [
   // { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
-  { name: "Rahul Jaiswal",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
-  { name: "Maynak Yadav",   role: "angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
-  { name: "Khushi Gupta", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
+  { name: "Rahul J.",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
+  { name: "Maynak Y.",   role: "angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
+  { name: "Khushi G.", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
 
-  { name: "Aarif Khan",    role: "Ract js trainee",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)" },
+  { name: "Aarif K.",    role: "Ract js trainee",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)" },
 
-    { name: "Arun Singh", role: "Team Head",  img: '/assets/arun.png', accent: "oklch(0.65 0.28 320)" },
-      { name: "Kajal Gurjar",    role: "full stack developer",   img: '/assets/kajal.png', accent: "oklch(0.65 0.28 320)" },
-        { name: "Akansha Soni",    role: "ui/ux designer",   img: '/assets/Aakansha.png', accent: "oklch(0.65 0.28 320)" },
+    { name: "Arun S.", role: "Team Head",  img: '/assets/arun.png', accent: "oklch(0.65 0.28 320)" },
+      { name: "Kajal G.",    role: "full stack developer",   img: '/assets/kajal.png', accent: "oklch(0.65 0.28 320)" },
+        { name: "Akansha S.",    role: "ui/ux designer",   img: '/assets/Aakansha.png', accent: "oklch(0.65 0.28 320)" },
 
-    { name: "Neha Rathore", role: "wordpress developer",  img: '/assets/neha.png', accent: "oklch(0.65 0.28 320)" },
-      { name: "Sumit Varma",    role: "BDE",   img: '/assets/sumit.png', accent: "oklch(0.65 0.28 320)" },
+    { name: "Neha R.", role: "wordpress developer",  img: '/assets/neha.png', accent: "oklch(0.65 0.28 320)" },
+      { name: "Sumit V.",    role: "Business Development Executive",   img: '/assets/sumit.png', accent: "oklch(0.65 0.28 320)" },
 ];
 
 const brands = [{img:"/assets/clogo1.png"},{img:"/assets/clogo2.png"},{img:"/assets/clogo3.png"},{img:"/assets/clogo4.png"},{img:"/assets/clogo5.png"},{img:"/assets/clogo6.png"},{img:"/assets/clogo7.png"},{img:"/assets/clogo8.png"},];
@@ -233,7 +233,7 @@ function Hero() {
 
 function ExpertsRow() {
   return (
-    <section id="experts" className="relative -mt-4 pb-24 overflow-hidden">
+    <section id="experts" className="relative -mt-4 pb-24 ">
       <div className="absolute inset-x-0 top-0 h-32  z-10 pointer-events-none" />
       <div className="flex gap-5 animate-scroll-cards w-max px-4">
         {[...experts, ...experts].map((e, i) => (
@@ -246,25 +246,44 @@ function ExpertsRow() {
 
 function ExpertCard({ expert }) {
   return (
-    <article
-      className="relative shrink-0 w-[280px] sm:w-[320px] md:w-[350px] 1xl:w-[380px] rounded-3xl p-2 overflow-hidden"
-      style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)` }}
-    >
-      <div className="rounded-[1.25rem] overflow-hidden bg-black relative">
-        <div
-          className="absolute top-3 left-1/2 -translate-x-1/2 z-10 text-[6px] md:text-[7px] lg:text-[8px] font-sans uppercase tracking-[0.2em] px-3 py-1 rounded-md font-bold"
-          style={{ color: expert.accent, background: "#f9e5ff", border: `1px solid ${expert.accent}` }}
-        >
-          {expert.role}
-        </div>
-        <img src={expert.img} alt={`${expert.name}, ${expert.role}`} width={640} height={800} loading="lazy"
-          className="w-full aspect-[4/5] object-cover" />
-        <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
-          <div className="font-display  text-3xl font-extrabold">{expert.name}</div>
-         
-        </div>
-      </div>
-    </article>
+ <article
+  className="relative shrink-0 w-[280px] sm:w-[320px] md:w-[350px] 1xl:w-[380px] rounded-3xl p-2 "
+  style={{ background: `linear-gradient(180deg, ${expert.accent}, transparent 60%)` }}
+>
+  {/* 🛠️ स्टेप 1: बैज को हमने overflow-hidden वाले डिब से बाहर निकाल दिया */}
+  {/* -top-2 या -top-1 करके आप इसे जितना चाहें उतना ऊपर कार्ड की बॉर्डर के पार दिखा सकते हैं */}
+  <div
+    className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-[8px] md:text-[9px] 2xl:text-[11px] font-sans uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-md font-bold whitespace-nowrap shadow-xl"
+    style={{ 
+      color: expert.accent, 
+      background: "#f9e5ff", 
+      border: `1px solid ${expert.accent}` 
+    }}
+  >
+    {expert.role}
+  </div>
+
+  {/* इमेज और नाम वाला बॉक्स (इसमें overflow-hidden सुरक्षित है) */}
+  <div className="rounded-[1.25rem] overflow-hidden bg-black relative w-full h-full">
+    
+    <img 
+      src={expert.img} 
+      alt={`${expert.name}, ${expert.role}`} 
+      width={640} 
+      height={800} 
+      loading="lazy"
+      className="w-full aspect-[4/5] object-cover" 
+    />
+    
+    <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
+      <div className="font-display text-3xl font-extrabold text-white">{expert.name}</div>
+        <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
+            <LuStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
+          </div>
+    </div>
+
+  </div>
+</article>
   );
 }
 
