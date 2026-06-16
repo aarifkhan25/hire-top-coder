@@ -1,126 +1,246 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from 'next/link';
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { FiAlignJustify, FiChevronDown } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
+import { 
+  FiMenu as Menu, 
+  FiChevronDown as ChevronDown, 
+  FiUsers as Users, 
+  FiPackage as Puzzle,       // Puzzle/Component design representation
+  FiBriefcase as Building2,  // Corporate/Building alternative
+  FiRefreshCw as RefreshCw, 
+
+  FiTrendingUp as TrendingUp, 
+  FiLayout as Layout, 
+  FiCode as Code2, 
+  FiCpu as Brain,            // AI/Brain/Core representation
+  FiSmartphone as Smartphone, 
+  FiServer as Server, 
+  FiFeather as Wand2,        // Creative/Magic alternative
+  FiBookOpen as BookOpen, 
+  FiBarChart2 as BarChart3, 
+  FiEdit3 as PenLine,        // Drawing/Writing representation
+  FiLayers as Calculator,    // Functional grid calculation design
+  FiFileText as FileText, 
+  FiShield as ShieldCheck, 
+  FiHeart as HeartHandshake, // Care/Handshake representation
+  FiStar as Star, 
+  FiBriefcase as Briefcase, 
+  FiLock as Lock, 
+  FiAward as Award, 
+  FiPhone as Phone, 
+  FiArrowRight as ArrowRight 
+} from "react-icons/fi";
+import { IoIosRocket as Rocket } from "react-icons/io";
+import { FaReact,FaPython,FaAndroid,FaNodeJs ,FaAws   } from "react-icons/fa";
+import { FaWebflow } from "react-icons/fa6";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
-import { ArrowRight } from "lucide-react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // 🌌 पूरी तरह डायनामिक मेगा मेनू डेटा स्ट्रक्चर (As per resources.png specs)
 const navData = [
-  { 
-    name: "Services", 
-    href: '/about', 
+  {
+    name: "Services",
+    href: "/about",
     dropdownTitle: "Services.",
-    dropdownDesc: "End-to end digital engineering built around your product goals.",
+    dropdownDesc:
+      "End-to end digital engineering built around your product goals.",
     featuredCard: {
       tag: "Case Study SAAS",
       title: "Broker Remarks - listing Platform Rebuild",
       desc: "Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture.",
       actionText: "Read case study",
-      href: "/work/case-study"
+      href: "/work/case-study",
     },
     columns: [
       {
         title: "Delivery Models",
         links: [
-          { name: "Dedicated Expert Teams", desc: "A full-time developer assigned only to year project", href: "/services/dedicated-teams" },
-          { name: "IT Staff Augmentation", desc: "Plug vetted engineers into your existing team", href: "/services/staff-augmentation" },
-          { name: "Offshore Development Center", desc: "Build your own offshore team with our infrastructure", href: "/services/offshore-center" }
-        ]
+          { icon:<Users/>,
+            name: "Dedicated Expert Teams",
+            desc: "A full-time developer assigned only to year project",
+            href: "/services/dedicated-teams",
+          },
+          { icon:<Puzzle/>,
+            name: "IT Staff Augmentation",
+            desc: "Plug vetted engineers into your existing team",
+            href: "/services/staff-augmentation",
+          },
+          
+          { icon:<Building2/>,
+            name: "Offshore Development Center",
+            desc: "Build your own offshore team with our infrastructure",
+            href: "/services/offshore-center",
+          },
+        ],
       },
       {
         title: "Engineering Services",
         links: [
-          { name: "Legacy System Modernization", desc: "Zero-Downtime upgrades for outdated platforms", href: "/services/modernization" },
-          { name: "MVP Development", desc: "Investor ready product in 12 weeks", href: "/services/mvp-development" },
-          { name: "Scale Your Engineering team", desc: "Add 3-30 engineers in 48-72 hours", href: "/services/scale-team" }
-        ]
-      }
-    ]
-  }, 
-  { 
-    name: "Hire Developers", 
-    href: "/hire", 
+          { icon :<RefreshCw/>,
+            name: "Legacy System Modernization",
+            desc: "Zero-Downtime upgrades for outdated platforms",
+            href: "/services/modernization",
+          },
+          {icon :<Rocket/>,
+            name: "MVP Development",
+            desc: "Investor ready product in 12 weeks",
+            href: "/services/mvp-development",
+          },
+          {icon :<TrendingUp/>,
+            name: "Scale Your Engineering team",
+            desc: "Add 3-30 engineers in 48-72 hours",
+            href: "/services/scale-team",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Hire Developers",
+    href: "/hire",
     dropdownTitle: "Hire Developers.",
-    dropdownDesc: "End-to end digital engineering built around your product goals.",
+    dropdownDesc:
+      "Experts across 50+ technologies. Cover any stack, any role, any stage.",
     featuredCard: {
-      tag: "Vetting Process",
-      title: "Rigorous 5-Step Talent Assessment",
-      desc: "Only the absolute best technical talent makes it through our multi-stage live coding and architectural tests.",
-      actionText: "Learn about vetting",
-      href: "/hire/vetting"
+      tag: "Case Study Mobile",
+      title: "MKGO Transport - Flutter App",
+      desc: "Full ride-booking app shipped in 8 Weeks with the react time sheduling.",
+      actionText: "Read case study",
+      href: "/hire/vetting",
     },
     columns: [
       {
         title: "Delivery Models",
         links: [
-          { name: "UI/UX  Designers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
-          { name: "Full Stack Developer", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
-          { name: "AI-ML Engeeners", desc: "Proficient in modern web stacks (MERN, Next.js, Python)", href: "/hire/categories/full-stack" },
-          { name: "Mobile Developers", desc: "Crafting beautiful, high-converting modern user journeys", href: "/hire/categories/design" },
-        ]
+          {icon:<Layout/>,
+            name: "UI/UX  Designers",
+            desc: "Crafting beautiful, high-converting modern user journeys",
+            href: "/hire/categories/design",
+          },
+          {icon:<Code2/>,
+            name: "Full Stack Developer",
+            desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
+            href: "/hire/categories/full-stack",
+          },
+          {icon:<Brain/>,
+            name: "AI-ML Engeeners",
+            desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
+            href: "/hire/categories/full-stack",
+          },
+          {icon:<Smartphone/>,
+            name: "Mobile Developers",
+            desc: "Crafting beautiful, high-converting modern user journeys",
+            href: "/hire/categories/design",
+          },
+        ],
       },
       {
         title: "Hire By Technology",
         links: [
-          { name: "React", desc:"",href:"/" },
-          { name: "Python/AI", desc:"",href:"/" },
-          { name: "Android", desc:"",href:"/" },
-           { name: "Node JS", desc:"",href:"/" },
-          { name: "AWS", desc:"",href:"/" },
- 
-          { name: "Webflow", desc:"",href:"/" },
-        ]
+          { icon:<FaReact/>, name: "React", desc: "", href: "/" },
+          {  icon:<FaPython/>,  name: "Python/AI", desc: "", href: "/" },
+          { icon:<FaAndroid />,  name: "Android", desc: "", href: "/" },
+        ],
+        links1: [
+          {icon:<FaNodeJs />,  name: "Node JS", desc: "", href: "/" },
+          {icon:<FaAws />,  name: "AWS", desc: "", href: "/" },
+
+          {icon:<FaWebflow/>,  name: "Webflow", desc: "", href: "/" },
+        ],
       },
-   
-    ]
-  }, 
-  { 
-    name: "Resources", 
-    href: '/resources',
+    ],
+  },
+  {
+    name: "Resources",
+    href: "/resources",
     dropdownTitle: "Resources",
-    dropdownDesc: "Guides, Tools, and insights to help you hire smarter and build faster",
+    dropdownDesc:
+      "Guides, Tools, and insights to help you hire smarter and build faster",
     isResourcesTemplate: true, // स्पेशल लेआउट को ट्रिगर करने के लिए फ्लैग
     leftSubTitle: "Delivery Models",
     leftLinks: [
-      { name: "Developer", desc: "Calculate your Total cost of hire", href: "/" },
-      { name: "Free Scoping template", desc: "Define your project before the first call", href: "/" }
+      {icon:<Calculator/>,
+        name: "Developer",
+        desc: "Calculate your Total cost of hire",
+        href: "/",
+      },
+      {icon:<FileText/>,
+        name: "Free Scoping template",
+        desc: "Define your project before the first call",
+        href: "/",
+      },
     ],
     columns: [
       {
         title: "LEARN",
         links: [
-          { name: "Hiring Guides& FAQs", desc: "Everything you need before hiring", href: "/" },
-          { name: "Offshore Dev Rates 2025", desc: "India vs eastern Europe vs LATAM", href: "/" },
-          { name: "Blog & Insights", desc: "Tech tips Hiring guides industry trends", href: "/" }
-        ]
-      }
+          {icon:<BookOpen/>,
+            name: "Hiring Guides& FAQs",
+            desc: "Everything you need before hiring",
+            href: "/",
+          },
+          {icon:<BarChart3/>,
+            name: "Offshore Dev Rates 2025",
+            desc: "India vs eastern Europe vs LATAM",
+            href: "/",
+          },
+          { icon:<PenLine/>,
+            name: "Blog & Insights",
+            desc: "Tech tips Hiring guides industry trends",
+            href: "/",
+          },
+        ],
+      },
     ],
     proofSection: {
       title: "PROOF AND COMPARISION",
       cards: [
-        { tag: "CASE STUDY", title: "Broker Remarks - listing Platform Rebuild", meta: "Flutter - Firebase  6weeks", href: "/" },
-        { tag: "GUIDE 2025", title: "Dedicated Dev vs Freelancer - The Real difference", meta: "8 min read", href: "/" },
-        { tag: "COMPARISION", title: "Staff Augmentation vs dedicated Team", meta: "5 min Read", href: "/" },
-        { tag: "CASE STUDY", title: "Rolling Star Casino-Full React Platform", meta: "React JS  10 weeks", href: "/" }
-      ]
-    }
+        {
+          tag: "CASE STUDY",
+          title: "Broker Remarks - listing Platform Rebuild",
+          meta: <>Flutter - Firebase <span className="text-primary">•</span>6 weeks</>,
+          href: "/",
+        },
+        {
+          tag: "GUIDE 2025",
+          title: "Dedicated Dev vs Freelancer - The Real difference",
+          meta: "8 min read",
+          href: "/",
+        },
+        {
+          tag: "COMPARISION",
+          title: "Staff Augmentation vs dedicated Team",
+          meta: "5 min Read",
+          href: "/",
+        },
+        {
+          tag: "CASE STUDY",
+          title: "Rolling Star Casino-Full React Platform",
+          meta: <>React JS  <span className="text-primary">•</span>10 weeks </>,
+          href: "/",
+        },
+      ],
+    },
   },
-  { 
+  {
     name: "Company",
-    href: '/work',
-  }, 
+    href: "/work",
+  },
 ];
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
-  const x = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+  const x = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.3,
+  });
   return (
     <motion.div
       style={{ scaleX: x, transformOrigin: "0% 50%" }}
@@ -147,7 +267,7 @@ export function Nav() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    setMobileDropdownOpen(null); 
+    setMobileDropdownOpen(null);
   };
 
   const closeMobileMenu = () => {
@@ -162,7 +282,7 @@ export function Nav() {
   return (
     <header className="w-full fixed top-0 inset-x-0 z-50 transition-all duration-500">
       <ScrollProgress />
-      
+
       <div className="w-full h-auto hidden md:block border-b border-white/5">
         {/* contact section */}
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-2 bg-[#0A0A0A]">
@@ -171,10 +291,12 @@ export function Nav() {
           </div>
           <div className="flex justify-between items-center font-sans gap-2 lg:gap-5">
             <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
-              <MdOutlinePhoneInTalk className="w-5 h-5" /> <p>+91 12345 67890</p>
+              <MdOutlinePhoneInTalk className="w-5 h-5" />{" "}
+              <p>+91 12345 67890</p>
             </div>
             <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
-              <MdOutlineMarkEmailUnread className="w-5 h-5" /> <p>contact@hiretopcoder.com</p>
+              <MdOutlineMarkEmailUnread className="w-5 h-5" />{" "}
+              <p>contact@hiretopcoder.com</p>
             </div>
           </div>
         </div>
@@ -190,291 +312,433 @@ export function Nav() {
         }`}
       >
         <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85 w-full">
-                  <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
-
+          <div className="flex justify-between items-center gap-10 lg:gap-20 text-xs lg:text-sm 1xl:text-lg font-bold text-foreground/85">
             <Link href="/" onClick={closeMobileMenu}>
-              <Image 
-                width={500} 
-                height={500} 
-                src="/assets/logo1.png" 
-                alt="logo" 
+              <Image
+                width={500}
+                height={500}
+                src="/assets/logo1.png"
+                alt="logo"
                 loading="eager"
-                className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain" 
+                className="w-[110px] h-[50px] lg:w-[120px] lg:h-[60px] 1xl:w-[130px] 1xl:h-[80px] 2xl:w-[150px] 2xl:h-[100px] cursor-pointer object-contain"
               />
             </Link>
-          
 
-          {/* डेस्कटॉप मेनू */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
-            {navData?.map((item, i) => (
-              <div
-                key={i}
-                onMouseEnter={() => setHoveredIndex(i)}
-                className="py-5"
-              >
-                <Link 
-                  href={item.href || "#"}
-                  data-aos="fade-down"
-                  className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer text-foreground/85"
+            {/* डेस्कटॉप मेनू */}
+            <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
+              {navData?.map((item, i) => (
+                <div
+                  key={i}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  className="py-5"
                 >
-                  <span className="flex justify-center items-center gap-1">
-                    {item.name}
-                    {(item.columns || item.isResourcesTemplate) && (
-                      <FiChevronDown className={`w-3 h-3 transition-transform duration-200 ${hoveredIndex === i ? 'rotate-180' : ''}`} />
-                    )}
-                  </span>
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
-                </Link>
+                  <Link
+                    href={item.href || "#"}
+                    data-aos="fade-down"
+                    className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer text-foreground/85"
+                  >
+                    <span className="flex justify-center items-center gap-1">
+                      {item.name}
+                      {(item.columns || item.isResourcesTemplate) && (
+                        <FiChevronDown
+                          className={`w-3 h-3 transition-transform duration-200 ${hoveredIndex === i ? "rotate-180" : ""}`}
+                        />
+                      )}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
+                  </Link>
 
-                {/* डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
-                <AnimatePresence>
-                  {hoveredIndex === i && (item.columns || item.isResourcesTemplate) && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className={`fixed left-0 right-0 ${
-                        isScrolled ? "top-[63px] 2xl:top-[100px]" : "top-[100px] 2xl:top-[120px]"
-                      } w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:px-25 py-10 overflow-hidden`}
-                    >
-                      {/* बैकग्राउंड ग्लो इफेक्ट */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
-                      
-                      <div className="relative w-full  z-10 text-left">
-                        
-                        {/* 🛠️ कंडीशनल रेंडरिंग: नया स्पेशल Resources टेम्पलेट (As per resources.png) */}
-                        {item.isResourcesTemplate ? (
-                          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-stretch">
-                            
-                            {/* 1. Left Section: Title + Delivery Models Links */}
-                            <div className="flex flex-col w-full justify-start text-left">
-                              <div>
-                                <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-2">{item.dropdownTitle}</h3>
-                                <p className="text-xs 2xl:text-sm text-gray-400 font-medium leading-relaxed font-mulish mb-8">
-                                  {item.dropdownDesc}
-                                </p>
-                              </div>
-                              
-                              {/* एक्स्ट्रा सब-यूनिट: Delivery Models */}
-                              <div className="flex flex-col gap-5 mt-2">
-                                <h4 className="text-xs font-semibold tracking-wider text-white uppercase font-sans">
-                                  {item.leftSubTitle}
-                                </h4>
-                                <div className="flex flex-col gap-5">
-                                  {item.leftLinks.map((link, lIdx) => (
-                                    <Link key={lIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left w-full">
-                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-md bg-white/5 transition-colors group-hover:border-primary" />
-                                      <div className="flex-1">
-                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
-                                          {link.name}
-                                        </h5>
-                                        <p className="text-xs text-gray-400 mt-1 leading-normal group-hover:text-white">
-                                          {link.desc}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
+                  {/* डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
+                  <AnimatePresence>
+                    {hoveredIndex === i &&
+                      (item.columns || item.isResourcesTemplate) && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 15 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className={`fixed left-0 right-0 ${
+                            isScrolled
+                              ? "top-[63px] 2xl:top-[100px]"
+                              : "top-[100px] 2xl:top-[120px]"
+                          } w-full z-50 pointer-events-auto bg-[#0a0612]/95 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 lg:px-15 1xl:px-20 2xl:pl-25 2xl:pr-130 py-10 overflow-hidden`}
+                        >
+                          {/* बैकग्राउंड ग्लो इफेक्ट */}
+                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-primary/10 blur-[120px] animate-pulse-glow pointer-events-none z-0" />
 
-                            {/* 2. Middle Section: LEARN Column */}
-                            {item.columns.map((col, colIdx) => (
-                              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
-                                <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
-                                  {col.title}
-                                </h4>
-                                <div className="flex flex-col gap-5">
-                                  {col.links.map((link, linkIdx) => (
-                                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-start gap-4 group text-left w-full">
-                                      <div className="w-10 h-10 shrink-0 border border-white/10 rounded-md bg-white/5 transition-colors group-hover:border-primary" />
-                                      <div className="flex-1">
-                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
-                                          {link.name}
-                                        </h5>
-                                        <p className="text-xs text-gray-400 mt-1 leading-normal group-hover:text-white">
-                                          {link.desc}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
+                          <div className="relative w-full  z-10 text-left">
+                            {/* 🛠️ कंडीशनल रेंडरिंग: नया स्पेशल Resources टेम्पलेट (As per resources.png) */}
+                            {item.isResourcesTemplate ? (
+                              <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 2xl:gap-15 items-stretch">
+                                {/* 1. Left Section: Title + Delivery Models Links */}
+                                <div className="flex flex-col w-full justify-start text-left">
+                                  <div>
+                                    <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-2">
+                                      {item.dropdownTitle}
+                                    </h3>
+                                    <p className="text-xs 2xl:text-sm text-gray-400 font-medium leading-relaxed font-mulish mb-8">
+                                      {item.dropdownDesc}
+                                    </p>
+                                  </div>
 
-                            {/* 3. Right Section: PROOF AND COMPARISION 2x2 Grid (Takes 2 Columns of layout) */}
-                            <div className="lg:col-span-2 flex flex-col gap-5 w-full">
-                              <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
-                                {item.proofSection.title}
-                              </h4>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
-                                {item.proofSection.cards.map((card, cIdx) => (
-                                  <div key={cIdx} className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group">
-                                    <div className="w-full">
-                                      <span className="text-[10px] font-bold text-primary tracking-wider uppercase block mb-1">
-                                        {card.tag}
-                                      </span>
-                                      <h4 className="text-sm font-bold text-white leading-snug font-mulish mb-2 group-hover:text-primary transition-colors">
-                                        {card.title}
-                                      </h4>
-                                      {card.meta && (
-                                        <p className="text-[11px] text-gray-500 font-sans flex items-center gap-1.5 before:content-['•'] before:text-primary">
-                                          {card.meta}
-                                        </p>
-                                      )}
+                                  {/* एक्स्ट्रा सब-यूनिट: Delivery Models */}
+                                  <div className="flex flex-col gap-10 mt-2">
+                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                      {item.leftSubTitle}
+                                    </h4>
+                                    <div className="flex flex-col gap-10">
+                                      {item.leftLinks.map((link, lIdx) => (
+                                        <Link
+                                          key={lIdx}
+                                          href={link.href}
+                                          onClick={() => setHoveredIndex(null)}
+                                          className="flex items-start gap-5 group text-left w-full"
+                                        >
+ <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          </div>                                          <div className="flex-1">
+                                            <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                              {link.name}
+                                            </h5>
+                                            <p className="text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
+                                              {link.desc}
+                                            </p>
+                                          </div>
+                                        </Link>
+                                      ))}
                                     </div>
-                                    <Link href={card.href} className="text-[11px] font-bold text-primary hover:underline mt-4 inline-block">
-                                      Read case study
-                                    </Link>
+                                  </div>
+                                </div>
+
+                                {/* 2. Middle Section: LEARN Column */}
+                                {item.columns.map((col, colIdx) => (
+                                  <div
+                                    key={colIdx}
+                                    className="flex flex-col gap-10 text-left w-full"
+                                  >
+                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                      {col.title}
+                                    </h4>
+                                    <div className="flex flex-col gap-10">
+                                      {col.links.map((link, linkIdx) => (
+                                        <Link
+                                          key={linkIdx}
+                                          href={link.href}
+                                          onClick={() => setHoveredIndex(null)}
+                                          className="flex items-start gap-5 group text-left w-full"
+                                        >
+                                          
+                                          <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          </div>
+                                          <div className="flex-1">
+                                            <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                              {link.name}
+                                            </h5>
+                                            <p className="text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
+                                              {link.desc}
+                                            </p>
+                                          </div>
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ))}
+
+                                {/* 3. Right Section: PROOF AND COMPARISION 2x2 Grid (Takes 2 Columns of layout) */}
+                                <div className="lg:col-span-2 flex flex-col gap-5 w-full">
+                                  <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                    {item.proofSection.title}
+                                  </h4>
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
+                                    {item.proofSection.cards.map(
+                                      (card, cIdx) => (
+                                        <div
+                                          key={cIdx}
+                                          className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group"
+                                        >
+                                          <div className="w-full">
+                                            <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase block mb-1">
+                                              {card.tag}
+                                            </span>
+                                            <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish mb-2 group-hover:text-primary transition-colors">
+                                              {card.title}
+                                            </h4>
+                                            {card.meta && (
+                                              <p className="text-[11px] 2xl:text-xs text-gray-500 font-sans flex items-center gap-1.5 ">
+                                                {card.meta}
+                                              </p>
+                                            )}
+                                          </div>
+                                          <Link
+                                            href={card.href}
+                                            className="text-[11px] 2xl:text-xs  font-bold text-primary hover:underline mt-4 inline-block"
+                                          >
+                                            Read case study
+                                          </Link>
+                                        </div>
+                                      ),
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              /* 🌟 पुराने ऑप्शंस (Services & Hire Developers) का मूल 4-कॉलम लेआउट सुरक्षित */
+                              <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 2xl:gap-15 items-stretch">
+                                <div className="border-r border-white/10 pr-10 2xl:pr-5 flex flex-col w-full text-left">
+                                  <div>
+                                    <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-1">
+                                      {item.dropdownTitle}
+                                    </h3>
+                                    <p className="text-xs 2xl:text-sm text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
+                                      {item.dropdownDesc}
+                                    </p>
+                                  </div>
+
+                                  {item.featuredCard && (
+                                    <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
+                                      <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
+                                        {item.featuredCard.tag}
+                                      </span>
+                                      <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish">
+                                        {item.featuredCard.title}
+                                      </h4>
+                                      <p className="text-xs 2xl:text-sm text-gray-400 font-medium font-sans">
+                                        {item.featuredCard.desc}
+                                      </p>
+                                      <Link
+                                        href={item.featuredCard.href}
+                                        className="text-xs 2xl:text-sm font-bold text-primary hover:underline mt-2 inline-block"
+                                      >
+                                        {item.featuredCard.actionText}
+                                      </Link>
+                                    </div>
+                                  )}
+                                </div>
+
+                                {item.columns.map((col, colIdx) => (
+                                  <div
+                                    key={colIdx}
+                                    className="flex flex-col gap-10 text-left w-full"
+                                  >
+                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white/90 uppercase font-sans">
+                                      {col.title}
+                                    </h4>
+
+                                    {col.title === "Hire By Technology" ? (
+                                      <div className="flex md:mt-3 1xl:mt-0 gap-10">
+                                        <div className="flex flex-col gap-10">
+                                          {col?.links.map((link, linkIdx) => (
+                                            <Link
+                                              key={linkIdx}
+                                              href={link.href}
+                                              onClick={() =>
+                                                setHoveredIndex(null)
+                                              }
+                                              className="flex  items-center gap-3 group text-left"
+                                            >
+                                             <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          </div>
+                                              <div>
+                                                <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                                  {link.name}
+                                                </h5>
+                                                
+                                              </div>
+                                            </Link>
+                                          ))}
+                                        </div>
+                                        <div className="flex flex-col gap-10">
+                                          {col?.links1.map((link, linkIdx) => (
+                                            <Link
+                                              key={linkIdx}
+                                              href={link.href}
+                                              onClick={() =>
+                                                setHoveredIndex(null)
+                                              }
+                                              className="flex items-center gap-3 group text-left"
+                                            >
+                                             <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          </div>
+                                              <div>
+                                                <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                                  {link.name}
+                                                </h5>
+                                              </div>
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <div className="flex flex-col gap-10">
+                                        {col.links.map((link, linkIdx) => (
+                                          <Link
+                                            key={linkIdx}
+                                            href={link.href}
+                                            onClick={() =>
+                                              setHoveredIndex(null)
+                                            }
+                                            className="flex items-center gap-3 group text-left"
+                                          >
+                                           <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          </div>
+                                            <div>
+                                              <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                                {link.name}
+                                              </h5>
+                                              <p className="text-xs 2xl:text-sm text-gray-400 mt-0.5 font-medium group-hover:text-white">
+                                                {link.desc}
+                                              </p>
+                                            </div>
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
                                   </div>
                                 ))}
                               </div>
-                            </div>
-
+                            )}
                           </div>
-                        ) : (
-                          /* 🌟 पुराने ऑप्शंस (Services & Hire Developers) का मूल 4-कॉलम लेआउट सुरक्षित */
-                          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-stretch">
-                            
-                            <div className="border-r border-white/10 pr-10 flex flex-col w-full justify-between text-left">
-                              <div>
-                                <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-1">{item.dropdownTitle}</h3>
-                                <p className="text-xs 2xl:text-sm text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
-                                  {item.dropdownDesc}
-                                </p>
-                              </div>
-                              
-                              {item.featuredCard && (
-                                <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
-                                  <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
-                                    {item.featuredCard.tag}
-                                  </span>
-                                  <h4 className="text-sm 2xl:text-base font-bold text-white leading-snug font-mulish">
-                                    {item.featuredCard.title}
-                                  </h4>
-                                  <p className="text-[11px] 2xl:text-xs text-gray-400 leading-normal font-sans">
-                                    {item.featuredCard.desc}
-                                  </p>
-                                  <Link href={item.featuredCard.href} className="text-[11px] 2xl:text-xs font-bold text-primary hover:underline mt-2 inline-block">
-                                    {item.featuredCard.actionText}
-                                  </Link>
-                                </div>
-                              )}
-                            </div>
-
-                            {item.columns.map((col, colIdx) => (
-                              <div key={colIdx} className="flex flex-col gap-5 text-left w-full">
-                                <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white/90 uppercase font-sans">
-                                  {col.title}
-                                </h4>
-                                <div className="flex flex-col gap-5">
-                                  {col.links.map((link, linkIdx) => (
-                                    <Link key={linkIdx} href={link.href} onClick={() => setHoveredIndex(null)} className="flex items-center gap-3 group text-left">
-                                      <div className="w-9 h-9 shrink-0 border border-white/10 rounded-sm bg-white/5 transition-colors group-hover:border-primary" />
-                                      <div>
-                                        <h5 className="text-sm font-semibold text-white group-hover:text-primary transition-colors font-mulish">
-                                          {link.name}
-                                        </h5>
-                                        <p className="text-xs text-gray-400 mt-0.5 leading-normal group-hover:text-white">
-                                          {link.desc}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-
-                          </div>
-                        )}
-                        
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+                        </motion.div>
+                      )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
-</div>
           {/* राइट साइड बटन्स */}
           <div data-aos="fade-down" className="flex items-center gap-2">
-            <Link href="/signin" className="hidden group sm:inline-flex items-center gap-2 text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]">
-              Talk to Expert <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+            <Link
+              href="/signin"
+              className="hidden group sm:inline-flex items-center gap-2 text-sm lg:text-base 2xl:text-lg font-bold px-5 py-2 rounded-full expert-btn text-[#381385]"
+            >
+              Talk to Expert{" "}
+              <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <button
               className="md:hidden grid place-items-center size-10 rounded-full btn-glass text-white cursor-pointer"
               aria-label="Menu"
               onClick={toggleMobileMenu}
             >
-              {isMobileMenuOpen ? <MdOutlineClose className="w-6 h-6" /> : <FiAlignJustify className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <MdOutlineClose className="w-6 h-6" />
+              ) : (
+                <FiAlignJustify className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
       </nav>
 
       {/* मोबाइल रेस्पॉन्सिव ओवरले */}
-      <div 
+      <div
         className={`md:hidden fixed inset-0 top-[50px] h-[calc(100vh-50px)] w-full bg-black/95 backdrop-blur-md z-40 transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          isMobileMenuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       >
         <div className="flex flex-col px-6 py-6 gap-2 overflow-y-auto h-full pb-20 text-left">
           {navData?.map((item, i) => (
-            <div key={i} className="flex flex-col w-full border-b border-white/5 py-2 text-left">
-              <div 
-                onClick={() => (item.columns || item.isResourcesTemplate) ? toggleMobileDropdown(i) : closeMobileMenu()}
+            <div
+              key={i}
+              className="flex flex-col w-full border-b border-white/5 py-2 text-left"
+            >
+              <div
+                onClick={() =>
+                  item.columns || item.isResourcesTemplate
+                    ? toggleMobileDropdown(i)
+                    : closeMobileMenu()
+                }
                 className="p-2 hover:text-gray-400 cursor-pointer text-white w-full text-lg font-mulish font-semibold flex justify-between items-center text-left"
               >
-                {(item.columns || item.isResourcesTemplate) ? (
+                {item.columns || item.isResourcesTemplate ? (
                   <span className="w-full flex justify-between items-center text-left">
                     {item.name}
-                    <FiChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen === i ? 'rotate-180' : ''}`} />
+                    <FiChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen === i ? "rotate-180" : ""}`}
+                    />
                   </span>
                 ) : (
-                  <Link href={item.href || "#"} className="w-full text-left">{item.name}</Link>
+                  <Link href={item.href || "#"} className="w-full text-left">
+                    {item.name}
+                  </Link>
                 )}
               </div>
-              
+
               {/* मोबाइल सब-मेन्यू */}
-              {(item.columns || item.isResourcesTemplate) && mobileDropdownOpen === i && (
-                <div className="pl-4 flex flex-col gap-2 mt-1 bg-white/5 p-3 rounded-lg transition-all text-left">
-                  {item.isResourcesTemplate ? (
-                    <>
-                      <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">Delivery Models</p>
-                      {item.leftLinks.map((link, lIdx) => (
-                        <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
-                          {link.name}
-                        </Link>
-                      ))}
-                      <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mt-2 mb-1">Learn</p>
-                      {item.columns[0].links.map((link, lIdx) => (
-                        <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
-                          {link.name}
-                        </Link>
-                      ))}
-                    </>
-                  ) : (
-                    item.columns.map((col, cIdx) => (
-                      <div key={cIdx} className="mb-3 text-left">
-                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">{col.title}</p>
-                        {col.links.map((link, lIdx) => (
-                          <Link key={lIdx} href={link.href} onClick={closeMobileMenu} className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2">
+              {(item.columns || item.isResourcesTemplate) &&
+                mobileDropdownOpen === i && (
+                  <div className="pl-4 flex flex-col gap-2 mt-1 bg-white/5 p-3 rounded-lg transition-all text-left">
+                    {item.isResourcesTemplate ? (
+                      <>
+                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
+                          Delivery Models
+                        </p>
+                        {item.leftLinks.map((link, lIdx) => (
+                          <Link
+                            key={lIdx}
+                            href={link.href}
+                            onClick={closeMobileMenu}
+                            className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2"
+                          >
                             {link.name}
                           </Link>
                         ))}
-                      </div>
-                    ))
-                  )}
-                </div>
-              )}
+                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mt-2 mb-1">
+                          Learn
+                        </p>
+                        {item.columns[0].links.map((link, lIdx) => (
+                          <Link
+                            key={lIdx}
+                            href={link.href}
+                            onClick={closeMobileMenu}
+                            className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </>
+                    ) : (
+                      item.columns.map((col, cIdx) => (
+                        <div key={cIdx} className="mb-3 text-left">
+                          <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
+                            {col.title}
+                          </p>
+                          {col.links.map((link, lIdx) => (
+                            <Link
+                              key={lIdx}
+                              href={link.href}
+                              onClick={closeMobileMenu}
+                              className="text-sm font-mulish text-gray-400 hover:text-white py-1 block pl-2"
+                            >
+                              {link.name}
+                            </Link>
+                          ))}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                )}
             </div>
           ))}
-          <Link href="/starthiring" onClick={closeMobileMenu} className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer">
+          <Link
+            href="/starthiring"
+            onClick={closeMobileMenu}
+            className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer"
+          >
             Talk To Expert
           </Link>
         </div>
       </div>
-    </header> 
+    </header>
   );
 }

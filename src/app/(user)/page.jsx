@@ -34,7 +34,7 @@ const blog4 = "/assets/blog-4.png";
 const experts = [
   // { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
   { name: "Rahul J.",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
-  { name: "Maynak Y.",   role: "angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
+  { name: "Maynak Y.",   role: "Angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
   { name: "Khushi G.", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
 
   { name: "Aarif K.",    role: "Ract js trainee",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)" },
@@ -45,6 +45,10 @@ const experts = [
 
     { name: "Neha R.", role: "wordpress developer",  img: '/assets/neha.png', accent: "oklch(0.65 0.28 320)" },
       { name: "Sumit V.",    role: "Business Development Executive",   img: '/assets/sumit.png', accent: "oklch(0.65 0.28 320)" },
+      { name: "Dev P.",    role: "Flutter Trainee",   img: '/assets/dev.png', accent: "oklch(0.65 0.28 320)" },
+            { name: "Nilofar A.",    role: "Business Development Executive",   img: '/assets/nilofar.png', accent: "oklch(0.65 0.28 320)" },
+
+
 ];
 
 const brands = [{img:"/assets/clogo1.png"},{img:"/assets/clogo2.png"},{img:"/assets/clogo3.png"},{img:"/assets/clogo4.png"},{img:"/assets/clogo5.png"},{img:"/assets/clogo6.png"},{img:"/assets/clogo7.png"},{img:"/assets/clogo8.png"},];
@@ -253,11 +257,10 @@ function ExpertCard({ expert }) {
   {/* 🛠️ स्टेप 1: बैज को हमने overflow-hidden वाले डिब से बाहर निकाल दिया */}
   {/* -top-2 या -top-1 करके आप इसे जितना चाहें उतना ऊपर कार्ड की बॉर्डर के पार दिखा सकते हैं */}
   <div
-    className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-[8px] md:text-[9px] 2xl:text-[11px] font-sans uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-md font-bold whitespace-nowrap shadow-xl"
+    className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-[8px] md:text-[9px] 2xl:text-[11px] font-sans uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-md font-semibold whitespace-nowrap shadow-xl"
     style={{ 
-      color: expert.accent, 
-      background: "#f9e5ff", 
-      border: `1px solid ${expert.accent}` 
+      color: "#f9e5ff", 
+      background: "#0a0612" 
     }}
   >
     {expert.role}
@@ -278,7 +281,7 @@ function ExpertCard({ expert }) {
     <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black via-black/70 to-transparent">
       <div className="font-display text-3xl font-extrabold text-white">{expert.name}</div>
         <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
-            <LuStar className="size-3 fill-primary text-primary" /> 4.9 · Available now
+            <LuStar className="size-3 fill-[#f5a623] text-[#f5a623]" /> 4.9 · Available now
           </div>
     </div>
 
@@ -294,7 +297,7 @@ function Marquee() {
         Trusted by teams shipping with Hire Top Coder
       </div>
      
-        <div className="flex gap-16 md:gap-24 animate-scroll-cards  w-max">
+        <div className="flex gap-16 md:gap-24 animate-scroll-cards py-10  w-max">
           {[...brands, ...brands].map((b, i) => (
             <div 
               key={i} 
