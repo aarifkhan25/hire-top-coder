@@ -1,12 +1,12 @@
-import Link from "next/link"
-import {useState} from "react"
-import { FaLinkedinIn, FaTwitter, FaGithub, FaInstagram, FaDribbble, FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
-import {GhostButton} from "./PageShell.jsx"
-import Image from "next/image"
 import logo from "@/assets/logo1.png";
- import { FiCheck } from 'react-icons/fi';
-import { AiOutlineSend } from "react-icons/ai";
-
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { AiOutlineGlobal, AiOutlineSend } from "react-icons/ai";
+import { FaGithub, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiCheck } from 'react-icons/fi';
+import { GhostButton } from "./PageShell.jsx";
 const services = [
 
   "UI/UX Design", "Full-Stack Development", "Mobile App Development",
@@ -46,7 +46,24 @@ const companyLinks= [
   { label: "Cookie Policy", to: "/cookies" },
 
 ];
- 
+ function Counter({ suffix = "" }) {
+   const ref = useRef(null);
+   const inView = useInView(ref, { once: true, margin: "-60px" });
+   const [n, setN] = useState(0);
+   useEffect(() => {
+     if (!inView) return;
+     const start = performance.now();
+     const dur = 1800;
+     const tick = (t) => {
+       const p = Math.min(1, (t - start) / dur);
+       const eased = 1 - Math.pow(1 - p, 3);
+       setN(Math.round(to * eased));
+       if (p < 1) requestAnimationFrame(tick);
+     };
+     requestAnimationFrame(tick);
+   }, [inView, to]);
+   return <span ref={ref}>{n.toLocaleString()}{suffix}</span>;
+ }
 const stats = [
 
   { n: "120+", l: "Experts Available" },
@@ -59,7 +76,7 @@ const stats = [
 
 ];
  
-const socials = [FaLinkedinIn, FaTwitter, FaGithub, FaInstagram, FaDribbble];
+const socials = [FaLinkedinIn, FaXTwitter, FaGithub, FaInstagram, AiOutlineGlobal];
  
 const resourceLinks = [
   {
@@ -96,9 +113,9 @@ export  function Footer() {
     3: false,
   });
 
-  // चेकबॉक्स टॉगल हैंडलर
+  
   const handleToggle = (id, e) => {
-    e.preventDefault(); // लिंक एंकर टैग के डिफ़ॉल्ट बिहेवियर को रोकने के लिए
+    e.preventDefault(); 
     setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
   return (
@@ -226,16 +243,17 @@ weekly.
 <div className="mt-6 flex gap-3">
 
               {socials.map((Icon, i) => (
-<a key={i} href="#" className="size-9 grid place-items-center rounded-lg bg-[#141414] border border-white/[0.07] text-white/30 hover:text-[#F0EDFF] transition">
-<Icon className="size-4" />
-</a>
+<div key={i} className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
+
+                                          <Icon className="text-2xl text-primary"/>
+                                          </div>
 
               ))}
 </div>
 <div className="mt-6 flex flex-wrap gap-2.5">
 
-              {["ISO 9001", "GDPR", "NDA Protected"].map((b) => (
-<span key={b} className="text-[11px] px-3 py-1 rounded-full bg-[#141414] border border-white/[0.07] text-white/30 hover:text-[#F0EDFF]">
+              {["ISO 9001", "GDPR", "NDA Protected"].map((b,i) => (
+<span key={i} className="text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary  text-[#F0EDFF]">
 
                   {b}
 </span>
@@ -302,13 +320,13 @@ weekly.
 </div>
  
         {/* Stats strip */}
-<div className="mt-16 -mx-6 lg:-mx-14 bg-[#0d0d0d] px-6 lg:px-14 py-6">
+<div className="mt-16 -mx-6 lg:-mx-14 glass px-6 lg:px-14 py-6">
 <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.07]">
 
             {stats.map((s, i) => (
 <div key={i} className="px-4 first:pl-0">
-<div className="text-[28px] font-medium tracking-[-0.02em] text-white">{s.n}</div>
-<div className="text-[12px] text-white/35 mt-0.5">{s.l}</div>
+<div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">{s.n}</div>
+<div className="text-[12px] font-semibold text-white/35 mt-0.5">{s.l}</div>
 </div>
 
             ))}
@@ -319,10 +337,10 @@ weekly.
 <div className="border-t border-white/[0.07] py-6 flex flex-wrap items-center justify-between gap-3 text-[13px]">
 <div className="text-white ">© 2025 HireTopCoder. All rights reserved.</div>
 <div className="text-white text-[12px]">Made with ❤️ in Indore, India</div>
-<div className="flex gap-5 text-white/35">
-<Link href="/privacy" className="hover:text-[#F0EDFF]">Privacy Policy</Link>
-<Link href="/terms" className="hover:text-[#F0EDFF]">Terms of Service</Link>
-<Link href="/cookies" className="hover:text-[#F0EDFF]">Cookies</Link>
+<div className="flex gap-5 text-white/35 ">
+<Link href="/privacy" className="hover:text-[#F0EDFF] hover:underline">Privacy Policy</Link>
+<Link href="/terms" className="hover:text-[#F0EDFF] hover:underline">Terms of Service</Link>
+<Link href="/cookies" className="hover:text-[#F0EDFF] hover:underline">Cookies</Link>
 </div>
 </div>
 </div>

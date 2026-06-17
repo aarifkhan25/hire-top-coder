@@ -1,52 +1,29 @@
 "use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { FiAlignJustify, FiChevronDown } from "react-icons/fi";
-import { MdOutlineClose } from "react-icons/md";
-import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { 
-  FiMenu as Menu, 
-  FiChevronDown as ChevronDown, 
-  FiUsers as Users, 
-  FiPackage as Puzzle,       // Puzzle/Component design representation
-  FiBriefcase as Building2,  // Corporate/Building alternative
-  FiRefreshCw as RefreshCw, 
-
-  FiTrendingUp as TrendingUp, 
-  FiLayout as Layout, 
-  FiCode as Code2, 
-  FiCpu as Brain,            // AI/Brain/Core representation
-  FiSmartphone as Smartphone, 
-  FiServer as Server, 
-  FiFeather as Wand2,        // Creative/Magic alternative
-  FiBookOpen as BookOpen, 
-  FiBarChart2 as BarChart3, 
-  FiEdit3 as PenLine,        // Drawing/Writing representation
-  FiLayers as Calculator,    // Functional grid calculation design
-  FiFileText as FileText, 
-  FiShield as ShieldCheck, 
-  FiHeart as HeartHandshake, // Care/Handshake representation
-  FiStar as Star, 
-  FiBriefcase as Briefcase, 
-  FiLock as Lock, 
-  FiAward as Award, 
-  FiPhone as Phone, 
-  FiArrowRight as ArrowRight 
-} from "react-icons/fi";
-import { IoIosRocket as Rocket } from "react-icons/io";
-import { FaReact,FaPython,FaAndroid,FaNodeJs ,FaAws   } from "react-icons/fa";
-import { FaWebflow } from "react-icons/fa6";
-import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { FaAndroid, FaAws, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
+import { FaWebflow } from "react-icons/fa6";
+import {
+  FiArrowRight as ArrowRight, FiBarChart2 as BarChart3, // Creative/Magic alternative
+  FiBookOpen as BookOpen, FiCpu as Brain, // Puzzle/Component design representation
+  FiBriefcase as Building2, // Drawing/Writing representation
+  FiLayers as Calculator, FiCode as Code2, FiAlignJustify, FiChevronDown, // Functional grid calculation design
+  FiFileText as FileText, FiLayout as Layout, FiEdit3 as PenLine, FiPackage as Puzzle, // Corporate/Building alternative
+  FiRefreshCw as RefreshCw, // AI/Brain/Core representation
+  FiSmartphone as Smartphone, FiTrendingUp as TrendingUp, FiUsers as Users
+} from "react-icons/fi";
+import { IoIosRocket as Rocket } from "react-icons/io";
+import { MdOutlineClose, MdOutlineMarkEmailUnread, MdOutlinePhoneInTalk } from "react-icons/md";
 
 // 🌌 पूरी तरह डायनामिक मेगा मेनू डेटा स्ट्रक्चर (As per resources.png specs)
 const navData = [
   {
     name: "Services",
-    href: "/about",
+    href: "/services",
     dropdownTitle: "Services.",
     dropdownDesc:
       "End-to end digital engineering built around your product goals.",
@@ -55,7 +32,7 @@ const navData = [
       title: "Broker Remarks - listing Platform Rebuild",
       desc: "Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture.",
       actionText: "Read case study",
-      href: "/work/case-study",
+      href: "/services/case-study",
     },
     columns: [
       {
@@ -75,7 +52,7 @@ const navData = [
           { icon:<Building2/>,
             name: "Offshore Development Center",
             desc: "Build your own offshore team with our infrastructure",
-            href: "/services/offshore-center",
+            href: "/services/offshore-dev-centre",
           },
         ],
       },
@@ -85,7 +62,7 @@ const navData = [
           { icon :<RefreshCw/>,
             name: "Legacy System Modernization",
             desc: "Zero-Downtime upgrades for outdated platforms",
-            href: "/services/modernization",
+            href: "/services/legacy-modernization",
           },
           {icon :<Rocket/>,
             name: "MVP Development",
@@ -95,7 +72,7 @@ const navData = [
           {icon :<TrendingUp/>,
             name: "Scale Your Engineering team",
             desc: "Add 3-30 engineers in 48-72 hours",
-            href: "/services/scale-team",
+            href: "/services/hire",
           },
         ],
       },
@@ -230,7 +207,7 @@ const navData = [
   },
   {
     name: "Company",
-    href: "/work",
+    href: "/company",
   },
 ];
 
@@ -463,11 +440,11 @@ export function Nav() {
                                             <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase block mb-1">
                                               {card.tag}
                                             </span>
-                                            <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish mb-2 group-hover:text-primary transition-colors">
+                                            <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish mb-2 ">
                                               {card.title}
                                             </h4>
                                             {card.meta && (
-                                              <p className="text-[11px] 2xl:text-xs text-gray-500 font-sans flex items-center gap-1.5 ">
+                                              <p className="text-xs 2xl:text-sm text-gray-500 font-medium font-sans flex items-center gap-1.5 ">
                                                 {card.meta}
                                               </p>
                                             )}
@@ -510,7 +487,7 @@ export function Nav() {
                                       </p>
                                       <Link
                                         href={item.featuredCard.href}
-                                        className="text-xs 2xl:text-sm font-bold text-primary hover:underline mt-2 inline-block"
+                                        className="text-[11px] 2xl:text-xs font-bold text-primary hover:underline mt-2 inline-block"
                                       >
                                         {item.featuredCard.actionText}
                                       </Link>

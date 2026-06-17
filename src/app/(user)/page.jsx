@@ -1,19 +1,20 @@
 "use client"
-import Link from "next/link";
-import {useRef,useState,useEffect} from "react"
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
-  LuArrowRight,   LuStar, LuClock,
+  LuArrowRight,
+  LuClock,
+  LuStar,
 } from "react-icons/lu";
 
+import { GhostButton, PrimaryButton } from "@/components/site/PageShell.jsx";
+import { Reveal } from "@/components/site/Reveal.jsx";
+import { BsGraphUp, BsLightningCharge, BsPeople, BsShieldCheck, BsStopwatch } from 'react-icons/bs';
+import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 import { FiTrendingUp } from 'react-icons/fi';
-import { BsStopwatch, BsPeople, BsLightningCharge, BsShieldCheck, BsGraphUp } from 'react-icons/bs'
-import {GhostButton,PrimaryButton} from "@/components/site/PageShell.jsx";
-import {Reveal} from "@/components/site/Reveal.jsx"
-import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 
 
-import Image from 'next/image'
+import Image from 'next/image';
 const expert1 = "/assets/expert-1.jpg";
 const expert2 = "/assets/expert-2.jpg";
 const expert3 = "/assets/expert-3.jpg";
@@ -34,7 +35,7 @@ const blog4 = "/assets/blog-4.png";
 const experts = [
   // { name: "Shubhash Sahu",   role: "Flutter Developer", img: '/assets/subhash.png', accent: "oklch(0.65 0.28 320)"},
   { name: "Rahul J.",   role: "ux designer",        img: '/assets/rahul2.png', accent: "oklch(0.65 0.28 320)"  },
-  { name: "Maynak Y.",   role: "Angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
+  { name: "Mayank Y.",   role: "Angular developer",      img: '/assets/mayanky.png', accent: "oklch(0.65 0.28 320)" },
   { name: "Khushi G.", role: "Wordpress developer",  img: '/assets/khushi.png', accent: "oklch(0.65 0.28 320)" },
 
   { name: "Aarif K.",    role: "Ract js trainee",   img: '/assets/aarif2.jpeg', accent: "oklch(0.65 0.28 320)" },
@@ -51,7 +52,7 @@ const experts = [
 
 ];
 
-const brands = [{img:"/assets/clogo1.png"},{img:"/assets/clogo2.png"},{img:"/assets/clogo3.png"},{img:"/assets/clogo4.png"},{img:"/assets/clogo5.png"},{img:"/assets/clogo6.png"},{img:"/assets/clogo7.png"},{img:"/assets/clogo8.png"},];
+const brands = [{img:"/assets/clogo3.png"},{img:"/assets/clogo4.png"},{img:"/assets/clogo5.png"},{img:"/assets/clogo6.png"},{img:"/assets/clogo7.png"},{img:"/assets/clogo8.png"},];
 
 const services = [
   { tag: "Most Hired", title: "Brand Identity System", price: "from $1,800", rating: 4.9, by: "Aria Studio" },
@@ -109,6 +110,14 @@ const testimonials=[
     avatar:expert1, // High-quality avatar placeholder
     name: 'Sarah Chen',
     role: 'Product Lead, Velocity Labs',
+  },
+   {
+    id: 3,
+    stars: 4,
+    quote: '"HireTopCoder transformed our development cycle. We went from a 3-month hiring process to shipping in under 48 hours. The caliber of talent is truly world-class."',
+    avatar: expert2, // High-quality avatar placeholder
+    name: 'James Wilson',
+    role: 'CTO, TechScale AI',
   },
 ];
 const portfolioItems = [
@@ -257,10 +266,11 @@ function ExpertCard({ expert }) {
   {/* 🛠️ स्टेप 1: बैज को हमने overflow-hidden वाले डिब से बाहर निकाल दिया */}
   {/* -top-2 या -top-1 करके आप इसे जितना चाहें उतना ऊपर कार्ड की बॉर्डर के पार दिखा सकते हैं */}
   <div
-    className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-[8px] md:text-[9px] 2xl:text-[11px] font-sans uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-md font-semibold whitespace-nowrap shadow-xl"
+    className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-[8px] md:text-[9px] 2xl:text-[11px] font-sans uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-md font-bold whitespace-nowrap shadow-xl"
     style={{ 
-      color: "#f9e5ff", 
-      background: "#0a0612" 
+     color: expert.accent, 
+      background: "#f9e5ff", 
+      border: `1px solid ${expert.accent}` 
     }}
   >
     {expert.role}
@@ -301,7 +311,7 @@ function Marquee() {
           {[...brands, ...brands].map((b, i) => (
             <div 
               key={i} 
-              className="flex items-center justify-center shrink-0 w-[120px] h-[50px] relative gray-scale-logo"
+              className="flex items-center justify-center shrink-0 w-[120px] h-[50px] 2xl:w-[150px] 2xl:h-[65px] relative gray-scale-logo"
             >
               <Image 
                 src={b.img} 
@@ -338,20 +348,19 @@ const [currentIndex, setCurrentIndex] = useState(0);
     };
   }, [portfolioItems.length]);
 
-  // जब स्लाइडर डुप्लिकेट (आखिरी) कार्ड पर पहुँच जाए, तो बिना एनीमेशन के तुरंत पहले कार्ड पर कूदें
+ 
   useEffect(() => {
     if (currentIndex === extendedItems.length - 1) {
       setTimeout(() => {
-        setIsTransitioning(false); // एनीमेशन बंद करें
-        setCurrentIndex(0);        // चुपके से पहले कार्ड पर जाएँ
-      }, 700); // यह समय transition-duration (700ms) के बराबर होना चाहिए
+        setIsTransitioning(false); 
+        setCurrentIndex(0);        
+      }, 700); 
     }
   }, [currentIndex, extendedItems.length]);
 
-  // जब एनीमेशन बंद करके इंडेक्स 0 किया जाए, तो अगले फ्रेम में एनीमेशन वापस चालू करें
   useEffect(() => {
     if (!isTransitioning && currentIndex === 0) {
-      // एक छोटे से डिले के बाद एनीमेशन वापस ऑन करें ताकि अगला मोशन स्मूथ हो
+     
       const raf = requestAnimationFrame(() => {
         setIsTransitioning(true);
       });
@@ -359,7 +368,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
     }
   }, [isTransitioning, currentIndex]);
 
-  // डॉट्स पर क्लिक करने का हैंडलर
+
   const handleDotClick = (idx) => {
     setIsTransitioning(true);
     setCurrentIndex(idx);
@@ -376,10 +385,10 @@ const [currentIndex, setCurrentIndex] = useState(0);
           title={<>Selected work that <span className="text-gradient-purple">speaks <br className="hidden md:block"/> for itself.</span></>}
           sub="Explore premium digital experiences, AI platforms, websites and modern products crafted by Hire Top Coder experts."
         />
-<Reveal>
+
     <div className="w-full overflow-hidden mt-14">
       
-      {/* मुख्य स्लाइडिंग कंटेनर */}
+     
       <div 
         className={`flex   w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : "transition-none"}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -448,10 +457,10 @@ const [currentIndex, setCurrentIndex] = useState(0);
                   Read Full Case Study
                 </a>
 
-                {/* स्लाइडिंग इंडिकेटर डॉट्स */}
+             
                 <div className="flex items-center gap-1.5 pr-2">
                   {portfolioItems.map((_, idx) => {
-                    // अगर हम आखरी डुप्लिकेट कार्ड पर हैं, तो पहला डॉट एक्टिव दिखना चाहिए
+                   
                     const isActive = idx === currentIndex || (currentIndex === portfolioItems.length && idx === 0);
                     return (
                       <button
@@ -472,7 +481,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       </div>
 
     </div>
-</Reveal>
+
       </div>
 
       <div className="mt-12 flex justify-center">
@@ -487,78 +496,159 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
 
 function Testimonials() {
+ const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const timeoutRef = useRef(null);
+
+  // अनंत लूप के लिए: अंत में पहले दो आइटम्स की कॉपी जोड़ रहे हैं ताकि स्लाइड स्मूथ रहे
+  const extendedItems = testimonials.length > 0 
+    ? [...testimonials, ...testimonials.slice(0, 2)] 
+    : [];
+
+  useEffect(() => {
+    if (testimonials.length <= 2) return;
+
+    // ऑटोमैटिक स्लाइडर शुरू करें
+    timeoutRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+      setIsTransitioning(true);
+    }, 5000);
+
+    return () => {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
+    };
+  }, [testimonials.length]);
+
+  // जब स्लाइडर आखिरी डुप्लिकेट्स पर पहुंचे, तो बिना एनीमेशन के पहले कार्ड्स पर कूदें
+  useEffect(() => {
+    if (currentIndex === testimonials.length) {
+      const snapTimeout = setTimeout(() => {
+        setIsTransitioning(false); // एनीमेशन बंद करें
+        setCurrentIndex(0);        // चुपके से पहले कार्ड पर जाएँ
+      }, 700); // transition-duration (700ms)
+
+      return () => clearTimeout(snapTimeout);
+    }
+  }, [currentIndex, testimonials.length]);
+
+  // एनीमेशन रीसेट होने के बाद वापस चालू करें
+  useEffect(() => {
+    if (!isTransitioning && currentIndex === 0) {
+      const raf = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [isTransitioning, currentIndex]);
+
+  const handleDotClick = (idx) => {
+    setIsTransitioning(true);
+    setCurrentIndex(idx);
+  };
+
+  if (!testimonials || testimonials.length === 0) return null;
+
   return (
-    <section className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+    <section id="testimonials" className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]">
       <div className="w-full">
+        <Reveal>
         <SectionHead
           eyebrow="Trusted by builders"
           title={<>The new standard for <span className="text-gradient-purple">hiring talent.</span></>}
-        />
-        <Reveal>
-       <div className="grid grid-cols-1 pt-20 md:grid-cols-2 gap-5 lg:gap-10 items-stretch">
-          
-          {testimonials.map((review) => (
-            <div
-              key={review.id}
-              className="group relative bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 "
+        /></Reveal>
+        
+        
+          {/* मुख्य स्लाइडर रैपर */}
+          <div className="w-full overflow-hidden pt-20">
+            
+            {/* स्लाइडिंग ट्रैक - मोबाइल पर 1 कार्ड, md स्क्रीन से 2 कार्ड्स दिखेंगे */}
+            <div 
+              className={`flex flex-row w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
+              style={{ 
+                transform: `translateX(-${currentIndex * (window?.innerWidth < 768 ? 100 : 50)}%)`,
+                transitionProperty: isTransitioning ? 'transform' : 'none'
+              }}isMobile
             >
-              <div>
-                {/* 5-Star Rating Section */}
-                <div className="flex items-center gap-2 mb-6">
-                  {[...Array(review.stars)].map((_, index) => (
-                    <FaStar 
-                      key={index} 
-                      className="text-[#f5a623] text-base lg:text-2xl 2xl:text-3xl" 
-                      aria-hidden="true"
-                    />
-                  ))}
-                </div>
+              {extendedItems.map((review, index) => (
+                <div 
+                  key={`${review.id}-${index}`}
+                  className="w-full md:w-1/2 shrink-0 p-2.5 lg:p-5" // यहाँ चौड़ाई आपके ओरिजिनल grid-cols-2 जैसी है
+                >
+                  <div className="group relative bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 h-full">
+                    
+                    <div>
+                      {/* 5-Star Rating Section */}
+                      <div className="flex items-center gap-2 mb-6">
+                        {[...Array(review.stars || 5)].map((_, idx) => (
+                          <FaStar 
+                            key={idx} 
+                            className="text-[#f5a623] text-base lg:text-2xl 2xl:text-3xl" 
+                            aria-hidden="true"
+                          />
+                        ))}
+                      </div>
 
-                {/* Styled Big Quote Icon */}
-                <div className="text-primary text-2xl lg:text-3xl mb-4">
-                  <FaQuoteLeft className="" />
-                </div>
+                      {/* Styled Big Quote Icon */}
+                      <div className="text-primary text-2xl lg:text-3xl mb-4">
+                        <FaQuoteLeft />
+                      </div>
 
-                {/* Review Text Body */}
-                <p className="text-[#b1afb8] text-[15px] sm:text-base lg:text-lg 2xl:text-xl leading-[1.7] tracking-wide font-normal italic">
-                  {review.quote}
-                </p>
-              </div>
+                      {/* Review Text Body */}
+                      <p className="text-[#b1afb8] text-[15px] sm:text-base lg:text-lg 2xl:text-xl leading-[1.7] tracking-wide font-normal italic">
+                        {review.quote}
+                      </p>
+                    </div>
 
-              {/* Bottom Profile Footer Section */}
-              <div className="mt-10">
-                {/* Separator Line */}
-                <div className="w-full h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-6" />
-                
-              
-                <div className="flex items-center gap-4">
-             
-                  <div className="w-12 h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
-                    <Image  width={500} height={500}
-                      src={review.avatar}
-                      alt={review.name}
-                      className="w-full h-full object-cover "
-                    />
+                    {/* Bottom Profile Footer Section */}
+                    <div className="mt-10">
+                      {/* Separator Line */}
+                      <div className="w-full h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-6" />
+                      
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
+                          <img
+                            src={review.avatar}
+                            alt={review.name}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        
+                        {/* Name and Designation */}
+                        <div>
+                          <h3 className="text-white text-[16px] font-semibold tracking-wide leading-snug">
+                            {review.name}
+                          </h3>
+                          <p className="text-[#726e7e] text-[13px] font-medium mt-0.5 group-hover:text-[#908b9c] transition-colors duration-500">
+                            {review.role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                  
-                  {/* Name and Designation */}
-                  <div>
-                    <h3 className="text-white text-[16px] font-semibold tracking-wide leading-snug">
-                      {review.name}
-                    </h3>
-                    <p className="text-[#726e7e] text-[13px] font-medium mt-0.5 group-hover:text-[#908b9c] transition-colors duration-500">
-                      {review.role}
-                    </p>
-                  </div>
                 </div>
-
-              </div>
-
+              ))}
             </div>
-          ))}
 
+          </div>
+        
+
+        {/* स्लाइडिंग इंडिकेटर डॉट्स - कार्ड्स के बाहर बिल्कुल बॉटम में */}
+        <div className="flex items-center justify-center gap-1.5 mt-10">
+          {testimonials.map((_, idx) => {
+            const isActive = idx === currentIndex || (currentIndex === testimonials.length && idx === 0);
+            return (
+              <button
+                key={idx}
+                onClick={() => handleDotClick(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            );
+          })}
         </div>
-</Reveal>
+
       </div>
     </section>
   );
