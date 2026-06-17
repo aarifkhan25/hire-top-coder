@@ -68,7 +68,7 @@ export default function Page() {
   );
 }
 
-function Field({ label, type }: { label: string; type: string }) {
+function Field({ label, type }) {
   return (
     <div>
       <label className="text-[11px] uppercase tracking-[0.15em] text-foreground/50 font-bold">{label}</label>
