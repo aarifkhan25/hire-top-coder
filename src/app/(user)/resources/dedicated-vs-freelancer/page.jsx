@@ -31,7 +31,7 @@ const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
             <div className="text-white font-bold text-lg mb-4">Freelancer</div>
             <div className="space-y-2">
               {[["Cheap for short bursts", true], ["Flexible commitment", true], ["No long-term reliability", false], ["Limited accountability", false]].map(([t, ok], i) => (
-                <div key={i} className="flex items-center gap-2 text-foreground/80">{ok ? <Check className="size-4 text-primary" /> : <X className="size-4 text-foreground/40" />} <span className={ok ? "" : "text-foreground/55"}>{t as string}</span></div>
+                <div key={i} className="flex items-center gap-2 text-foreground/80">{ok ? <Check className="size-4 text-primary" /> : <X className="size-4 text-foreground/40" />} <span className={ok ? "" : "text-foreground/55"}>{t}</span></div>
               ))}
             </div>
           </Card>
@@ -39,7 +39,7 @@ const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
             <div className="text-white font-bold text-lg mb-4">Dedicated Team</div>
             <div className="space-y-2">
               {[["Predictable cost", true], ["Ownership & IP", true], ["Daily standups & QBR", true], ["Higher upfront commitment", false]].map(([t, ok], i) => (
-                <div key={i} className="flex items-center gap-2 text-foreground/80">{ok ? <Check className="size-4 text-primary" /> : <X className="size-4 text-foreground/40" />} <span className={ok ? "" : "text-foreground/55"}>{t as string}</span></div>
+                <div key={i} className="flex items-center gap-2 text-foreground/80">{ok ? <Check className="size-4 text-primary" /> : <X className="size-4 text-foreground/40" />} <span className={ok ? "" : "text-foreground/55"}>{t}</span></div>
               ))}
             </div>
           </Card>
