@@ -5,7 +5,7 @@ import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, Section, S
    const meta= [{ title: "IT Staff Augmentation — HireTopCoder" }, { name: "description", content: "Plug vetted engineers into your existing team in 48–72 hours." }] 
 
 
-function Page() {
+export default function Page() {
   return (
     <   >
       <div className="pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
