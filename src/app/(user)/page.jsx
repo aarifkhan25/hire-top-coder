@@ -498,12 +498,24 @@ const [currentIndex, setCurrentIndex] = useState(0);
 function Testimonials() {
  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef(null);
 
   // अनंत लूप के लिए: अंत में पहले दो आइटम्स की कॉपी जोड़ रहे हैं ताकि स्लाइड स्मूथ रहे
   const extendedItems = testimonials.length > 0 
     ? [...testimonials, ...testimonials.slice(0, 2)] 
     : [];
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      if (typeof window === "undefined") return;
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
 
   useEffect(() => {
     if (testimonials.length <= 2) return;
@@ -565,9 +577,9 @@ function Testimonials() {
             <div 
               className={`flex flex-row w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
               style={{ 
-                transform: `translateX(-${currentIndex * (window?.innerWidth < 768 ? 100 : 50)}%)`,
+                transform: `translateX(-${currentIndex * (isMobile ? 100 : 50)}%)`,
                 transitionProperty: isTransitioning ? 'transform' : 'none'
-              }}isMobile
+              }}
             >
               {extendedItems.map((review, index) => (
                 <div 
