@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaAndroid, FaAws, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import { FaWebflow } from "react-icons/fa6";
@@ -98,22 +99,22 @@ const navData = [
           {icon:<Layout/>,
             name: "UI/UX  Designers",
             desc: "Crafting beautiful, high-converting modern user journeys",
-            href: "/hire/categories/design",
+            href: "/hire/ui-ux-designer",
           },
           {icon:<Code2/>,
             name: "Full Stack Developer",
             desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
-            href: "/hire/categories/full-stack",
+            href: "/hire/full-stack-developer",
           },
           {icon:<Brain/>,
             name: "AI-ML Engeeners",
             desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
-            href: "/hire/categories/full-stack",
+            href: "/hire/ai-ml-engineer",
           },
           {icon:<Smartphone/>,
             name: "Mobile Developers",
             desc: "Crafting beautiful, high-converting modern user journeys",
-            href: "/hire/categories/design",
+            href: "/hire/mobile-developer",
           },
         ],
       },
@@ -145,12 +146,12 @@ const navData = [
       {icon:<Calculator/>,
         name: "Developer",
         desc: "Calculate your Total cost of hire",
-        href: "/",
+          href: "/resources/offshore-dev-rates",
       },
       {icon:<FileText/>,
         name: "Free Scoping template",
         desc: "Define your project before the first call",
-        href: "/",
+        href: "/resources",
       },
     ],
     columns: [
@@ -160,17 +161,17 @@ const navData = [
           {icon:<BookOpen/>,
             name: "Hiring Guides& FAQs",
             desc: "Everything you need before hiring",
-            href: "/",
+            href: "/faq",
           },
           {icon:<BarChart3/>,
             name: "Offshore Dev Rates 2025",
             desc: "India vs eastern Europe vs LATAM",
-            href: "/",
+            href: "/resources/offshore-dev-rates",
           },
           { icon:<PenLine/>,
             name: "Blog & Insights",
             desc: "Tech tips Hiring guides industry trends",
-            href: "/",
+            href: "/resources",
           },
         ],
       },
@@ -188,13 +189,13 @@ const navData = [
           tag: "GUIDE 2025",
           title: "Dedicated Dev vs Freelancer - The Real difference",
           meta: "8 min read",
-          href: "/",
+          href: "/resources/dedicated-vs-freelancer",
         },
         {
           tag: "COMPARISION",
           title: "Staff Augmentation vs dedicated Team",
           meta: "5 min Read",
-          href: "/",
+          href: "/services/staff-augmentation",
         },
         {
           tag: "CASE STUDY",
@@ -231,7 +232,7 @@ export function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
-
+const pathname = usePathname()
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
     const handleScroll = () => {
@@ -303,8 +304,9 @@ export function Nav() {
 
             {/* डेस्कटॉप मेनू */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
-              {navData?.map((item, i) => (
-                <div
+              {navData?.map((item, i) => {
+                const isActive = pathname === item.href;
+                return(<div
                   key={i}
                   onMouseEnter={() => setHoveredIndex(i)}
                   className="py-5"
@@ -312,9 +314,9 @@ export function Nav() {
                   <Link
                     href={item.href || "#"}
                     data-aos="fade-down"
-                    className="relative hover:text-white transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer text-foreground/85"
+                    className={`relative   transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer `}
                   >
-                    <span className="flex justify-center items-center gap-1">
+                    <span className={`${isActive ?"text-primary hover:text-gradient-purple":"hover:text-white text-foreground/85"} flex justify-center items-center gap-1`}>
                       {item.name}
                       {(item.columns || item.isResourcesTemplate) && (
                         <FiChevronDown
@@ -322,7 +324,7 @@ export function Nav() {
                         />
                       )}
                     </span>
-                    <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
+                    <span className={`absolute -bottom-1 left-0 h-px w-0 ${isActive ?"bg-gray-400":"bg-gradient-to-r from-primary to-accent"}  transition-all duration-300 group-hover:w-full`} />
                   </Link>
 
                   {/* डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
@@ -434,7 +436,7 @@ export function Nav() {
                                       (card, cIdx) => (
                                         <div
                                           key={cIdx}
-                                          className="bg-black border border-white/5 rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group"
+                                          className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group"
                                         >
                                           <div className="w-full">
                                             <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase block mb-1">
@@ -475,7 +477,7 @@ export function Nav() {
                                   </div>
 
                                   {item.featuredCard && (
-                                    <div className="bg-black border border-white/5 rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
+                                    <div className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
                                       <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
                                         {item.featuredCard.tag}
                                       </span>
@@ -588,7 +590,7 @@ export function Nav() {
                       )}
                   </AnimatePresence>
                 </div>
-              ))}
+              )})}
             </div>
           </div>
           {/* राइट साइड बटन्स */}

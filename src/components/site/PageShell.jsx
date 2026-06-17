@@ -1,12 +1,11 @@
 "use client"
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Nav, ScrollProgress } from "./Nav.jsx";
-import { Footer } from "./Footer.jsx";
 import Link from "next/link";
 import {
   LuArrowRight
 } from "react-icons/lu";
+import { Footer } from "./Footer.jsx";
+import { Nav, ScrollProgress } from "./Nav.jsx";
 
 export function PageShell({ children }) {
   return (
