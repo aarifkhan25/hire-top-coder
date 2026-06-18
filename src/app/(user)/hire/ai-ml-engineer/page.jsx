@@ -1,5 +1,5 @@
 
-import { PageHero, Section, SectionTitle, Card, ProfileCard, FAQ, CTABanner, Breadcrumb } from "@/components/site/Shared";
+import { Breadcrumb, Card, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 
  const meta= [{ title: "Hire AI/ML Engineers & LLM Specialists — HireTopCoder" }] 
 
@@ -16,26 +16,28 @@ const devs = [
 
 export default function Page() {
   return (
-    < >
-      <div className=" px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "AI / ML Engineer" }]} /></div>
+   <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className=" pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "AI / ML Engineer" }]} /></div>
       <PageHero
         eyebrow="Hire by Role"
         title={<>Hire <span className="text-primary">AI / ML Engineers</span> & LLM Specialists</>}
-        sub="Engineers who can ship production AI — not just notebooks. LLMs, vision, MLOps, automation."
+        sub={<>Engineers who can ship production AI — not just<br/> notebooks. LLMs, vision, MLOps, automation.</>}
       />
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Specializations" title="Pick the right specialization" />
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center mt-10 gap-2">
           {specs.map((s) => (
-            <span key={s} className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[13px] font-medium">{s}</span>
+            <span key={s} className="px-4 py-2 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary  text-primary hover:text-white text-[13px] font-medium">{s}</span>
           ))}
         </div>
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Profiles" title="Featured AI Engineers" />
         <div className="grid md:grid-cols-3 gap-5">{devs.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Use Cases" title="Use cases we've shipped" />
         <div className="grid md:grid-cols-4 gap-4">
           {[
@@ -44,9 +46,9 @@ export default function Page() {
             { t: "Automation pipelines", d: "LangGraph + workflow orchestration for ops teams." },
             { t: "Document AI", d: "OCR + extraction with structured JSON output." },
           ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
-        </div>
+        </div></div>
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Can they work on proprietary data?", a: "Yes — we sign NDAs and follow your data-handling policies." },
@@ -56,6 +58,6 @@ export default function Page() {
         ]} />
       </Section>
       <CTABanner />
-    </ >
+    </main >
   );
 }

@@ -1,15 +1,15 @@
 
-import { PageHero, Section, SectionTitle, Card, ComparisonTable, CTABanner, Breadcrumb } from "@/components/site/Shared";
+import { Breadcrumb, Card, ComparisonTable, CTABanner, PageHero, Section, SectionTitle } from "@/components/site/Shared";
 import { Check, X } from "lucide-react";
 
 const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
 
  export default function Page() {
   return (
-    <    >
-      <div className=" px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Resources" }, { label: "Dedicated vs Freelancer" }]} /></div>
+  <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className=" pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Resources" }, { label: "Dedicated vs Freelancer" }]} /></div>
       <PageHero eyebrow="Guide 2026" title={<>Dedicated Developer vs <span className="text-primary">Freelancer</span></>} sub="The real differences — cost, control, quality, and what actually scales." />
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Compare" title="Side-by-side" />
         <ComparisonTable
           headers={["Dimension", "Freelancer", "Dedicated Team"]}
@@ -24,7 +24,9 @@ const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
           ]}
         />
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+              <div className="relative  w-full">
         <SectionTitle eyebrow="Pros & Cons" title="What each is good at" />
         <div className="grid md:grid-cols-2 gap-5">
           <Card>
@@ -44,8 +46,8 @@ const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
             </div>
           </Card>
         </div>
-      </Section>
-      <Section>
+      </div></Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Decide" title="Which one fits you?" />
         <div className="max-w-2xl mx-auto space-y-3">
           {[
@@ -64,6 +66,6 @@ const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
         </div>
       </Section>
       <CTABanner />
-    </    >
+    </   main >
   );
 }

@@ -22,10 +22,10 @@ export default function Page() {
   const [tab, setTab] = useState("cross");
   const set = tab === "ios" ? ios : tab === "android" ? android : cross;
   return (
-    <   >
-      <div className=" px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Mobile Developer" }]} /></div>
-      <PageHero eyebrow="Hire by Role" title={<>Hire <span className="text-primary">Mobile Developers</span></>} sub="Flutter, React Native, native iOS and Android — pick the right platform for your product." />
-      <Section>
+    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className=" pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Mobile Developer" }]} /></div>
+      <PageHero eyebrow="Hire by Role" title={<>Hire <span className="text-primary">Mobile Developers</span></>} sub={<>Flutter, React Native, native iOS and Android — pick the  right <br/> platform for your product.</>} />
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Compare" title="Flutter vs React Native" />
         <ComparisonTable
           headers={["Dimension", "Flutter", "React Native"]}
@@ -38,16 +38,16 @@ export default function Page() {
           ]}
         />
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Profiles" title="By platform" />
-        <div className="flex justify-center gap-2 mb-8">
+        <div className="flex justify-center  gap-2 mt-10">
           {([["cross", "Cross-platform"], ["ios", "iOS"], ["android", "Android"]] ).map(([k, l]) => (
             <button key={k} onClick={() => setTab(k)} className={`px-5 py-2 rounded-full text-sm font-medium ${tab === k ? "bg-primary text-white" : "bg-white/[0.04] text-foreground/70 hover:bg-white/[0.08]"}`}>{l}</button>
           ))}
         </div>
         <div className="grid md:grid-cols-3 gap-5">{set.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Flutter or React Native?", a: "Flutter for animation-heavy and greenfield apps; React Native if your team already lives in JS/React." },
@@ -57,6 +57,6 @@ export default function Page() {
         ]} />
       </Section>
       <CTABanner />
-    </   >
+    </main >
   );
 }

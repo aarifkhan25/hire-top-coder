@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 
-import { PageHero, Section, SectionTitle, Card, ProfileCard, FAQ, CTABanner, Breadcrumb, ComparisonTable } from "@/components/site/Shared";
+import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 import { Search } from "lucide-react";
 
 const meta= [{ title: "Hire Full-Stack Developer — HireTopCoder" }, { name: "description", content: "Hire vetted full-stack developers. React, Node, Python, MERN." }] 
@@ -21,12 +21,12 @@ const stacks = ["All", "React", "Node", "Python", "MERN", "Next.js"];
 export default function Page() {
   const [stack, setStack] = useState("All");
   return (
-    <   >
-      <div className=" px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Full-Stack Developer" }]} /></div>
+   <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className=" pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Full-Stack Developer" }]} /></div>
       <PageHero
         eyebrow="Hire by Role"
         title={<>Hire <span className="text-primary">Full-Stack Developers</span></>}
-        sub="Senior engineers who ship across the stack — from React to infra — without hand-holding."
+        sub={<>Senior engineers who ship across the stack — from <br/> React to infra — without hand-holding.</>}
       >
         <div className="max-w-xl mx-auto flex items-center gap-2 rounded-full bg-[#141418] border border-white/[0.08] px-4 py-2">
           <Search className="size-4 text-foreground/40" />
@@ -38,11 +38,12 @@ export default function Page() {
           ))}
         </div>
       </PageHero>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Profiles" title="Featured Engineers" />
         <div className="grid md:grid-cols-3 gap-5">{devs.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Seniority" title="Filter by level" />
         <ComparisonTable
           headers={["Level", "Experience", "Hourly", "Monthly"]}
@@ -54,7 +55,10 @@ export default function Page() {
           ]}
         />
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
+         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Why" title="Why hire full-stack" />
         <div className="grid md:grid-cols-3 gap-5">
           {[
@@ -62,9 +66,10 @@ export default function Page() {
             { t: "Faster iteration", d: "Ship features end-to-end inside one sprint." },
             { t: "Better architecture", d: "Decisions are made with the whole stack in mind." },
           ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
-        </div>
+        </div></div>
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Can a single engineer really cover full-stack?", a: "Yes — our senior engineers consistently ship production features end-to-end." },
@@ -73,7 +78,8 @@ export default function Page() {
           { q: "Time to start?", a: "5–7 business days." },
         ]} />
       </Section>
+
       <CTABanner />
-    </   >
+    </  main >
   );
 }

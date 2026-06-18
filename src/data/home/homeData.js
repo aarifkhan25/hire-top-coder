@@ -84,7 +84,7 @@ export const  homeData = {
   //   role: "Business Development Executive",
   //   img: "/assets/nilofar.png",
   //   accent: "oklch(0.65 0.28 320)",
-  // },
+  // }, 
 ],
 
  brands : [

@@ -8,12 +8,12 @@ import Link from "next/link";
 
  export default function Page() {
   return (
-    < >
-      <div className="pt-28 w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "MVP Development" }]} /></div>
+    < main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full" >
+      <div className="pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "MVP Development" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
         title={<>Investor-Ready <span className="text-primary">MVP in 12 Weeks</span></>}
-        sub="Strategy, design, code, QA, and launch — one team, one timeline, one outcome you can show to investors."
+        sub={<>Strategy, design, code, QA, and launch — one team, one timeline, <br/>one outcome you can show to investors.</>}
       />
       <Section   className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Included" title="What's in the box" />
@@ -28,13 +28,15 @@ import Link from "next/link";
       </Section>
 
       <Section   className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Timeline" title="12-Week Roadmap" />
         <Stepper steps={[
           { title: "Weeks 1–2 · Discovery", desc: "Product brief, user flows, success metrics locked." },
           { title: "Weeks 3–6 · Design + Build", desc: "Hi-fi designs and core architecture in parallel." },
           { title: "Weeks 7–10 · Development", desc: "Feature build-out, integrations, internal demos." },
           { title: "Weeks 11–12 · Test + Launch", desc: "QA, polish, production deploy, handoff." },
-        ]} />
+        ]} /></div>
       </Section>
 
 
@@ -49,6 +51,8 @@ import Link from "next/link";
 
 
       <Section   className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Output" title="Investor-Ready Output" />
         <div className="grid md:grid-cols-3 gap-5">
           {[
@@ -56,7 +60,7 @@ import Link from "next/link";
             { t: "Codebase ownership", d: "Full repo access, clean commits, transferable architecture." },
             { t: "Scalability docs", d: "Architecture diagrams and scale-up plan you can hand to your CTO." },
           ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
-        </div>
+        </div></div>
       </Section>
 
       <Section   className="py-28 2xl:py-35">
@@ -79,10 +83,7 @@ import Link from "next/link";
         ]} />
       </Section>
 
-      <CTABanner title = "Ready to get started?"
-  sub = "Talk to a vetted expert today and ship faster."
-  ctaLabel = "Talk to Expert"
-  to = "/contact"  />
-    </ >
+     <CTABanner />
+    </main  >
   );
 }

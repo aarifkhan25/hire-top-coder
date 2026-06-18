@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 
  export default function Page() {
   return (
-    < >
-      <div className="pt-28 w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
+    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"  >
+      <div className="pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
         title={<>Zero-Downtime <span className="text-primary">Legacy Upgrades</span></>}
@@ -25,13 +25,15 @@ import { ArrowRight } from "lucide-react";
       </Section>
 
       <Section  className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Outcomes" title="What our clients see" />
         <StatGrid stats={[
           { value: "60%", label: "Faster page loads" },
           { value: "40%", label: "Lower infra cost" },
           { value: "0", label: "Production downtime" },
           { value: "3×", label: "Deploy frequency" },
-        ]} />
+        ]} /></div>
       </Section>
 
       <Section  className="py-28 2xl:py-35">
@@ -63,10 +65,7 @@ import { ArrowRight } from "lucide-react";
         ]} />
       </Section>
 
-     <CTABanner title = "Ready to get started?"
-  sub = "Talk to a vetted expert today and ship faster."
-  ctaLabel = "Talk to Expert"
-  to = "/contact"  />
-    </ >
+     <CTABanner />
+    </main  >
   );
 }

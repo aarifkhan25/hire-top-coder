@@ -7,8 +7,8 @@ import { Briefcase, Building2, ShieldCheck, Users } from "lucide-react";
 
 export default function Page() {
   return (
-    <  >
-      <div className=" pt-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Offshore Dev Centre" }]} /></div>
+     <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full" >
+      <div className=" pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Offshore Dev Centre" }]} /></div>
       <PageHero
         eyebrow="GCC Model"
         title={<>Offshore <span className="text-primary">Development Centre</span></>}
@@ -35,8 +35,9 @@ export default function Page() {
       </Section>
 
       <Section className="py-28 2xl:py-35">
+        
         <SectionTitle eyebrow="Timeline" title="90-Day Setup" />
-        <div className="space-y-3 max-w-3xl mx-auto">
+        <div className="space-y-3 w-full grid grid-cols-1 md:grid-cols-2 gap-10 px-20 1xl:px-40">
           {[
             { w: "Week 1–2", t: "Planning", d: "Org design, role mapping, location strategy." },
             { w: "Week 3–6", t: "Hiring", d: "Recruit & vet 80% of seed roles." },
@@ -55,11 +56,13 @@ export default function Page() {
       </Section>
 
       <Section className="py-28 2xl:py-35">
+         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Cost" title="GCC vs In-house, side by side" />
         <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           <Card><div className="text-[11px] uppercase tracking-[0.2em] text-foreground/40 mb-2">In-house (US)</div><div className="text-4xl font-extrabold text-white">$1.8M</div><div className="text-foreground/55 text-sm mt-2">Annual cost for 10 engineers + ops</div></Card>
           <Card className="border-primary/30"><div className="text-[11px] uppercase tracking-[0.2em] text-primary mb-2 font-bold">GCC with us</div><div className="text-4xl font-extrabold text-white">$680K</div><div className="text-foreground/55 text-sm mt-2">Same 10 engineers, fully managed</div></Card>
-        </div>
+        </div></div>
       </Section>
 
       <Section className="py-28 2xl:py-35">
@@ -73,10 +76,7 @@ export default function Page() {
         ]} />
       </Section>
 
-     <CTABanner title = "Ready to get started?"
-      sub = "Talk to a vetted expert today and ship faster."
-      ctaLabel = "Talk to Expert"
-      to = "/contact"  />
-    </  >
+   <CTABanner />
+    </main  >
   );
 }

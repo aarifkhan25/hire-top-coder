@@ -121,7 +121,10 @@ export function FAQ({
 }
 
 export function CTABanner({
-  title,sub,ctaLabel,to
+ title = "Ready to get started?",
+  sub = "Talk to a vetted expert today and ship faster.",
+  ctaLabel = "Talk to Expert",
+  to = "/contact"
 }) {
   return (
     <section className="relative py-28 2xl:py-35  ">

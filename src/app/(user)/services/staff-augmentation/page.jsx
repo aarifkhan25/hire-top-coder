@@ -7,12 +7,12 @@ import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, Section, S
 
 export default function Page() {
   return (
-    <   >
-      <div className="pt-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
+    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className="pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
         title={<>IT <span className="text-primary">Staff Augmentation</span></>}
-        sub="Plug vetted engineers directly into your existing team — your tools, your process, your timeline."
+        sub={<>Plug vetted engineers directly into your existing  team — your <br/> tools,  your process, your timeline.</>}
       />
       <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="When To Use" title="The right scenarios" />
@@ -39,7 +39,10 @@ export default function Page() {
         />
       </Section>
 
+
       <Section className="py-28 2xl:py-35">
+         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Timeline" title="From request to engineer online" />
         <div className="grid md:grid-cols-4 gap-4">
           {[
@@ -54,16 +57,8 @@ export default function Page() {
               <div className="text-foreground/55 text-[13px]">{s.d}</div>
             </Card>
           ))}
-        </div>
+        </div></div>
       </Section>
-
-      <Section className="py-28 2xl:py-35">
-        <SectionTitle eyebrow="Vetting" title="Only the top 3%" sub="Every engineer passes a 5-stage screening before they reach your shortlist." />
-        <div className="text-center">
-          <a href="/how-we-vet" className="inline-flex items-center gap-2 text-primary font-medium">See our vetting process →</a>
-        </div>
-      </Section>
-
       <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
@@ -75,10 +70,7 @@ export default function Page() {
         ]} />
       </Section>
 
-     <CTABanner title = "Ready to get started?"
-  sub = "Talk to a vetted expert today and ship faster."
-  ctaLabel = "Talk to Expert"
-  to = "/contact"  />
-    </   >
+     <CTABanner />
+    </  main >
   );
 }

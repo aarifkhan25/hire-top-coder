@@ -9,13 +9,14 @@ const meta=[{ title: "Dedicated Expert Teams — HireTopCoder" }, { name: "descr
 
 export default function Page() {
   return (
-   <>
-      <div className="pt-28 flex flex-col items-center  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Dedicated Teams" }]} /></div>
+   <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full">
+      <div className="pt-28   "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Dedicated Teams" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
         title={<>Dedicated <span className="text-primary">Expert Teams</span></>}
         sub={<>A full-time developer assigned solely to your project — embedded <br/> in your workflow, owning outcomes end-to-end.</>}
       />
+
       <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Process" title="How It Works" />
         <Stepper steps={[
@@ -25,7 +26,10 @@ export default function Page() {
           { title: "Ongoing Management", desc: "Dedicated success manager keeps velocity and quality on track." },
         ]} />
       </Section>
+
       <Section className="py-28 2xl:py-35">
+         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Ideal For" title="Who this is built for" />
         <div className="grid md:grid-cols-3 gap-5">
           {[
@@ -34,7 +38,10 @@ export default function Page() {
             { t: "Ongoing feature dev", d: "Teams running parallel feature streams that need a steady, embedded engineer." },
           ]?.map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
         </div>
+        </div>
       </Section>
+
+
       <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Pricing" title="Simple monthly retainer" sub="One predictable invoice. No recruiter fees. No surprises." />
         <div className="max-w-2xl mx-auto"><Card className="p-10">
@@ -49,15 +56,21 @@ export default function Page() {
 
         </Card></div>
       </Section>
+
+
       <Section className="py-28 2xl:py-35">
+        <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Proof" title="Real outcomes" />
         <div className="max-w-2xl mx-auto"><Link href="/case-studies/broker-remarks" className="block"><Card className="hover:border-primary/30 transition">
           <PurplePill>Case Study · SaaS</PurplePill>
           <div className="mt-3 text-xl text-white font-medium">Broker Remarks — Listing Platform Rebuild</div>
           <div className="mt-2 text-foreground/60 leading-relaxed">Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture, shipped in 12 weeks by a 2-engineer dedicated team.</div>
           <div className="mt-4 text-primary text-sm flex items-center gap-1 font-medium">Read case study <ArrowRight className="size-4" /></div>
-        </Card></Link></div>
+        </Card></Link></div></div>
       </Section>
+
+
       <Section className="px-30 py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
@@ -68,10 +81,9 @@ export default function Page() {
           { q: "Are engineers truly full-time on my project?", a: "Yes. Each engineer is contractually allocated 100% to a single client at any time." },
         ]} />
       </Section>
-      <CTABanner title = "Ready to get started?"
-  sub = "Talk to a vetted expert today and ship faster."
-  ctaLabel = "Talk to Expert"
-  to = "/contact"  />
-    </>
+
+
+     <CTABanner />
+    </main>
   );
 }

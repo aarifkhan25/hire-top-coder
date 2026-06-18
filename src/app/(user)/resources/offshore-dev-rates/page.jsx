@@ -1,6 +1,6 @@
 "use client"
+import { Breadcrumb, Card, ComparisonTable, CTABanner, PageHero, Section, SectionTitle } from "@/components/site/Shared";
 import { useState } from "react";
-import { PageHero, Section, SectionTitle, Card, ComparisonTable, CTABanner, Breadcrumb } from "@/components/site/Shared";
 
 const meta= [{ title: "Offshore Developer Rates 2026 — HireTopCoder" }]
 
@@ -17,10 +17,10 @@ export default function Page() {
   const rate = rates[region][role];
   const monthly = rate * hours;
   return (
-    <    >
-      <div className="pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Resources" }, { label: "Dev Rates 2026" }]} /></div>
+ <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+      <div className="pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Resources" }, { label: "Dev Rates 2026" }]} /></div>
       <PageHero eyebrow="Guide · Updated June 2026" title={<>Offshore Developer <span className="text-primary">Rates 2026</span></>} sub="Benchmark rates for the regions and stacks that actually matter, refreshed quarterly." />
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Region" title="Rate Comparison by Region" />
         <ComparisonTable
           headers={["Region", "Junior", "Mid", "Senior"]}
@@ -31,7 +31,7 @@ export default function Page() {
           ]}
         />
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Stack" title="Rate by Tech Stack" />
         <ComparisonTable
           headers={["Stack", "India", "Eastern Europe", "LATAM"]}
@@ -43,7 +43,9 @@ export default function Page() {
           ]}
         />
       </Section>
-      <Section>
+      <Section className="py-28 2xl:py-35">
+          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
+      <div className="relative  w-full">
         <SectionTitle eyebrow="Calculator" title="Estimate your monthly cost" />
         <Card className="max-w-2xl mx-auto">
           <div className="grid md:grid-cols-3 gap-4">
@@ -68,8 +70,8 @@ export default function Page() {
             <div className="text-foreground/55 text-sm">@ ${rate}/hr · {hours}h</div>
           </div>
         </Card>
-      </Section>
-      <Section>
+      </div></Section>
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Insights" title="Key takeaways" />
         <div className="grid md:grid-cols-3 gap-5">
           {[
@@ -81,6 +83,6 @@ export default function Page() {
         <div className="text-center mt-10"><button className="bg-white text-black font-bold px-6 py-3 rounded-full">Get Full Report</button></div>
       </Section>
       <CTABanner />
-    </    >
+    </   main >
   );
 }
