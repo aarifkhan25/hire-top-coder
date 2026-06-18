@@ -128,7 +128,7 @@ export function CTABanner({
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
                 <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative text-center">
-          <h3 className="text-3xl md:text-5xl font-extrabold leading-tight">{title}</h3>
+          <h3 className="text-3xl md:text-5xl font-extrabold text-gradient-purple leading-tight">{title}</h3>
           <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-sm md:text-base lg:text-xl">{sub}</p>
         <PrimaryButton href={to} className="mt-8">
           {ctaLabel}
