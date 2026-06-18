@@ -1,5 +1,6 @@
 "use client"
-import { ArrowRight, Check, ChevronDown, X } from "lucide-react";
+import { PrimaryButton } from "@/components/site/PageShell.jsx";
+import { Check, ChevronDown, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Reveal } from "./Reveal";
@@ -11,22 +12,22 @@ export function PageHero({
   children,
 }) {
   return (
-    <section className="relative pt-40 pb-20 px-6 overflow-hidden">
+    <section className="relative  py-20  overflow-hidden">
       <div className="absolute top-20 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
-      <div className="relative mx-auto max-w-7xl text-center">
+      <div className="relative w-full text-center">
         {eyebrow && (
-          <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] text-primary font-bold mb-5">
+ <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
             <span className="size-1 rounded-full bg-primary" /> {eyebrow}
           </div>
         )}
         <Reveal>
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+        <h1 className="text-3xl md:text-5xl font-bold leading-[1.05]">
             {title}
           </h1>
         </Reveal>
         {sub && (
           <Reveal delay={0.1}>
-            <p className="mt-6 text-foreground/70 text-lg max-w-2xl mx-auto font-medium">
+            <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">
               {sub}
             </p>
           </Reveal>
@@ -42,7 +43,7 @@ export function Section({
   className = "",
 }) {
   return (
-    <section className={`relative px-6 py-20 ${className}`}>
+    <section className={`relative    ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -54,15 +55,15 @@ export function SectionTitle({
   sub,
 }) {
   return (
-    <div className="text-center mb-14">
+    <div className="text-center ">
       {eyebrow && (
-        <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] text-primary font-bold mb-4">
+       <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
           <span className="size-1 rounded-full bg-primary" /> {eyebrow}
         </div>
       )}
-      <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">{title}</h2>
+      <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">{title}</h2>
       {sub && (
-        <p className="mt-4 text-foreground/65 text-lg max-w-2xl mx-auto font-medium">
+     <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">
           {sub}
         </p>
       )}
@@ -76,7 +77,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-[10px] bg-[#141418] border border-white/[0.07] p-6 ${className}`}
+      className={` bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-6 mt-10 ${className}`}
     >
       {children}
     </div>
@@ -85,7 +86,7 @@ export function Card({
 
 export function PurplePill({ children }) {
   return (
-    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] text-primary bg-primary/10 border border-primary/20">
+    <span className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10  font-semibold">
       {children}
     </span>
   );
@@ -96,16 +97,16 @@ export function FAQ({
 }) {
   const [open, setOpen] = useState(0);
   return (
-    <div className="max-w-3xl mx-auto divide-y divide-white/[0.07] rounded-[10px] bg-[#0d0d0d] border border-white/[0.07]">
+    <div className="w-full mt-10  divide-y divide-white/[0.07] rounded-[10px] bg-[#0d0d0d] border border-white/[0.07]">
       {items.map((item, i) => (
         <div key={i} className="px-6">
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between py-5 text-left text-white font-medium"
+            className="w-full flex items-center justify-between cursor-pointer py-5 text-left text-white font-medium"
           >
             <span>{item.q}</span>
             <ChevronDown
-              className={`size-4 text-primary transition-transform ${open === i ? "rotate-180" : ""}`}
+              className={`size-4 text-primary transition-transform  ${open === i ? "rotate-180" : ""}`}
             />
           </button>
           {open === i && (
@@ -120,24 +121,18 @@ export function FAQ({
 }
 
 export function CTABanner({
-  title = "Ready to get started?",
-  sub = "Talk to a vetted expert today and ship faster.",
-  ctaLabel = "Talk to Expert",
-  to = "/contact",
+  title,sub,ctaLabel,to
 }) {
   return (
-    <section className="relative px-6 py-20">
-      <div className="mx-auto max-w-5xl relative rounded-2xl bg-[#0d0d0d] border border-primary/30 p-10 md:p-14 overflow-hidden shadow-[0_0_60px_-10px_oklch(0.62_0.26_305/0.35)]">
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/20 blur-[140px] pointer-events-none" />
+    <section className="relative py-28 2xl:py-35  ">
+      <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
+                <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative text-center">
-          <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">{title}</h3>
-          <p className="mt-3 text-foreground/65 max-w-xl mx-auto">{sub}</p>
-          <Link
-            href={to}
-            className="mt-8 inline-flex items-center gap-2 bg-white text-black font-bold px-6 py-3 rounded-full hover:bg-white/90 transition"
-          >
-            {ctaLabel} <ArrowRight className="size-4" />
-          </Link>
+          <h3 className="text-3xl md:text-5xl font-extrabold leading-tight">{title}</h3>
+          <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-sm md:text-base lg:text-xl">{sub}</p>
+        <PrimaryButton href={to} className="mt-8">
+          {ctaLabel}
+        </PrimaryButton>
         </div>
       </div>
     </section>
@@ -168,7 +163,7 @@ export function ComparisonTable({
   rows,
 }) {
   return (
-    <div className="overflow-hidden rounded-[10px] border border-white/[0.07] bg-[#0d0d0d]">
+    <div className="overflow-hidden mt-10 rounded-[10px] border border-white/[0.07] bg-[#0d0d0d]">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-white/[0.07] bg-white/[0.02]">
@@ -191,7 +186,7 @@ export function ComparisonTable({
                     cell ? (
                       <Check className="size-4 text-primary" />
                     ) : (
-                      <X className="size-4 text-foreground/30" />
+                      <X className="size-4 text-white" />
                     )
                   ) : (
                     cell
@@ -214,11 +209,11 @@ export function Stepper({
       {steps.map((s, i) => (
         <Reveal key={i} delay={i * 0.08}>
           <Card className="h-full">
-            <div className="size-10 rounded-lg bg-primary/10 border border-primary/20 grid place-items-center text-primary font-bold mb-4">
+            <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary mb-5" >
               {String(i + 1).padStart(2, "0")}
             </div>
-            <div className="text-white font-medium mb-2">{s.title}</div>
-            <div className="text-foreground/55 text-[13px] leading-relaxed">{s.desc}</div>
+            <div className="text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition mb-2">{s.title}</div>
+            <div className="text-xs 2xl:text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">{s.desc}</div>
           </Card>
         </Reveal>
       ))}
@@ -233,10 +228,10 @@ export function StatGrid({
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {stats.map((s, i) => (
         <Card key={i} className="text-center">
-          <div className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          <div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">
             {s.value}
           </div>
-          <div className="mt-2 text-[12px] uppercase tracking-[0.15em] text-foreground/50 font-mono">
+          <div className="text-[12px] font-semibold text-white/35 mt-2">
             {s.label}
           </div>
         </Card>

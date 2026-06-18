@@ -8,13 +8,13 @@ import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, Section, S
 export default function Page() {
   return (
     <   >
-      <div className="pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
+      <div className="pt-28 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
         title={<>IT <span className="text-primary">Staff Augmentation</span></>}
         sub="Plug vetted engineers directly into your existing team — your tools, your process, your timeline."
       />
-      <Section>
+      <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="When To Use" title="The right scenarios" />
         <div className="grid md:grid-cols-3 gap-5">
           {[
@@ -24,7 +24,8 @@ export default function Page() {
           ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
         </div>
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Compare" title="Staff Augmentation vs Dedicated Teams" />
         <ComparisonTable
           headers={["Dimension", "Staff Augmentation", "Dedicated Team"]}
@@ -37,7 +38,8 @@ export default function Page() {
           ]}
         />
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Timeline" title="From request to engineer online" />
         <div className="grid md:grid-cols-4 gap-4">
           {[
@@ -54,13 +56,15 @@ export default function Page() {
           ))}
         </div>
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Vetting" title="Only the top 3%" sub="Every engineer passes a 5-stage screening before they reach your shortlist." />
         <div className="text-center">
           <a href="/how-we-vet" className="inline-flex items-center gap-2 text-primary font-medium">See our vetting process →</a>
         </div>
       </Section>
-      <Section>
+
+      <Section className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Minimum engagement length?", a: "We typically engage for a minimum of 4 weeks." },
@@ -70,7 +74,11 @@ export default function Page() {
           { q: "Can I convert to a full-time hire?", a: "Yes — after 6 months a conversion fee applies, and the engineer becomes yours." },
         ]} />
       </Section>
-      <CTABanner />
+
+     <CTABanner title = "Ready to get started?"
+  sub = "Talk to a vetted expert today and ship faster."
+  ctaLabel = "Talk to Expert"
+  to = "/contact"  />
     </   >
   );
 }

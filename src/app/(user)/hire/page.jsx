@@ -6,6 +6,10 @@ import {
 import { PrimaryButton, GhostButton, SectionHead, AmbientGlow } from "@/components/site/PageShell";
 import { Reveal, Stagger, StaggerItem, WordReveal, TiltCard, Parallax } from "@/components/site/Reveal";
 
+export const metadata ={ title: "Start Hiring — HireTopCoder" ,
+      description: "Tell us what you need. We'll match you with the right expert — vetted, available, and ready to ship." };
+
+      
 const categories = [
   { icon: Palette,   label: "UI/UX Designers",     count: "320+" },
   { icon: Layout,    label: "Product Designers",   count: "210+" },

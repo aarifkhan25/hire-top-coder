@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { PageHero, Section, SectionTitle, Card, Stepper, StatGrid, FAQ, CTABanner, Breadcrumb } from "@/components/site/Shared";
+import { Breadcrumb, Card, CTABanner, FAQ, PageHero, Section, SectionTitle, StatGrid, Stepper } from "@/components/site/Shared";
 import { ArrowRight } from "lucide-react";
 
 
@@ -9,13 +8,13 @@ import { ArrowRight } from "lucide-react";
  export default function Page() {
   return (
     < >
-      <div className="pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
+      <div className="pt-28 w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
         title={<>Zero-Downtime <span className="text-primary">Legacy Upgrades</span></>}
-        sub="Modernize tired PHP, jQuery, or .NET stacks into cloud-native React/Node systems — without breaking production."
+        sub={<>Modernize tired PHP, jQuery, or .NET stacks into cloud-native <br/> React/Node systems — without breaking production.</>}
       />
-      <Section>
+      <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Approach" title="Our Modernization Approach" />
         <Stepper steps={[
           { title: "Audit & Assessment", desc: "Full codebase, infra, and risk audit in week 1." },
@@ -24,7 +23,8 @@ import { ArrowRight } from "lucide-react";
           { title: "Zero-Downtime Deploy", desc: "Blue/green cutovers with instant rollback." },
         ]} />
       </Section>
-      <Section>
+
+      <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Outcomes" title="What our clients see" />
         <StatGrid stats={[
           { value: "60%", label: "Faster page loads" },
@@ -33,7 +33,8 @@ import { ArrowRight } from "lucide-react";
           { value: "3×", label: "Deploy frequency" },
         ]} />
       </Section>
-      <Section>
+
+      <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="Stacks" title="From → To" />
         <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           <Card>
@@ -50,7 +51,8 @@ import { ArrowRight } from "lucide-react";
           </Card>
         </div>
       </Section>
-      <Section>
+
+      <Section  className="py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "How long does a typical modernization take?", a: "Most engagements are 4–9 months, depending on surface area and team size." },
@@ -60,7 +62,11 @@ import { ArrowRight } from "lucide-react";
           { q: "Do you train our internal team?", a: "Yes — knowledge-transfer is built into every milestone." },
         ]} />
       </Section>
-      <CTABanner />
+
+     <CTABanner title = "Ready to get started?"
+  sub = "Talk to a vetted expert today and ship faster."
+  ctaLabel = "Talk to Expert"
+  to = "/contact"  />
     </ >
   );
 }

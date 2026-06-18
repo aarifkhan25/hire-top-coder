@@ -1,4 +1,5 @@
 "use client";
+import { headerData } from "@/data/headerData";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
@@ -6,211 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaAndroid, FaAws, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
-import { FaWebflow } from "react-icons/fa6";
-import {
-  FiArrowRight as ArrowRight, FiBarChart2 as BarChart3, // Creative/Magic alternative
-  FiBookOpen as BookOpen, FiCpu as Brain, // Puzzle/Component design representation
-  FiBriefcase as Building2, // Drawing/Writing representation
-  FiLayers as Calculator, FiCode as Code2, FiAlignJustify, FiChevronDown, // Functional grid calculation design
-  FiFileText as FileText, FiLayout as Layout, FiEdit3 as PenLine, FiPackage as Puzzle, // Corporate/Building alternative
-  FiRefreshCw as RefreshCw, // AI/Brain/Core representation
-  FiSmartphone as Smartphone, FiTrendingUp as TrendingUp, FiUsers as Users
-} from "react-icons/fi";
-import { IoIosRocket as Rocket } from "react-icons/io";
+import { FiArrowRight as ArrowRight, FiAlignJustify, FiChevronDown } from "react-icons/fi";
 import { MdOutlineClose, MdOutlineMarkEmailUnread, MdOutlinePhoneInTalk } from "react-icons/md";
 
-// 🌌 पूरी तरह डायनामिक मेगा मेनू डेटा स्ट्रक्चर (As per resources.png specs)
-const navData = [
-  {
-    name: "Services",
-    href: "/services",
-    dropdownTitle: "Services.",
-    dropdownDesc:
-      "End-to end digital engineering built around your product goals.",
-    featuredCard: {
-      tag: "Case Study SAAS",
-      title: "Broker Remarks - listing Platform Rebuild",
-      desc: "Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture.",
-      actionText: "Read case study",
-      href: "/services/case-study",
-    },
-    columns: [
-      {
-        title: "Delivery Models",
-        links: [
-          { icon:<Users/>,
-            name: "Dedicated Expert Teams",
-            desc: "A full-time developer assigned only to year project",
-            href: "/services/dedicated-teams",
-          },
-          { icon:<Puzzle/>,
-            name: "IT Staff Augmentation",
-            desc: "Plug vetted engineers into your existing team",
-            href: "/services/staff-augmentation",
-          },
-          
-          { icon:<Building2/>,
-            name: "Offshore Development Center",
-            desc: "Build your own offshore team with our infrastructure",
-            href: "/services/offshore-dev-centre",
-          },
-        ],
-      },
-      {
-        title: "Engineering Services",
-        links: [
-          { icon :<RefreshCw/>,
-            name: "Legacy System Modernization",
-            desc: "Zero-Downtime upgrades for outdated platforms",
-            href: "/services/legacy-modernization",
-          },
-          {icon :<Rocket/>,
-            name: "MVP Development",
-            desc: "Investor ready product in 12 weeks",
-            href: "/services/mvp-development",
-          },
-          {icon :<TrendingUp/>,
-            name: "Scale Your Engineering team",
-            desc: "Add 3-30 engineers in 48-72 hours",
-            href: "/services/hire",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Hire Developers",
-    href: "/hire",
-    dropdownTitle: "Hire Developers.",
-    dropdownDesc:
-      "Experts across 50+ technologies. Cover any stack, any role, any stage.",
-    featuredCard: {
-      tag: "Case Study Mobile",
-      title: "MKGO Transport - Flutter App",
-      desc: "Full ride-booking app shipped in 8 Weeks with the react time sheduling.",
-      actionText: "Read case study",
-      href: "/hire/vetting",
-    },
-    columns: [
-      {
-        title: "Delivery Models",
-        links: [
-          {icon:<Layout/>,
-            name: "UI/UX  Designers",
-            desc: "Crafting beautiful, high-converting modern user journeys",
-            href: "/hire/ui-ux-designer",
-          },
-          {icon:<Code2/>,
-            name: "Full Stack Developer",
-            desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
-            href: "/hire/full-stack-developer",
-          },
-          {icon:<Brain/>,
-            name: "AI-ML Engeeners",
-            desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
-            href: "/hire/ai-ml-engineer",
-          },
-          {icon:<Smartphone/>,
-            name: "Mobile Developers",
-            desc: "Crafting beautiful, high-converting modern user journeys",
-            href: "/hire/mobile-developer",
-          },
-        ],
-      },
-      {
-        title: "Hire By Technology",
-        links: [
-          { icon:<FaReact/>, name: "React", desc: "", href: "/" },
-          {  icon:<FaPython/>,  name: "Python/AI", desc: "", href: "/" },
-          { icon:<FaAndroid />,  name: "Android", desc: "", href: "/" },
-        ],
-        links1: [
-          {icon:<FaNodeJs />,  name: "Node JS", desc: "", href: "/" },
-          {icon:<FaAws />,  name: "AWS", desc: "", href: "/" },
 
-          {icon:<FaWebflow/>,  name: "Webflow", desc: "", href: "/" },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Resources",
-    href: "/resources",
-    dropdownTitle: "Resources",
-    dropdownDesc:
-      "Guides, Tools, and insights to help you hire smarter and build faster",
-    isResourcesTemplate: true, // स्पेशल लेआउट को ट्रिगर करने के लिए फ्लैग
-    leftSubTitle: "Delivery Models",
-    leftLinks: [
-      {icon:<Calculator/>,
-        name: "Developer",
-        desc: "Calculate your Total cost of hire",
-          href: "/resources/offshore-dev-rates",
-      },
-      {icon:<FileText/>,
-        name: "Free Scoping template",
-        desc: "Define your project before the first call",
-        href: "/resources",
-      },
-    ],
-    columns: [
-      {
-        title: "LEARN",
-        links: [
-          {icon:<BookOpen/>,
-            name: "Hiring Guides& FAQs",
-            desc: "Everything you need before hiring",
-            href: "/faq",
-          },
-          {icon:<BarChart3/>,
-            name: "Offshore Dev Rates 2025",
-            desc: "India vs eastern Europe vs LATAM",
-            href: "/resources/offshore-dev-rates",
-          },
-          { icon:<PenLine/>,
-            name: "Blog & Insights",
-            desc: "Tech tips Hiring guides industry trends",
-            href: "/resources",
-          },
-        ],
-      },
-    ],
-    proofSection: {
-      title: "PROOF AND COMPARISION",
-      cards: [
-        {
-          tag: "CASE STUDY",
-          title: "Broker Remarks - listing Platform Rebuild",
-          meta: <>Flutter - Firebase <span className="text-primary">•</span>6 weeks</>,
-          href: "/",
-        },
-        {
-          tag: "GUIDE 2025",
-          title: "Dedicated Dev vs Freelancer - The Real difference",
-          meta: "8 min read",
-          href: "/resources/dedicated-vs-freelancer",
-        },
-        {
-          tag: "COMPARISION",
-          title: "Staff Augmentation vs dedicated Team",
-          meta: "5 min Read",
-          href: "/services/staff-augmentation",
-        },
-        {
-          tag: "CASE STUDY",
-          title: "Rolling Star Casino-Full React Platform",
-          meta: <>React JS  <span className="text-primary">•</span>10 weeks </>,
-          href: "/",
-        },
-      ],
-    },
-  },
-  {
-    name: "Company",
-    href: "/company",
-  },
-];
+
+const {navData}=headerData
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -305,14 +107,14 @@ const pathname = usePathname()
             {/* डेस्कटॉप मेनू */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
               {navData?.map((item, i) => {
-                const isActive = pathname === item.href;
+                const isActive = pathname === item.href || (item.columns && item.columns.some(col => col.links.some(link => link.href === pathname))) || (item.isResourcesTemplate && (pathname.startsWith("/resources") || pathname === "/faq"));
                 return(<div
                   key={i}
                   onMouseEnter={() => setHoveredIndex(i)}
                   className="py-5"
                 >
                   <Link
-                    href={item.href || "#"}
+                    href={item.href || "/"}
                     data-aos="fade-down"
                     className={`relative   transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer `}
                   >
@@ -327,7 +129,6 @@ const pathname = usePathname()
                     <span className={`absolute -bottom-1 left-0 h-px w-0 ${isActive ?"bg-gray-400":"bg-gradient-to-r from-primary to-accent"}  transition-all duration-300 group-hover:w-full`} />
                   </Link>
 
-                  {/* डायनामिक यूनिफॉर्म मेगा ड्रॉपडाउन सिस्टम */}
                   <AnimatePresence>
                     {hoveredIndex === i &&
                       (item.columns || item.isResourcesTemplate) && (
@@ -366,7 +167,7 @@ const pathname = usePathname()
                                       {item.leftSubTitle}
                                     </h4>
                                     <div className="flex flex-col gap-10">
-                                      {item.leftLinks.map((link, lIdx) => (
+                                      {item.leftLinks?.map((link, lIdx) => (
                                         <Link
                                           key={lIdx}
                                           href={link.href}
@@ -391,7 +192,7 @@ const pathname = usePathname()
                                 </div>
 
                                 {/* 2. Middle Section: LEARN Column */}
-                                {item.columns.map((col, colIdx) => (
+                                {item.columns?.map((col, colIdx) => (
                                   <div
                                     key={colIdx}
                                     className="flex flex-col gap-10 text-left w-full"
@@ -400,7 +201,7 @@ const pathname = usePathname()
                                       {col.title}
                                     </h4>
                                     <div className="flex flex-col gap-10">
-                                      {col.links.map((link, linkIdx) => (
+                                      {col.links?.map((link, linkIdx) => (
                                         <Link
                                           key={linkIdx}
                                           href={link.href}
@@ -432,7 +233,7 @@ const pathname = usePathname()
                                     {item.proofSection.title}
                                   </h4>
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
-                                    {item.proofSection.cards.map(
+                                    {item.proofSection.cards?.map(
                                       (card, cIdx) => (
                                         <div
                                           key={cIdx}
@@ -497,7 +298,7 @@ const pathname = usePathname()
                                   )}
                                 </div>
 
-                                {item.columns.map((col, colIdx) => (
+                                {item.columns?.map((col, colIdx) => (
                                   <div
                                     key={colIdx}
                                     className="flex flex-col gap-10 text-left w-full"
@@ -509,7 +310,7 @@ const pathname = usePathname()
                                     {col.title === "Hire By Technology" ? (
                                       <div className="flex md:mt-3 1xl:mt-0 gap-10">
                                         <div className="flex flex-col gap-10">
-                                          {col?.links.map((link, linkIdx) => (
+                                          {col?.links?.map((link, linkIdx) => (
                                             <Link
                                               key={linkIdx}
                                               href={link.href}
@@ -532,7 +333,7 @@ const pathname = usePathname()
                                           ))}
                                         </div>
                                         <div className="flex flex-col gap-10">
-                                          {col?.links1.map((link, linkIdx) => (
+                                          {col?.links1?.map((link, linkIdx) => (
                                             <Link
                                               key={linkIdx}
                                               href={link.href}
@@ -556,7 +357,7 @@ const pathname = usePathname()
                                       </div>
                                     ) : (
                                       <div className="flex flex-col gap-10">
-                                        {col.links.map((link, linkIdx) => (
+                                        {col.links?.map((link, linkIdx) => (
                                           <Link
                                             key={linkIdx}
                                             href={link.href}
@@ -662,7 +463,7 @@ const pathname = usePathname()
                         <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
                           Delivery Models
                         </p>
-                        {item.leftLinks.map((link, lIdx) => (
+                        {item.leftLinks?.map((link, lIdx) => (
                           <Link
                             key={lIdx}
                             href={link.href}
@@ -675,7 +476,7 @@ const pathname = usePathname()
                         <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mt-2 mb-1">
                           Learn
                         </p>
-                        {item.columns[0].links.map((link, lIdx) => (
+                        {item.columns[0].links?.map((link, lIdx) => (
                           <Link
                             key={lIdx}
                             href={link.href}
@@ -687,12 +488,12 @@ const pathname = usePathname()
                         ))}
                       </>
                     ) : (
-                      item.columns.map((col, cIdx) => (
+                      item.columns?.map((col, cIdx) => (
                         <div key={cIdx} className="mb-3 text-left">
                           <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
                             {col.title}
                           </p>
-                          {col.links.map((link, lIdx) => (
+                          {col.links?.map((link, lIdx) => (
                             <Link
                               key={lIdx}
                               href={link.href}

@@ -2,107 +2,14 @@ import logo from "@/assets/logo1.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { AiOutlineGlobal, AiOutlineSend } from "react-icons/ai";
-import { FaGithub, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { FiCheck } from 'react-icons/fi';
+import {AiOutlineSend } from "react-icons/ai";
+import {FaMapMarkerAlt, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 import { GhostButton } from "./PageShell.jsx";
-const services = [
+import { footerData } from "@/data/footerData.js";
 
-  "UI/UX Design", "Full-Stack Development", "Mobile App Development",
 
-  "AI / ML Engineering", "DevOps & Cloud", "No-Code Development",
-
-  "Graphic Design", "Growth Marketing",
-
-];
- 
-const hireRoles = [
-
-  "Hire UI/UX Designer", "Hire Full-Stack Dev", "Hire AI Engineer",
-
-  "Hire Mobile Dev", "Hire DevOps Engineer", "Hire No-Code Dev",
-
-  "View All Roles →",
-
-];
- 
-const companyLinks= [
-
-  { label: "About Us", to: "/about" },
-
-  { label: "Our Portfolio", to: "/work" },
-
-  { label: "Careers", to: "/careers" },
-
-  { label: "How We Vet", to: "/about" },
-
-  { label: "Blog & Insights", to: "/resources" },
-
-  { label: "Privacy Policy", to: "/privacy" },
-
-  { label: "Terms of Service", to: "/terms" },
-
-  { label: "Cookie Policy", to: "/cookies" },
-
-];
- function Counter({ suffix = "" }) {
-   const ref = useRef(null);
-   const inView = useInView(ref, { once: true, margin: "-60px" });
-   const [n, setN] = useState(0);
-   useEffect(() => {
-     if (!inView) return;
-     const start = performance.now();
-     const dur = 1800;
-     const tick = (t) => {
-       const p = Math.min(1, (t - start) / dur);
-       const eased = 1 - Math.pow(1 - p, 3);
-       setN(Math.round(to * eased));
-       if (p < 1) requestAnimationFrame(tick);
-     };
-     requestAnimationFrame(tick);
-   }, [inView, to]);
-   return <span ref={ref}>{n.toLocaleString()}{suffix}</span>;
- }
-const stats = [
-
-  { n: "120+", l: "Experts Available" },
-
-  { n: "500+", l: "Projects Delivered" },
-
-  { n: "98%",  l: "Client Satisfaction" },
-
-  { n: "24hr", l: "Average Match Time" },
-
-];
- 
-const socials = [FaLinkedinIn, FaXTwitter, FaGithub, FaInstagram, AiOutlineGlobal];
- 
-const resourceLinks = [
-  {
-    id: 1,
-    title: 'Get a Developer Cost Estimate',
-    description: 'Calculate your team\'s total cost of engagement',
-  },
-  {
-    id: 2,
-    title: 'Engineering Hiring Insights',
-    description: 'Monthly guide for CTOs, founders, and tech leads',
-  },
-  {
-    id: 3,
-    title: 'Free Project Scoping Template',
-    description: 'Define scope before your first expert call',
-  },
-];
-
-const trustMetrics = [
-  '500+ Projects Delivered Across All Technologies',
-  '100+ Happy Enterprise Clients',
-  'ISO 9001 Quality Certified',
-  'GDPR &amp; NDA Protected',
-  'Serving Clients in 15+ Countries',
-];
+const { services, hireRoles, companyLinks, stats, socials, resourceLinks } = footerData;
 export  function Footer() {
 
 
@@ -127,7 +34,7 @@ export  function Footer() {
             LEFT COLUMN - INTERACTIVE RESOURCES WITH CHECKBOXES
             ========================================================= */}
         <div className="md:col-span-8 w-full flex flex-col">
-          {resourceLinks.map((item, index) => {
+          {resourceLinks?.map((item, index) => {
             const isChecked = checkedItems[item.id];
 
             return (
@@ -242,7 +149,7 @@ weekly.
 </p>
 <div className="mt-6 flex gap-3">
 
-              {socials.map((Icon, i) => (
+              {socials?.map((Icon, i) => (
 <div key={i} className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
 
                                           <Icon className="text-2xl text-primary"/>
@@ -252,7 +159,7 @@ weekly.
 </div>
 <div className="mt-6 flex flex-wrap gap-2.5">
 
-              {["ISO 9001", "GDPR", "NDA Protected"].map((b,i) => (
+              {["ISO 9001", "GDPR", "NDA Protected"]?.map((b,i) => (
 <span key={i} className="text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary  text-[#F0EDFF]">
 
                   {b}
@@ -267,7 +174,7 @@ weekly.
 <FooterColTitle>Services</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {services.map((s) => (
+              {services?.map((s) => (
 <li key={s}><a href="#" className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s}</a></li>
 
               ))}
@@ -279,7 +186,7 @@ weekly.
 <FooterColTitle>Hire by Role</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {hireRoles.map((s) => (
+              {hireRoles?.map((s) => (
 <li key={s}><Link href="/hire" className="text-[14px] text-foreground/75 hover:text-white/50transition">{s}</Link></li>
 
               ))}
@@ -291,7 +198,7 @@ weekly.
 <FooterColTitle>Company</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {companyLinks.map((s) => (
+              {companyLinks?.map((s) => (
 <li key={s.label}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.label}</Link></li>
 
               ))}
@@ -323,7 +230,7 @@ weekly.
 <div className="mt-16 -mx-6 lg:-mx-14 glass px-6 lg:px-14 py-6">
 <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.07]">
 
-            {stats.map((s, i) => (
+            {stats?.map((s, i) => (
 <div key={i} className="px-4 first:pl-0">
 <div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">{s.n}</div>
 <div className="text-[12px] font-semibold text-white/35 mt-0.5">{s.l}</div>
