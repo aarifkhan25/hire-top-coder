@@ -43,9 +43,11 @@ export function Section({
   className = "",
 }) {
   return (
-    <section className={`relative    ${className}`}>
-      <div className="mx-auto max-w-7xl">{children}</div>
-    </section>
+   
+      <section className={`relative    ${className}`}>
+        <div className="mx-auto max-w-7xl">{children}</div>
+      </section>
+   
   );
 }
 
@@ -55,6 +57,7 @@ export function SectionTitle({
   sub,
 }) {
   return (
+    <Reveal>
     <div className="text-center ">
       {eyebrow && (
        <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
@@ -68,6 +71,7 @@ export function SectionTitle({
         </p>
       )}
     </div>
+    </Reveal>
   );
 }
 
@@ -76,11 +80,13 @@ export function Card({
   className = "",
 }) {
   return (
-    <div
-      className={` bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-6 mt-10 ${className}`}
-    >
-      {children}
-    </div>
+    <Reveal>
+      <div
+        className={` bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-6 mt-10 ${className}`}
+      >
+        {children}
+      </div>
+    </Reveal>
   );
 }
 
@@ -97,6 +103,7 @@ export function FAQ({
 }) {
   const [open, setOpen] = useState(0);
   return (
+    <Reveal>
     <div className="w-full mt-10  divide-y divide-white/[0.07] rounded-[10px] bg-[#0d0d0d] border border-white/[0.07]">
       {items.map((item, i) => (
         <div key={i} className="px-6">
@@ -116,7 +123,7 @@ export function FAQ({
           )}
         </div>
       ))}
-    </div>
+    </div></Reveal>
   );
 }
 
@@ -128,6 +135,7 @@ export function CTABanner({
 }) {
   return (
     <section className="relative py-28 2xl:py-35  ">
+      <Reveal>
       <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
                 <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative text-center">
@@ -137,7 +145,7 @@ export function CTABanner({
           {ctaLabel}
         </PrimaryButton>
         </div>
-      </div>
+      </div></Reveal>
     </section>
   );
 }
@@ -166,6 +174,7 @@ export function ComparisonTable({
   rows,
 }) {
   return (
+    <Reveal>
     <div className="overflow-hidden mt-10 rounded-[10px] border border-white/[0.07] bg-[#0d0d0d]">
       <table className="w-full text-sm">
         <thead>
@@ -200,7 +209,7 @@ export function ComparisonTable({
           ))}
         </tbody>
       </table>
-    </div>
+    </div></Reveal>
   );
 }
 
@@ -208,6 +217,7 @@ export function Stepper({
   steps,
 }) {
   return (
+    <Reveal>
     <div className="grid md:grid-cols-4 gap-4">
       {steps.map((s, i) => (
         <Reveal key={i} delay={i * 0.08}>
@@ -220,7 +230,7 @@ export function Stepper({
           </Card>
         </Reveal>
       ))}
-    </div>
+    </div></Reveal>
   );
 }
 
@@ -228,18 +238,19 @@ export function StatGrid({
   stats,
 }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {stats.map((s, i) => (
-        <Card key={i} className="text-center">
-          <div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">
-            {s.value}
-          </div>
+    <Reveal>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {stats.map((s, i) => (
+          <Card key={i} className="text-center">
+            <div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">
+              {s.value}
+            </div>
           <div className="text-[12px] font-semibold text-white/35 mt-2">
             {s.label}
           </div>
         </Card>
       ))}
-    </div>
+    </div></Reveal>
   );
 }
 
@@ -252,6 +263,7 @@ export function ProfileCard({
 }) {
   const initial = name.charAt(0);
   return (
+    
     <Card className="group hover:border-primary/30 transition">
       <div className="flex items-center gap-3 mb-4">
         <div className="size-12 rounded-full bg-gradient-to-br from-primary to-accent grid place-items-center text-white font-bold">
