@@ -9,18 +9,6 @@ export const metadata = {
     "og:description": "Find the right digital expert instantly. Curated, vetted, ready in hours."
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 export default function Index() {
   return (
     <HomePage />

@@ -1,13 +1,26 @@
 "use client"
+import { AmbientGlow, GhostButton, PrimaryButton, SectionHead } from "@/components/site/PageShell";
+import { Parallax, Reveal, Stagger, StaggerItem, TiltCard, WordReveal } from "@/components/site/Reveal";
 import {
-  Search, Palette, Layout, Code2, Server, Layers, Brain, BarChart3,
-  Cog, ShieldCheck, Megaphone, Briefcase, Check, Star, Clock, Zap,
+  BarChart3,
+  Brain,
+  Briefcase, Check,
+  Clock,
+  Code2,
+  Cog,
+  Layers,
+  Layout,
+  Megaphone,
+  Palette,
+  Search,
+  Server,
+  ShieldCheck,
+  Star,
+  Zap,
 } from "lucide-react";
-import { PrimaryButton, GhostButton, SectionHead, AmbientGlow } from "@/components/site/PageShell";
-import { Reveal, Stagger, StaggerItem, WordReveal, TiltCard, Parallax } from "@/components/site/Reveal";
 
-export const metadata ={ title: "Start Hiring — HireTopCoder" ,
-      description: "Tell us what you need. We'll match you with the right expert — vetted, available, and ready to ship." };
+// export const metadata ={ title: "Start Hiring — HireTopCoder" ,
+//       description: "Tell us what you need. We'll match you with the right expert — vetted, available, and ready to ship." };
 
       
 const categories = [
