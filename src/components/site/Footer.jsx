@@ -1,12 +1,12 @@
 import logo from "@/assets/logo1.png";
+import { footerData } from "@/data/footerData.js";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { AiOutlineSend } from "react-icons/ai";
+import { FaMapMarkerAlt, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 import { FiCheck } from 'react-icons/fi';
-import {AiOutlineSend } from "react-icons/ai";
-import {FaMapMarkerAlt, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 import { GhostButton } from "./PageShell.jsx";
-import { footerData } from "@/data/footerData.js";
 
 
 const { services, hireRoles, companyLinks, stats, socials, resourceLinks } = footerData;
@@ -38,10 +38,11 @@ export  function Footer() {
             const isChecked = checkedItems[item.id];
 
             return (
-              <div key={item.id} className="w-full">
+              <div key={index} className="w-full">
                 {/* Row Item Link */}
-                <button
-                  onClick={(e) => handleToggle(item.id, e)}
+                <Link
+                href={item.to}
+                 
                   className="group flex items-center gap-5 py-2 w-full text-left transition-all duration-300 rounded-[12px] hover:bg-white/[0.01] focus:outline-none"
                 >
                   {/* Outer Frame (इमेज `image (4).png` के बॉक्स साइज को बनाए रखने के लिए) */}
@@ -69,7 +70,7 @@ export  function Footer() {
                       {item.description}
                     </p>
                   </div>
-                </button>
+                </Link>
 
                
               </div>
@@ -149,11 +150,11 @@ weekly.
 </p>
 <div className="mt-6 flex gap-3">
 
-              {socials?.map((Icon, i) => (
-<div key={i} className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
+              {socials?.map((social, i) => (
+<Link  key={i} href={social.to} className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
 
-                                          <Icon className="text-2xl text-primary"/>
-                                          </div>
+                                          <social.icon className="text-2xl text-primary"/>
+                                          </Link>
 
               ))}
 </div>
@@ -174,8 +175,8 @@ weekly.
 <FooterColTitle>Services</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {services?.map((s) => (
-<li key={s}><a href="#" className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s}</a></li>
+              {services?.map((s,i) => (
+<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
 
               ))}
 </ul>
@@ -186,8 +187,8 @@ weekly.
 <FooterColTitle>Hire by Role</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {hireRoles?.map((s) => (
-<li key={s}><Link href="/hire" className="text-[14px] text-foreground/75 hover:text-white/50transition">{s}</Link></li>
+              {hireRoles?.map((s,i) => (
+<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
 
               ))}
 </ul>
@@ -198,8 +199,8 @@ weekly.
 <FooterColTitle>Company</FooterColTitle>
 <ul className="space-y-2.5">
 
-              {companyLinks?.map((s) => (
-<li key={s.label}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.label}</Link></li>
+              {companyLinks?.map((s,i) => (
+<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.label}</Link></li>
 
               ))}
 </ul>

@@ -1,6 +1,8 @@
 import { PageShell } from '@/components/site/PageShell.jsx';
 import ScrollToTop from '@/components/site/ScrollToTop.jsx'; // नया कंपोनेंट इम्पोर्ट किया
+import "@/components/site/styles.css";
 import "../globals.css";
+
 
 export default function RootLayout({ children }) {
   return (

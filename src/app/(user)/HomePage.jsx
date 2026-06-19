@@ -10,7 +10,7 @@ import { homeData } from "@/data/home/homeData.js";
 
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
-
+import Link from "next/link"
 import Image from "next/image";
 const {experts,brands,posts,testimonials,portfolioItems}=homeData
 export default function HomePage() {
@@ -239,7 +239,7 @@ function Portfolio() {
             <div
   key={`${item.id}-${index}`}
   
-  className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch py-5 px-10 2xl:px-20 bg-[oklch(0.18_0.02_290_/_0.7)] backdrop-filter backdrop-blur-[18px] border-[1px] border-[solid] border-[oklch(0.62_0.26_305_/_0.7)] rounded-sm"
+  className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch py-5 px-10 2xl:px-20 bg-[oklch(0.18_0.02_290_/_0.7)] backdrop-filter backdrop-blur-[18px] border-[1px] border-[solid] border-[oklch(0.62_0.26_305/0.15)] rounded-sm"
 
   style={{ transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' }}
 >
@@ -330,9 +330,9 @@ function Portfolio() {
       </div>
 
       <div className="mt-12 flex justify-center">
-        <Reveal>
+        
           <GhostButton href="/case-studies">View All Case Studies</GhostButton>
-        </Reveal>
+       
       </div>
     </section>
   );
@@ -572,9 +572,9 @@ function Blog() {
                     <span className="inline-flex items-center gap-1.5 text-xs text-foreground/60 font-medium">
                       <LuClock className="size-3.5" /> {p.read}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-sm font-bold text-primary group-hover:gap-2 transition-all">
+                    <Link href={p.to} className="inline-flex items-center gap-1 text-sm font-bold text-primary group-hover:gap-2 transition-all">
                       Read More <LuArrowRight className="size-3.5" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </article>

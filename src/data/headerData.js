@@ -1,13 +1,13 @@
 import { FaAndroid, FaAws, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import { FaWebflow } from "react-icons/fa6";
 import {
-    FiBarChart2 as BarChart3, // Creative/Magic alternative
-    FiBookOpen as BookOpen, FiCpu as Brain, // Puzzle/Component design representation
-    FiBriefcase as Building2, // Drawing/Writing representation
-    FiLayers as Calculator, FiCode as Code2, // Functional grid calculation design
-    FiFileText as FileText, FiLayout as Layout, FiEdit3 as PenLine, FiPackage as Puzzle, // Corporate/Building alternative
-    FiRefreshCw as RefreshCw, // AI/Brain/Core representation
-    FiSmartphone as Smartphone, FiTrendingUp as TrendingUp, FiUsers as Users
+  FiBarChart2 as BarChart3, // Creative/Magic alternative
+  FiBookOpen as BookOpen, FiCpu as Brain, // Puzzle/Component design representation
+  FiBriefcase as Building2, // Drawing/Writing representation
+  FiLayers as Calculator, FiCode as Code2, // Functional grid calculation design
+  FiFileText as FileText, FiLayout as Layout, FiEdit3 as PenLine, FiPackage as Puzzle, // Corporate/Building alternative
+  FiRefreshCw as RefreshCw, // AI/Brain/Core representation
+  FiSmartphone as Smartphone, FiTrendingUp as TrendingUp, FiUsers as Users
 } from "react-icons/fi";
 import { IoIosRocket as Rocket } from "react-icons/io";
 export const headerData={
@@ -161,7 +161,7 @@ export const headerData={
           { icon:<PenLine/>,
             name: "Blog & Insights",
             desc: "Tech tips Hiring guides industry trends",
-            href: "/resources",
+            href: "/blog",
           },
         ],
       },

@@ -69,7 +69,7 @@ export function SectionHead({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className={`inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.25em] text-primary mb-4 font-bold`}
+        className={`inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold`}
       >
         <span className="size-1 rounded-full bg-primary" /> {eyebrow}
       </motion.div>
@@ -78,7 +78,7 @@ export function SectionHead({
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="text-4xl md:text-5xl font-extrabold leading-[1.05]"
+       className="text-3xl md:text-5xl font-bold leading-[1.05]"
       >
         {title}
       </motion.h2>
@@ -88,7 +88,7 @@ export function SectionHead({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-4 text-foreground/75 text-lg font-medium"
+         className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal"
         >
           {sub}
         </motion.p>

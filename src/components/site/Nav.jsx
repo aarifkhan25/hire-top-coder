@@ -107,7 +107,7 @@ const pathname = usePathname()
             {/* डेस्कटॉप मेनू */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6 static h-full">
               {navData?.map((item, i) => {
-                const isActive = pathname === item.href || (item.columns && item.columns.some(col => col.links.some(link => link.href === pathname))) || (item.isResourcesTemplate && (pathname.startsWith("/resources") || pathname === "/faq"));
+              
                 return(<div
                   key={i}
                   onMouseEnter={() => setHoveredIndex(i)}
@@ -118,7 +118,7 @@ const pathname = usePathname()
                     data-aos="fade-down"
                     className={`relative   transition group flex items-center gap-1 text-sm lg:text-base 2xl:text-lg font-mulish font-semibold cursor-pointer `}
                   >
-                    <span className={`${isActive ?"text-primary hover:text-gradient-purple":"hover:text-white text-foreground/85"} flex justify-center items-center gap-1`}>
+                    <span className={`hover:text-white text-foreground/85 flex justify-center items-center gap-1`}>
                       {item.name}
                       {(item.columns || item.isResourcesTemplate) && (
                         <FiChevronDown
@@ -126,7 +126,7 @@ const pathname = usePathname()
                         />
                       )}
                     </span>
-                    <span className={`absolute -bottom-1 left-0 h-px w-0 ${isActive ?"bg-gray-400":"bg-gradient-to-r from-primary to-accent"}  transition-all duration-300 group-hover:w-full`} />
+                    <span className={`absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-primary to-accent  transition-all duration-300 group-hover:w-full`} />
                   </Link>
 
                   <AnimatePresence>

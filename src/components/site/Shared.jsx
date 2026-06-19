@@ -16,18 +16,18 @@ export function PageHero({
       <div className="absolute top-20 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative w-full text-center">
         {eyebrow && (
- <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
+ <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-sm 2xl:text-base font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
             <span className="size-1 rounded-full bg-primary" /> {eyebrow}
           </div>
         )}
         <Reveal>
-        <h1 className="text-3xl md:text-5xl font-bold leading-[1.05]">
+        <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
             {title}
           </h1>
         </Reveal>
         {sub && (
           <Reveal delay={0.1}>
-            <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">
+           <p className="mt-12 text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
               {sub}
             </p>
           </Reveal>
