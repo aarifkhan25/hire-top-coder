@@ -105,7 +105,7 @@ export const  homeData = {
     excerpt: "How generative interfaces are reshaping every product surface.",
     img: blog1,
     read: "6 min",
-    to:"/blog/ai-design-future"
+    to:"/blog "
   },
   {
     cat: "UX Trends",
@@ -113,7 +113,7 @@ export const  homeData = {
     excerpt: "Spatial layouts, kinetic type and ambient AI take center stage.",
     img: blog2,
     read: "5 min",
-     to:"/blog/ai-design-future"
+     to:"/blog "
   },
   {
     cat: "SaaS",
@@ -121,7 +121,7 @@ export const  homeData = {
     excerpt: "The craft framework behind today's most loved enterprise tools.",
     img: blog3,
     read: "8 min",
-     to:"/blog/ai-design-future"
+     to:"/blog "
   },
   {
     cat: "Product",
@@ -130,7 +130,7 @@ export const  homeData = {
       "From discovery to ship — orchestrating AI across the build cycle.",
     img: blog4,
     read: "7 min",
-     to:"/blog/ai-design-future"
+     to:"/blog "
   },
 ],
 

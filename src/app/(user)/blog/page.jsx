@@ -82,7 +82,7 @@ export default function BlogPage() {
                     <span>By the Hire Top Coder </span>
                   </div>
                   <div className="mt-8">
-                    <PrimaryButton href="/blog/ai-design-future">Read the Report</PrimaryButton>
+                    <PrimaryButton href="/blog ">Read the Report</PrimaryButton>
                   </div>
                 </div>
               </div>
