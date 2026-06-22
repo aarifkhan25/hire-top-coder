@@ -2,7 +2,7 @@
 import { FadeUp } from "@/components/site/FadeUp";
 import { Breadcrumb, CTABanner } from "@/components/site/Shared";
 import { useState } from "react";
-import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Keywords, Question1, Question4, Question5 } from "../ai-design-future/page.jsx";
+import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Keywords, Question1, Question4 } from "../ai-design-future/page.jsx";
 import { KeyInsides, Pillar1, Pillar2 } from "../premium-saas-experiences/page.jsx";
 // import {   } from "@/components/site/ ";
 import { FaPlus as Plus } from "react-icons/fa6";
@@ -176,29 +176,15 @@ role:"hide"
 "The engineering teams shipping with AI do not have fewer engineers — they have engineers spending more of their time on architecture, system design, and the genuinely novel problems that require human expertise. AI handles the execution volume; humans handle the judgment calls."  ]
 };
 
-const pillarFourData = {
-  title: "Pillar 4 — Trust Engineering: Making Enterprise Buyers Confident",
+const phase4Data = {
+  title: "Phase 4 — Quality Assurance: AI-Driven Test Coverage at Scale",
   paragraphsBefore: [
-    "Enterprise software decisions are not made by individual users — they are made by committees of buyers, security teams, legal departments, and executives. These stakeholders are not evaluating how delightful your onboarding is. They are evaluating risk. The fourth pillar of premium SaaS is engineering trust at every layer of the product and business.",
+    "QA is chronically under-resourced in most product teams. Test coverage suffers not because teams do not care about quality, but because writing comprehensive tests is time-consuming, repetitive, and competes with feature development for engineering capacity. AI changes this trade-off fundamentally.",
+    "AI models can generate unit tests, integration tests, and end-to-end test scenarios directly from specifications and existing code — achieving test coverage levels that would be prohibitively expensive to create manually. More importantly, AI can generate the edge cases, negative tests, and boundary conditions that human test writers most often overlook under deadline pressure.",
+    "Teams using AI-assisted QA are reporting test suite coverage improvements of 50–70% without proportional increases in engineering time — and a corresponding reduction in production bugs that reach users. Quality at this level was previously the exclusive domain of well-resourced enterprise engineering organizations. AI is democratizing it."
    
   ],
-  subSection: {
-    title: "Trust in the Product Layer",
-    paragraphsBefore: [
-      "Trust at the product level is built through reliability, transparency, and control. Enterprise users need to know that your system will not go down during a critical moment, that their data is protected, and that they have full visibility and control over what the product is doing on their behalf. This means investing in:"
-    ],
-    listItems: [
-      "Transparent audit logs and activity histories",
-      "Granular permission and access control systems",
-      "Real-time status pages and proactive incident communication",
-      "Data residency and compliance certifications (SOC 2, GDPR, ISO 27001)"
-      
-    ]
-  },
-  aftertitle:"Trust in the Commercial Layer",
-  paragraphsAfter: [
-    "Trust at the commercial level is built through pricing transparency, fair contract terms, and exceptional customer success. Hidden fees, surprise overages, and punitive lock-in terms destroy enterprise trust permanently. Premium SaaS companies understand that a single contractual betrayal costs more in reputation than the short-term revenue it might capture."
-  ],
+  
   role:"view"
 };
 
@@ -408,10 +394,10 @@ export default function BlogPost() {
 
        
         <Question4 ques4Content={ques4Content}/>
-<Pillar2 pillarTwoData={pillarFourData} />
+<Pillar2 pillarTwoData={phase4Data} />
 
 <Phase2  phase2Data={phase5Data}/>
-        <Question5 ques5Content={ques5Content}/>
+     
 
         {/* Keyword pills */}
         <Keywords KEYWORDS={KEYWORDS}  />

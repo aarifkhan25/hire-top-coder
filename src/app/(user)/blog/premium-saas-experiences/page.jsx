@@ -448,35 +448,37 @@ export const Pillar2 = ({ pillarTwoData }) => {
         {pillarTwoData?.title}
       </h2>
 
-      {pillarTwoData?.paragraphsBefore.map((p, index) => (
+      {pillarTwoData?.paragraphsBefore?.map((p, index) => (
         <p key={index} className=" text-white/70 mb-5 text-[15px] leading-relaxed">
           {p}
         </p>
       ))}
 
-      <div className="mt-7">
-        <h3 className="text-[1.15rem] font-bold text-white/90 mt-7 mb-2">
-          {pillarTwoData?.subSection.title}
-        </h3>
-        
-        {pillarTwoData?.subSection.paragraphsBefore.map((p, index) => (
-          <p key={index} className=" text-white/70 mb-5 text-[15px] leading-relaxed">
-            {p}
-          </p>
-        ))}
-
-        <ul className="list-disc pl-6 mb-5 space-y-2">
-          {pillarTwoData?.subSection.listItems.map((item, index) => (
-            <li key={index} className=" text-white/70 text-[15px] leading-relaxed">
-              {item}
-            </li>
+      {pillarTwoData?.subSection && (
+        <div className="mt-7">
+          <h3 className="text-[1.15rem] font-bold text-white/90 mt-7 mb-2">
+            {pillarTwoData.subSection.title}
+          </h3>
+          
+          {pillarTwoData.subSection.paragraphsBefore?.map((p, index) => (
+            <p key={index} className=" text-white/70 mb-5 text-[15px] leading-relaxed">
+              {p}
+            </p>
           ))}
-        </ul>
-      </div>
+
+          <ul className="list-disc pl-6 mb-5 space-y-2">
+            {pillarTwoData.subSection.listItems?.map((item, index) => (
+              <li key={index} className=" text-white/70 text-[15px] leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
  <h3 className={`${pillarTwoData?.role==="view"?"block":"hidden"} text-[1.15rem] font-bold text-white/90 mt-7 mb-2`}>
           {pillarTwoData?.aftertitle}
         </h3>
-      {pillarTwoData?.paragraphsAfter.map((p, index) => (
+      {pillarTwoData?.paragraphsAfter?.map((p, index) => (
         <p key={index} className=" text-white/70 mb-5 text-[15px] leading-relaxed">
           {p}
         </p>

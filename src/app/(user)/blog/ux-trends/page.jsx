@@ -2,6 +2,7 @@
 import { FadeUp } from "@/components/site/FadeUp";
 import { Breadcrumb, CTABanner } from "@/components/site/Shared";
 import { useState } from "react";
+import { BiSolidChevronsRight } from "react-icons/bi";
 import { FaPlus as Plus } from "react-icons/fa6";
 import {
   FiCalendar,
@@ -9,7 +10,10 @@ import {
   FiTag,
   FiUser
 } from "react-icons/fi";
-import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Question1, Question2, Question3, Question4, Question5 } from "../ai-design-future/page.jsx";
+import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Question1, Question4 } from "../ai-design-future/page.jsx";
+
+
+
 const headContent = {
   title: "UX Design · Spatial Computing · AI Interfaces · June 2026",
   heading: "UX Trends Defining 2026: Spatial Layouts, Kinetic Type, and Ambient AI Take Center Stage",
@@ -28,26 +32,7 @@ const cardsContent = [
             { n: "+70%", l: "Multi-device users expect consistent UX" },
           ];
 
-const questionsContent={
-  article:"  In This Article",
-   TOC : [
-  { id: "what", label: "What Is Adaptive AI Design?" },
-  {
-    id: "why",
-    label: "Why Generative Interfaces Are Reshaping Product Surfaces",
-  },
-  {
-    id: "role",
-    label: "The Role of AI Model Development in Interface Intelligence",
-  },
-  { id: "metrics", label: "How Adaptive Design Improves Key SaaS Metrics" },
-  {
-    id: "framework",
-    label: "Implementing Adaptive AI Design: A Practical Framework",
-  },
-  { id: "faq", label: "Frequently Asked Questions" },
-]
-};
+
 
 const ques1Content={
   question:"Why 2026 Is a Turning Point for UX Design",
@@ -58,23 +43,29 @@ card: "The best UI design trends of 2026 aren't decorative. They're deliberate �
 }
 
 
-const ques2Content={
-  question:"Why Generative Interfaces Are Reshaping Product Surfaces",
-  answer:["The shift from static to generative interfaces is being driven by three converging forces: the maturity of large language models, rising user  expectations for personalization, and the explosion of multi-modal AI applications."," Traditional UI design operates on assumptions — designers predict what users will need and build fixed paths. But real users behave unpredictably. They come from different industries, have different skill levels, and arrive at your product with wildly different goals. A static interface forces every user through the same tunnel, regardless of fit."," Generative interfaces dissolve this constraint entirely. Instead of a fixed tunnel, the product surface becomes a responsive environment — one that reads context, understands intent, and presents exactly what theuser needs in that moment."],
-  heading:"Key capabilities of generative interface design:",
-  FEATURES : [
-  "Context-aware layouts that rearrange based on task and role",
-  "AI-driven onboarding that adapts to user profile and industry",
-  "Conversational navigation replacing static menus",
-  "Predictive UI elements that surface before users search",
-  "Real-time content generation within the interface itself",
-  "Dynamic forms that simplify based on prior user answers",
-]
+const step1Data={
+  step:"01",
+  
+  title:"Developers · Designers · CEOs"
+  ,heading:"Spatial Layouts: Designing in Three Dimensions",
+  pragraph:[<>Spatial design is the most significant structural shift in interface design since responsive web design. Driven by devices like Apple Vision Pro and Meta Quest, designers in 2026 are thinking in <strong>space, not screen</strong> s — creating interfaces with real depth, layering, and interactive dimensionality.
+
+</>,"But spatial design is not only for headset users. Even on standard phones and desktops, spatial principles — depth cues, parallax scrolling, layered card systems, and 3D-responsive elements — create richer, more navigable product surfaces. Cards shift subtly with cursor movement. Menus exist in layers rather than dropdowns. Content feels architectural, not flat.","For developers, this means moving beyond CSS grids toward three-dimensional layout models. For business owners and CEOs, it means product interfaces that feel premium, differentiated, and modern — directly impacting perceived brand value."]
+};
+const step2Data={
+  step:"02",
+    
+  title:"Marketers · Designers · Business Owners"
+  ,heading:"Kinetic Typography: Text That Moves With Purpose",
+  pragraph:["Kinetic typography — text that animates, morphs, or responds dynamically to user interaction — has graduated from portfolio novelty to mainstream UX tool. In 2026, variable fonts combined with CSS View Transitions and modern Animation APIs make expressive, motion-driven type accessible to every product team.",<>he practical impact is significant. Kinetic type in hero sections improves engagement and ,<strong>perceived speed by up to 18%</strong> . Text that responds to scrolling creates a dialogue between the reader and the interface — making content feel interactive rather than static. For marketers, this means landing pages and campaign content that hold attention longer and convert at higher rates.</>,"The key discipline is restraint. Kinetic type earns its place when it explains — revealing structure, guiding attention, or punctuating a key message. Typography that moves purely for decoration creates noise, not signal."]
 }
-
-
-const ques3Content={question:"The Role of AI Model Development in Interface Intelligence",
-  answer:["Adaptive AI design is only as powerful as the model behind it. AI model development teams are now responsible not just for training accurate models, but for ensuring those models can communicate intent, uncertainty, and suggestions through the interface layer.", "This has created a new discipline: model-aware UX design. In this  approach, designers work directly with the model's output space —  understanding what the model knows, what it can infer, and how to  present model-generated content in ways that feel natural, trustworthy, and useful.","The most successful AI products in 2025 — from productivity tools to  enterprise analytics platforms — share a common trait: the interface is designed as a direct extension of the model. Every suggestion, every auto-completed field, every reordered dashboard widget is a model output expressed through design language."]}
+const step3Data={
+  step:"03",
+    
+  title:"All Audiences · Product Teams · CEOs"
+  ,heading:"Ambient AI: Intelligence That Works in the Background",
+  pragraph:["Ambient AI is the most transformative — and least visible — UX trend of 2026. Unlike chatbots or AI assistants that demand your attention, ambient AI operates quietly in the product background, personalizing layouts, pre-loading relevant content, adapting navigation, and surfacing predictions before users realize they need them.","Think of it as a product that already knows your role, your workflow stage, your preferences, and your next likely action — and rearranges itself accordingly. No prompts. No popups. Just a seamless experience that gets better every session.","For CEOs and business owners, ambient AI is a retention superpower. Products that silently adapt to each user deliver dramatically higher satisfaction and long-term engagement. For developers, it requires building context pipelines that feed user signals into real-time personalization engines — a significant architectural investment that compounds in value over time."]
+}
 
 
 
@@ -95,40 +86,30 @@ const ques3Content={question:"The Role of AI Model Development in Interface Inte
   role:"hide"
     };
 
+    const laststep={
+        title: "What Every Stakeholder Should Do Right Now",
 
-  const ques5Content = {
-    question: "Implementing Adaptive AI Design: A Practical Framework",
-    answer:
-      "For teams ready to move from static to adaptive interfaces, the journey typically follows four phases:",
-    phase: [
-      {
-        name: "Phase 1 — Instrument your current interface",
-        content:
-          "Before you can adapt, you must understand how users actually navigate your product. Implement behavioral analytics, session recording, and intent signals across every surface. This data becomes the training signal for your adaptive layer.",
-      },
-      {
-        name: "Phase 2 — Define your context model",
-        content:
-          "Identify the key dimensions of user context that should drive adaptation: role, industry, workflow stage, expertise level, recent actions, and stated goals. These dimensions form the input space for your adaptive system.",
-      },
-      {
-        name: "Phase 3 — Build model-driven UI components",
-        content:
-          "Start with high-impact, low-risk surfaces: search results, onboarding flows, dashboard layouts, and notification systems. Replace static defaults with model-generated outputs. Test rigorously and measure against your baseline metrics.",
-      },
-      {
-        name: "Phase 4 — Close the feedback loop",
-        content:
-          "Adaptive design is not a one-time build. The model must continuously learn from user interactions, implicit signals, and explicit feedback. Build pipelines that update your context model and retrain your interface intelligence layer on a regular cadence.",
-      },
-    ],
-  };
+  subSection:[
+  {  title: "For Developers",
+  
+    listItems: [
+      "Learn CSS View Transitions and the Web Animations API for kinetic type implementation",
+     "Explore Three.js or React Three Fiber for spatial UI prototyping","Build user context pipelines (behavior, role, session data) to power ambient AI layers","Adopt variable fonts — a single file replaces 6–8 static font files and enables fluid typography"
+      
+    ]},{title: "For CEOs & Business Owners",
+  
+    listItems: [
+     "Audit your current product surfaces against 2026 UX benchmarks","Prioritize ambient AI investment — it compounds retention value over time","Treat UX as a revenue driver, not a design cost center","Ensure accessibility is built into new design systems from day one"
+      
+    ]},{ title: "For Marketers",
+  
+    listItems: [
+      "Update landing pages with kinetic typography in hero and headline sections","Use bento grid layouts for product feature showcases — they outperform traditional feature lists","Align content tone with calm, cognitive-clarity-first design principles","A/B test spatial depth cues on key conversion pages"
+      
+    ]}]
+   
 
-
-
-
-
-
+    }
 
 const   keywords = [
 {heading:"UX trends 2026",subheading:"Primary · High volume"},
@@ -291,11 +272,12 @@ export default function BlogPost() {
         {/* questions*/}
         <Question1 ques1Content={ques1Content} />
 
-        <Question2 ques2Content={ques2Content}/>
-        <Question3 ques3Content={ques3Content}/>
-        <Question4 ques4Content={ques4Content}/>
-        <Question5 ques5Content={ques5Content}/>
-
+       <Step step1Data={step1Data}/>
+       <Step step1Data={step2Data}/>
+       <Step step1Data={step3Data}/>
+       <Question4 ques4Content={ques4Content}/>
+      
+<LastStep laststep={laststep}/>
         {/* Keyword pills */}
        <Keywords keywords={keywords}/>
 
@@ -368,8 +350,8 @@ export const Question6FAQ = ({ques6faqcontent}) => {
 
 export const Keywords=({keywords})=>{
   return(
-    <>  <h3 className="text-base font-semibold text-white/90 mt-7 mb-3">
-           Target SEO Keywords for This Article
+    <section className="p-5 bg-primary/30 rounded-sm">  <h3 className="text-base font-semibold text-white/90 mt-7 mb-3">
+           <span className="text-xl">🎯</span> Target SEO Keywords for This Article
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3 mb-8">
             {keywords?.map((f) => (
@@ -388,6 +370,76 @@ export const Keywords=({keywords})=>{
                 </div>
               </div>
             ))}
-          </div></>
+          </div></section>
   )
 }
+
+export const Step=({step1Data})=>{
+  return(
+    <section className="border border-t-5 border-t-primary  border-primary/50 rounded-sm p-5 mb-20">
+<div className="">
+  <div className="flex justify-between items-center ">
+    <div><span  className="text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary text-primary hover:text-[#F0EDFF]">
+{step1Data?.title}
+                  
+</span></div>
+
+<div>
+  <h1 className="text-xl 2xl:text-6xl italic font-medium text-white/75 leading-[1.7]`}>">{step1Data?.step}</h1>
+</div>
+  </div>
+
+        <h2
+          id="what"
+          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-5 mb-4"
+        >
+      {step1Data?.heading}
+        </h2>
+    
+       {
+        step1Data?.pragraph?.map((p,i)=>(
+ <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
+          {p}
+        </p>
+        ))
+}
+       
+</div>
+    
+    </section>)
+  
+}
+
+export const LastStep = ({ laststep }) => {
+  return (
+    <section className="mb-20">
+      {/* मुख्य हेडिंग */}
+      <h2 className="text-[1.5rem] font-bold text-white mt-10 mb-3 tracking-tight">
+        {laststep?.title}
+      </h2>
+      
+      <div className="mt-7">
+        {laststep?.subSection?.map((s, i) => (
+          <div key={i} className="mb-6">
+            {/* सब-सेक्शन हेडिंग (जैसे: For Developers) */}
+            <h3 className="text-[1.15rem] font-bold text-white/90 mt-6 mb-3">
+              {s.title}
+            </h3>
+
+            {/* 🛠️ फ़िक्स: s?.map की जगह s?.listItems?.map का उपयोग और ul/li का स्ट्रक्चर */}
+            <ul className="list-none pl-6 space-y-2">
+              {s?.listItems?.map((item, index) => (
+                <li 
+                  key={index} 
+                  className="text-white/70 border-b border-primary/50 pb-2 flex  text-[15px] leading-relaxed"
+                >
+                 <span><BiSolidChevronsRight className="my-auto mr-3 text-primary text-xl" /></span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};

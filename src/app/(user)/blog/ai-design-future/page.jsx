@@ -377,7 +377,7 @@ export const Cards = ({cardsContent}) => {
           {cardsContent?.map((s) => (
             <div
               key={s.n}
-              className="text-center bg-gradient-to-t from-black/80 to-transparent border group border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-text-xs rounded-xl px-4 py-5"
+              className="text-center bg-gradient-to-t from-black/80 to-transparent border group border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-text-xs rounded-sm px-4 py-5"
             >
               <div className="text-[26px] 2xl:text-4xl font-semibold  text-primary tracking-[-0.5px]">
                 {s.n}
@@ -628,7 +628,7 @@ export const Question6FAQ = ({ques6faqcontent}) => {
           const isOpen = openFaq === i;
           return (
             <FadeUp key={f.q} delay={i * 0.06}>
-              <div className="bg-[#0d0d0d] border border-white/5 rounded-sm mb-2.5 overflow-hidden">
+              <div className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm mb-2.5 overflow-hidden">
                 <button
                   type="button"
                   onClick={() => setOpenFaq(isOpen ? -1 : i)}
