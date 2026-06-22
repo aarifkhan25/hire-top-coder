@@ -376,70 +376,79 @@ export const Keywords=({keywords})=>{
 
 export const Step=({step1Data})=>{
   return(
-    <section className="border border-t-5 border-t-primary  border-primary/50 rounded-sm p-5 mb-20">
-<div className="">
-  <div className="flex justify-between items-center ">
-    <div><span  className="text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary text-primary hover:text-[#F0EDFF]">
-{step1Data?.title}
-                  
-</span></div>
+    <section className="border border-primary/50 rounded-sm p-5 mb-20 relative overflow-hidden">
+  
+  <div className="absolute top-0 inset-x-0 h-[5px] bg-primary" />
 
-<div>
-  <h1 className="text-xl 2xl:text-6xl italic font-medium text-white/75 leading-[1.7]`}>">{step1Data?.step}</h1>
-</div>
-  </div>
+  
+  <div className="pt-2">
+    <div className="flex justify-between items-center">
+      <div>
+        <span className="text-[11px] px-3 py-1 rounded-full border border-white/10 bg-primary/10 transition-colors hover:border-primary text-primary hover:text-[#F0EDFF]">
+          {step1Data?.title}
+        </span>
+      </div>
 
-        <h2
-          id="what"
-          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-5 mb-4"
-        >
+      <div>
+    
+        <h1 className="text-xl 2xl:text-6xl italic font-medium text-white/75 leading-[1.7]">
+          {step1Data?.step}
+        </h1>
+      </div>
+    </div>
+
+    <h2
+      
+      className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-5 mb-4"
+    >
       {step1Data?.heading}
-        </h2>
-    
-       {
-        step1Data?.pragraph?.map((p,i)=>(
- <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
-          {p}
-        </p>
-        ))
-}
-       
-</div>
-    
-    </section>)
+    </h2>
+
+    {step1Data?.paragraph?.map((p, i) => (
+      <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
+        {p}
+      </p>
+    ))}
+  </div>
+</section>)
   
 }
 
 export const LastStep = ({ laststep }) => {
   return (
-    <section className="mb-20">
-      {/* मुख्य हेडिंग */}
-      <h2 className="text-[1.5rem] font-bold text-white mt-10 mb-3 tracking-tight">
-        {laststep?.title}
-      </h2>
-      
-      <div className="mt-7">
-        {laststep?.subSection?.map((s, i) => (
-          <div key={i} className="mb-6">
-            {/* सब-सेक्शन हेडिंग (जैसे: For Developers) */}
-            <h3 className="text-[1.15rem] font-bold text-white/90 mt-6 mb-3">
-              {s.title}
-            </h3>
+   <section className="mb-20">
+  {/* मुख्य हेडिंग */}
+  <h2 className="text-[1.5rem] font-bold text-white mt-10 mb-3 tracking-tight">
+    {laststep?.title}
+  </h2>
+  
+  <div className="mt-7">
+    {laststep?.subSection?.map((s, i) => (
+      <div key={i} className="mb-6">
+        {/* सब-सेक्शन हेडिंग */}
+        <h3 className="text-[1.15rem] font-bold text-white/90 mt-6 mb-3">
+          {s.title}
+        </h3>
 
-            {/* 🛠️ फ़िक्स: s?.map की जगह s?.listItems?.map का उपयोग और ul/li का स्ट्रक्चर */}
-            <ul className="list-none pl-6 space-y-2">
-              {s?.listItems?.map((item, index) => (
-                <li 
-                  key={index} 
-                  className="text-white/70 border-b border-primary/50 pb-2 flex  text-[15px] leading-relaxed"
-                >
-                 <span><BiSolidChevronsRight className="my-auto mr-3 text-primary text-xl" /></span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* 🛠️ pl-0 किया ताकि आइकॉन लेफ्ट से बिल्कुल बराबर अलाइन रहे */}
+        <ul className="list-none pl-0 space-y-2">
+          {s?.listItems?.map((item, index) => (
+            <li 
+              key={index} 
+              // 🛠️ यहाँ items-start जोड़ा है ताकि बहु-लाइन टेक्स्ट होने पर भी आइकॉन टॉप पर रहे
+              className="text-white/70 border-b border-primary/50 pb-2 flex items-start text-[15px] leading-relaxed"
+            >
+              {/* 🛠️ यहाँ my-auto हटाकर mt-1 और shrink-0 लगाया है ताकि आइकॉन दबे नहीं */}
+              <span className="shrink-0">
+                <BiSolidChevronsRight className="mt-1 mr-3 text-primary text-xl" />
+              </span> 
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
   );
 };

@@ -8,24 +8,24 @@ import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, Section, S
 export default function Page() {
   return (
     <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
-      <div className="pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
+      <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
         title={<>IT <span className="text-primary">Staff Augmentation</span></>}
-        sub={<>Plug vetted engineers directly into your existing  team — your <br/> tools,  your process, your timeline.</>}
+        sub={<>Plug vetted engineers directly into your existing  team — your <br className="hidden md:block" /> tools,  your process, your timeline.</>}
       />
-      <Section  className="py-28 2xl:py-35">
+      <Section  className=" py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="When To Use" title="The right scenarios" />
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-2 md:gap-5">
           {[
             { t: "Burst capacity", d: "Quarter-end push or feature launch that your team can't absorb alone." },
             { t: "Specialized skill gap", d: "You need a Rust, ML, or DevOps specialist for 3–6 months — not forever." },
             { t: "Backfill while hiring", d: "Bridge the 90-day gap between an open role and a permanent hire." },
-          ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
+          ].map((c) => <Card key={c.t}><div className="text-white text-xs md:text-base font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-[10px] md:text-sm leading-relaxed">{c.d}</div></Card>)}
         </div>
       </Section>
 
-      <Section className="py-28 2xl:py-35">
+      <Section className=" py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="Compare" title="Staff Augmentation vs Dedicated Teams" />
         <ComparisonTable
           headers={["Dimension", "Staff Augmentation", "Dedicated Team"]}
@@ -40,11 +40,11 @@ export default function Page() {
       </Section>
 
 
-      <Section className="py-28 2xl:py-35">
+      <Section className=" py-10  lg:py-28 2xl:py-35">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Timeline" title="From request to engineer online" />
-        <div className="grid md:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-4 md:gap-4">
           {[
             { h: "Hour 0", t: "Brief call", d: "30 minutes to define the role & skills." },
             { h: "Hour 24", t: "Shortlist", d: "3 vetted profiles in your inbox." },
@@ -52,14 +52,14 @@ export default function Page() {
             { h: "Hour 72", t: "Online", d: "Engineer in your tools, shipping code." },
           ].map((s, i) => (
             <Card key={i}>
-              <div className="text-[11px] uppercase tracking-[0.2em] text-primary font-bold mb-2">{s.h}</div>
-              <div className="text-white font-medium mb-1">{s.t}</div>
-              <div className="text-foreground/55 text-[13px]">{s.d}</div>
+              <div className="text-[8px] md:text-[11px] uppercase tracking-[0.2em] text-primary font-bold md:mb-2">{s.h}</div>
+              <div className="text-white text-xs md:text-base font-medium mb-1">{s.t}</div>
+              <div className="text-foreground/55 text-[10px] md:text-[13px]">{s.d}</div>
             </Card>
           ))}
         </div></div>
       </Section>
-      <Section className="py-28 2xl:py-35">
+      <Section className=" py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Minimum engagement length?", a: "We typically engage for a minimum of 4 weeks." },

@@ -10,8 +10,8 @@ import { homeData } from "@/data/home/homeData.js";
 
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
-import Link from "next/link"
 import Image from "next/image";
+import Link from "next/link";
 const {experts,brands,posts,testimonials,portfolioItems}=homeData
 export default function HomePage() {
   return (
@@ -42,27 +42,27 @@ function Hero() {
       <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] pointer-events-none" />
 
       <div className="relative w-full text-center">
-        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[6px] sm:text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5 md:mb-10 font-semibold">
           Build faster with elite digital experts
         </div>
 
-        <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
+        <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.6rem,8vw,7rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
           Hire elite <br />
           <span className="text-gradient-purple">digital experts.</span>
         </h1>
 
-        <p className="mt-12 text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="mt-6 md:mt-12 text-xs sm:text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
           The best designers, engineers, marketers and strategists in the world,
           ready to hire in 24 hours. AI-matched, human-vetted, and instantly
           available.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-5 md:mt-10 flex flex-wrap items-center justify-center gap-3">
           <PrimaryButton>Start Hiring</PrimaryButton>
           <GhostButton>Talk to Experts</GhostButton>
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-3 text-sm 1xl:text-base text-foreground/60 font-medium">
+        <div className=" mt-5 md:mt-10 flex items-center justify-center gap-3 text-sm 1xl:text-base text-foreground/60 font-medium">
           <span>Backed by</span>
           <span className="inline-flex items-center gap-1.5 font-display font-bold text-white">
             <span className="size-5 grid place-items-center rounded bg-white text-black font-extrabold text-xs 1xl:text-sm">
@@ -126,7 +126,7 @@ function ExpertCard({ expert }) {
             {expert.name}
           </div>
           <div className="flex items-center gap-1 mt-1 text-xs text-foreground/80 font-medium">
-            <LuStar className="size-3 fill-[#f5a623] text-[#f5a623]" /> 4.9 ·
+            <LuStar className="size-3 fill-[#f5a623] text-[#f5a623]" /> 5 ·
             Available now
           </div>
         </div>
@@ -137,16 +137,16 @@ function ExpertCard({ expert }) {
 
 function Marquee() {
   return (
-    <section className="relative py-12 border  border-y border-border/80 overflow-hidden">
-      <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
-        Trusted by teams shipping with Hire Top Coder
+    <section className="relative py-6 lg:py-12 border  border-y border-border/80 overflow-hidden">
+      <div className="text-center text-[10px] md:text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6 font-semibold">
+        Trusted by teams shipping <br className="block lg:hidden"/> with Hire Top Coder
       </div>
 
-      <div className="flex gap-16 md:gap-24 animate-scroll-cards py-10  w-max">
+      <div className="flex gap-10   md:gap-17 1xl:gap-24 animate-scroll-cards py-5 md:py-10  w-max">
         {[...brands, ...brands].map((b, i) => (
           <div
             key={i}
-            className="flex items-center justify-center shrink-0 w-[120px] h-[50px] 2xl:w-[150px] 2xl:h-[65px] relative gray-scale-logo"
+            className="flex items-center justify-center shrink-0 w-[80px] h-[30px]  md:w-[120px] md:h-[50px] 2xl:w-[175px] 2xl:h-[75px] relative gray-scale-logo"
           >
             <Image
               src={b.img}
@@ -208,7 +208,7 @@ function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
+      className="relative py-20 lg: py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
     >
       <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
@@ -407,7 +407,7 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
+      className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
     >
       
       <div className="w-full">
@@ -424,7 +424,7 @@ function Testimonials() {
        
 
         {/* मुख्य स्लाइडर रैपर */}
-        <div className="w-full overflow-hidden pt-20">
+        <div className="w-full overflow-hidden pt-10 lg:pt-20">
           {/* स्लाइडिंग ट्रैक - मोबाइल पर 1 कार्ड, md स्क्रीन से 2 कार्ड्स दिखेंगे */}
           <div
             className={`flex flex-row w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
@@ -436,39 +436,39 @@ function Testimonials() {
             {extendedItems.map((review, index) => (
               <div
                 key={`${review.id}-${index}`}
-                className="w-full md:w-1/2 shrink-0 p-2.5 lg:p-5" // यहाँ चौड़ाई आपके ओरिजिनल grid-cols-2 जैसी है
-              > <div className="group relative bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-8 sm:p-10 flex flex-col justify-between transition-all duration-500 h-full">
+                className="w-full md:w-1/2 shrink-0 p-1.5 md:p-2.5 lg:p-5" // यहाँ चौड़ाई आपके ओरिजिनल grid-cols-2 जैसी है
+              > <div className="group relative bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card p-4 sm:p-6 md:p-10 flex flex-col justify-between transition-all duration-500 h-full">
                
                   <div>
                     {/* 5-Star Rating Section */}
-                    <div className="flex items-center gap-2 mb-6">
+                    <div className="flex items-center gap-1 md:gap-2 mb-6">
                       {[...Array(review.stars || 5)].map((_, idx) => (
                         <FaStar
                           key={idx}
-                          className="text-[#f5a623] text-base lg:text-2xl 2xl:text-3xl"
+                          className="text-[#f5a623] text-sm  md:text-base lg:text-2xl 2xl:text-3xl"
                           aria-hidden="true"
                         />
                       ))}
                     </div>
 
                     {/* Styled Big Quote Icon */}
-                    <div className="text-primary text-2xl lg:text-3xl mb-4">
+                    <div className="text-primary text-base md:text-2xl lg:text-3xl mb-2 md:mb-4">
                       <FaQuoteLeft />
                     </div>
 
                     {/* Review Text Body */}
-                    <p className="text-[#b1afb8] text-[15px] sm:text-base lg:text-lg 2xl:text-xl leading-[1.7] tracking-wide font-normal italic">
+                    <p className="text-[#b1afb8] text-xs sm:text-sm lg:text-lg 2xl:text-xl leading-[1.7] tracking-wide font-normal italic">
                       {review.quote}
                     </p>
                   </div>
 
                   {/* Bottom Profile Footer Section */}
-                  <div className="mt-10">
+                  <div className="mt-5 md:mt-10">
                     {/* Separator Line */}
-                    <div className="w-full h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-6" />
+                    <div className="w-full h-[1px] md:h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-3 md:mb-6" />
 
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
+                      <div className="w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
                         <img
                           src={review.avatar}
                           alt={review.name}
@@ -479,10 +479,10 @@ function Testimonials() {
 
                       {/* Name and Designation */}
                       <div>
-                        <h3 className="text-white text-[16px] font-semibold tracking-wide leading-snug">
+                        <h3 className="text-white text-xs  md:text-[16px] font-semibold tracking-wide leading-snug">
                           {review.name}
                         </h3>
-                        <p className="text-[#726e7e] text-[13px] font-medium mt-0.5 group-hover:text-[#908b9c] transition-colors duration-500">
+                        <p className="text-[#726e7e] text-[8px] md:text-[13px] font-medium mt-0.5 group-hover:text-[#908b9c] transition-colors duration-500">
                           {review.role}
                         </p>
                       </div>
@@ -494,8 +494,8 @@ function Testimonials() {
           </div>
         </div>
 
-        {/* स्लाइडिंग इंडिकेटर डॉट्स - कार्ड्स के बाहर बिल्कुल बॉटम में */}
-        <div className="flex items-center justify-center gap-1.5 mt-10">
+   
+        <div className="flex items-center justify-center gap-1 md:gap-1.5  mt-5 md:mt-10">
           {testimonials.map((_, idx) => {
             const isActive =
               idx === currentIndex ||
@@ -504,7 +504,7 @@ function Testimonials() {
               <button
                 key={idx}
                 onClick={() => handleDotClick(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
+                className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-3 md:w-5 bg-primary" : " w-1 md:w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             );
@@ -519,7 +519,7 @@ function Blog() {
   return (
     <section
       id="blog"
-      className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   "
+      className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   "
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
         <Reveal> <div className="relative w-full">
@@ -534,7 +534,7 @@ function Blog() {
           sub="Explore the latest thoughts on design, AI, branding, product development and modern digital experiences."
         />
      
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-8 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {posts.map((p) => (
               <article
                 key={p.title}
@@ -556,23 +556,23 @@ function Blog() {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-                  <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
+                  <span className="absolute top-3 left-3 text-[8px] md:text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
                     {p.cat}
                   </span>
                 </div>
 
-                <div className="p-5 flex-1 flex flex-col rounded-b-2xl bg-[#0A0A0A]/40 mt-[-2px] relative z-20 pt-[22px]">
-                  <h3 className=" text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition">
+                <div className="p-3 md:p-5 flex-1 flex flex-col rounded-b-2xl bg-[#0A0A0A]/40 mt-[-2px] relative z-20 pt-[22px]">
+                  <h3 className=" text-base md:text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-xs 2xl:text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">
+                  <p className="mt-2 text-[10px] md:text-xs 2xl:text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">
                     {p.excerpt}
                   </p>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-foreground/60 font-medium">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs text-foreground/60 font-medium">
                       <LuClock className="size-3.5" /> {p.read}
                     </span>
-                    <Link href={p.to} className="inline-flex items-center gap-1 text-sm font-bold text-primary group-hover:gap-2 transition-all">
+                    <Link href={p.to} className="inline-flex items-center gap-1 text-xs md:text-sm font-bold text-primary group-hover:gap-2 transition-all">
                       Read More <LuArrowRight className="size-3.5" />
                     </Link>
                   </div>
@@ -588,20 +588,20 @@ function Blog() {
 
 function CTA() {
   return (
-    <section className="relative py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+    <section className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
       <Reveal>
-        <div className="mx-auto max-w-5xl relative rounded-3xl glass p-12 md:p-16 text-center overflow-hidden glow-purple-strong">
+        <div className="mx-auto max-w-5xl relative rounded-3xl glass p-8 md:p-12 lg:p-16 text-center overflow-hidden glow-purple-strong">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
           <div className="relative">
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Your next hire is <br />
-              <span className="text-gradient-purple">one search away.</span>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-extrabold leading-tight">
+              Your next hire is 
+              <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span>
             </h2>
-            <p className="mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-sm md:text-base lg:text-xl ">
+            <p className="mt-3 md:mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-xs md:text-sm lg:text-base 1xl:text-xl ">
               Join thousands of teams shipping faster with the world's most
               curated talent network.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3 justify-center">
+            <div className="mt-5 md:mt-9 flex flex-wrap gap-3 justify-center">
               <PrimaryButton>Start Hiring Talent</PrimaryButton>
               <GhostButton>Become an Expert</GhostButton>
             </div>
@@ -616,14 +616,14 @@ function SectionHead({ eyebrow, title, sub }) {
   return (
    
       <div className="text-center max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
+        <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
           <span className="size-1 rounded-full bg-primary" /> {eyebrow}
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold leading-[1.05]">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.05]">
           {title}
         </h2>
         {sub && (
-          <p className="mt-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">
+          <p className="mt-4 text-foreground/75 text-xs md:text-base lg:text-xl  font-normal">
             {sub}
           </p>
         )}

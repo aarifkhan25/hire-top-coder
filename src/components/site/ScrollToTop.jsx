@@ -69,7 +69,7 @@ export default function ScrollToTop() {
           whileTap={{ scale: 0.95 }}
           
           // यहाँ साइज टकराव को ठीक करके w-12 h-12 फिक्स कर दिया है
-          className="fixed bottom-6 right-6 z-50 flex w-12 h-12 items-center justify-center rounded-full cursor-pointer shrink-0 border border-white/20 bg-neutral-900 text-primary hover:border-primary shadow-xl"
+          className="fixed bottom-6 right-6 z-50 flex w-8 h-8 md:w-12 md:h-12 items-center justify-center rounded-full cursor-pointer shrink-0 border border-white/20 bg-neutral-900 text-primary hover:border-primary shadow-xl"
         >
           <MdArrowUpward className="text-2xl text-primary" />
         </motion.button>

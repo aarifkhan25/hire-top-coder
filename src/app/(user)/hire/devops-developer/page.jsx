@@ -13,7 +13,7 @@ const devs = [
 export default function Page() {
   return (
     <   >
-      <div className="pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "DevOps Engineer" }]} /></div>
+      <div className="pt-20 md:pt-28 px-6 max-w-7xl mx-auto"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "DevOps Engineer" }]} /></div>
       <PageHero eyebrow="Hire by Role" title={<>Hire <span className="text-primary">DevOps Engineers</span></>} sub="Cloud, containers, pipelines, and reliability — engineers who turn deploys into a non-event." />
       <Section>
         <SectionTitle eyebrow="Skills" title="Core competencies" />

@@ -31,7 +31,7 @@ export function PrimaryButton({
   ...rest
 }) {
   return (
-     <Link href={href} className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-[8px] md:text-[15px] 1xl:text-lg ${className}`}>
+     <Link href={href} className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-3 py-2  md:px-8 md:py-4 text-xs md:text-[15px] 1xl:text-lg ${className}`}>
       {children}
       <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
     </Link >
@@ -47,7 +47,7 @@ export function GhostButton({
   return (
     <Link href={href}
       {...rest}
-      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-4 py-2  md:px-8 md:py-4 font-[8px] md:text-[15px]  1xl:text-lg ${className}`}
+      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-3 py-2   md:px-8 md:py-4 text-xs md:text-[15px]  1xl:text-lg ${className}`}
     >
       {children}
     </Link>

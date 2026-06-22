@@ -94,6 +94,9 @@ export const  homeData = {
   { img: "/assets/clogo6.png" },
   { img: "/assets/clogo7.png" },
   { img: "/assets/clogo8.png" },
+    { img: "/assets/img1.png" },
+  { img: "/assets/img2.png" },
+  { img: "/assets/img3.png" },
 ],
 
 
@@ -130,7 +133,7 @@ export const  homeData = {
       "From discovery to ship — orchestrating AI across the build cycle.",
     img: blog4,
     read: "7 min",
-     to:"/blog "
+     to:"/blog"
   },
 ],
 

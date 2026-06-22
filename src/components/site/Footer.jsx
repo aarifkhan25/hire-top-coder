@@ -28,7 +28,7 @@ export  function Footer() {
   return (
 <footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] ">
 <div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-10">
-<div className=" w-full mb-10 mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 items-center">
+<div className=" w-full mb-5 md:mb-10 mx-auto grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-12 lg:gap-8 items-center">
         
         {/* =========================================================
             LEFT COLUMN - INTERACTIVE RESOURCES WITH CHECKBOXES
@@ -128,7 +128,7 @@ weekly.
 
       </div>
       
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pt-10 border-t border-white/[0.07]">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12  md:pt-10 border-t border-white/[0.07]">
 
           {/* Brand */}
 <div className="   w-full lg:col-span-4">

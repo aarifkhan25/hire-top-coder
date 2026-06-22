@@ -22,7 +22,7 @@ export default function Page() {
   const [stack, setStack] = useState("All");
   return (
    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
-      <div className=" pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Full-Stack Developer" }]} /></div>
+      <div className=" pt-20 md:pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "Full-Stack Developer" }]} /></div>
       <PageHero
         eyebrow="Hire by Role"
         title={<>Hire <span className="text-primary">Full-Stack Developers</span></>}
@@ -38,12 +38,12 @@ export default function Page() {
           ))}
         </div>
       </PageHero>
-      <Section className="py-28 2xl:py-35">
+      <Section className="py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="Profiles" title="Featured Engineers" />
         <div className="grid md:grid-cols-3 gap-5">{devs.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
 
-      <Section className="py-28 2xl:py-35">
+      <Section className="py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="Seniority" title="Filter by level" />
         <ComparisonTable
           headers={["Level", "Experience", "Hourly", "Monthly"]}
@@ -56,20 +56,20 @@ export default function Page() {
         />
       </Section>
 
-      <Section className="py-28 2xl:py-35">
+      <Section className="py-10  lg:py-28 2xl:py-35">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Why" title="Why hire full-stack" />
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 md:gap-5">
           {[
             { t: "One engineer, full ownership", d: "From DB to UI — no handoff overhead." },
             { t: "Faster iteration", d: "Ship features end-to-end inside one sprint." },
             { t: "Better architecture", d: "Decisions are made with the whole stack in mind." },
-          ].map((c) => <Card key={c.t}><div className="text-white font-medium mb-2">{c.t}</div><div className="text-foreground/60 text-sm leading-relaxed">{c.d}</div></Card>)}
+          ].map((c) => <Card key={c.t}><div className="text-white font-medium text-sm md:text-base md:mb-2">{c.t}</div><div className="text-foreground/60 text-xs md:text-sm leading-relaxed">{c.d}</div></Card>)}
         </div></div>
       </Section>
 
-      <Section className="py-28 2xl:py-35">
+      <Section className="py-10  lg:py-28 2xl:py-35">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Can a single engineer really cover full-stack?", a: "Yes — our senior engineers consistently ship production features end-to-end." },
