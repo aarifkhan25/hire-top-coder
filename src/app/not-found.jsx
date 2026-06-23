@@ -15,7 +15,7 @@ export default function NotFoundPage() {
       <div className="max-w-lg w-full text-center">
         {/* Animated 404 */}
         <div className="mb-8">
-          <h1 className="text-8xl md:text-9xl font-bold text-gradient-purple bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
+          <h1 className="text-8xl md:text-9xl font-bold text-gradient-purple bg-clip-text bg-gradient-to-r from-purple-800 to-purple-500  animate-pulse">
             404
           </h1>
           <div className="w-[50%] h-1 bg-primary mx-auto mt-4 rounded-full"></div>
@@ -34,7 +34,7 @@ export default function NotFoundPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button title="Go to Home page" className="group flex items-center justify-center gap-2 italic btn-primary-glow text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+          <button title="Go to Home page" className="group flex items-center justify-center gap-2 italic btn-primary-glow text-white font-medium py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
             <Home size={20} />
             <Link href="/">
               <span className="hover:text-white">Go Home</span>
@@ -42,7 +42,7 @@ export default function NotFoundPage() {
           </button>
 
           <button title="previews page"
-            className="group flex items-center justify-center gap-2 btn-glass cursor-pointer italic text-white font-medium py-3 px-6 rounded-lg border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105"
+            className="group flex items-center justify-center gap-2 btn-glass  cursor-pointer italic text-white font-medium py-3 px-6 rounded-full border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105"
             onClick={() => router.back()}
           >
             <ArrowLeft size={20} />

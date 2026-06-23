@@ -448,7 +448,7 @@ const pathname = usePathname()
                     />
                   </span>
                 ) : (
-                  <Link href={item.href || "#"} className="w-full text-left">
+                  <Link href={item.href || "/"} className="w-full text-left">
                     {item.name}
                   </Link>
                 )}
@@ -460,7 +460,7 @@ const pathname = usePathname()
                   <div className="pl-4 flex flex-col gap-2 mt-1 bg-white/5 p-3 rounded-lg transition-all text-left">
                     {item.isResourcesTemplate ? (
                       <>
-                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
+                        <p className="text-[10px] font-sans text-gray-500 hover:text-primary uppercase tracking-wider font-bold mb-1">
                           Delivery Models
                         </p>
                         {item.leftLinks?.map((link, lIdx) => (
@@ -473,7 +473,7 @@ const pathname = usePathname()
                             {link.name}
                           </Link>
                         ))}
-                        <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mt-2 mb-1">
+                        <p className="text-[10px] font-sans text-gray-500 hover:text-primary uppercase tracking-wider font-bold mt-2 mb-1">
                           Learn
                         </p>
                         {item.columns[0].links?.map((link, lIdx) => (
@@ -490,7 +490,7 @@ const pathname = usePathname()
                     ) : (
                       item.columns?.map((col, cIdx) => (
                         <div key={cIdx} className="mb-3 text-left">
-                          <p className="text-[10px] font-sans text-gray-500 uppercase tracking-wider font-bold mb-1">
+                          <p className="text-[10px] font-sans text-gray-500 hover:text-primary uppercase tracking-wider font-bold mb-1">
                             {col.title}
                           </p>
                           {col.links?.map((link, lIdx) => (

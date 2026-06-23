@@ -30,6 +30,7 @@ export default function HomePage() {
         <Testimonials />
         <Blog />
         <CTA />
+     
       </motion.main>
     </div>
   );
@@ -112,7 +113,7 @@ function ExpertCard({ expert }) {
 
       {/* इमेज और नाम वाला बॉक्स (इसमें overflow-hidden सुरक्षित है) */}
       <div className="rounded-[1.25rem] overflow-hidden bg-black relative w-full h-full">
-        <img
+        <Image width={500} height={500}
           src={expert.img}
           alt={`${expert.name}, ${expert.role}`}
           width={640}
@@ -228,108 +229,110 @@ function Portfolio() {
         />
 
         <div className="w-full overflow-hidden mt-14">
-        <div
-  className={`flex  flex-row w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
+    <div
+  className={`flex flex-row w-full ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
   style={{ 
     transform: `translateX(-${currentIndex * 100}%)`,
     transitionProperty: isTransitioning ? 'transform' : 'none' 
   }}
 >
-            {extendedItems.map((item, index) => (
-            <div
-  key={`${item.id}-${index}`}
-  
-  className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch py-5 px-10 2xl:px-20 bg-[oklch(0.18_0.02_290_/_0.7)] backdrop-filter backdrop-blur-[18px] border-[1px] border-[solid] border-[oklch(0.62_0.26_305/0.15)] rounded-sm"
+  {extendedItems.map((item, index) => (
+    <div
+      key={`${item.id}-${index}`}
+     
+      className="w-full shrink-0 grid grid-cols-1 lg:grid-cols-12 items-stretch p-5 md:py-5 md:px-10 lg:px-5 xl:px-10 2xl:px-20 bg-[oklch(0.18_0.02_290_/_0.7)] backdrop-blur-[18px] border border-[oklch(0.62_0.26_305/0.15)] rounded-2xl overflow-hidden transition-all duration-300 cubic-bezier(0.4, 0, 0.2, 1)"
+    >
+     
+      <div className="lg:col-span-5 flex justify-center items-center overflow-hidden shadow-2xl min-h-[250px] md:h-[40vh] lg:h-full  lg:min-h-[400px] rounded-t-2xl rounded-b-none lg:rounded-l-2xl lg:rounded-r-none">
+        <Image 
+          width={500} 
+          height={500}
+          loading="lazy"
+          src={item.image}
+          alt={item.title}
+         
+          className="w-full h-full object-cover rounded-t-2xl rounded-b-none lg:rounded-l-2xl lg:rounded-r-none"
+        />
+      </div>
 
-  style={{ transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' }}
->
-                {/* left VISUAL SIDE */}
-                <div className="lg:col-span-5 flex justify-center items-center overflow-hidden shadow-2xl min-h-[300px] lg:min-h-[400px]">
-                  <img
-                    loading="lazy"
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover lg:rounded-tl-sm lg:rounded-bl-sm"
-                  />
-                </div>
+      {/* right CONTENT SIDE */}
+      <div className="lg:col-span-7 flex flex-col justify-between pt-5 lg:pl-5   xl:p-10 2xl:p-20 h-auto lg:h-full space-y-4 lg:space-y-8">
+        
+        {/* Typography Header Section */}
+        <div className="space-y-4">
+          <h2 className="text-base md:text-2xl lg:text-[34px] 2xl:text-[40px] font-medium tracking-tight text-white leading-[1.2]">
+            {item.title}
+          </h2>
 
-                {/* right CONTENT SIDE */}
-                <div className="lg:col-span-7 flex flex-col justify-between p-10  2xl:p-20  space-y-8 ">
-                  {/* Typography Header Section */}
-                  <div className="space-y-4">
-                    <h2 className="text-xl md:text-3xl lg:text[34px] 2xl:text-[40px] font-medium tracking-tight text-white leading-[1.2]">
-                      {item.title}
-                    </h2>
-
-                    <div className="text-[#a1a1aa] text-[10px] lg:text-[11px] 1xl:text-base leading-[1.6] space-y-1">
-                      {item.paragraphs.map((p, pIndex) => (
-                        <p key={pIndex}>{p}</p>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Metric Stats Cards Layout */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {item.metrics.map((metric) => (
-                      <div
-                        key={metric.id}
-                        className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-5 flex items-center gap-4"
-                      >
-                        <div className="text-primary text-3xl">
-                          {metric.icon}
-                        </div>
-                        <div>
-                          <span className="block text-2xl font-bold text-white tracking-tight">
-                            {metric.value}
-                          </span>
-                          <span className="block text-[#71717a] text-[11px] font-medium mt-0.5">
-                            {metric.label}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Testimonial Box */}
-                  <div className="bg-gradient-to-t from-black/80 to-transparent border-l-[6px] border-primary hover-glow-card rounded-xl p-6 relative overflow-hidden">
-                    <p className="text-[#d4d4d8] text-[10px] lg:text-[12px] 1xl:text-base leading-[1.6] font-normal">
-                      {item.testimonial}
-                    </p>
-                  </div>
-
-                  {/* Bottom Link Trigger & Dot Indicators */}
-                  <div className="pt-2 flex items-center justify-between">
-                    <a
-                      href="#"
-                      className="inline-block text-primary text-[16px] font-semibold tracking-wide underline underline-offset-8 decoration-primary transition-all duration-200"
-                    >
-                      Read Full Case Study
-                    </a>
-
-                    <div className="flex items-center gap-1.5 pr-2">
-                      {portfolioItems.map((_, idx) => {
-                        const isActive =
-                          idx === currentIndex ||
-                          (currentIndex === portfolioItems.length && idx === 0);
-                        return (
-                          <button
-                            key={idx}
-                            onClick={() => handleDotClick(idx)}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-5 bg-primary" : "w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
-                            aria-label={`Go to slide ${idx + 1}`}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="text-[#a1a1aa] text-[11px] md:text-xs lg:text-[11px] xl:text-xs 1xl:text-base leading-[1.6] space-y-1">
+            {item.paragraphs.map((p, pIndex) => (
+              <p key={pIndex}>{p}</p>
             ))}
           </div>
         </div>
+
+        {/* Metric Stats Cards Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {item.metrics.map((metric) => (
+            <div
+              key={metric.id}
+              className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-xl p-3 md:p-5 lg:p-2 xl:p-5 flex items-center gap-2 md:gap-4"
+            >
+              <div className="text-primary text-2xl md:text-3xl shrink-0">
+                {metric.icon}
+              </div>
+              <div className="flex gap-3 justify-center items-center md:gap-0 md:grid">
+                <span className="block text-sm md:text-base lg:text-lg xl:text-base 1xl:text-2xl font-bold text-white tracking-tight">
+                  {metric.value}
+                </span>
+                <span className="block text-[#71717a] text-[10px] md:text-xs 1xl:text-base font-medium mt-0.5">
+                  {metric.label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonial Box */}
+        <div className="bg-gradient-to-t from-black/80 to-transparent border-l-[3px] md:border-l-[6px] rounded-xl border-primary hover-glow-card rounded-r-xl p-3 xl:p-6 relative overflow-hidden">
+          <p className="text-[#d4d4d8] text-[11px] md:text-xs 1xl:text-base leading-[1.6] font-normal">
+            {item.testimonial}
+          </p>
+        </div>
+
+        {/* Bottom Link Trigger & Dot Indicators */}
+        <div className="pt-2 flex items-center justify-between">
+          <Link
+            href="/"
+            className="inline-block text-primary text-xs md:text-sm xl:text-base font-semibold tracking-wide hover:underline hover:underline-offset-8 decoration-primary transition-all duration-200"
+          >
+            Read Full Case Study
+          </Link>
+
+          <div className="flex items-center gap-1.5 pr-2">
+            {portfolioItems.map((_, idx) => {
+              const isActive =
+                idx === currentIndex ||
+                (currentIndex === portfolioItems.length && idx === 0);
+              return (
+                <button
+                  key={idx}
+                  onClick={() => handleDotClick(idx)}
+                  className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-3 md:w-5 bg-primary" : "w-1 md:w-1.5 bg-neutral-700 hover:bg-neutral-500"}`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+        </div>
       </div>
 
-      <div className="mt-12 flex justify-center">
+      <div className="mt-5 md:mt-12 flex justify-center">
         
           <GhostButton href="/case-studies">View All Case Studies</GhostButton>
        
@@ -463,13 +466,13 @@ function Testimonials() {
                   </div>
 
                   {/* Bottom Profile Footer Section */}
-                  <div className="mt-5 md:mt-10">
+                  <div className="mt-5 lg:mt-10">
                     {/* Separator Line */}
                     <div className="w-full h-[1px] md:h-[2px] bg-[oklch(0.62_0.26_305/0.15)] mb-3 md:mb-6" />
 
                     <div className="flex items-center gap-4">
                       <div className="w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden ring-1 ring-[#3a2763] group-hover:ring-[#583794] transition-all duration-500">
-                        <img
+                        <Image width={500} height={500}
                           src={review.avatar}
                           alt={review.name}
                           className="w-full h-full object-cover"

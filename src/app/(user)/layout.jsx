@@ -1,5 +1,5 @@
 import { PageShell } from "@/components/site/PageShell.jsx";
-import ScrollToTop from "@/components/site/ScrollToTop.jsx"; // नया कंपोनेंट इम्पोर्ट किया
+import ScrollToTop from "@/components/site/ScrollToTop.jsx";
 import "@/components/site/styles.css";
 import "../globals.css";
 export const metadata = {
@@ -450,7 +450,7 @@ export const metadata = {
     },
   },
   // 2. Canonical URL  secure dublicate content
-  metadataBase: new URL("https://www.hiretopcoder.com"), //
+  // metadataBase: new URL("https://www.hiretopcoder.com"), //
   alternates: {
     canonical: "/",
     languages: {
@@ -460,7 +460,7 @@ export const metadata = {
   icons: {
     icon: "/icon.png",
   },
-  metadataBase: new URL(""), //Main  Website link
+  // metadataBase: new URL("/https://www.hiretopcoder.com"), //Main  Website link
   openGraph: {
     title: "Hire Top Coder",
     description: "HireTopCoder — Hire Elite Digital Experts Instantly",

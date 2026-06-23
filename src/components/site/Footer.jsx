@@ -28,7 +28,7 @@ export  function Footer() {
   return (
 <footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] ">
 <div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-10">
-<div className=" w-full mb-5 md:mb-10 mx-auto grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-12 lg:gap-8 items-center">
+<div className=" w-full  md:mb-10 mx-auto grid grid-cols-1 md:grid-cols-12  md:gap-12 lg:gap-8 items-center">
         
         {/* =========================================================
             LEFT COLUMN - INTERACTIVE RESOURCES WITH CHECKBOXES
@@ -43,12 +43,12 @@ export  function Footer() {
                 <Link
                 href={item.to}
                  
-                  className="group flex items-center gap-5 py-2 w-full text-left transition-all duration-300 rounded-[12px] hover:bg-white/[0.01] focus:outline-none"
+                  className="group flex items-center gap-2 md:gap-5 py-2 w-full text-left transition-all duration-300 rounded-[6px] md:rounded-[12px] hover:bg-white/[0.01] focus:outline-none"
                 >
                   {/* Outer Frame (इमेज `image (4).png` के बॉक्स साइज को बनाए रखने के लिए) */}
                 
                     {/* Inner Custom Checkbox Square */}
-                    <div className={`w-9 h-9 rounded-[4px] border flex items-center justify-center transition-all duration-200 
+                    <div className={`w-7 h-7 md:w-9 md:h-9 rounded-[4px] border flex items-center justify-center transition-all duration-200 
                       ${isChecked 
                         ? 'bg-[#ac45ff] border-[#ac45ff] text-[#2e1d4d] scale-100' 
                         : 'border-[#4a4557] bg-transparent text-transparent scale-95 group-hover:border-[#7b6f9e]'}`}
@@ -59,12 +59,12 @@ export  function Footer() {
 
                   {/* Vertical Stacked Text Info */}
                   <div className="space-y-[2px]">
-                    <h3 className={`font-semibold text-xs md:text-sm tracking-wide transition-colors duration-200 
+                    <h3 className={`font-semibold text-[10px] md:text-sm tracking-wide transition-colors duration-200 
                       ${isChecked ? 'text-[#ac45ff]' : 'text-white group-hover:text-[#ac45ff]'}`}
                     >
                       {item.title}
                     </h3>
-                    <p className={`text-[10px] md:text-xs font-normal leading-normal transition-colors duration-200
+                    <p className={`text-[8px] md:text-xs font-normal leading-normal transition-colors duration-200
                       ${isChecked ? 'text-[#8d889e]' : 'text-[#696575] group-hover:text-[#8d889e]'}`}
                     >
                       {item.description}
@@ -81,19 +81,19 @@ export  function Footer() {
         {/* =========================================================
             RIGHT COLUMN - TRUST & CREDIBILITY METRICS
             ========================================================= */}
-        <div className="md:col-span-4 w-full  lg:pl-12 flex flex-col justify-center space-y-2 py-4">
-        <div className="mb-10" >
-              <div className="text-xs 1xl:text-sm font-mono uppercase tracking-[0.25em] text-primary font-bold mb-4">
+        <div className="md:col-span-4 w-full  lg:pl-12 flex flex-col justify-center space-y-2 py-2 md:py-4">
+        <div className="mb-5 md:mb-10" >
+              <div className="text-[10px] md:text-xs 1xl:text-sm font-mono uppercase tracking-[0.25em] text-primary font-bold mb-2 md:mb-4">
         Newsletter
               </div>
-        <p className=" text-foreground/65 text-sm  font-medium">
+        <p className=" text-foreground/65 text-[10px] md:text-sm  font-medium">
               Get the latest technical insights delivered <br/>
 weekly.
             </p>
             <div className=" w-full ">
         
         {/* Form Container */}
-        <form  className="relative mt-4 flex items-center w-full group">
+        <form  className="relative mt-2 md:mt-4 flex items-center w-[80%] md:w-full group">
           
           {/* Input Box */}
           <input
@@ -103,7 +103,7 @@ weekly.
             placeholder="Email address"
             required
         
-            className="w-full bg-[#110e1b] text-white text-[14px] 2xl:text-[16px] placeholder-[#4f4b66] pl-6 pr-20 py-2 rounded-[8px] border border-[oklch(0.62_0.26_305/0.15)] outline-none transition-all duration-300 focus:border-[#583794] focus:shadow-[0_0_15px_rgba(88,55,148,0.2)] disabled:opacity-60"
+            className=" w-full bg-[#110e1b] text-white text-[10px] md:text-[14px] 2xl:text-[16px] placeholder-[#4f4b66] pl-2 pr-10  md:pl-6 md:pr-20 py-2 rounded-[8px] border border-[oklch(0.62_0.26_305/0.15)] outline-none transition-all duration-300 focus:border-[#583794] focus:shadow-[0_0_15px_rgba(88,55,148,0.2)] disabled:opacity-60"
           />
 
           {/* Connected Button on Right Side */}
@@ -128,10 +128,10 @@ weekly.
 
       </div>
       
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12  md:pt-10 border-t border-white/[0.07]">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12 gap-12  md:pt-10 border-t border-white/[0.07]">
 
           {/* Brand */}
-<div className="   w-full lg:col-span-4">
+<div className=" -mb-5 md:-mb-0  w-full xl:col-span-4">
 <Link href="/" className="block">
   {/* लोगो को दबने से बचाने के लिए wrapper div */}
   <div className="relative w-[140px] h-[45px] sm:w-[160px] sm:h-[50px] md:w-[180px] md:h-[55px] lg:w-[200px] lg:h-[60px]">
@@ -144,24 +144,24 @@ weekly.
     />
   </div>
 </Link>
-<p className="mt-4 text-[14px] text-white/45 hover:text-[#F0EDFF] leading-[1.8] w-full">
+<p className="md:mt-4 text-xs md:text-sm text-white/45 hover:text-[#F0EDFF] leading-[1.8] w-full">
 
               We match elite offshore developers, designers, and AI engineers to startups and businesses worldwide. Human-vetted, AI-matched, ready in 24 hours.
 </p>
-<div className="mt-6 flex gap-3">
+<div className="mt-3 md:mt-6 flex gap-3">
 
               {socials?.map((social, i) => (
-<Link  key={i} href={social.to} className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
+<Link  key={i} href={social.to} className="w-8 h-8 md:w-10 md:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary" >
 
-                                          <social.icon className="text-2xl text-primary"/>
+                                          <social.icon className="text-xl md:text-2xl text-primary"/>
                                           </Link>
 
               ))}
 </div>
-<div className="mt-6 flex flex-wrap gap-2.5">
+<div className="mt-3 md:mt-6 flex flex-wrap gap-2.5">
 
               {["ISO 9001", "GDPR", "NDA Protected"]?.map((b,i) => (
-<span key={i} className="text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary  text-[#F0EDFF]">
+<span key={i} className="text-[9px] md:text-[11px] px-3 py-1 rounded-full border border-white/10  bg-primary/10 transition-colors hover:border-primary  text-[#F0EDFF]">
 
                   {b}
 </span>
@@ -171,54 +171,54 @@ weekly.
 </div>
  
           {/* Services */}
-<div className="lg:col-span-2">
+<div className="xl:col-span-2 -mb-5 md:-mb-0">
 <FooterColTitle>Services</FooterColTitle>
-<ul className="space-y-2.5">
+<ul className=" md:space-y-2.5">
 
               {services?.map((s,i) => (
-<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
+<li key={i}><Link href={s.to} className="text-[10px] md:text-sm text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
 
               ))}
 </ul>
 </div>
  
           {/* Hire by Role */}
-<div className="lg:col-span-2">
+<div className="xl:col-span-2 -mb-5 md:-mb-0">
 <FooterColTitle>Hire by Role</FooterColTitle>
-<ul className="space-y-2.5">
+<ul className=" md:space-y-2.5">
 
               {hireRoles?.map((s,i) => (
-<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
+<li key={i}><Link href={s.to} className="text-[10px] md:text-sm text-foreground/75 hover:text-white/50 transition">{s.name}</Link></li>
 
               ))}
 </ul>
 </div>
  
           {/* Company */}
-<div className="lg:col-span-2">
+<div className="xl:col-span-2 -mb-5 md:-mb-0">
 <FooterColTitle>Company</FooterColTitle>
-<ul className="space-y-2.5">
+<ul className=" md:space-y-2.5">
 
               {companyLinks?.map((s,i) => (
-<li key={i}><Link href={s.to} className="text-[14px] text-foreground/75 hover:text-white/50 transition">{s.label}</Link></li>
+<li key={i}><Link href={s.to} className="text-[10px] md:text-sm text-foreground/75 hover:text-white/50 transition">{s.label}</Link></li>
 
               ))}
 </ul>
 </div>
  
           {/* Contact */}
-<div className="lg:col-span-2">
+<div className="xl:col-span-2">
 <FooterColTitle>Get in Touch</FooterColTitle>
-<ul className="space-y-3 text-[13px] text-white/45">
-<li className="flex items-start gap-2"><FaMapMarkerAlt className="size-4 mt-0.5 text-white/35 shrink-0" /><span>Indore, Madhya Pradesh, India</span></li>
-<li className="flex items-start gap-2"><FaRegEnvelope className="size-4 mt-0.5 text-white/35 shrink-0" /><span>contact@hirertopcodercom</span></li>
-<li className="flex items-start gap-2"><FaPhoneAlt className="size-4 mt-0.5 text-white/35 shrink-0" /><span>+91 98765 43210</span></li>
+<ul className="space-y-1 md:space-y-3 text-[11px]  md:text-[13px] text-white/45">
+<li className="flex items-start gap-1 md:gap-2"><FaMapMarkerAlt className="size-3 md:size-4 mt-0.5 text-white/35 shrink-0" /><span>Indore, Madhya Pradesh, India</span></li>
+<li className="flex items-start gap-1 md:gap-2"><FaRegEnvelope className="size-3 md:size-4 mt-0.5 text-white/35 shrink-0" /><span>contact@hirertopcodercom</span></li>
+<li className="flex items-start gap-1 md:gap-2"><FaPhoneAlt className="size-3 md:size-4 mt-0.5 text-white/35 shrink-0" /><span>+91 98765 43210</span></li>
 </ul>
 <div className="mt-5">
-<div className="text-[11px] text-white/35 uppercase tracking-wider">Response time</div>
-<div className="text-[13px] text-white font-medium mt-0.5">&lt; 2 hours</div>
+<div className=" text-[10px] md:text-[11px] text-white/35 uppercase tracking-wider">Response time</div>
+<div className="text-xs md:text-[13px] text-white font-medium mt-0.5">&lt; 2 hours</div>
 </div>
-<GhostButton className="mt-5">
+<GhostButton className=" mt-2 md:mt-5">
 
               Book a Call 
 </GhostButton>
@@ -227,14 +227,15 @@ weekly.
 </div>
 </div>
  
+ 
         {/* Stats strip */}
-<div className="mt-16 -mx-6 lg:-mx-14 glass px-6 lg:px-14 py-6">
-<div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.07]">
+<div className="mt-8 md:mt-16 border border-y-primary/50 p-2 md:p-5 bg-[#0a0a0a]">
+<div className="grid grid-cols-2 md:grid-cols-4   gap-3 md:gap-0 divide-x divide-white/[0.07]">
 
             {stats?.map((s, i) => (
-<div key={i} className="px-4 first:pl-0">
-<div className="text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">{s.n}</div>
-<div className="text-[12px] font-semibold text-white/35 mt-0.5">{s.l}</div>
+<div key={i} className="grid justify-center items-center ">
+<div className="text-2xl md:text-[28px] 2xl:text-4xl  font-extrabold tracking-tight text-gradient-purple">{s.n}</div>
+<div className="text-[10px] md:text-[12px] font-semibold text-white/35 hover:text-white mt-0.5">{s.l}</div>
 </div>
 
             ))}
@@ -242,7 +243,7 @@ weekly.
 </div>
  
         {/* Bottom bar */}
-<div className="border-t border-white/[0.07] py-6 flex flex-wrap items-center justify-between gap-3 text-[13px]">
+<div className="border-t border-white/[0.07] py-6 flex flex-wrap items-center justify-center md:justify-between gap-1 md:gap-3 text-[11px] md:text-[13px]">
 <div className="text-white ">© 2025 HireTopCoder. All rights reserved.</div>
 <div className="text-white text-[12px]">Made with ❤️ in Indore, India</div>
 <div className="flex gap-5 text-white/35 ">
@@ -261,7 +262,7 @@ weekly.
 function FooterColTitle({ children }) {
 
   return (
-<div className="text-xs  uppercase tracking-[0.2em] text-primary mb-5 font-medium">
+<div className="text-[10px] md:text-xs  uppercase tracking-[0.2em] text-primary  md:mb-5 font-medium">
 
       {children}
 </div>
