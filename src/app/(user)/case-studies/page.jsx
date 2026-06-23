@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-   export  const metadata= [
+   export  const metadata= 
       { title: "HireTopCoder — Case Studies" ,
      description:
        "Selected case studies from HireTopCoder — engineering teams that ship."
-  },
+  };
     
  
 
