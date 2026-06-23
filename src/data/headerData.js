@@ -98,7 +98,7 @@ export const headerData={
           },
           {icon:<Brain/>,
             name: "AI-ML Engeeners",
-            desc: "Proficient in modern web stacks (MERN, Next.js, Python)",
+            desc: "Proficient in modern web stacks (Python, AI, ML)",
             href: "/hire/ai-ml-engineer",
           },
           {icon:<Smartphone/>,
