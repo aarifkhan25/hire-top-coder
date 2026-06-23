@@ -2,7 +2,7 @@
 import { Breadcrumb, Card, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 import { Search } from "lucide-react";
 
- const meta= [{ title: "Hire UI/UX Designer — HireTopCoder" }, { name: "description", content: "Hire vetted UI/UX designers. Figma, prototyping, design systems." }]
+ export const metadata= [{ title: "Hire UI/UX Designer — HireTopCoder" ,description: "Hire vetted UI/UX designers. Figma, prototyping,Photoshop, Canva,Lightroom, design systems." }]
 
 const designers = [
   { name: "Anya R.", role: "Senior UI/UX Designer", years: 7, tags: ["Figma", "Prototyping", "Design Systems"] },

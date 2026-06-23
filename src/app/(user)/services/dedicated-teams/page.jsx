@@ -5,7 +5,7 @@ import Link from "next/link";
 
 
 
-const meta=[{ title: "Dedicated Expert Teams — HireTopCoder" }, { name: "description", content: "Full-time developers assigned solely to your project. Long-term ownership, predictable cost." }] 
+export const metadata={ title: "Dedicated Expert Teams — HireTopCoder" ,description: "Full-time developers assigned solely to your project. Long-term ownership, predictable cost." }
 
 export default function Page() {
   return (

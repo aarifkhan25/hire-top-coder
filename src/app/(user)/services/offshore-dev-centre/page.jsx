@@ -2,7 +2,7 @@ import { Breadcrumb, Card, CTABanner, FAQ, PageHero, Section, SectionTitle } fro
 import { Briefcase, Building2, ShieldCheck, Users } from "lucide-react";
 
 
-  const meta= [{ title: "Offshore Development Centre — HireTopCoder" }, { name: "description", content: "Build your own offshore engineering team using our GCC infrastructure." }] 
+  export  const metadata= { title: "Offshore Development Centre — HireTopCoder" ,description: "Build your own offshore engineering team using our GCC infrastructure." }
  
 
 export default function Page() {

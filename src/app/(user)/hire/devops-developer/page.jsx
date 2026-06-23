@@ -1,7 +1,7 @@
 
 import { PageHero, Section, SectionTitle, ProfileCard, FAQ, CTABanner, Breadcrumb, ComparisonTable } from "@/components/site/Shared";
 import { Cloud, Box, Settings, GitBranch, Layers, ShieldCheck } from "lucide-react";
- const meta= [{ title: "Hire DevOps Engineer — HireTopCoder" }] 
+export  const metadata= { title: "Hire DevOps Engineer — HireTopCoder" };
 
 
 const devs = [

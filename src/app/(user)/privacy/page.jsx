@@ -3,12 +3,12 @@ import { Reveal } from "@/components/site/Reveal";
 
 
 
-    const meta= [
-      { title: "Privacy Policy — Hire Top Coder" },
-      { name: "description", content: "Hire Top Coder privacy policy. Learn how we collect, use, and protect your personal data." },
-      { property: "og:title", content: "Privacy Policy — Hire Top Coder" },
-      { property: "og:description", content: "Learn how Hire Top Coder collects, uses, and protects your personal data." },
-    ];
+   export  const metadata= 
+      { title: "Privacy Policy — Hire Top Coder" ,
+      description: "Hire Top Coder privacy policy. Learn how we collect, use, and protect your personal data." ,
+       property:{ "og:title": "Privacy Policy — Hire Top Coder", "og:description": "Learn how Hire Top Coder collects, uses, and protects your personal data."  }}
+      
+    
   
 
 const sections = [

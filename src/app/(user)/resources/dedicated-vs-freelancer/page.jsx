@@ -2,7 +2,7 @@
 import { Breadcrumb, Card, ComparisonTable, CTABanner, PageHero, Section, SectionTitle } from "@/components/site/Shared";
 import { Check, X } from "lucide-react";
 
-const meta= [{ title: "Dedicated Developer vs Freelancer — HireTopCoder" }] ;
+export const metadata= { title: "Dedicated Developer vs Freelancer — HireTopCoder" }
 
  export default function Page() {
   return (

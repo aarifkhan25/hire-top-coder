@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CTABanner, FAQ, PageHero, Section } from "@/components/site/Shared";
 import { Search } from "lucide-react";
 
- const meta= [{ title: "FAQ — HireTopCoder" }] 
+  export const metadata= { title: "FAQ — HireTopCoder" }
  
 
 const groups = {

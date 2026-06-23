@@ -2,7 +2,7 @@
 import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, Section, SectionTitle } from "@/components/site/Shared";
 
 
-   const meta= [{ title: "IT Staff Augmentation — HireTopCoder" }, { name: "description", content: "Plug vetted engineers into your existing team in 48–72 hours." }] 
+export const metadata =  { title: "IT Staff Augmentation — HireTopCoder", description : "Plug vetted engineers into your existing team in 48–72 hours." }
 
 
 export default function Page() {

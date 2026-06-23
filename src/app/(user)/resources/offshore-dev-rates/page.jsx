@@ -2,7 +2,7 @@
 import { Breadcrumb, Card, ComparisonTable, CTABanner, PageHero, Section, SectionTitle } from "@/components/site/Shared";
 import { useState } from "react";
 
-const meta= [{ title: "Offshore Developer Rates 2026 — HireTopCoder" }]
+export const metadata= { title: "Offshore Developer Rates 2026 — HireTopCoder" }
 
 const rates = {
   India: { React: 55, Python: 60, DevOps: 70, AI: 90 },

@@ -3,7 +3,7 @@ import { Breadcrumb, Card, CTABanner, FAQ, PageHero, PurplePill, Section, Sectio
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 
-  const meta= [{ title: "MVP Development in 12 Weeks — HireTopCoder" }, { name: "description", content: "Investor-ready MVP shipped in 12 weeks. Strategy, design, build, ship." }]
+  export const metadata= { title: "MVP Development in 12 Weeks — HireTopCoder", description: "Investor-ready MVP shipped in 12 weeks. Strategy, design, build, ship." }
 
 
  export default function Page() {

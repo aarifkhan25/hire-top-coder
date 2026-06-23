@@ -2,12 +2,10 @@ import Link from "next/link"
 import { Reveal } from "@/components/site/Reveal";
 
 
- const   meta= [
-      { title: "Terms of Service — Hire Top Coder" },
-      { name: "description", content: "Hire Top Coder terms of service. Read the rules and guidelines for using our platform." },
-      { property: "og:title", content: "Terms of Service — Hire Top Coder" },
-      { property: "og:description", content: "Read the rules and guidelines for using the Hire Top Coder platform." },
-    ];
+  export const   metadata=  { title: "Terms of Service — Hire Top Coder" ,description: "Hire Top Coder terms of service. Read the rules and guidelines for using our platform." ,
+       property: {"og:title": "Terms of Service — Hire Top Coder" ,"og:description": "Read the rules and guidelines for using the Hire Top Coder platform."
+   }}
+    
 
 
 const sections = [

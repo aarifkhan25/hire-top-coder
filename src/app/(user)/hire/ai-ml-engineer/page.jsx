@@ -1,7 +1,7 @@
 
 import { Breadcrumb, Card, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 
- const meta= [{ title: "Hire AI/ML Engineers & LLM Specialists — HireTopCoder" }] 
+ export  const metadata= { title: "Hire AI/ML Engineers & LLM Specialists — HireTopCoder" }
 
 
 const specs = ["LLM Integration", "Computer Vision", "NLP", "MLOps", "Automation", "Predictive Analytics", "RAG / Vector DBs", "Fine-Tuning"];

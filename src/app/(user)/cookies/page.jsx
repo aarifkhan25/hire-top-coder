@@ -2,12 +2,13 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/site/Reveal";
 
- const   meta=[
-      { title: "Cookie Policy — Hire Top Coder" },
-      { name: "description", content: "Hire Top Coder cookie policy. Learn how we use cookies and how you can manage them." },
-      { property: "og:title", content: "Cookie Policy — Hire Top Coder" },
-      { property: "og:description", content: "Learn how Hire Top Coder uses cookies and how you can manage your preferences." },
-    ];
+  export const   metadata=
+      { title: "Cookie Policy — Hire Top Coder" ,description: "Hire Top Coder cookie policy. Learn how we use cookies and how you can manage them." ,
+
+
+       property:{ "og:title": "Cookie Policy — Hire Top Coder","og:description":"Learn how Hire Top Coder uses cookies and how you can manage your preferences." }}
+      
+    
 
 
 const cookieTypes = [

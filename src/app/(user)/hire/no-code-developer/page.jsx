@@ -1,7 +1,7 @@
 
 import { PageHero, Section, SectionTitle, Card, ProfileCard, FAQ, CTABanner, Breadcrumb } from "@/components/site/Shared";
 
-const meta= [{ title: "Hire No-Code Developer — HireTopCoder" }] 
+export const metadata= { title: "Hire No-Code Developer — HireTopCoder" }
 
 const specs = ["Bubble", "Webflow", "n8n", "Zapier", "Airtable", "Glide", "Softr", "Make"];
 const devs = [

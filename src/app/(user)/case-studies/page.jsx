@@ -1,12 +1,11 @@
 import Link from "next/link";
 
-    const meta= [
-      { title: "HireTopCoder — Case Studies" },
-      {
-        name: "description",
-        content: "Selected case studies from HireTopCoder — engineering teams that ship.",
-      },
-    ]
+   export  const metadata= [
+      { title: "HireTopCoder — Case Studies" ,
+     description:
+       "Selected case studies from HireTopCoder — engineering teams that ship."
+  },
+    
  
 
 const cases = [

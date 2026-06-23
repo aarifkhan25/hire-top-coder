@@ -2,7 +2,7 @@ import { Breadcrumb, Card, CTABanner, FAQ, PageHero, Section, SectionTitle, Stat
 import { ArrowRight } from "lucide-react";
 
 
-  const meta= [{ title: "Legacy Modernization — HireTopCoder" }, { name: "description", content: "Zero-downtime upgrades for outdated platforms." }] 
+  export const metadata= { title: "Legacy Modernization — HireTopCoder" ,description: "Zero-downtime upgrades for outdated platforms." }
 
 
  export default function Page() {

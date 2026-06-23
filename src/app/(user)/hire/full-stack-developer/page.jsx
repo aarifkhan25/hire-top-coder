@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Breadcrumb, Card, ComparisonTable, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 import { Search } from "lucide-react";
 
-const meta= [{ title: "Hire Full-Stack Developer — HireTopCoder" }, { name: "description", content: "Hire vetted full-stack developers. React, Node, Python, MERN." }] 
+export const metadata= { title: "Hire Full-Stack Developer — HireTopCoder" ,description: "Hire vetted full-stack developers. React, Node, Python, MERN,MEAN,MERN Stack,MEAN Stack." }
 
 
 const devs = [

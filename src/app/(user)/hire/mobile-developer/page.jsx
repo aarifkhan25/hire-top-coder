@@ -2,7 +2,7 @@
 import { Breadcrumb, ComparisonTable, CTABanner, FAQ, PageHero, ProfileCard, Section, SectionTitle } from "@/components/site/Shared";
 import { useState } from "react";
 
-const meta= [{ title: "Hire Mobile Developer — HireTopCoder" }] ;
+export  const metadata= { title: "Hire Mobile Developer — HireTopCoder",description: "Hire vetted Mobile App developers. Flutter,React Native,Flutter Developers,React Native developers." } ;
 
 
 const ios = [
