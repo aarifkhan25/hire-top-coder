@@ -9,7 +9,7 @@ export const metadata={ title: "Dedicated Expert Teams — HireTopCoder" ,descri
 
 export default function Page() {
   return (
-   <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full">
+   <main className=" w-full">
       <div className="pt-20 md:pt-28   "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Dedicated Teams" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
@@ -17,7 +17,7 @@ export default function Page() {
         sub={<>A full-time developer assigned solely to your project — embedded <br className="hidden md:block"/> in your workflow, owning outcomes end-to-end.</>}
       />
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Process" title="How It Works" />
         <Stepper steps={[
           { title: "Discovery", desc: "We map your goals, stack, and team culture in a 30-minute call." },
@@ -27,7 +27,7 @@ export default function Page() {
         ]} />
       </Section>
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Ideal For" title="Who this is built for" />
@@ -42,7 +42,7 @@ export default function Page() {
       </Section>
 
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Pricing" title="Simple monthly retainer" sub="One predictable invoice. No recruiter fees. No surprises." />
         <div className="max-w-2xl mx-auto"><Card className="p-5 md:p-10">
           <div className="text-[8px] md:text-[11px] uppercase tracking-[0.2em] text-primary font-bold">Dedicated Engineer</div>
@@ -58,7 +58,7 @@ export default function Page() {
       </Section>
 
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Proof" title="Real outcomes" />
@@ -71,7 +71,7 @@ export default function Page() {
       </Section>
 
 
-      <Section className="lg:px-30  py-10  lg:py-28 2xl:py-35">
+      <Section className="lg:px-30   ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "How quickly can an engineer start?", a: "Most dedicated engineers begin within 5–7 business days after we sign the agreement." },

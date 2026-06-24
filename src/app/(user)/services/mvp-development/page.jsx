@@ -8,14 +8,14 @@ import Link from "next/link";
 
  export default function Page() {
   return (
-    < main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full" >
+    < main className=" w-full" >
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "MVP Development" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
         title={<>Investor-Ready <span className="text-primary">MVP in 12 Weeks</span></>}
         sub={<>Strategy, design, code, QA, and launch — one team, one timeline, <br/>one outcome you can show to investors.</>}
       />
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <SectionTitle eyebrow="Included" title="What's in the box" />
         <div className="grid md:grid-cols-3 gap-3 w-full mt-5 md:mt-10">
           {["Product strategy", "UI/UX design", "Full-stack development", "QA & testing", "Deployment & DevOps", "Technical documentation"].map((f) => (
@@ -27,7 +27,7 @@ import Link from "next/link";
         </div>
       </Section>
 
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Timeline" title="12-Week Roadmap" />
@@ -40,7 +40,7 @@ import Link from "next/link";
       </Section>
 
 
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <SectionTitle eyebrow="Tech" title="Tech Stack We Use" />
         <div className="flex flex-wrap justify-center gap-3 mt-10 max-w-xl mx-auto">
           {["React", "Next.js", "Node.js", "Flutter", "React Native", "Firebase", "AWS", "PostgreSQL", "Stripe", "OpenAI"].map((t) => (
@@ -50,7 +50,7 @@ import Link from "next/link";
       </Section>
 
 
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Output" title="Investor-Ready Output" />
@@ -63,7 +63,7 @@ import Link from "next/link";
         </div></div>
       </Section>
 
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <div className="max-w-2xl mx-auto"> <Link href="/case-studies/mkgo-transport"><Card className="hover:border-primary/30 transition">
           <PurplePill>Case Study · Mobile</PurplePill>
           <div className="mt-3 text-sm md:text-xl text-white font-medium">MKGO Transport — Flutter MVP</div>
@@ -72,7 +72,7 @@ import Link from "next/link";
         </Card></Link></div>
       </Section>
 
-      <Section   className=" py-10  lg:py-28 2xl:py-35">
+      <Section   className="   ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "What if scope changes mid-flight?", a: "We re-baseline at week 6. Small changes are absorbed; large ones add timeline transparently." },

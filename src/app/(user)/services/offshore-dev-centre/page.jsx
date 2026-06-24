@@ -7,14 +7,14 @@ import { Briefcase, Building2, ShieldCheck, Users } from "lucide-react";
 
 export default function Page() {
   return (
-     <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full" >
+     <main className=" w-full" >
       <div className=" pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Offshore Dev Centre" }]} /></div>
       <PageHero
         eyebrow="GCC Model"
         title={<>Offshore <span className="text-primary">Development Centre</span></>}
         sub={<>Set up your own Global Capability Centre in 90 days — talent, compliance <br/> infrastructure, and management, all run by us.</>}
       />
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
         <SectionTitle eyebrow="Model" title="The GCC Model Explained" />
         <div className="grid md:grid-cols-4 gap-5">
           {[
@@ -34,7 +34,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
         
         <SectionTitle eyebrow="Timeline" title="90-Day Setup" />
         <div className="space-y-3 w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-10 lg:px-20 1xl:px-40">
@@ -55,7 +55,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Cost" title="GCC vs In-house, side by side" />
@@ -65,7 +65,7 @@ export default function Page() {
         </div></div>
       </Section>
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Where are the offshore centres located?", a: "We operate hubs in Bangalore, Hyderabad, and Warsaw with managed delivery." },

@@ -6,10 +6,10 @@ export const metadata= { title: "Dedicated Developer vs Freelancer — HireTopCo
 
  export default function Page() {
   return (
-  <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+  <main className=" w-full"    >
       <div className=" pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Resources" }, { label: "Dedicated vs Freelancer" }]} /></div>
       <PageHero eyebrow="Guide 2026" title={<>Dedicated Developer vs <span className="text-primary">Freelancer</span></>} sub="The real differences — cost, control, quality, and what actually scales." />
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Compare" title="Side-by-side" />
         <ComparisonTable
           headers={["Dimension", "Freelancer", "Dedicated Team"]}
@@ -24,7 +24,7 @@ export const metadata= { title: "Dedicated Developer vs Freelancer — HireTopCo
           ]}
         />
       </Section>
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
               <div className="relative  w-full">
         <SectionTitle eyebrow="Pros & Cons" title="What each is good at" />
@@ -47,7 +47,7 @@ export const metadata= { title: "Dedicated Developer vs Freelancer — HireTopCo
           </Card>
         </div>
       </div></Section>
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Decide" title="Which one fits you?" />
         <div className="w-full md:max-w-2xl md:mx-auto space-y-3">
           {[

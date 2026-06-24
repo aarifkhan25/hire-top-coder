@@ -229,7 +229,7 @@ weekly.
  
  
         {/* Stats strip */}
-<div className="mt-8 md:mt-16 border border-y-primary/50 p-2 md:p-5 bg-[#0a0a0a]">
+<div className="mt-8 md:mt-16 border border-y-primary/20 p-2 md:p-5 bg-[#0a0a0a]">
 <div className="grid grid-cols-2 md:grid-cols-4   gap-3 md:gap-0 divide-x divide-white/[0.07]">
 
             {stats?.map((s, i) => (

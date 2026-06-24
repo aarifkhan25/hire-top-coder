@@ -264,7 +264,7 @@ function Portfolio() {
             {item.title}
           </h2>
 
-          <div className="text-[#a1a1aa] text-[11px] md:text-xs lg:text-[11px] xl:text-xs 1xl:text-base leading-[1.6] space-y-1">
+          <div className="text-[#a1a1aa] text-[11px] md:text-xs lg:text-[11px] xl:text-xs 1xl:text-base 1xl:text-lg leading-[1.6] space-y-1">
             {item.paragraphs.map((p, pIndex) => (
               <p key={pIndex}>{p}</p>
             ))}
@@ -303,7 +303,7 @@ function Portfolio() {
         {/* Bottom Link Trigger & Dot Indicators */}
         <div className="pt-2 flex items-center justify-between">
           <Link
-            href="/"
+            href={item.href}
             className="inline-block text-primary text-xs md:text-sm xl:text-base font-semibold tracking-wide hover:underline hover:underline-offset-8 decoration-primary transition-all duration-200"
           >
             Read Full Case Study
@@ -334,7 +334,7 @@ function Portfolio() {
 
       <div className="mt-5 md:mt-12 flex justify-center">
         
-          <GhostButton href="/case-studies">View All Case Studies</GhostButton>
+          <GhostButton href="/company">View All Case Studies</GhostButton>
        
       </div>
     </section>

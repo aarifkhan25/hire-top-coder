@@ -19,17 +19,17 @@ const work10 = "/assets/work-10.png";
 const work11 = "/assets/work-11.jpg";
 
 const projects = [
-  { title: "Broker Remarks", category: "SaaS Web App", desc: "Real estate listing platform that eliminates repetitive agent questions.", img: work1, results: "3x faster workflow", span: "lg:col-span-2 lg:row-span-2" },
-  { title: "Code Conspirators", category: "Web Design", desc: "Bold agency website with immersive 3D hero and brand storytelling.", img: work2, results: "High-impact brand", span: "" },
-  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" },
-  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2" },
-  { title: "Wizz Air Integration", category: "Travel Platform", desc: "Flight booking and deals platform with multi-city search.", img: work5, results: "Booking platform", span: "" },
-  { title: "Workla", category: "Mobile App", desc: "Task management mobile app with calendar and team collaboration.", img: work6, results: "Cross-platform", span: "" },
-  { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work7, results: "High-conversion event LP", span: "lg:col-span-2" },
-  { title: "Tairo Real Estate", category: "Real Estate Platform", desc: "Property search platform with listings, agent profiles and geolocation filters.", img: work8, results: "24 yrs expertise", span: "" },
-  { title: "Cheshire Cats Club", category: "NFT / Web3", desc: "NFT collectibles launch site with countdown, roadmap and OpenSea integration.", img: work9, results: "Web3 launch", span: "" },
-  { title: "Olesya Cloud Technology", category: "IT / Cloud", desc: "Multi-page IT solutions and managed services website for cloud infrastructure.", img: work10, results: "Cloud infrastructure", span: "lg:col-span-2" },
-  { title: "Themi — Truth Platform", category: "Content Platform", desc: "Dark editorial content website with cinematic image layouts and immersive storytelling.", img: work11, results: "Editorial design", span: "" },
+  { title: "Alesk", category: "Management System", desc: "Alesk is a comprehensive, user-friendly customer management system", img: "/assets/case-2.png", results: "3x faster workflow", span: "lg:col-span-2 lg:row-span-2",href:"/case-studies/alesk" },
+  { title: "Code Conspirators", category: "Web Design", desc: "Bold agency website with immersive 3D hero and brand storytelling.", img: work2, results: "High-impact brand", span: "" ,href:"/case-studies/speakable"},
+  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" ,href:"/case-studies/alesk"},
+  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2",href:"/case-studies/alesk" },
+  { title: "Wizz Air Integration", category: "Travel Platform", desc: "Flight booking and deals platform with multi-city search.", img: work5, results: "Booking platform", span: "",href:"/case-studies/alesk" },
+  { title: "Workla", category: "Mobile App", desc: "Task management mobile app with calendar and team collaboration.", img: work6, results: "Cross-platform", span: "" ,href:"/case-studies/alesk"},
+  { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work7, results: "High-conversion event LP", span: "lg:col-span-2",href:"/case-studies/alesk" },
+  { title: "Tairo Real Estate", category: "Real Estate Platform", desc: "Property search platform with listings, agent profiles and geolocation filters.", img: work8, results: "24 yrs expertise", span: "",href:"/case-studies/alesk" },
+  { title: "Cheshire Cats Club", category: "NFT / Web3", desc: "NFT collectibles launch site with countdown, roadmap and OpenSea integration.", img: work9, results: "Web3 launch", span: "",href:"/case-studies/alesk" },
+  { title: "Olesya Cloud Technology", category: "IT / Cloud", desc: "Multi-page IT solutions and managed services website for cloud infrastructure.", img: work10, results: "Cloud infrastructure", span: "lg:col-span-2",href:"/case-studies/alesk" },
+  { title: "Themi — Truth Platform", category: "Content Platform", desc: "Dark editorial content website with cinematic image layouts and immersive storytelling.", img: work11, results: "Editorial design", span: "",href:"/case-studies/alesk" },
 ];
 
 const industries = [
@@ -38,8 +38,8 @@ const industries = [
 ];
 
 const caseStudies = [
-  { c: "Broker Remarks", t: "Eliminating repetitive questions for real estate agents", d: "A streamlined listing workflow that 3x'd agent throughput and reduced repetitive Q&A.", img: work1},
-  { c: "Rolling Star",   t: "Shipping a full multi-game casino platform in React", d: "Roulette, Blackjack, Slots and Aviator integrated under one premium frontend.", img: work4},
+  { c: "Speakable", t: "This platform provides a personalized English learning experience", d: "A personalized English learning platform connecting students in Poland with their ideal English teachers.", img: "/assets/work-12.png",href:"/case-studies/speakable"},
+  { c: "Alesk",   t: "ALESK is a comprehensive, user-friendly customer management system", d: "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.", img: "/assets/case-2.png",href:"/case-studies/alesk"},
 ];
 
 function Counter({ to, suffix = "" }) {
@@ -109,9 +109,9 @@ export default function WorkPage() {
                       <p className="mt-1 text-sm text-foreground/75 font-medium line-clamp-2">{p?.desc}</p>
                       <div className="mt-4 flex items-center justify-between">
                         <span className="text-xs font-bold text-white/85 glass px-3 py-1 rounded-full">{p?.results}</span>
-                        <span className="size-9 grid place-items-center rounded-full glass text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all">
+                        <Link href={p?.href} className="size-9 grid place-items-center rounded-full glass text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all">
                           <ArrowUpRight className="size-4" />
-                        </span>
+                        </Link>
                       </div>
                     </div>
                   </TiltCard>
@@ -137,7 +137,7 @@ export default function WorkPage() {
                       <h3 className="mt-3 text-3xl font-extrabold tracking-tight leading-tight">{cs?.t}</h3>
                       <p className="mt-4 text-foreground/75 font-medium">{cs?.d}</p>
                       <div className="mt-6">
-                        <GhostButton>Read Case Study</GhostButton>
+                        <GhostButton href={cs?.href}>Read Case Study</GhostButton>
                       </div>
                     </div>
                   </div>

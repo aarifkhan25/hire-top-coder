@@ -7,14 +7,14 @@ import { ArrowRight } from "lucide-react";
 
  export default function Page() {
   return (
-    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"  >
+    <main className=" w-full"  >
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
         title={<>Zero-Downtime <span className="text-primary">Legacy Upgrades</span></>}
         sub={<>Modernize tired PHP, jQuery, or .NET stacks into cloud-native <br/> React/Node systems — without breaking production.</>}
       />
-      <Section  className=" py-10  lg:py-28 2xl:py-35">
+      <Section  className="   ">
         <SectionTitle eyebrow="Approach" title="Our Modernization Approach" />
         <Stepper steps={[
           { title: "Audit & Assessment", desc: "Full codebase, infra, and risk audit in week 1." },
@@ -24,7 +24,7 @@ import { ArrowRight } from "lucide-react";
         ]} />
       </Section>
 
-      <Section  className=" py-10  lg:py-28 2xl:py-35">
+      <Section  className="   ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Outcomes" title="What our clients see" />
@@ -36,7 +36,7 @@ import { ArrowRight } from "lucide-react";
         ]} /></div>
       </Section>
 
-      <Section  className=" py-10  lg:py-28 2xl:py-35">
+      <Section  className="   ">
         <SectionTitle eyebrow="Stacks" title="From → To" />
         <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
           <Card>
@@ -54,7 +54,7 @@ import { ArrowRight } from "lucide-react";
         </div>
       </Section>
 
-      <Section  className=" py-10  lg:py-28 2xl:py-35">
+      <Section  className="   ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "How long does a typical modernization take?", a: "Most engagements are 4–9 months, depending on surface area and team size." },

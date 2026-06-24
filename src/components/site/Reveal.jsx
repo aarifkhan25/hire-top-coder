@@ -63,15 +63,16 @@ export function StaggerItem({
   );
 }
 
-export function WordReveal({
-  text,
-  className = "",
-}) {
+export function WordReveal({ text, className = "" }) {
   const words = text.split(" ");
   return (
     <span className={className} aria-label={text}>
       {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-bottom">
+        /* 🛠️ फ़िक्स: pb-[0.2em] के साथ pt-[0.1em] और mt-[-0.1em] किया ताकि ऊपर-नीचे दोनों तरफ से स्पेस मिले और overflow-hidden अक्षरों को न काटे */
+        <span 
+          key={i} 
+          className="inline-block overflow-hidden pt-[0.1em] pb-[0.2em] mt-[-0.1em] align-bottom"
+        >
           <motion.span
             className="inline-block"
             initial={{ y: "110%", opacity: 0 }}

@@ -7,14 +7,14 @@ export const metadata =  { title: "IT Staff Augmentation — HireTopCoder", desc
 
 export default function Page() {
   return (
-    <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+    <main className=" w-full"    >
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
         title={<>IT <span className="text-primary">Staff Augmentation</span></>}
         sub={<>Plug vetted engineers directly into your existing  team — your <br className="hidden md:block" /> tools,  your process, your timeline.</>}
       />
-      <Section  className=" py-10  lg:py-28 2xl:py-35">
+      <Section  className="   ">
         <SectionTitle eyebrow="When To Use" title="The right scenarios" />
         <div className="grid md:grid-cols-3 gap-2 md:gap-5">
           {[
@@ -25,7 +25,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
         <SectionTitle eyebrow="Compare" title="Staff Augmentation vs Dedicated Teams" />
         <ComparisonTable
           headers={["Dimension", "Staff Augmentation", "Dedicated Team"]}
@@ -40,7 +40,7 @@ export default function Page() {
       </Section>
 
 
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Timeline" title="From request to engineer online" />
@@ -59,7 +59,7 @@ export default function Page() {
           ))}
         </div></div>
       </Section>
-      <Section className=" py-10  lg:py-28 2xl:py-35">
+      <Section className="   ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Minimum engagement length?", a: "We typically engage for a minimum of 4 weeks." },

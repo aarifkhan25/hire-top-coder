@@ -1,5 +1,5 @@
-import Link from "next/link";
 
+import Link from "next/link";
    export  const metadata= 
       { title: "HireTopCoder — Case Studies" ,
      description:
@@ -14,20 +14,20 @@ const cases = [
     title: "Speakable",
     tag: "Web Application",
     blurb: "Personalized English learning platform connecting students with teachers.",
-    img: "https://placehold.co/800x500/141418/a78bfa?text=Speakable",
+    img: "/assets/case-1.png",
   },
   {
     slug: "alesk",
     title: "ALESK",
     tag: "Healthcare Platform",
     blurb: "Customer management platform for hospitals, clinics, and patients.",
-    img: "https://placehold.co/800x500/141418/a78bfa?text=ALESK",
+    img: "/assets/case-2.png",
   },
 ];
 
 export default function CaseStudies() {
   return (
-    <div className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full py-28 2xl:py-35">
+    <div className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full py-10 lg:py-28 2xl:py-35">
       <section className="w-full  pb-20">
         <span className="pill-accent inline-flex rounded-full text-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
           Case Studies
@@ -51,7 +51,7 @@ export default function CaseStudies() {
               <img
                 src={c.img}
                 alt={`${c.title} preview`}
-                className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
+                className="aspect-[16/10] w-full object-cover "
               />
               <div className="p-6">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.16em] ">

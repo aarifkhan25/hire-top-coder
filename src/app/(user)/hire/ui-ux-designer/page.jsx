@@ -15,7 +15,7 @@ const designers = [
 
 export default function Page() {
   return (
- <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"  >
+ <main className=" w-full"  >
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "UI/UX Designer" }]} /></div>
       <PageHero
         eyebrow="Hire by Role"
@@ -34,12 +34,12 @@ export default function Page() {
              </div>
              </div>
       </PageHero>
-      <Section className="py-10 lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Profiles" title="Featured Designers" />
         <div className="grid md:grid-cols-3 gap-5">{designers.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
 
-      <Section className="py-10 lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Tools" title="Tools they master" />
         <div className="flex flex-wrap justify-center gap-3 mt-5 md:mt-10">
           {["Figma", "Sketch", "Adobe XD", "Framer", "Webflow", "Principle", "ProtoPie"].map((t) => (
@@ -48,7 +48,7 @@ export default function Page() {
         </div>
       </Section>
 
-      <Section className="py-10 lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Work" title="Past work samples" />
         <div className="grid md:grid-cols-3 mt-10 gap-4">
           {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -57,7 +57,7 @@ export default function Page() {
         </div>
       </Section>
       
-      <Section className="py-10 lg:py-28 2xl:py-35">
+      <Section className="  ">
          <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Pricing" title="Simple rate card" />
@@ -67,7 +67,7 @@ export default function Page() {
         </div></div>
       </Section>
 
-      <Section className="py-10 lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "How fast can a designer start?", a: "Most designers begin within 5 business days." },

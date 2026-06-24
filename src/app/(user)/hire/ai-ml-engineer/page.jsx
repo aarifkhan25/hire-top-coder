@@ -16,14 +16,14 @@ const devs = [
 
 export default function Page() {
   return (
-   <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full"    >
+   <main className=" w-full"    >
       <div className=" pt-20 md:pt-28"><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Hire" }, { label: "AI / ML Engineer" }]} /></div>
       <PageHero
         eyebrow="Hire by Role"
         title={<>Hire <span className="text-primary">AI / ML Engineers</span> & LLM Specialists</>}
         sub={<>Engineers who can ship production AI — not just<br/> notebooks. LLMs, vision, MLOps, automation.</>}
       />
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Specializations" title="Pick the right specialization" />
         <div className="flex flex-wrap justify-center mt-10 gap-2">
           {specs.map((s) => (
@@ -31,11 +31,11 @@ export default function Page() {
           ))}
         </div>
       </Section>
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="Profiles" title="Featured AI Engineers" />
         <div className="grid md:grid-cols-3 gap-5">{devs.map((d) => <ProfileCard key={d.name} {...d} />)}</div>
       </Section>
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Use Cases" title="Use cases we've shipped" />
@@ -64,7 +64,7 @@ export default function Page() {
 </div>
         </div>
       </Section>
-      <Section className="py-10  lg:py-28 2xl:py-35">
+      <Section className="  ">
         <SectionTitle eyebrow="FAQ" title="Common questions" />
         <FAQ items={[
           { q: "Can they work on proprietary data?", a: "Yes — we sign NDAs and follow your data-handling policies." },

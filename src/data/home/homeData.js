@@ -171,13 +171,11 @@ export const  homeData = {
  portfolioItems : [
   {
     id: 1,
-    image: "/assets/work-12.png",
+    image: "/assets/case-1.png",
     title:
-      "Sales CRM Modernization: 30% Faster Deal Cycles & Reduced Operational Costs",
+      "Speakable provides a personalized English learning experience ",
     paragraphs: [
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    ",
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    ",
-      "The client was struggling with a fragment CRM system, duplicated leads, and lack of visibility    ",
+  "A personalized English learning platform connecting students in Poland with their ideal English teachers.",
     ],
     metrics: [
       {
@@ -198,19 +196,18 @@ export const  homeData = {
         label: "Forecast Accuracy",
         icon: <BsPeople />,
       },
-    ],
+    ], href:"/case-studies/speakable",
     testimonial:
       "“HireDeveloper didn't just send us a developer - they sent us a problem solver. The onboarding was seamless amd with 48 hours he was already pushing commits.”",
   },
   {
     id: 2,
-    image: "/assets/work-10.png", // अपनी दूसरी इमेज का पाथ यहाँ डालें
+    image: "/assets/Case-2.png", // अपनी दूसरी इमेज का पाथ यहाँ डालें
     title:
-      "AI Financial Analytics: 45% Increase in Operational Portfolio Yields",
+      "Alesk is a comprehensive, user-friendly customer management system ",
     paragraphs: [
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   ",
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   ",
-      "The hedge fund required high-speed real-time ingestion arrays to parse unstructured transactional   ",
+      "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.",
+    
     ],
     metrics: [
       { id: "m4", value: "45%", label: "Portfolio Yield", icon: <BsGraphUp /> },
@@ -227,17 +224,16 @@ export const  homeData = {
         icon: <BsShieldCheck />,
       },
     ],
+    href:"/case-studies/alesk",
     testimonial:
       "“The enterprise AI solution delivered by their engineering branch completely overhauled our predictive indexing latency benchmarks within the targeted deadline.”",
   },
   {
     id: 3,
     image: "/assets/work-12.png", // अपनी तीसरी इमेज का पाथ यहाँ डालें
-    title: "Next-Gen E-Commerce Stack: Scaled to 10M+ Monthly Active Sessions",
+    title: "Sales CRM Modernization: 30% Faster Deal Cycles & Reduced Operational Costs",
     paragraphs: [
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    ",
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    ",
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent    ",
+      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent",
     ],
     metrics: [
       { id: "m7", value: "10M+", label: "Active Sessions", icon: <BsPeople /> },
@@ -253,7 +249,7 @@ export const  homeData = {
         label: "TTFB Performance",
         icon: <BsLightningCharge />,
       },
-    ],
+    ], href:"/case-studies/speakable",
     testimonial:
       "“Our transaction capacity quadrupled overnight without a single microservice failure. Absolute mastery over cloud-native serverless system design.”",
   },

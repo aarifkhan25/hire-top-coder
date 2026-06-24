@@ -36,7 +36,6 @@ import {
   Wrench,
   Zap
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { CountUp, Reveal } from "./CaseReveal.jsx";
 
@@ -91,14 +90,14 @@ export function Section({
     <section id={id} className={`w-full py-28 2xl:py-35 ${className}`}>
       {label && (
         <Reveal>
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             {label}
           </div>
         </Reveal>
       )}
       {heading && (
         <Reveal delay={80}>
-          <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-white md:text-4xl">
             {heading}
           </h2>
         </Reveal>
@@ -113,7 +112,7 @@ export function Section({
 export function Breadcrumb({ current }) {
   return (
     <div className="w-full  pt-30 text-[13px] text-muted-foreground">
-      <Link href="/" className="hover:text-accent">Home</Link>
+      <Link href="/" className="">Home</Link>
       <span className="mx-2 opacity-50">/</span>
       <Link href="/case-studies/speakable" className="hover:text-accent">Case Studies</Link>
       <span className="mx-2 opacity-50">/</span>
@@ -130,10 +129,10 @@ export function InfoRow({
       {items.map((it, i) => (
         <Reveal key={it.label} delay={i * 80}>
           <div className=" py-5">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
               {it.label}
             </div>
-            <div className="mt-2 text-sm text-foreground">{it.value}</div>
+            <div className="mt-2 text-sm text-white/5">{it.value}</div>
           </div>
         </Reveal>
       ))}
@@ -161,27 +160,28 @@ export function Hero({
         }}
       />
       <Reveal>
-        <span className="pill-accent inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
+        <span className="pill-accent text-primary inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
           <Sparkles size={12} /> {category}
         </span>
       </Reveal>
       <Reveal delay={80}>
         <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-          <span className="bg-gradient-to-r from-white via-white to-[#c4b5fd] bg-clip-text text-transparent">
+          <span className="text-gradient-purple">
             {title}
           </span>
         </h1>
       </Reveal>
       <Reveal delay={140}>
-        <p className="mt-5 max-w-3xl text-lg text-body">{subtitle}</p>
+        <p className="mt-5 max-w-3xl text-lg text-[#b1afb8]">{subtitle}</p>
       </Reveal>
       <InfoRow items={info} />
       <Reveal delay={200}>
         <div className="glow-border mt-12 overflow-hidden rounded-2xl">
-           <Image width={500} height={500}
+          <img
             src={image}
             alt={imageAlt}
             className="aspect-video w-full object-cover"
+            loading="lazy"
           />
         </div>
       </Reveal>
@@ -207,7 +207,7 @@ export function StatGrid({
         const parsed = parseStat(s.stat);
         return (
           <Reveal key={s.label} delay={i * 90}>
-            <div className="glass-card glass-card-hover group relative h-full overflow-hidden rounded-2xl p-6">
+            <div className="glass  group relative h-full overflow-hidden rounded-2xl p-6">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-50 blur-2xl transition group-hover:opacity-80"
@@ -219,14 +219,14 @@ export function StatGrid({
               <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent">
                 <Icon size={16} />
               </div>
-              <div className="text-3xl font-bold tracking-tight text-accent md:text-4xl">
+              <div className="text-3xl font-bold tracking-tight text-white md:text-4xl">
                 {parsed.num !== null && Number.isInteger(parsed.num) && parsed.num <= 9999 ? (
                   <CountUp value={parsed.num} prefix={parsed.prefix} suffix={parsed.suffix} />
                 ) : (
                   s.stat
                 )}
               </div>
-              <div className="mt-2 text-sm text-body">{s.label}</div>
+              <div className="mt-2 text-sm text-white/5">{s.label}</div>
             </div>
           </Reveal>
         );
@@ -246,7 +246,7 @@ export function FeatureGrid({
           : f.icon ?? CheckCircle2;
         return (
           <Reveal key={f.title} delay={(i % 3) * 100}>
-            <div className="glass-card glass-card-hover group relative h-full overflow-hidden rounded-2xl p-6">
+            <div className="glass group relative h-full overflow-hidden rounded-2xl p-6">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full opacity-0 blur-3xl transition duration-500 group-hover:opacity-60"
@@ -258,8 +258,8 @@ export function FeatureGrid({
               <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-accent/30 bg-gradient-to-br from-accent/25 to-accent/5 text-accent shadow-[0_0_30px_-5px_rgba(167,139,250,0.5)]">
                 <Icon size={20} />
               </div>
-              <div className="text-base font-semibold text-foreground">{f.title}</div>
-              <p className="mt-2 text-sm leading-relaxed text-body">{f.body}</p>
+              <div className="text-base font-semibold text-primary">{f.title}</div>
+              <p className="mt-2 text-sm leading-relaxed text-[#b1afb8]">{f.body}</p>
             </div>
           </Reveal>
         );
@@ -293,7 +293,7 @@ export function TechStack({ items }) {
         const Icon = TECH_ICONS[t.toLowerCase()] ?? Wrench;
         return (
           <Reveal key={t} delay={i * 70}>
-            <span className="glass-card glass-card-hover inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-foreground">
+            <span className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group  inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-foreground">
               <Icon size={14} className="text-accent" />
               {t}
             </span>
@@ -315,10 +315,11 @@ export function Gallery({
           <Reveal key={img.alt} delay={(i % 2) * 120}>
             <div className="glass-card glass-card-hover group relative overflow-hidden rounded-2xl p-2">
               <div className="overflow-hidden rounded-xl">
-                 <Image width={500} height={500}
+                <img
                   src={img.src}
                   alt={img.alt}
                   className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
               <div className="px-3 py-3 text-xs text-muted-foreground">{img.alt}</div>
@@ -326,59 +327,21 @@ export function Gallery({
           </Reveal>
         ))}
       </div>
-      {wide && (
+      {wide?.src && (
         <Reveal>
           <div className="glass-card glass-card-hover overflow-hidden rounded-2xl p-2">
             <div className="overflow-hidden rounded-xl">
-               <Image width={500} height={500}
+              <img
                 src={wide.src}
                 alt={wide.alt}
                 className="aspect-[24/10] w-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="px-3 py-3 text-xs text-muted-foreground">{wide.alt}</div>
           </div>
         </Reveal>
       )}
-    </div>
-  );
-}
-
-const OUTCOME_ICONS = [TrendingUp, Zap, ShieldCheck, Sparkles, CheckCircle2, Flame];
-
-export function OutcomeGrid({
-  items,
-}) {
-  return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      {items.map((it, i) => {
-        const Icon = OUTCOME_ICONS[i % OUTCOME_ICONS.length];
-        return (
-          <Reveal key={it.title} delay={i * 120}>
-            <div className="glass-card glass-card-hover group relative h-full overflow-hidden rounded-2xl p-7">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-60"
-                style={{
-                  background:
-                    "radial-gradient(circle at 100% 0%, rgba(167,139,250,0.18), transparent 50%)",
-                }}
-              />
-              <div className="relative">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/30 to-transparent text-accent shadow-[0_0_40px_-8px_rgba(167,139,250,0.8)]">
-                  <Icon size={22} />
-                </div>
-                {it.metric && (
-                  <div className="mt-5 text-3xl font-bold text-accent">{it.metric}</div>
-                )}
-                <div className="mt-3 text-lg font-semibold text-foreground">{it.title}</div>
-                <p className="mt-2 text-sm leading-relaxed text-body">{it.body}</p>
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-accent/40 via-accent/10 to-transparent" />
-              </div>
-            </div>
-          </Reveal>
-        );
-      })}
     </div>
   );
 }
@@ -401,10 +364,11 @@ export function Quote({
             {text}
           </p>
           <div className="relative mt-8 flex items-center gap-4">
-             <Image width={500} height={500}
+            <img
               src={avatar}
               alt="Client avatar"
               className="h-12 w-12 rounded-full border border-accent/30 object-cover"
+              loading="lazy"
             />
             <div>
               <div className="text-sm font-semibold">{name}</div>
@@ -417,36 +381,7 @@ export function Quote({
   );
 }
 
-export function Related({
-  items,
-}) {
-  return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      {items.map((it, i) => (
-        <Reveal key={it.title} delay={i * 100}>
-          <a
-            href={it.href}
-            className="glass-card glass-card-hover group block overflow-hidden rounded-2xl"
-          >
-            <div className="overflow-hidden">
-               <Image width={500} height={500}
-                src={it.src}
-                alt={it.alt}
-                className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-5">
-              <div className="text-base font-semibold">{it.title}</div>
-              <div className="mt-1 inline-flex items-center gap-1 text-xs text-accent">
-                View case study <ArrowRight size={12} />
-              </div>
-            </div>
-          </a>
-        </Reveal>
-      ))}
-    </div>
-  );
-}
+
 
 export function CTABanner() {
   return (
