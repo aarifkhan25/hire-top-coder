@@ -334,7 +334,7 @@ function Portfolio() {
 
       <div className="mt-5 md:mt-12 flex justify-center">
         
-          <GhostButton href="/company">View All Case Studies</GhostButton>
+          <GhostButton href="/case-studies">View All Case Studies</GhostButton>
        
       </div>
     </section>

@@ -163,27 +163,28 @@ export default function AleskPage() {
         <Gallery
           images={[
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c1.png",
               alt: "ALESK admin dashboard screen",
+              
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c7.png",
               alt: "ALESK financial charts screen",
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c8.png",
               alt: "ALESK service provider registration screen",
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c5.png",
               alt: "ALESK team management screen",
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c1.png",
               alt: "ALESK provider dashboard screen",
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/c3.png",
               alt: "ALESK chat module screen",
             },
           ]}
@@ -223,22 +224,25 @@ export default function AleskPage() {
         <Related
           items={[
             {
-              src: "/assets/logo1.png",
+              src: "/assets/work-12.png",
               alt: "Speakable case study thumbnail",
               title: "Speakable",
               href: "/case-studies/speakable",
+obj:"object-cover"
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/work-3.png",
               alt: "MKGO case study thumbnail",
               title: "MKGO",
               href: "#",
+              obj:"object-cover"
             },
             {
-              src: "/assets/logo1.png",
+              src: "/assets/clogo1.png",
               alt: "Parakh Jewellers case study thumbnail",
               title: "Parakh Jewellers",
               href: "#",
+              obj:"object-contain"
             },
           ]}
         />

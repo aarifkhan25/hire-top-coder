@@ -409,7 +409,7 @@ export function Related({
               <img
                 src={it.src}
                 alt={it.alt}
-                className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105"
+                className={`aspect-[16/10] w-full ${it.obj} transition duration-700 group-hover:scale-105`}
                 loading="lazy"
               />
             </div>
@@ -426,40 +426,7 @@ export function Related({
   );
 }
 
-export function Quote({
-  text,
-  name,
-  role,
-  avatar,
-}) {
-  return (
-    <section className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-28 2xl:py-35">
-      <Reveal>
-        <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card  relative overflow-hidden rounded-3xl p-10 md:p-14">
-          <QuoteIcon
-            className="absolute right-8 top-8 text-primary"
-            size={80}
-          />
-          <p className="relative mt-4 max-w-3xl text-xl text-foreground/90 md:text-2xl">
-            {text}
-          </p>
-          <div className="relative mt-8 flex items-center gap-4">
-            <img
-              src={avatar}
-              alt="Client avatar"
-              className="h-12 w-12 rounded-full border border-primary/50 object-cover"
-              loading="lazy"
-            />
-            <div>
-              <div className="text-sm font-semibold">{name}</div>
-              <div className="text-xs text-muted-foreground">{role}</div>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
+
 
 const OUTCOME_ICONS = [TrendingUp, Zap, ShieldCheck, Sparkles, CheckCircle2, Flame];
 
