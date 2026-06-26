@@ -1,5 +1,5 @@
 
-import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Quote, Related, Section1, Stat1Grid, TechStack, } from "@/components/site/Shared.jsx";
+import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Section1, Stat1Grid, TechStack, } from "@/components/site/Shared.jsx";
 export const metadata = {
   title: "Speakable — Case Study | HireTopCoder",
   description:
@@ -178,30 +178,7 @@ export default function SpeakablePage() {
         avatar="/assets/logo1.png"
       />
 
-      <Section1   label="Explore More" heading="Related Case Studies">
-        <Related
-          items={[
-            {
-              src: "/assets/logo1.png",
-              alt: "ALESK case study thumbnail",
-              title: "ALESK",
-              href: "/case-studies/alesk",
-            },
-            {
-              src:"/assets/logo1.png",
-              alt: "MKGO case study thumbnail",
-              title: "MKGO",
-              href: "/",
-            },
-            {
-              src: "/assets/logo1.png",
-              alt: "Casino case study thumbnail",
-              title: "Casino",
-              href: "/",
-            },
-          ]}
-        />
-       </Section1 > 
+   
 
      <CTABanner
             title="Have a similar project in mind?"

@@ -1,4 +1,4 @@
-import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Quote, Related, Section1, Stat1Grid, TechStack } from "@/components/site/Shared.jsx";
+import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Section1, Stat1Grid, TechStack } from "@/components/site/Shared.jsx";
 import { Building2, Monitor } from "lucide-react";
 
 export const metadata = {
@@ -213,40 +213,9 @@ export default function AleskPage() {
         />
       </Section1>
 
-      <Quote
-        text="[Client testimonial goes here — replace with actual feedback]"
-        name="Client Name"
-        role="Founder, Company"
-        avatar="/assets/logo1.png"
-      />
+   
 
-      <Section1 label="Explore More" heading="Related Case Studies">
-        <Related
-          items={[
-            {
-              src: "/assets/work-12.png",
-              alt: "Speakable case study thumbnail",
-              title: "Speakable",
-              href: "/case-studies/speakable",
-obj:"object-cover"
-            },
-            {
-              src: "/assets/work-3.png",
-              alt: "MKGO case study thumbnail",
-              title: "MKGO",
-              href: "#",
-              obj:"object-cover"
-            },
-            {
-              src: "/assets/clogo1.png",
-              alt: "Parakh Jewellers case study thumbnail",
-              title: "Parakh Jewellers",
-              href: "#",
-              obj:"object-contain"
-            },
-          ]}
-        />
-      </Section1>
+     
 <CTABanner
             title="Have a similar project in mind?"
             sub="Let's discuss how we can bring it to life.
