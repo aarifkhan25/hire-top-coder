@@ -171,12 +171,6 @@ export default function SpeakablePage() {
         />
        </Section1 > 
 
-      <Quote
-        text="[Client testimonial goes here — replace with actual feedback]"
-        name="Client Name"
-        role="Founder, Company"
-        avatar="/assets/logo1.png"
-      />
 
    
 
