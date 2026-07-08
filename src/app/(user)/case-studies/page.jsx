@@ -21,8 +21,8 @@ const work11 = "/assets/work-11.jpg";
 const projects = [
   { title: "Alesk", category: "Management System", desc: "Alesk is a comprehensive, user-friendly customer management system", img: "/assets/case-2.png", results: "3x faster workflow", span: "lg:col-span-2 lg:row-span-2",href:"/case-studies/alesk" },
   { title: "Code Conspirators", category: "Web Design", desc: "Bold agency website with immersive 3D hero and brand storytelling.", img: work2, results: "High-impact brand", span: "" ,href:"/case-studies/speakable"},
-  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" ,href:"/case-studies/alesk"},
-  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2",href:"/case-studies/alesk" },
+  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" ,href:"/case-studies/mkgo"},
+  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2",href:"/case-studies/casino" },
   { title: "Wizz Air Integration", category: "Travel Platform", desc: "Flight booking and deals platform with multi-city search.", img: work5, results: "Booking platform", span: "",href:"/case-studies/alesk" },
   { title: "Workla", category: "Mobile App", desc: "Task management mobile app with calendar and team collaboration.", img: work6, results: "Cross-platform", span: "" ,href:"/case-studies/alesk"},
   { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work7, results: "High-conversion event LP", span: "lg:col-span-2",href:"/case-studies/alesk" },

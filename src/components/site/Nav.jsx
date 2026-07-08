@@ -71,11 +71,11 @@ const pathname = usePathname()
           </div>
           <div className="flex justify-between items-center font-sans gap-2 lg:gap-5">
             <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
-              <MdOutlinePhoneInTalk className="w-5 h-5" />{" "}
+              <MdOutlinePhoneInTalk className="w-5 h-5  text-primary " />{" "}
               <p>+91 12345 67890</p>
             </div>
             <div className="flex justify-center items-center gap-2 hover:text-white text-xs lg:text-sm text-foreground/85">
-              <MdOutlineMarkEmailUnread className="w-5 h-5" />{" "}
+              <MdOutlineMarkEmailUnread className="w-5 h-5 text-primary  " />{" "}
               <p>contact@hiretopcoder.com</p>
             </div>
           </div>

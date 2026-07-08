@@ -28,7 +28,6 @@ import {
   MessageCircle,
   MessageSquare,
   PieChart,
-  Quote as QuoteIcon,
   Rocket,
   Server,
   ShieldCheck,
@@ -255,7 +254,7 @@ export function Breadcrumb({ items }) {
               {it.label}
             </Link>
           ) : (
-            <span className="text-foreground/70">{it.label}</span>
+            <span className="text-foreground/70 capitalize">{it.label}</span>
           )}
           {i < items.length - 1 && <span className=" mx-1 md:mx-2">/</span>}
         </span>
