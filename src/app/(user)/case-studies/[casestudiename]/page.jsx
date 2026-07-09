@@ -58,20 +58,20 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
 
       <Section1 label="What We Built" heading="Key Modules & Features">
         <div className="space-y-14">
-        {item.modules && item.modules[0].featureGird1&& (
-          <div>
-             { item.modules[0].icon && (
-            <div className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-           
-              <span className="text-base">{item.modules[0].icon}</span>
-            
-            {item.modules[0].label}
-            </div>)}
-            <FeatureGrid
-            items={item.modules[0].featureGird1}  
-            />
-          </div>)}
-       
+          {item.modules?.length > 0 &&
+            item.modules.map((module, index) => (
+              <div key={`${module.label || "module"}-${index}`}>
+                {module.icon && (
+                  <div className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                    <span className="text-base">{module.icon}</span>
+                    {module.label}
+                  </div>
+                )}
+
+                {module.featureGird1 && <FeatureGrid items={module.featureGird1} />}
+                {module.featureGird2 && <FeatureGrid items={module.featureGird2} />}
+              </div>
+            ))}
         </div>
       </Section1>
 

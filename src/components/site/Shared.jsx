@@ -1,16 +1,19 @@
 "use client"
 import { PrimaryButton } from "@/components/site/PageShell.jsx";
-import {
-  Check, ChevronDown, X,
-} from "lucide-react";
 
 import {
   Activity,
+  ArrowDownUp,
   ArrowRight,
   Atom,
+  Bot,
+  Brain,
   Building2,
   Calendar,
+  Check,
   CheckCircle2,
+  ChessQueen,
+  ChevronDown,
   ClipboardList,
   Cloud,
   Code2,
@@ -20,15 +23,19 @@ import {
   FileSignature,
   FileText,
   Flame,
+  Gem,
   GraduationCap,
   Home,
   Layers,
   LayoutDashboard,
   LogIn,
+  MapPinCheck,
+  Megaphone,
   MessageCircle,
   MessageSquare,
   PieChart,
   Rocket,
+  Search,
   Server,
   ShieldCheck,
   Smartphone,
@@ -38,7 +45,8 @@ import {
   UserPlus,
   Users,
   Wrench,
-  Zap
+  X,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -71,6 +79,14 @@ const ICONS = {
   user: User,
   users: Users,
   calendar: Calendar,
+  search: Search,
+  swap: ArrowDownUp,
+  "mappin-check": MapPinCheck,
+"primium": Gem,
+"game":ChessQueen,
+"brain":Brain,
+"chat bot":Bot,
+"ads": Megaphone,
   "credit-card": CreditCard,
   trendingup: TrendingUp,
   "trending-up": TrendingUp,
@@ -612,7 +628,7 @@ export function Section1({
   id,
 }) {
   return (
-    <section id={id} className={`w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-28 2xl:py-35 ${className}`}>
+    <section id={id} className={`w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 ${className}`}>
       {label && (
         <Reveal>
           <div className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
