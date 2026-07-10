@@ -132,10 +132,10 @@ export const allCaseStudiesData = {
           src: "/assets/case-studies/alesk/c1.png",
           alt: "ALESK provider dashboard screen",
         },
-        {
-          src: "/assets/case-studies/alesk/c3.png",
-          alt: "ALESK chat module screen",
-        },
+        // {
+        //   src: "/assets/case-studies/alesk/c3.png",
+        //   alt: "ALESK chat module screen",
+        // },
       ],
       outcome: [
         {

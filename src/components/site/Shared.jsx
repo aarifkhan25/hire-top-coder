@@ -1,6 +1,5 @@
 "use client"
 import { PrimaryButton } from "@/components/site/PageShell.jsx";
-
 import {
   Activity,
   ArrowDownUp,
@@ -51,6 +50,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { CountUp } from "./CaseReveal.jsx";
 import { Reveal } from "./Reveal";
 const TECH_ICONS = {
@@ -484,34 +484,58 @@ export function OutcomeGrid({
 }
 
 
+// export function Gallery({
+//   images,
+  
+//   role
+// }) {
+//   return (
+//     <div className="space-y-6">
+//       <div className={`grid grid-cols-1 gap-6  ${role === "mobile" ?  "sm:grid-cols-2 md:grid-cols-3" : "md:grid-cols-2"}`}>
+//         {images.map((img, i) => (
+//           <Reveal key={img.alt} >
+//             <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group   relative overflow-hidden rounded-2xl p-2">
+//               <div className="overflow-hidden rounded-xl">
+//                 <Image height="500" width="500" 
+//                   src={img.src}
+//                   alt={img.alt}
+//                   className={`aspect-[16/10] w-full h-full   ${role === "mobile" ?"object-contain":  "object-cover transition duration-700 group-hover:scale-105"} `}
+//                   loading="lazy"
+//                 />
+//               </div>
+//               <div className={`p-3 text-xs 2xl:text-base  text-white/35 group-hover:text-white ${role === "mobile" ?"text-center":"text-start"}`}>{img.alt}</div>
+//             </div>
+//           </Reveal>
+//         ))}
+//       </div>
+    
+//     </div>
+//   );
+// }
+
 export function Gallery({
   images,
   
   role
 }) {
-  return (
-    <div className="space-y-6">
-      <div className={`grid grid-cols-1 gap-6  ${role === "mobile" ?  "sm:grid-cols-2 md:grid-cols-3" : "md:grid-cols-2"}`}>
-        {images.map((img, i) => (
-          <Reveal key={img.alt} >
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group   relative overflow-hidden rounded-2xl p-2">
-              <div className="overflow-hidden rounded-xl">
-                <Image height="500" width="500" 
-                  src={img.src}
-                  alt={img.alt}
-                  className={`aspect-[16/10] w-full h-full   ${role === "mobile" ?"object-contain":  "object-cover transition duration-700 group-hover:scale-105"} `}
-                  loading="lazy"
-                />
-              </div>
-              <div className={`p-3 text-xs 2xl:text-base  text-white/35 group-hover:text-white ${role === "mobile" ?"text-center":"text-start"}`}>{img.alt}</div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    
-    </div>
-  );
-}
+  return (<><ResponsiveMasonry
+               columnsCountBreakPoints={{ 350: 1,  900: 2, }}
+        gutterBreakPoints={{ 350: "12px", 750: "16px", 900: "50px",}}
+            >
+                <Masonry  gutter="50px">
+                    {images.map((image, i) => (
+                        <img
+                            key={i}
+                            src={image.src}
+                            style={{width: "100%", display: "block"}}
+                            alt={image.alt}
+                        />
+                    ))}
+                </Masonry>
+            </ResponsiveMasonry>
+  
+  
+  </>)};
 
 export function TechStack({ items }) {
   return (
@@ -534,7 +558,7 @@ export function FeatureGrid({
   items,
 }) {
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:px-10 xl:px-20 2xl:px-30">
       {items.map((f, i) => {
         const Icon = typeof f.icon === "string"
           ? ICONS[f.icon.toLowerCase()] ?? CheckCircle2
@@ -553,8 +577,8 @@ export function FeatureGrid({
              <div className="w-10 h-10 mb-4 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
                 <Icon size={20} className="text-primary"  />
               </div>
-              <div className="text-[15px] md:text-base font-semibold text-primary">{f.title}</div>
-              <p className="md:mt-2 text-[13px] md:text-sm leading-relaxed text-[#b1afb8]">{f.body}</p>
+              <div className="text-[15px] md:text-base  text-start font-semibold text-primary">{f.title}</div>
+              <p className="md:mt-2 text-[13px] md:text-sm text-start leading-relaxed text-[#b1afb8]">{f.body}</p>
             </div>
           </Reveal>
         );
@@ -614,26 +638,32 @@ export function Section1({
   children,
   className = "",
   id,
+  pos
 }) {
   return (
     <section id={id} className={`w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 ${className}`}>
-      {label && (
+    <div className={`  gap-10 lg:gap-20 ${pos==="flex"?"flex ":"grid text-center"} `}>
+    <div> {label && (
         <Reveal>
-          <div className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <div className="text-[11px] md:text-xs  font-semibold uppercase tracking-[0.18em] text-primary">
             {label}
           </div>
         </Reveal>
       )}
       {heading && (
         <Reveal >
-          <h2 className="lg:mt-3 text-xl md:text-2xl font-bold tracking-tight text-white md:text-4xl">
+        <div>
+
+          <h2 className=" text-xl md:text-2xl font-bold tracking-tight text-white md:text-4xl">
             {heading}
           </h2>
+        </div>
         </Reveal>
-      )}
+      )}</div>
       <Reveal >
-        <div className="mt-5 lg:mt-10">{children}</div>
+        <div className="">{children}</div>
       </Reveal>
+      </div>
     </section>
   );
 }
@@ -694,7 +724,7 @@ export function Hero1({
       </Reveal>
       <InfoRow items={info} />
       <Reveal >
-        <div className="glow-border mt-12 overflow-hidden xl:px-30 2xl:px-60 ">
+        <div className="glow-border mt-12 overflow-hidden  ">
           <Image height="500" width="500" 
             src={image}
             alt={imageAlt}

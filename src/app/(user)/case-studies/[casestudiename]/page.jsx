@@ -44,8 +44,8 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
         info={item.info}
       />
 
-      <Section1 label="Project Brief" heading="Overview">
-       <p className=" w-full text-[#b1afb8] text-[13px] font-semibold md:text-base 2xl:text-lg xl:pr-30 2xl:pr-60">
+      <Section1 pos="flex" label="Project Brief" heading="Overview">
+       <p className=" w-full text-[#b1afb8] text-[13px] font-semibold md:text-base 2xl:text-lg">
          {item.prag}
         </p>
       </Section1>
@@ -56,7 +56,7 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
         />
       </Section1> */}
 
-      <Section1 label="What We Built" heading="Key Modules & Features">
+      <Section1 pos="grid" label="What We Built" heading="Key Modules & Features">
         <div className="space-y-14">
           {item.modules?.length > 0 &&
             item.modules.map((module, index) => (
@@ -75,11 +75,11 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
         </div>
       </Section1>
 
-      <Section1 label="Tech Stack" heading="Built With">
+      <Section1 pos="flex" label="Tech Stack" heading="Built With">
         <TechStack items={item.techstack} />
       </Section1>
 
-      <Section1 label="Project Screenshots" heading="See It In Action">
+      <Section1 pos="grid" label="Project Screenshots" heading="See It In Action">
         <Gallery
           images={item.gallery}
           role={item.role}
