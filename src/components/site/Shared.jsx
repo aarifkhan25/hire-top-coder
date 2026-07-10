@@ -48,6 +48,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CountUp } from "./CaseReveal.jsx";
@@ -421,7 +422,7 @@ export function Related({
             className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group block overflow-hidden rounded-2xl"
           >
             <div className="overflow-hidden">
-              <img
+              <Image height="500" width="500" 
                 src={it.src}
                 alt={it.alt}
                 className={`aspect-[16/10] w-full ${it.obj} transition duration-700 group-hover:scale-105`}
@@ -485,42 +486,29 @@ export function OutcomeGrid({
 
 export function Gallery({
   images,
-  wide,
+  
+  role
 }) {
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className={`grid grid-cols-1 gap-6  ${role === "mobile" ?  "sm:grid-cols-2 md:grid-cols-3" : "md:grid-cols-2"}`}>
         {images.map((img, i) => (
           <Reveal key={img.alt} >
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group  group relative overflow-hidden rounded-2xl p-2">
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group   relative overflow-hidden rounded-2xl p-2">
               <div className="overflow-hidden rounded-xl">
-                <img
+                <Image height="500" width="500" 
                   src={img.src}
                   alt={img.alt}
-                  className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105"
+                  className={`aspect-[16/10] w-full h-full   ${role === "mobile" ?"object-contain":  "object-cover transition duration-700 group-hover:scale-105"} `}
                   loading="lazy"
                 />
               </div>
-              <div className="px-3 py-3 text-xs text-white/35">{img.alt}</div>
+              <div className={`p-3 text-xs 2xl:text-base  text-white/35 group-hover:text-white ${role === "mobile" ?"text-center":"text-start"}`}>{img.alt}</div>
             </div>
           </Reveal>
         ))}
       </div>
-      {wide?.src && (
-        <Reveal>
-          <div className="glass-card glass-card-hover overflow-hidden rounded-2xl p-2">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                src={wide.src}
-                alt={wide.alt}
-                className="aspect-[24/10] w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="px-3 py-3 text-xs text-white/35">{wide.alt}</div>
-          </div>
-        </Reveal>
-      )}
+    
     </div>
   );
 }
@@ -533,8 +521,8 @@ export function TechStack({ items }) {
         return (
           <Reveal key={t} >
             <div className="w-full flex gap-2 justify-center items-center shrink-0 border border-white/10  bg-primary/10 transition-colors hover:border-primary px-3 py-2 rounded-full" >
-              <Icon  className="text-primary text-2xl" />
-             <span>{t}</span> 
+              <Icon  className="text-primary text-base md:text-2xl" />
+             <span className="text-sm md:text-base">{t}</span> 
             </div>
           </Reveal>
         );
@@ -565,8 +553,8 @@ export function FeatureGrid({
              <div className="w-10 h-10 mb-4 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
                 <Icon size={20} className="text-primary"  />
               </div>
-              <div className="text-base font-semibold text-primary">{f.title}</div>
-              <p className="mt-2 text-sm leading-relaxed text-[#b1afb8]">{f.body}</p>
+              <div className="text-[15px] md:text-base font-semibold text-primary">{f.title}</div>
+              <p className="md:mt-2 text-[13px] md:text-sm leading-relaxed text-[#b1afb8]">{f.body}</p>
             </div>
           </Reveal>
         );
@@ -631,20 +619,20 @@ export function Section1({
     <section id={id} className={`w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 ${className}`}>
       {label && (
         <Reveal>
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <div className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             {label}
           </div>
         </Reveal>
       )}
       {heading && (
         <Reveal >
-          <h2 className="mt-3 text-2xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="lg:mt-3 text-xl md:text-2xl font-bold tracking-tight text-white md:text-4xl">
             {heading}
           </h2>
         </Reveal>
       )}
       <Reveal >
-        <div className="mt-10">{children}</div>
+        <div className="mt-5 lg:mt-10">{children}</div>
       </Reveal>
     </section>
   );
@@ -655,14 +643,14 @@ export function InfoRow({
   items,
 }) {
   return (
-    <div className="mt-10 grid grid-cols-2 divide-y divide-border border-y border-border md:grid-cols-4 md:divide-x md:divide-y-0">
+    <div className="mt-10 grid grid-cols-2  divide-y divide-border border-y border-border md:grid-cols-4 md:divide-x md:divide-y-0">
       {items.map((it, i) => (
         <Reveal key={it.label} >
-          <div className=" py-5">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+          <div className=" p-5">
+            <div className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
               {it.label}
             </div>
-            <div className="mt-2 text-sm text-white/35">{it.value}</div>
+            <div className="mt-2 text-xs md:text-sm text-white/35">{it.value}</div>
           </div>
         </Reveal>
       ))}
@@ -690,24 +678,24 @@ export function Hero1({
         }}
       />
       <Reveal>
-        <span className="pill-accent text-primary inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">
+        <span className="pill-accent text-primary inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.16em]">
           <Sparkles size={12} /> {category}
         </span>
       </Reveal>
       <Reveal >
-        <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
+        <h1 className="mt-5 text-3xl font-bold tracking-tight md:text-6xl">
           <span className="text-gradient-purple">
             {title}
           </span>
         </h1>
       </Reveal>
       <Reveal >
-        <p className="mt-5 max-w-3xl text-lg text-[#b1afb8]">{subtitle}</p>
+        <p className="mt-5 max-w-3xl text-sm  md:text-lg text-[#b1afb8]">{subtitle}</p>
       </Reveal>
       <InfoRow items={info} />
       <Reveal >
         <div className="glow-border mt-12 overflow-hidden xl:px-30 2xl:px-60 ">
-          <img
+          <Image height="500" width="500" 
             src={image}
             alt={imageAlt}
             className="aspect-video w-full object-cover rounded-2xl"

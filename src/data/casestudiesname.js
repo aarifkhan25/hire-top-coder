@@ -113,27 +113,27 @@ export const allCaseStudiesData = {
       techstack: ["Flutter Flow", "Firebase"],
       gallery: [
         {
-          src: "/assets/c1.png",
+          src: "/assets/case-studies/alesk/c1.png",
           alt: "ALESK admin dashboard screen",
         },
         {
-          src: "/assets/c7.png",
+          src: "/assets/case-studies/alesk/c7.png",
           alt: "ALESK financial charts screen",
         },
         {
-          src: "/assets/c8.png",
+          src: "/assets/case-studies/alesk/c8.png",
           alt: "ALESK service provider registration screen",
         },
         {
-          src: "/assets/c5.png",
+          src: "/assets/case-studies/alesk/c5.png",
           alt: "ALESK team management screen",
         },
         {
-          src: "/assets/c1.png",
+          src: "/assets/case-studies/alesk/c1.png",
           alt: "ALESK provider dashboard screen",
         },
         {
-          src: "/assets/c3.png",
+          src: "/assets/case-studies/alesk/c3.png",
           alt: "ALESK chat module screen",
         },
       ],
@@ -161,7 +161,7 @@ export const allCaseStudiesData = {
       title: "Speakable",
       subtitle:
         "A personalized English learning platform connecting students in Poland with their ideal English teachers.",
-      image: "/assets/case-1.png",
+      image: "/assets/case-studies/speakable/img1.png",
       imageAlt: "Speakable platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
@@ -231,29 +231,26 @@ export const allCaseStudiesData = {
       techstack: ["React.js", "Node.js", "MongoDB"],
       gallery: [
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign up screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
-        },
-        {
-          src: "/assets/logo1.png",
+          src: "/assets/case-studies/speakable/img4.png",
           alt: "Speakable admin panel screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
+          src: "/assets/case-studies/speakable/img6.png",
+          alt: "Speakable student dashboard screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
+          src: "/assets/case-studies/speakable/img2.png",
+          alt: "Speakable sign in screen",
         },
+        {
+          src: "/assets/case-studies/speakable/img3.png",
+          alt: "Speakable teacher list screen",
+        },
+        {
+          src: "/assets/case-studies/speakable/img5.png",
+          alt: "Speakable teachers table screen",
+        },
+      
       ],
       outcome: [
         {
@@ -510,7 +507,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "Rolling Star Casino",
       subtitle:
         "allow users to play various games using cryptocurrencies like Bitcoin, Ethereum, or others.",
-      image: "/assets/case-1.png",
+      image: "/assets/case-studies/casino/img1.png",
       imageAlt: "Rolling Star Casino platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
@@ -560,29 +557,21 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["React.js", "Node.js", "MongoDB"],
       gallery: [
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign up screen",
+          src: "/assets/case-studies/casino/img2.png",
+          alt: "Casino login screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
+          src: "/assets/case-studies/casino/img3.png",
+          alt: "Casino register screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
+          src: "/assets/case-studies/casino/img4.png",
+          alt: "Casino games screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable admin panel screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
-        },
+          src: "/assets/case-studies/casino/img5.png",
+          alt: "Casino wallet screen",
+        }
       ],
       outcome: [
         {
@@ -935,7 +924,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "BrokerRemarks",
       subtitle:
         "Broker Remarks is a comprehensive real estate management web application designed to connect real estate agents and potential buyers seamlessly.",
-      image: "/assets/case-1.png",
+      image: "/assets/case-studies/brokerRemarks/img.png",
       imageAlt: "BrokerRemarks platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
@@ -1003,30 +992,28 @@ Ensure authentication protocols comply with industry standards to protect user d
 
       techstack: ["React.js", "Node.js", "MongoDB"],
       gallery: [
+        
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign up screen",
+          src: "/assets/case-studies/brokerRemarks/img1.png",
+          alt: "Broker Remarks sign up screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
+      src: "/assets/case-studies/brokerRemarks/img3.png",
+          alt: "Broker Remarks Dashboard screen",
+        },
+         {
+          src: "/assets/case-studies/brokerRemarks/img5.png",
+          alt: "Broker Remarks profile screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
+          src: "/assets/case-studies/brokerRemarks/img6.png",
+          alt: "Broker Remarks subscription plans screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable admin panel screen",
+         src: "/assets/case-studies/brokerRemarks/img4.png",
+          alt: "Broker Remarks questions screen",
         },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
-        },
+       
       ],
       outcome: [
         {
@@ -1294,7 +1281,8 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "Parakh Jewellers",
       subtitle:
         "This app facilitates investment in gold and silver, allowing users to invest at the current market prices.",
-      image: "/assets/case-2.png",
+      image: "/assets/case-studies/parakh/img1.png",
+      
       imageAlt: "amicco App",
       info: [
         { label: "Client", value: "Confidential" },
@@ -1368,29 +1356,30 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["Flutter Flow", "Firebase"],
       gallery: [
         {
-          src: "/assets/c1.png",
-          alt: "ALESK admin dashboard screen",
+          src: "/assets/case-studies/parakh/img2.png",
+          alt: "Parakh Jewellers  screen",
         },
         {
-          src: "/assets/c7.png",
-          alt: "ALESK financial charts screen",
+          src: "/assets/case-studies/parakh/img3.png",
+          alt: "Parakh Jewellers start now screen",
         },
         {
-          src: "/assets/c8.png",
-          alt: "ALESK service provider registration screen",
+          src: "/assets/case-studies/parakh/img4.png",
+          alt: " Parakh Jewellersce what's new screen",
+        },
+         {
+          src: "/assets/case-studies/parakh/img7.png",
+          alt: "Parakh Jewellers rewards screen",
         },
         {
-          src: "/assets/c5.png",
-          alt: "ALESK team management screen",
+          src: "/assets/case-studies/parakh/img5.png",
+          alt: "Parakh Jewellers invest Gold or Silver screen",
         },
         {
-          src: "/assets/c1.png",
-          alt: "ALESK provider dashboard screen",
+          src: "/assets/case-studies/parakh/img6.png",
+          alt: "Parakh Jewellers dashboard screen",
         },
-        {
-          src: "/assets/c3.png",
-          alt: "ALESK chat module screen",
-        },
+       
       ],
       outcome: [
         {
@@ -1409,6 +1398,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           body: "Clear, exportable financial reporting for every provider and consumer.",
         },
       ],
+      role:"mobile"
     },
      {
       casestudiename: "breathwrk",

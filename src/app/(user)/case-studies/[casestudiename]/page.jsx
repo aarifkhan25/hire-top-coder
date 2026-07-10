@@ -1,5 +1,5 @@
 "use Client";
-import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Section1, Stat1Grid, TechStack } from "@/components/site/Shared.jsx";
+import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, Section1, TechStack } from "@/components/site/Shared.jsx";
 import { allCaseStudiesData } from "@/data/casestudiesname.js";
 import { use } from "react";
 import NotFoundPage from "../../../not-found.jsx";
@@ -45,16 +45,16 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
       />
 
       <Section1 label="Project Brief" heading="Overview">
-       <p className=" w-full text-[#b1afb8] text-base 2xl:text-lg xl:pr-30 2xl:pr-60">
+       <p className=" w-full text-[#b1afb8] text-[13px] font-semibold md:text-base 2xl:text-lg xl:pr-30 2xl:pr-60">
          {item.prag}
         </p>
       </Section1>
 
-      <Section1 label="By the Numbers" heading="Key Stats">
+      {/* <Section1 label="By the Numbers" heading="Key Stats">
         <Stat1Grid
           items={item.state1grid}
         />
-      </Section1>
+      </Section1> */}
 
       <Section1 label="What We Built" heading="Key Modules & Features">
         <div className="space-y-14">
@@ -82,14 +82,15 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
       <Section1 label="Project Screenshots" heading="See It In Action">
         <Gallery
           images={item.gallery}
+          role={item.role}
         />
       </Section1>
 
-      <Section1 label="The Results" heading="Impact & Outcomes">
+      {/* <Section1 label="The Results" heading="Impact & Outcomes">
         <OutcomeGrid
           items={item.outcome}
         />
-      </Section1>
+      </Section1> */}
 
    
 
