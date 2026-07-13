@@ -1,3 +1,4 @@
+import {User } from "lucide-react"
 export const allCaseStudiesData = {
   case_studies: [
     {
@@ -1359,6 +1360,18 @@ Ensure authentication protocols comply with industry standards to protect user d
           src: "/assets/case-studies/parakh/img2.png",
           alt: "Parakh Jewellers  screen",
         },
+          {
+          src: "/assets/case-studies/parakh/img8.png",
+          alt: "Parakh Jewellers start now screen",
+        },
+          {
+          src: "/assets/case-studies/parakh/img9.png",
+          alt: "Parakh Jewellers start now screen",
+        },
+          {
+          src: "/assets/case-studies/parakh/img10.png",
+          alt: "Parakh Jewellers start now screen",
+        },
         {
           src: "/assets/case-studies/parakh/img3.png",
           alt: "Parakh Jewellers start now screen",
@@ -1377,6 +1390,10 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
         {
           src: "/assets/case-studies/parakh/img6.png",
+          alt: "Parakh Jewellers dashboard screen",
+        },
+        {
+          src: "/assets/case-studies/parakh/img11.png",
           alt: "Parakh Jewellers dashboard screen",
         },
        

@@ -93,6 +93,7 @@ const ICONS = {
   "trending-up": TrendingUp,
   checkcircle: CheckCircle2,
   "check-circle": CheckCircle2,
+  "users": User,
   cloud: Cloud,
   code: Code2,
   database: Database,
@@ -513,29 +514,50 @@ export function OutcomeGrid({
 //   );
 // }
 
-export function Gallery({
-  images,
-  
-  role
-}) {
-  return (<><ResponsiveMasonry
-               columnsCountBreakPoints={{ 350: 1,  900: 2, }}
-        gutterBreakPoints={{ 350: "12px", 750: "16px", 900: "50px",}}
-            >
-                <Masonry  gutter="50px">
-                    {images.map((image, i) => (
-                        <img
-                            key={i}
-                            src={image.src}
-                            style={{width: "100%", display: "block"}}
-                            alt={image.alt}
-                        />
-                    ))}
-                </Masonry>
-            </ResponsiveMasonry>
-  
-  
-  </>)};
+export function Gallery({ images, role }) {
+
+  const cul_breakPoints =
+    role === "mobile"
+      ? { 350: 2, 750: 3, 1200: 5 }
+      : { 350: 1, 750: 2,};
+
+
+  const gutt_breakPoints =role === "mobile"? {350: "50px",
+
+    750: "70px",
+    1200:"100px"
+   
+
+  }: {
+    350: "12px",
+    750: "50px",
+    900: "24px",
+    1200: "50px",
+  };
+
+  return (
+    <ResponsiveMasonry
+      columnsCountBreakPoints={cul_breakPoints}
+      gutterBreakPoints={gutt_breakPoints}
+    >
+    
+      <Masonry>
+        {images?.map((image, i) => (
+          <Image
+            key={i}
+            height={500}
+            width={500}
+            src={image.src}
+            style={{ width: "100%", height: "auto", display: "block" }}
+            alt={image.alt || "screen Images"}
+            loading="lazy"
+            className="transition duration-400 hover:scale-110"
+          />
+        ))}
+      </Masonry>
+    </ResponsiveMasonry>
+  );
+}
 
 export function TechStack({ items }) {
   return (
@@ -680,7 +702,7 @@ export function InfoRow({
             <div className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
               {it.label}
             </div>
-            <div className="mt-2 text-xs md:text-sm text-white/35">{it.value}</div>
+            <div className="mt-2 text-xs md:text-sm text-white/35 hover:text-white">{it.value}</div>
           </div>
         </Reveal>
       ))}
