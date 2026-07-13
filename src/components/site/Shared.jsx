@@ -7,6 +7,8 @@ import {
   Atom,
   Bot,
   Brain,
+  Motorbike,
+  Video,
   Building2,
   Calendar,
   Check,
@@ -77,7 +79,7 @@ const ICONS = {
   shield: ShieldCheck,
   "shield-check": ShieldCheck,
   "graduation-cap": GraduationCap,
-  user: User,
+  "user": User,
   users: Users,
   calendar: Calendar,
   search: Search,
@@ -88,6 +90,8 @@ const ICONS = {
 "brain":Brain,
 "chat bot":Bot,
 "ads": Megaphone,
+"filter-rides":Motorbike,
+"video-call":Video,
   "credit-card": CreditCard,
   trendingup: TrendingUp,
   "trending-up": TrendingUp,
@@ -113,7 +117,7 @@ const ICONS = {
   "file-signature": FileSignature,
   rocket: Rocket,
   "clipboard-list": ClipboardList,
-  building2: Building2,
+  "building2": Building2,
   "user-plus": UserPlus,
   "pie-chart": PieChart,
 };
@@ -522,10 +526,10 @@ export function Gallery({ images, role }) {
       : { 350: 1, 750: 2,};
 
 
-  const gutt_breakPoints =role === "mobile"? {350: "50px",
+  const gutt_breakPoints =role === "mobile"? {350: "40px",
 
-    750: "70px",
-    1200:"100px"
+    750: "60px",
+    1200:"90px"
    
 
   }: {
@@ -549,9 +553,9 @@ export function Gallery({ images, role }) {
             width={500}
             src={image.src}
             style={{ width: "100%", height: "auto", display: "block" }}
-            alt={image.alt || "screen Images"}
+            alt= "screen Images"
             loading="lazy"
-            className="transition duration-400 hover:scale-110"
+            className={`transition duration-400 hover:scale-110 ${role==="mobile"?"rounded-2xl":""} `}
           />
         ))}
       </Masonry>

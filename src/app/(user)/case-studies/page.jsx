@@ -19,16 +19,16 @@ const work10 = "/assets/work-10.png";
 const work11 = "/assets/work-11.jpg";
 
 const projects = [
-  { title: "Alesk", category: "Management System", desc: "Alesk is a comprehensive, user-friendly customer management system", img: "/assets/case-2.png", results: "3x faster workflow", span: "lg:col-span-2 lg:row-span-2",href:"/case-studies/alesk" },
+  { title: "Ai Chatbot", category: "Web App", desc: "Platform specializes in creating a Chabot for the company’s website to manage customer queries using AI.", img: "/assets/case-studies/ai/img1.png", results: "3x faster ", span: "lg:col-span-2 lg:row-span-2",href:"/case-studies/ai" },
   { title: "Broker Remarks", category: "Web App", desc: "comprehensive real estate management web application designed to connect real estate agent", img: "/assets/case-studies/brokerRemarks/img.png", results: "High-impact brand", span: "" ,href:"/case-studies/brokerremarks"},
-  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: work3, results: "iOS & Android", span: "" ,href:"/case-studies/mkgo"},
-  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:work4, results: "Multi-game platform", span: "lg:col-span-2",href:"/case-studies/casino" },
+  { title: "MKGO Transport", category: "Mobile App", desc: "Flutter-based ride-booking app for city commutes in Toulouse.", img: "/assets/case-studies/mkgo/img1.png", results: "Ride Booking Platform", span: "" ,href:"/case-studies/mkgo"},
+  { title: "Rolling Star Casino", category: "Web App", desc: "Full-featured online casino platform built in React JS.", img:"/assets/case-studies/casino/img1.png", results: "Multi-game platform", span: "lg:col-span-2",href:"/case-studies/casino" },
   { title: "Parakh Jewellers", category: "investment in gold and silver", desc: "Investment in gold and silver, allowing users to invest at the current market prices.", img: "/assets/case-studies/parakh/img1.png", results: "Investing Platform", span: "",href:"/case-studies/parakh-jewellers" },
-  { title: "Workla", category: "Mobile App", desc: "Task management mobile app with calendar and team collaboration.", img: work6, results: "Cross-platform", span: "" ,href:"/case-studies/alesk"},
-  { title: "Code Conspirators — Outdoors", category: "Landing Page", desc: "Event landing page for the 2025 DSC Convention with lead capture.", img: work7, results: "High-conversion event LP", span: "lg:col-span-2",href:"/case-studies/alesk" },
-  { title: "Tairo Real Estate", category: "Real Estate Platform", desc: "Property search platform with listings, agent profiles and geolocation filters.", img: work8, results: "24 yrs expertise", span: "",href:"/case-studies/alesk" },
-  { title: "Cheshire Cats Club", category: "NFT / Web3", desc: "NFT collectibles launch site with countdown, roadmap and OpenSea integration.", img: work9, results: "Web3 launch", span: "",href:"/case-studies/alesk" },
-  { title: "Olesya Cloud Technology", category: "IT / Cloud", desc: "Multi-page IT solutions and managed services website for cloud infrastructure.", img: work10, results: "Cloud infrastructure", span: "",href:"/case-studies/alesk" },
+  { title: "Cherish Dating App", category: "Mobile App", desc: "Help people find and connect with potential romantic partners or friends.", img: "/assets/case-studies/cherish/img1.png", results: "Cross-platform", span: "" ,href:"/case-studies/cherish-dating-app"},
+  { title: "BrainlyLingo", category: "Web App", desc: " Designed for children, offering an immersive learning experience through diverse genre stories.", img: "/assets/case-studies/brainlylingo/img1.png", results: "Great Learning Experience", span: "lg:col-span-2",href:"/case-studies/brainlylingo" },
+  { title: "Micro Mitti", category: "Real Estate Mobile App", desc: "Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.", img: "/assets/case-studies/mircromitti/img1.png", results: "24 yrs expertise", span: "",href:"/case-studies/mircromitti" },
+  { title: "Tellwhom", category: "Mobile App", desc: "Designed as a multi-vendor job marketplace, Tellwhom eliminates fragmented hiring workflows by bringing recruitment.", img: "/assets/case-studies/tellwhom/img1.png", results: "Great Job Market", span: "",href:"/case-studies/tellwhom" },
+  { title: "SoulmateX", category: "Mobile App", desc: "AI-powered dating platform designed to help users find meaningful relationships through intelligent compatibility-based matchmaking.", img: "/assets/case-studies/soulmatex/img1.png", results: "Intelligent Dating Platform", span: "",href:"/case-studies/soulmatex" },
 ];
 
 const industries = [

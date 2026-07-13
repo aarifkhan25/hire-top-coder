@@ -1,4 +1,3 @@
-import {User } from "lucide-react"
 export const allCaseStudiesData = {
   case_studies: [
     {
@@ -277,7 +276,7 @@ export const allCaseStudiesData = {
       title: "MKGO",
       subtitle:
         "A dedicated mobile application developed to streamline operations for drivers associated with Innoya Services.",
-      image: "/assets/case-1.png",
+      image: "/assets/case-studies/mkgo/img1.png",
       imageAlt: "MKGO platform hero ",
       info: [
         { label: "Client", value: "Confidential" },
@@ -314,27 +313,27 @@ Ensure authentication protocols comply with industry standards to protect user d
             {
               title: "Filtering Rides/Trips",
               body: "Enable users to filter rides or trips based on various criteria such as region, trip type (e.g., pickup, delivery), driver availability, or trip status.",
-              icon: "shield-check",
+              icon: "filter-rides",
             },
             {
               title: "Trip Status Management",
               body: "Provide a user interface for drivers to view trip requests, accept or decline trips, and update trip statuses.",
-              icon: "graduation-cap",
+              icon: "calendar",
             },
             {
               title: "Map Feature",
               body: "Integrate mapping APIs to display trip routes, pickup/delivery locations, and current driver location.",
-              icon: "user",
+              icon: "mappin-check",
             },
             {
               title: "WebView for Viewing PDFs",
               body: "Implement additional functionalities within the WebView, such as zooming, scrolling, and downloading PDF files for offline viewing.",
-              icon: "calendar",
+              icon: "file-text",
             },
             {
               title: "Expense Report",
               body: "Allow drivers to record and track expenses incurred during trips, such as fuel, tolls, parking fees, and vehicle maintenance.",
-              icon: "credit-card",
+              icon: "file-signature",
             },
           ],
         },
@@ -343,29 +342,22 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["Flutter", "Firebase", "API"],
       gallery: [
         {
-          src: "/assets/logo1.png",
+          src: "/assets/case-studies/mkgo/img2.png",
           alt: "Speakable sign up screen",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
+        src: "/assets/case-studies/mkgo/img3.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
+       src: "/assets/case-studies/mkgo/img4.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable admin panel screen",
+     src: "/assets/case-studies/mkgo/img5.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
+        src: "/assets/case-studies/mkgo/img6.png",
         },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
-        },
+       
       ],
       outcome: [
         {
@@ -384,6 +376,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           body: "Trusted payment processing built directly into the platform for course purchases.",
         },
       ],
+      role:"mobile"
     },
     {
       casestudiename: "cherish-dating-app",
@@ -391,8 +384,8 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "Cherish Dating App",
       subtitle:
         " mobile applications that help people find and connect with potential romantic partners or friends.",
-      image: "/assets/case-2.png",
-      imageAlt: "Cherish Dating App",
+      image: "/assets/case-studies/cherish/img1.png",
+      imageAlt: "Cherish Dating Ap",
       info: [
         { label: "Client", value: "Confidential" },
         { label: "Date", value: "Jul 2023" },
@@ -460,29 +453,25 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["Flutter Flow", "Firebase"],
       gallery: [
         {
-          src: "/assets/c1.png",
-          alt: "ALESK admin dashboard screen",
+          src: "/assets/case-studies/cherish/img2.png",
+       
         },
         {
-          src: "/assets/c7.png",
-          alt: "ALESK financial charts screen",
+           src: "/assets/case-studies/cherish/img3.png",
+         
         },
         {
-          src: "/assets/c8.png",
-          alt: "ALESK service provider registration screen",
+        src: "/assets/case-studies/cherish/img4.png",
+        
         },
         {
-          src: "/assets/c5.png",
-          alt: "ALESK team management screen",
+           src: "/assets/case-studies/cherish/img5.png",
+         
         },
         {
-          src: "/assets/c1.png",
-          alt: "ALESK provider dashboard screen",
+        src: "/assets/case-studies/cherish/img6.png",
         },
-        {
-          src: "/assets/c3.png",
-          alt: "ALESK chat module screen",
-        },
+      
       ],
       outcome: [
         {
@@ -501,6 +490,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           body: "Clear, exportable financial reporting for every provider and consumer.",
         },
       ],
+      role:"mobile"
     },
     {
       casestudiename: "casino",
@@ -598,7 +588,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "BrainlyLingo",
       subtitle:
         " designed for children, offering an immersive learning experience through diverse genre stories.",
-      image: "/assets/case-1.png",
+      image: "/assets/case-studies/brainlylingo/img1.png",
       imageAlt: "BrainlyLingo platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
@@ -647,7 +637,7 @@ Ensure authentication protocols comply with industry standards to protect user d
               icon: "primium",
             },
             {
-              title: "Brain Quest Activity- ",
+              title: "Brain Quest Activity ",
               body: "After attempting quiz questions specific to the story, users receive feedback on both correct and incorrect answers.",
               icon: "brain",
             },
@@ -664,29 +654,19 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["React.js", "Node.js", "MongoDB"],
       gallery: [
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign up screen",
+          src: "/assets/case-studies/brainlylingo/img2.png",
+        
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
+           src: "/assets/case-studies/brainlylingo/img3.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
+            src: "/assets/case-studies/brainlylingo/img4.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable admin panel screen",
+         src: "/assets/case-studies/brainlylingo/img5.png",
         },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
-        },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
-        },
+       
       ],
       outcome: [
         {
@@ -711,8 +691,8 @@ Ensure authentication protocols comply with industry standards to protect user d
       category: "Web Application",
       title: "Ai Chatbot",
       subtitle:
-        "platform specializes in creating a Chabot for the company’s website to manage customer queries using AI.",
-      image: "/assets/case-1.png",
+        "Platform specializes in creating a Chabot for the company’s website to manage customer queries using AI.",
+      image: "/assets/case-studies/ai/img1.png",
       imageAlt: "ai platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
@@ -774,29 +754,22 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["React.js", "Node.js", "MongoDB"],
       gallery: [
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign up screen",
+          src: "/assets/case-studies/ai/img2.png",
+          
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable sign in screen",
+            src: "/assets/case-studies/ai/img3.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher list screen",
+         src: "/assets/case-studies/ai/img4.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable admin panel screen",
+           src: "/assets/case-studies/ai/img5.png",
         },
         {
-          src: "/assets/logo1.png",
-          alt: "Speakable teacher panel screen",
+            src: "/assets/case-studies/ai/img6.png",
         },
-        {
-          src: "/assets/logo1.png",
-          alt: "Speakable student panel screen",
-        },
+        
       ],
       outcome: [
         {
@@ -1161,8 +1134,8 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "Micro Mitti",
       subtitle:
         "An Real Estate investment application. It is, Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.",
-      image: "/assets/case-2.png",
-      imageAlt: "amicco App",
+      image: "/assets/case-studies/mircromitti/img1.png",
+      imageAlt: "micro mitti  App",
       info: [
         { label: "Client", value: "Confidential" },
         { label: "Date", value: "Jul 2023" },
@@ -1234,30 +1207,28 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["Flutter Flow", "Firebase"],
       gallery: [
         {
-          src: "/assets/c1.png",
-          alt: "ALESK admin dashboard screen",
+          src: "/assets/case-studies/mircromitti/img2.png",
+    
         },
         {
-          src: "/assets/c7.png",
-          alt: "ALESK financial charts screen",
+      src: "/assets/case-studies/mircromitti/img3.png",
+         
         },
         {
-          src: "/assets/c8.png",
-          alt: "ALESK service provider registration screen",
+  src: "/assets/case-studies/mircromitti/img4.png",
+        
         },
         {
-          src: "/assets/c5.png",
-          alt: "ALESK team management screen",
+      src: "/assets/case-studies/mircromitti/img5.jpg",
+       
         },
         {
-          src: "/assets/c1.png",
-          alt: "ALESK provider dashboard screen",
+      src: "/assets/case-studies/mircromitti/img6.png",
+          
         },
-        {
-          src: "/assets/c3.png",
-          alt: "ALESK chat module screen",
-        },
+       
       ],
+      
       outcome: [
         {
           metric: "1",
@@ -1275,6 +1246,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           body: "Clear, exportable financial reporting for every provider and consumer.",
         },
       ],
+      role:'mobile',
     },
       {
       casestudiename: "parakh-jewellers",
@@ -1868,6 +1840,173 @@ Ensure authentication protocols comply with industry standards to protect user d
           body: "Trusted payment processing built directly into the platform for course purchases.",
         },
       ],
+    },
+     {
+      casestudiename: "tellwhom",
+      category: "Mobile Application",
+      title: "Tellwhom",
+      subtitle:
+        "Designed as a multi-vendor job marketplace, Tellwhom eliminates fragmented hiring workflows by bringing recruitment.",
+      image: "/assets/case-studies/tellwhom/img1.png",
+      imageAlt: "tellwhom  App",
+      info: [
+        { label: "Client", value: "Confidential" },
+        { label: "Date", value: "Jul 2023" },
+        { label: "Category", value: "Real State Mobile app" },
+        { label: "Tech Stack", value: "Flutter Flow, Firebase" },
+      ],
+      prag: `Finding the right talent shouldn’t be slow or complicated. Tellwhom was built to simplify the hiring process by connecting employers and job seekers through one intelligent platform. Businesses can publish and manage job openings with ease, while candidates can discover relevant opportunities, apply instantly, and track every stage of their application.Designed as a multi-vendor job marketplace, Tellwhom eliminates fragmented hiring workflows by bringing recruitment, communication, and application management into a single seamless experience.`
+,
+     
+     
+  modules: [
+        {
+          featureGird1: [
+            {
+              title: "Job Listing",
+              body: "Create and manage job posts easily.",
+              icon: "graduation-cap",
+            },
+            {
+              title: "Smart Search",
+              body: "Find jobs with advanced filters.",
+              icon: "search",
+            },
+            {
+              title: "Candidate Profile",
+              body: "Showcase skills and experience.",
+              icon: "user",
+            },
+            {
+              title: "Application Tracking",
+              body: "Track applications and hiring status.",
+              icon: "user-plus",
+            },
+           
+            {
+              title: "Vendor Dashboard",
+              body: "Get instant job updates and alerts.",
+              icon: "layout-dashboard",
+            },
+           
+          
+           
+          ],
+        },
+      ],
+      techstack: ["Flutter Flow", "Firebase"],
+      gallery: [
+        {
+          src: "/assets/case-studies/tellwhom/img2.png",
+    
+        },
+        {
+      src: "/assets/case-studies/tellwhom/img3.png",
+         
+        },
+        {
+  src: "/assets/case-studies/tellwhom/img4.png",
+        
+        },
+        {
+      src: "/assets/case-studies/tellwhom/img5.png",
+       
+        },
+        {
+      src: "/assets/case-studies/tellwhom/img6.png",
+          
+        },
+       
+      ],
+      
+    
+      role:'mobile',
+    },
+      {
+      casestudiename: "soulmatex",
+      category: "Mobile Application",
+      title: "SoulmateX",
+      subtitle:
+        "AI-powered dating platform designed to help users find meaningful relationships through intelligent compatibility-based matchmaking. ",
+      image: "/assets/case-studies/soulmatex/img1.png",
+      imageAlt: "SoulmateX App",
+      info: [
+        { label: "Client", value: "Confidential" },
+        { label: "Date", value: "Jul 2023" },
+        { label: "Category", value: "Dating Mobile app" },
+        { label: "Tech Stack", value: "Flutter Flow, Firebase" },
+      ],
+      prag: `SoulmateX is an AI-powered dating platform designed to help users find meaningful relationships through intelligent compatibility-based matchmaking. The platform combines artificial intelligence, astrology, and personality insights to move beyond traditional swipe-based dating and provide more personalized connections.The goal was to build a secure and engaging platform that helps users discover compatible matches, build genuine conversations, and create long-term relationships through data-driven insights and verified profiles.`
+,
+     
+     
+  modules: [
+        {
+          featureGird1: [
+            {
+              title: "AI Matchmaking",
+              body: "Discover highly compatible matches instantly.",
+              icon: "brain",
+            },
+            {
+              title: "Astrology Insights",
+              body: "Analyze complete birth chart compatibility.",
+              icon: "search",
+            },
+            {
+              title: "Verified Profiles",
+              body: "Ensure trusted and authentic users.e.",
+              icon: "shield-check",
+            },
+            {
+              title: "AI Icebreakers",
+              body: "Start conversations with smart suggestions.",
+              icon: "message-circle",
+            },
+           
+            {
+              title: "Video Calling",
+              body: "Connect securely before meeting.",
+              icon: "video-call",
+            },
+            {
+              title: "Premium Membership",
+              body: "Unlock advanced compatibility features.",
+              icon: "primium",
+            },
+           
+          
+           
+          ],
+        },
+      ],
+      techstack: ["Flutter Flow", "Firebase"],
+      gallery: [
+        {
+          src: "/assets/case-studies/soulmatex/img2.png",
+    
+        },
+        {
+      src: "/assets/case-studies/soulmatex/img3.png",
+         
+        },
+        {
+  src: "/assets/case-studies/soulmatex/img4.jpg",
+        
+        },
+        {
+      src: "/assets/case-studies/soulmatex/img5.png",
+       
+        },
+        {
+      src: "/assets/case-studies/soulmatex/img6.jpg",
+          
+        },
+       
+      ],
+      
+    
+      role:'mobile',
     },
   ],
   
