@@ -38,7 +38,7 @@ const industries = [
 
 const caseStudies = [
   { c: "Speakable", t: "This platform provides a personalized English learning experience", d: "A personalized English learning platform connecting students in Poland with their ideal English teachers.", img: "/assets/case-studies/speakable/img1.png",href:"/case-studies/speakable"},
-  { c: "Alesk",   t: "ALESK is a comprehensive, user-friendly customer management system", d: "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.", img: "/assets/case-2.png",href:"/case-studies/alesk"},
+  { c: "Alesk",   t: "ALESK is a comprehensive, user-friendly customer management system", d: "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.", img: "/assets/case-studies/alesk/img1.png",href:"/case-studies/alesk"},
 ];
 
 function Counter({ to, suffix = "" }) {

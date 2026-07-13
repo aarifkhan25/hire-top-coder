@@ -1,3 +1,4 @@
+
 export const allCaseStudiesData = {
   case_studies: [
     {
@@ -6,7 +7,7 @@ export const allCaseStudiesData = {
       title: "ALESK",
       subtitle:
         "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.",
-      image: "/assets/case-2.png",
+      image: "/assets/case-studies/alesk/img1.png",
       imageAlt: "ALESK healthcare platform ",
       info: [
         { label: "Client", value: "Confidential" },

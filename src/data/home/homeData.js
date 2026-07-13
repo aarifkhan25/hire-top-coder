@@ -202,7 +202,7 @@ export const  homeData = {
   },
   {
     id: 2,
-    image: "/assets/Case-2.png", 
+    image: "/assets/case-studies/alesk/img1.png", 
     title:
       "Alesk is a comprehensive, user-friendly customer management system ",
     paragraphs: [
