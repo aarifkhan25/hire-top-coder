@@ -111,7 +111,7 @@ function ExpertCard({ expert }) {
         {expert.role}
       </div>
 
-      {/* इमेज और नाम वाला बॉक्स (इसमें overflow-hidden सुरक्षित है) */}
+     
       <div className="rounded-[1.25rem] overflow-hidden bg-black relative w-full h-full">
         <Image width={500} height={500}
           src={expert.img}

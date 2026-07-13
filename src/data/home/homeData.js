@@ -171,7 +171,7 @@ export const  homeData = {
  portfolioItems : [
   {
     id: 1,
-    image: "/assets/case-1.png",
+    image: "/assets/case-studies/speakable/img1.png",
     title:
       "Speakable provides a personalized English learning experience ",
     paragraphs: [
@@ -202,7 +202,7 @@ export const  homeData = {
   },
   {
     id: 2,
-    image: "/assets/Case-2.png", // अपनी दूसरी इमेज का पाथ यहाँ डालें
+    image: "/assets/Case-2.png", 
     title:
       "Alesk is a comprehensive, user-friendly customer management system ",
     paragraphs: [
