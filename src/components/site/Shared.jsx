@@ -556,8 +556,34 @@ export function Gallery({ images, role }) {
     1200: "50px",
   };
 
-  return (
-    <ResponsiveMasonry
+  return (<>
+    {role==="mobile"? (<section className="h-full py-10    flex items-center justify-center">
+     
+      <div className="w-full  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 2xl:gap-10 items-start justify-center">
+        {images.map((screen,i) => (
+          <div
+            key={i}
+            className={`relative group transition-all duration-300 hover:scale-[1.02] ${screen.desktopOffset}`}
+          >
+      
+
+              {/* Internal Screen Area */}
+              <div className="relative w-full aspect-[9/19.5]   overflow-hidden">
+                <Image
+                  src={screen.src}
+                  alt="hello"
+                  fill
+   
+                  className="object-cover w-[80%] h-auto rounded-2xl "
+                  priority={i<= 5}
+                />
+              </div>
+
+            
+          </div>
+        ))}
+      </div>
+    </section>):(<ResponsiveMasonry
       columnsCountBreakPoints={cul_breakPoints}
       gutterBreakPoints={gutt_breakPoints}
     >
@@ -576,7 +602,8 @@ export function Gallery({ images, role }) {
           />
         ))}
       </Masonry>
-    </ResponsiveMasonry>
+    </ResponsiveMasonry>)}</>
+    
   );
 }
 

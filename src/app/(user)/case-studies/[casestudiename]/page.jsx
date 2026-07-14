@@ -20,7 +20,7 @@ import NotFoundPage from "../../../not-found.jsx";
 export default function CaseStudiesMainPage({params}) {
 const {casestudiename}=use(params);
 const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casestudiename===casestudiename);
-console.log("hiii",filterCaseStudy)
+
   return (
     <div>
       {filterCaseStudy.length > 0 ? (
@@ -83,8 +83,12 @@ console.log("hiii",filterCaseStudy)
         <Gallery
           images={item.gallery}
           role={item.role}
+   
         />
       </Section1>
+
+
+     
 
       <Section1  label="The Results" heading="Impact & Outcomes">
         <OutcomeGrid items={item.outcome ?? []} />

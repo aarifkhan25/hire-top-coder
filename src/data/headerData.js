@@ -23,7 +23,7 @@ export const headerData={
       title: "Broker Remarks - listing Platform Rebuild",
       desc: "Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture.",
       actionText: "Read case study",
-      href: "/services/case-study",
+      href: "/case-studies/brokerremarks",
     },
     columns: [
       {
@@ -80,7 +80,7 @@ export const headerData={
       title: "MKGO Transport - Flutter App",
       desc: "Full ride-booking app shipped in 8 Weeks with the react time sheduling.",
       actionText: "Read case study",
-      href: "/hire/vetting",
+      href: "/case-studies/mkgo",
     },
     columns: [
       {
@@ -173,7 +173,7 @@ export const headerData={
           tag: "CASE STUDY",
           title: "Broker Remarks - listing Platform Rebuild",
           meta: <>Flutter - Firebase <span className="text-primary">•</span>6 weeks</>,
-          href: "/",
+          href: "/case-studies/brokerremarks",
         },
         {
           tag: "GUIDE 2025",
@@ -191,7 +191,7 @@ export const headerData={
           tag: "CASE STUDY",
           title: "Rolling Star Casino-Full React Platform",
           meta: <>React JS  <span className="text-primary">•</span>10 weeks </>,
-          href: "/",
+          href: "/case-studies/casino",
         },
       ],
     },

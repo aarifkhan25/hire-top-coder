@@ -344,19 +344,44 @@ Ensure authentication protocols comply with industry standards to protect user d
       gallery: [
         {
           src: "/assets/case-studies/mkgo/img2.png",
-          alt: "Speakable sign up screen",
+    desktopOffset:"lg:translate-y-0"
         },
         {
         src: "/assets/case-studies/mkgo/img3.png",
+         desktopOffset:"lg:translate-y-12"
         },
         {
        src: "/assets/case-studies/mkgo/img4.png",
+        desktopOffset:"lg:translate-y-0"
         },
         {
      src: "/assets/case-studies/mkgo/img5.png",
+      desktopOffset:"lg:translate-y-16"
         },
         {
         src: "/assets/case-studies/mkgo/img6.png",
+         desktopOffset:"lg:translate-y-0"
+        },
+         {
+          src: "/assets/case-studies/mkgo/img2.png",
+           desktopOffset:"lg:translate-y-8"
+    
+        },
+        {
+        src: "/assets/case-studies/mkgo/img3.png",
+         desktopOffset:"lg:translate-y-25"
+        },
+        {
+       src: "/assets/case-studies/mkgo/img4.png",
+        desktopOffset:"lg:translate-y-10"
+        },
+        {
+     src: "/assets/case-studies/mkgo/img5.png",
+      desktopOffset:"lg:translate-y-25"
+        },
+        {
+        src: "/assets/case-studies/mkgo/img6.png",
+         desktopOffset:"lg:translate-y-12"
         },
        
       ],
@@ -377,7 +402,8 @@ Ensure authentication protocols comply with industry standards to protect user d
     body: "Centralized fleet monitoring and digital trip reporting streamlined daily operations and lowered overhead costs."
   },
 ],
-      role:"mobile"
+      role:"mobile",
+      desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
     },
     {
       casestudiename: "cherish-dating-app",
@@ -491,7 +517,9 @@ Ensure authentication protocols comply with industry standards to protect user d
     body: "Multi-factor authentication and seamless social logins provided a quick, frictionless, and highly secure sign-in experience."
   },
 ],
-      role:"mobile"
+      role:"mobile",
+            desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
+
     },
     {
       casestudiename: "casino",
@@ -1388,7 +1416,9 @@ Ensure authentication protocols comply with industry standards to protect user d
     body: "Encrypted messaging and verified agent profiles ensured seamless, trusted interactions between clients and representatives."
   },
 ],
-      role:"mobile"
+      role:"mobile",
+            desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
+
     },
      {
       casestudiename: "breathwrk",
