@@ -2,10 +2,11 @@ import {
   BsGraphUp,
   BsLightningCharge,
   BsPeople,
-  BsShieldCheck,
-  BsStopwatch,
+  BsStopwatch
 } from "react-icons/bs";
-import { FiTrendingUp } from "react-icons/fi";
+import { FiLayers, FiTrendingUp } from "react-icons/fi";
+import { MdPayment } from "react-icons/md";
+
 const expert1 = "/assets/expert-1.jpg";
 const expert2 = "/assets/expert-2.jpg";
 const blog1 = "/assets/blog-1.png";
@@ -175,26 +176,26 @@ export const  homeData = {
     title:
       "Speakable provides a personalized English learning experience ",
     paragraphs: [
-  "A personalized English learning platform connecting students in Poland with their ideal English teachers.",
+  "This platform provides a personalized English learning experience tailored for people in Poland. Users can book one-on-one sessions with their preferred teachers.",
     ],
     metrics: [
       {
         id: "m1",
-        value: "30%",
-        label: "Faster Deal Cycles",
-        icon: <FiTrendingUp />,
+        value: "3",
+        label: "User Roles",
+        icon: <BsPeople  />,
       },
       {
         id: "m2",
-        value: "99.5%",
-        label: "Forecast Accuracy",
-        icon: <BsStopwatch />,
+        value: "256",
+        label: "Secure Payments",
+        icon: <MdPayment />,
       },
       {
         id: "m3",
-        value: "99.5%",
-        label: "Forecast Accuracy",
-        icon: <BsPeople />,
+        value: "100%",
+        label: "Live Calendar Scheduling",
+        icon: <  BsStopwatch />,
       },
     ], href:"/case-studies/speakable",
     testimonial:
@@ -210,18 +211,18 @@ export const  homeData = {
     
     ],
     metrics: [
-      { id: "m4", value: "45%", label: "Portfolio Yield", icon: <BsGraphUp /> },
+      { id: "m4", value: "3", label: "Platform User Types", icon: <BsPeople /> },
       {
         id: "m5",
-        value: "4x",
-        label: "Processing Speed",
-        icon: <BsLightningCharge />,
+        value: "4",
+        label: "Mobile, Web & Desktop",
+        icon: <FiLayers />,
       },
       {
         id: "m6",
-        value: "Zero",
-        label: "Compliance Risk",
-        icon: <BsShieldCheck />,
+        value: "100%",
+        label: "Financial Reporting",
+        icon: <BsGraphUp />,
       },
     ],
     href:"/case-studies/alesk",
@@ -230,10 +231,10 @@ export const  homeData = {
   },
   {
     id: 3,
-    image: "/assets/work-12.png", // अपनी तीसरी इमेज का पाथ यहाँ डालें
-    title: "Sales CRM Modernization: 30% Faster Deal Cycles & Reduced Operational Costs",
+    image: "/assets/case-studies/mircromitti/img1.png", // अपनी तीसरी इमेज का पाथ यहाँ डालें
+    title: "An Real Estate investment application. It is, Indore’s premier Prop-tech company.",
     paragraphs: [
-      "Legacy infrastructure limitations were inducing high bounce rates during seasonal concurrent",
+      "Micro Mitti's is an Real Estate investment application. It is, Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.",
     ],
     metrics: [
       { id: "m7", value: "10M+", label: "Active Sessions", icon: <BsPeople /> },
@@ -249,9 +250,9 @@ export const  homeData = {
         label: "TTFB Performance",
         icon: <BsLightningCharge />,
       },
-    ], href:"/case-studies/speakable",
+    ], href:"/case-studies/mircromitti",
     testimonial:
-      "“Our transaction capacity quadrupled overnight without a single microservice failure. Absolute mastery over cloud-native serverless system design.”",
+      "“Micro Mitti has transformed the way users approach real estate investments. The platform provides a seamless experience with secure transactions, verified opportunities, and complete control over investment portfolios”",
   },
 ]
 }

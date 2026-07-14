@@ -457,10 +457,18 @@ const OUTCOME_ICONS = [TrendingUp, Zap, ShieldCheck, Sparkles, CheckCircle2, Fla
 export function OutcomeGrid({
   items,
 }) {
+
+  const outcomeItems = items ?? [];
+
+  if (outcomeItems.length === 0) {
+    return null;
+  }
+  
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-      {items.map((it, i) => {
+      {outcomeItems.map((it, i) => {
         const Icon = OUTCOME_ICONS[i % OUTCOME_ICONS.length];
+        const parsed = parseStat(it.metric);
         return (
           <Reveal key={it.title} >
             <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group relative h-full overflow-hidden p-7">
@@ -473,11 +481,17 @@ export function OutcomeGrid({
                 }}
               />
               <div className="relative">
-               <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+               {/* <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
                   <Icon size={22} className="text-primary"  />
-                </div>
+                </div> */}
                 {it.metric && (
-                  <div className="mt-5 text-3xl font-bold text-primary">{it.metric}</div>
+                  <div className="mt-5 text-3xl font-bold text-primary">
+                      {parsed.num !== null && Number.isInteger(parsed.num) && parsed.num <= 9999 ? (
+                  <CountUp value={parsed.num} prefix={parsed.prefix} suffix={parsed.suffix} />
+                ) : (
+                  it.metric
+                )}
+                    %</div>
                 )}
                 <div className="mt-3 text-lg font-semibold text-white">{it.title}</div>
                 <p className="mt-2 text-sm leading-relaxed text-white/35">{it.body}</p>

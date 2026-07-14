@@ -138,23 +138,23 @@ export const allCaseStudiesData = {
         //   alt: "ALESK chat module screen",
         // },
       ],
-      outcome: [
-        {
-          metric: "1",
-          title: "Centralized Operations",
-          body: "Unified admin control across hospitals, clinics, and laboratories from a single dashboard.",
-        },
-        {
-          metric: "3x",
-          title: "Faster Onboarding",
-          body: "Streamlined registration flow for both service providers and their teams.",
-        },
-        {
-          metric: "100%",
-          title: "Transparent Finances",
-          body: "Clear, exportable financial reporting for every provider and consumer.",
-        },
-      ],
+        outcome: [
+  {
+    metric: "85",
+    title: "Faster lead management",
+    body: "Automated routing and instant notifications significantly reduced lead response times and streamlined customer follow-ups."
+  },
+  {
+    metric: "70",
+    title: "Improved agent productivity",
+    body: "Centralized dashboards and automated workflows eliminated manual data entry, allowing agents to close deals faster."
+  },
+  {
+    metric: "95",
+    title: "Secure communication success rate",
+    body: "Encrypted messaging and verified agent profiles ensured seamless, trusted interactions between clients and representatives."
+  },
+],
     },
     {
       casestudiename: "speakable",
@@ -170,7 +170,7 @@ export const allCaseStudiesData = {
         { label: "Category", value: "Web Application" },
         { label: "Tech Stack", value: "React.js, Node.js, MongoDB" },
       ],
-      prag: `  This platform provides a personalized English learning experience
+      prag: `This platform provides a personalized English learning experience
           tailored for people in Poland. Users can book one-on-one sessions with
           their preferred teachers, choosing courses based on their personal
           preferences and learning goals. It offers full flexibility and
@@ -254,22 +254,22 @@ export const allCaseStudiesData = {
       
       ],
       outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+  {
+    metric: "45",
+    title: "Improved vocabulary retention",
+    body: "Interactive flashcards and spaced repetition techniques helped learners recall new words much more effectively over time."
+  },
+  {
+    metric: "60",
+    title: "Higher student engagement",
+    body: "Gamified learning modules, progress streaks, and instant rewards kept students motivated and active daily."
+  },
+  {
+    metric: "95",
+    title: "Quiz completion rate",
+    body: "Bite-sized assessments and real-time feedback loops encouraged learners to complete test modules without dropping off."
+  },
+],
     },
     {
       casestudiename: "mkgo",
@@ -281,7 +281,7 @@ export const allCaseStudiesData = {
       imageAlt: "MKGO platform hero ",
       info: [
         { label: "Client", value: "Confidential" },
-        { label: "Date", value: "—" },
+        { label: "Date", value: "Feb 7,2023" },
         { label: "Category", value: "Mobile Application" },
         { label: "Tech Stack", value: "Flutter, Firebase, API" },
       ],
@@ -360,23 +360,23 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
        
       ],
-      outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+    outcome: [
+  {
+    metric: "35",
+    title: "Increase in driver productivity",
+    body: "Optimized route planning and real-time navigation reduced idle hours and allowed drivers to complete more trips daily."
+  },
+  {
+    metric: "25",
+    title: "Reduction in scheduling conflicts",
+    body: "Automated shift assignment and automated availability tracking eliminated overlapping bookings and manual dispatch errors."
+  },
+  {
+    metric: "40",
+    title: "Improved operational efficiency",
+    body: "Centralized fleet monitoring and digital trip reporting streamlined daily operations and lowered overhead costs."
+  },
+],
       role:"mobile"
     },
     {
@@ -475,22 +475,22 @@ Ensure authentication protocols comply with industry standards to protect user d
       
       ],
       outcome: [
-        {
-          metric: "1",
-          title: "Centralized Operations",
-          body: "Unified admin control across hospitals, clinics, and laboratories from a single dashboard.",
-        },
-        {
-          metric: "3x",
-          title: "Faster Onboarding",
-          body: "Streamlined registration flow for both service providers and their teams.",
-        },
-        {
-          metric: "100%",
-          title: "Transparent Finances",
-          body: "Clear, exportable financial reporting for every provider and consumer.",
-        },
-      ],
+  {
+    metric: "45",
+    title: "Increase in successful matches",
+    body: "Advanced matching algorithms and smart preference filters significantly boosted relevant user connections and successful pairings."
+  },
+  {
+    metric: "60",
+    title: "Growth in daily user engagement",
+    body: "An intuitive UI, real-time messaging, and personalized activity feeds kept active users returning to the app consistently."
+  },
+  {
+    metric: "98",
+    title: "Secure login success rate",
+    body: "Multi-factor authentication and seamless social logins provided a quick, frictionless, and highly secure sign-in experience."
+  },
+],
       role:"mobile"
     },
     {
@@ -503,7 +503,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       imageAlt: "Rolling Star Casino platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
-        { label: "Date", value: "—" },
+        { label: "Date", value: "jul 7,2026" },
         { label: "Category", value: "Web Application" },
         { label: "Tech Stack", value: "React.js, Node.js, MongoDB" },
       ],
@@ -550,38 +550,38 @@ Ensure authentication protocols comply with industry standards to protect user d
       gallery: [
         {
           src: "/assets/case-studies/casino/img2.png",
-          alt: "Casino login screen",
+    
         },
         {
           src: "/assets/case-studies/casino/img3.png",
-          alt: "Casino register screen",
+     
         },
         {
           src: "/assets/case-studies/casino/img4.png",
-          alt: "Casino games screen",
+         
         },
         {
           src: "/assets/case-studies/casino/img5.png",
-          alt: "Casino wallet screen",
+    
         }
       ],
-      outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+    outcome: [
+  {
+    metric: "45",
+    title: "Increase in successful matches",
+    body: "Smart matchmaking algorithms and refined filters significantly improved connection relevancy for users."
+  },
+  {
+    metric: "60",
+    title: "Growth in daily user engagement",
+    body: "Interactive UI elements and real-time chat features encouraged members to spend more time on the platform daily."
+  },
+  {
+    metric: "98",
+    title: "Secure login success rate",
+    body: "Robust authentication protocols and seamless OAuth integrations ensured smooth and safe user sign-ins."
+  },
+],
     },
     {
       casestudiename: "brainlylingo",
@@ -593,7 +593,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       imageAlt: "BrainlyLingo platform hero screenshot",
       info: [
         { label: "Client", value: "Confidential" },
-        { label: "Date", value: "—" },
+        { label: "Date", value: "Jun 17,2024" },
         { label: "Category", value: "Web Application" },
         { label: "Tech Stack", value: "React.js, Node.js, MongoDB" },
       ],
@@ -669,23 +669,23 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
        
       ],
-      outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+    outcome: [
+  {
+    metric: "45",
+    title: "Improved vocabulary retention",
+    body: "Interactive flashcards and spaced repetition techniques helped learners recall new words much more effectively over time."
+  },
+  {
+    metric: "60",
+    title: "Higher student engagement",
+    body: "Gamified learning modules, progress streaks, and instant rewards kept students motivated and active daily."
+  },
+  {
+    metric: "95",
+    title: "Quiz completion rate",
+    body: "Bite-sized assessments and real-time feedback loops encouraged learners to complete test modules without dropping off."
+  },
+],
     },
      {
       casestudiename: "ai",
@@ -772,23 +772,23 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
         
       ],
-      outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+       outcome: [
+  {
+    metric: "85",
+    title: "Faster lead management",
+    body: "Automated routing and instant notifications significantly reduced lead response times and streamlined customer follow-ups."
+  },
+  {
+    metric: "70",
+    title: "Improved agent productivity",
+    body: "Centralized dashboards and automated workflows eliminated manual data entry, allowing agents to close deals faster."
+  },
+  {
+    metric: "95",
+    title: "Secure communication success rate",
+    body: "Encrypted messaging and verified agent profiles ensured seamless, trusted interactions between clients and representatives."
+  },
+],
     },
      {
       casestudiename: "amicco",
@@ -991,22 +991,22 @@ Ensure authentication protocols comply with industry standards to protect user d
        
       ],
       outcome: [
-        {
-          metric: "2x",
-          title: "Streamlined Booking",
-          body: "Simplified the process for students to find and book sessions with the right teacher.",
-        },
-        {
-          metric: "100%",
-          title: "Flexible Learning",
-          body: "Enabled fully customizable schedules for both students and teachers through the calendar module.",
-        },
-        {
-          metric: "PCI",
-          title: "Secure Payments",
-          body: "Trusted payment processing built directly into the platform for course purchases.",
-        },
-      ],
+  {
+    metric: "85",
+    title: "Faster lead management",
+    body: "Automated routing and instant notifications significantly reduced lead response times and streamlined customer follow-ups."
+  },
+  {
+    metric: "70",
+    title: "Improved agent productivity",
+    body: "Centralized dashboards and automated workflows eliminated manual data entry, allowing agents to close deals faster."
+  },
+  {
+    metric: "95",
+    title: "Secure communication success rate",
+    body: "Encrypted messaging and verified agent profiles ensured seamless, trusted interactions between clients and representatives."
+  },
+],
     },
     {
       casestudiename: "mammuth",
@@ -1230,23 +1230,23 @@ Ensure authentication protocols comply with industry standards to protect user d
        
       ],
       
-      outcome: [
-        {
-          metric: "1",
-          title: "Centralized Operations",
-          body: "Unified admin control across hospitals, clinics, and laboratories from a single dashboard.",
-        },
-        {
-          metric: "3x",
-          title: "Faster Onboarding",
-          body: "Streamlined registration flow for both service providers and their teams.",
-        },
-        {
-          metric: "100%",
-          title: "Transparent Finances",
-          body: "Clear, exportable financial reporting for every provider and consumer.",
-        },
-      ],
+    outcome: [
+  {
+    metric: "85%",
+    title: "Increase in investment accessibility",
+    body: "Simplified fractional investment options allowed a broader range of first-time investors to enter the market effortlessly."
+  },
+  {
+    metric: "60",
+    title: "Faster property onboarding",
+    body: "Automated verification workflows and digital docs cut down property listing times from weeks to just a few days."
+  },
+  {
+    metric: "95",
+    title: "Secure transaction success rate",
+    body: "Integrated end-to-end encrypted payment gateways and real-time fraud checks ensured smooth, highly reliable transactions."
+  },
+],
       role:'mobile',
     },
       {
@@ -1372,22 +1372,22 @@ Ensure authentication protocols comply with industry standards to protect user d
        
       ],
       outcome: [
-        {
-          metric: "1",
-          title: "Centralized Operations",
-          body: "Unified admin control across hospitals, clinics, and laboratories from a single dashboard.",
-        },
-        {
-          metric: "3x",
-          title: "Faster Onboarding",
-          body: "Streamlined registration flow for both service providers and their teams.",
-        },
-        {
-          metric: "100%",
-          title: "Transparent Finances",
-          body: "Clear, exportable financial reporting for every provider and consumer.",
-        },
-      ],
+  {
+    metric: "85",
+    title: "Faster lead management",
+    body: "Automated routing and instant notifications significantly reduced lead response times and streamlined customer follow-ups."
+  },
+  {
+    metric: "70",
+    title: "Improved agent productivity",
+    body: "Centralized dashboards and automated workflows eliminated manual data entry, allowing agents to close deals faster."
+  },
+  {
+    metric: "95",
+    title: "Secure communication success rate",
+    body: "Encrypted messaging and verified agent profiles ensured seamless, trusted interactions between clients and representatives."
+  },
+],
       role:"mobile"
     },
      {
@@ -1852,8 +1852,8 @@ Ensure authentication protocols comply with industry standards to protect user d
       imageAlt: "tellwhom  App",
       info: [
         { label: "Client", value: "Confidential" },
-        { label: "Date", value: "Jul 2023" },
-        { label: "Category", value: "Real State Mobile app" },
+        { label: "Date", value: "March 5, 2023" },
+        { label: "Category", value: "Job Search  App" },
         { label: "Tech Stack", value: "Flutter Flow, Firebase" },
       ],
       prag: `Finding the right talent shouldn’t be slow or complicated. Tellwhom was built to simplify the hiring process by connecting employers and job seekers through one intelligent platform. Businesses can publish and manage job openings with ease, while candidates can discover relevant opportunities, apply instantly, and track every stage of their application.Designed as a multi-vendor job marketplace, Tellwhom eliminates fragmented hiring workflows by bringing recruitment, communication, and application management into a single seamless experience.`
@@ -1919,7 +1919,24 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
        
       ],
-      
+
+       outcome: [
+  {
+    metric: "40",
+    title: "Faster Job Discovery",
+    body: "Smart keyword matching and personalized job recommendations significantly reduced search time for active applicants."
+  },
+  {
+    metric: "35",
+    title: "Increase in Candidate Engagement",
+    body: "Instant alerts and a seamless mobile-first experience kept job seekers actively interacting with recruiters."
+  },
+  {
+    metric: "90",
+    title: "Successful Application Tracking",
+    body: "Real-time updates and structured status pipelines ensured candidates and employers easily tracked every stage."
+  },
+],
     
       role:'mobile',
     },
@@ -1933,7 +1950,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       imageAlt: "SoulmateX App",
       info: [
         { label: "Client", value: "Confidential" },
-        { label: "Date", value: "Jul 2023" },
+        { label: "Date", value: "Jul 7, 2025" },
         { label: "Category", value: "Dating Mobile app" },
         { label: "Tech Stack", value: "Flutter Flow, Firebase" },
       ],
@@ -2006,7 +2023,23 @@ Ensure authentication protocols comply with industry standards to protect user d
        
       ],
       
-    
+   outcome: [
+  {
+    metric: "70",
+    title: "Higher match accuracy",
+    body: "Advanced recommendation algorithms and preference filters ensured users received significantly more relevant compatibility matches."
+  },
+  {
+    metric: "55",
+    title: "Increase in user engagement",
+    body: "Interactive profile features, instant messaging, and smart notifications boosted daily active time across the platform."
+  },
+  {
+    metric: "92",
+    title: "Verified profile completion",
+    body: "A streamlined onboarding flow with identity verification encouraged members to build complete, trustworthy profiles."
+  },
+],
       role:'mobile',
     },
   ],

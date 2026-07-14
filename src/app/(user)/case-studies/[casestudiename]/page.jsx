@@ -1,5 +1,5 @@
 "use Client";
-import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, Section1, TechStack } from "@/components/site/Shared.jsx";
+import { Breadcrumb, CTABanner, FeatureGrid, Gallery, Hero1, OutcomeGrid, Section1, TechStack } from "@/components/site/Shared.jsx";
 import { allCaseStudiesData } from "@/data/casestudiesname.js";
 import { use } from "react";
 import NotFoundPage from "../../../not-found.jsx";
@@ -20,7 +20,7 @@ import NotFoundPage from "../../../not-found.jsx";
 export default function CaseStudiesMainPage({params}) {
 const {casestudiename}=use(params);
 const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casestudiename===casestudiename);
-
+console.log("hiii",filterCaseStudy)
   return (
     <div>
       {filterCaseStudy.length > 0 ? (
@@ -86,11 +86,9 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
         />
       </Section1>
 
-      {/* <Section1 label="The Results" heading="Impact & Outcomes">
-        <OutcomeGrid
-          items={item.outcome}
-        />
-      </Section1> */}
+      <Section1  label="The Results" heading="Impact & Outcomes">
+        <OutcomeGrid items={item.outcome ?? []} />
+      </Section1>
 
    
 
