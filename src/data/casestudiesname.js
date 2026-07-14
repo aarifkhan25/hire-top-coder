@@ -6,7 +6,7 @@ export const allCaseStudiesData = {
       category: "Mobile · Web · Desktop Application",
       title: "ALESK",
       subtitle:
-        "A comprehensive healthcare customer management platform connecting patients, doctors, and clinics across the Portuguese-speaking community.",
+        "Alesk is a customer management system for healthcare service providers— hospitals and clinics.",
       image: "/assets/case-studies/alesk/img1.png",
       imageAlt: "ALESK healthcare platform ",
       info: [
@@ -111,7 +111,7 @@ export const allCaseStudiesData = {
         },
       ],
 
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/alesk/c1.png",
@@ -229,7 +229,7 @@ export const allCaseStudiesData = {
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/case-studies/speakable/img4.png",
@@ -340,7 +340,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["Flutter", "Firebase", "API"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/mkgo/img2.png",
@@ -451,7 +451,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/cherish/img2.png",
@@ -546,7 +546,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/case-studies/casino/img2.png",
@@ -652,7 +652,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/case-studies/brainlylingo/img2.png",
@@ -752,7 +752,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/case-studies/ai/img2.png",
@@ -848,7 +848,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/c1.png",
@@ -898,7 +898,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       category: "Web Application",
       title: "BrokerRemarks",
       subtitle:
-        "Broker Remarks is a comprehensive real estate management web application designed to connect real estate agents and potential buyers seamlessly.",
+        "Broker Remark is a modern real estate platform that connects property buyers,sellers, and brokers through a seamless digital experience.",
       image: "/assets/case-studies/brokerRemarks/img.png",
       imageAlt: "BrokerRemarks platform hero screenshot",
       info: [
@@ -965,7 +965,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         
         {
@@ -1084,7 +1084,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/c1.png",
@@ -1205,7 +1205,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/mircromitti/img2.png",
@@ -1254,7 +1254,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       category: "Mobile Application",
       title: "Parakh Jewellers",
       subtitle:
-        "This app facilitates investment in gold and silver, allowing users to invest at the current market prices.",
+        "PARAKH JEWELLERS is a premium jewelry brand offering a wide range of finely crafted gold, diamond, silver, and bridal jewelry.",
       image: "/assets/case-studies/parakh/img1.png",
       
       imageAlt: "amicco App",
@@ -1327,7 +1327,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/parakh/img2.png",
@@ -1462,7 +1462,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1575,7 +1575,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1685,7 +1685,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1797,7 +1797,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "MongoDB"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1895,7 +1895,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/tellwhom/img2.png",
@@ -1981,7 +1981,7 @@ Ensure authentication protocols comply with industry standards to protect user d
           ],
         },
       ],
-      techstack: ["Flutter Flow", "Firebase"],
+      techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/soulmatex/img2.png",

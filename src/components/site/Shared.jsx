@@ -1,5 +1,6 @@
 "use client"
 import { PrimaryButton } from "@/components/site/PageShell.jsx";
+
 import {
   Activity,
   ArrowDownUp,
@@ -7,8 +8,6 @@ import {
   Atom,
   Bot,
   Brain,
-  Motorbike,
-  Video,
   Building2,
   Calendar,
   Check,
@@ -34,6 +33,8 @@ import {
   Megaphone,
   MessageCircle,
   MessageSquare,
+  Motorbike,
+  Palette,
   PieChart,
   Rocket,
   Search,
@@ -45,6 +46,7 @@ import {
   User,
   UserPlus,
   Users,
+  Video,
   Wrench,
   X,
   Zap,
@@ -71,6 +73,7 @@ const TECH_ICONS = {
   azure: Cloud,
   typescript: Code2,
   javascript: Code2,
+  "tailwind css":Palette,
 };
 
 const ICONS = {

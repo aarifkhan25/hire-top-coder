@@ -62,8 +62,8 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
             item.modules.map((module, index) => (
               <div key={`${module.label || "module"}-${index}`}>
                 {module.icon && (
-                  <div className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
-                    <span className="text-base">{module.icon}</span>
+                  <div className="mb-6 inline-flex items-center gap-2 text-sm font-semibold uppercase text-accent">
+                    {/* <span className="text-base">{module.icon}</span> */}
                     {module.label}
                   </div>
                 )}
