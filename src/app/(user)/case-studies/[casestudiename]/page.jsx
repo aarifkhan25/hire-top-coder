@@ -45,7 +45,7 @@ const filterCaseStudy=allCaseStudiesData.case_studies.filter((item)=>item.casest
       />
 
       <Section1 pos="flex" label="Project Brief" heading="Overview">
-       <p className=" w-full text-[#b1afb8] text-[13px]  md:text-base 2xl:text-lg">
+       <p className=" w-full text-[#b1afb8] text-[11px] md:text-[13px]  lg:text-base 2xl:text-lg">
          {item.prag}
         </p>
       </Section1>

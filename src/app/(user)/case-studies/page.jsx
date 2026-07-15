@@ -26,7 +26,7 @@ const projects = [
   { title: "Parakh Jewellers", category: "investment in gold and silver", desc: "Investment in gold and silver, allowing users to invest at the current market prices.", img: "/assets/case-studies/parakh/img1.png", results: "Investing Platform", span: "",href:"/case-studies/parakh-jewellers" },
   { title: "Cherish Dating App", category: "Mobile App", desc: "Help people find and connect with potential romantic partners or friends.", img: "/assets/case-studies/cherish/img1.png", results: "Cross-platform", span: "" ,href:"/case-studies/cherish-dating-app"},
   { title: "BrainlyLingo", category: "Web App", desc: " Designed for children, offering an immersive learning experience through diverse genre stories.", img: "/assets/case-studies/brainlylingo/img1.png", results: "Great Learning Experience", span: "lg:col-span-2",href:"/case-studies/brainlylingo" },
-  { title: "Micro Mitti", category: "Real Estate Mobile App", desc: "Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.", img: "/assets/case-studies/mircromitti/img1.png", results: "24 yrs expertise", span: "",href:"/case-studies/mircromitti" },
+  { title: "Micro Mitti", category: "Real Estate Mobile App", desc: "Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.", img: "/assets/case-studies/micromitti/img1.png", results: "24 yrs expertise", span: "",href:"/case-studies/mircromitti" },
   { title: "Tellwhom", category: "Mobile App", desc: "Designed as a multi-vendor job marketplace, Tellwhom eliminates fragmented hiring workflows by bringing recruitment.", img: "/assets/case-studies/tellwhom/img1.png", results: "Great Job Market", span: "",href:"/case-studies/tellwhom" },
   { title: "SoulmateX", category: "Mobile App", desc: "AI-powered dating platform designed to help users find meaningful relationships through intelligent compatibility-based matchmaking.", img: "/assets/case-studies/soulmatex/img1.png", results: "Intelligent Dating Platform", span: "",href:"/case-studies/soulmatex" },
 ];
@@ -71,21 +71,21 @@ export default function CaseStudyPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-40 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-20 md:pt-40 pb-10 md:pb-20 px-4 overflow-hidden">
         <AmbientGlow />
         <div className="relative w-full text-center">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-10 font-semibold">
+        <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px]  md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5 md:mb-10 font-semibold">
               Selected Work · 2024–2026
             </div>
           </Reveal>
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-tight">
+          <h1 className="leading-[0.95] text-[clamp(2.5rem,8vw,7.5rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)] font-bold tracking-tight">
             <WordReveal text="Work That" />
             <br />
             <span className="text-gradient-purple"><WordReveal text="Delivers Results" /></span>
           </h1>
           <Reveal delay={0.3}>
-            <p className="mt-6 w-full text-lg text-foreground/75 font-medium">
+        <p className="mt-6 md:mt-12 text-xs sm:text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
               Explore digital products, AI systems, SaaS platforms, websites,
               branding projects and modern experiences built by Hire Top Coder experts.
             </p>
@@ -94,9 +94,9 @@ export default function CaseStudyPage() {
       </section>
 
        {/* PROJECTS BENTO */}
-         <section className="relative py-16 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+         <section className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35 ">
  
-  <Stagger className="w-full grid lg:grid-cols-3 lg:auto-rows-[280px] grid-flow-row-dense gap-4">
+  <Stagger className="w-full grid sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[280px] grid-flow-row-dense gap-4">
     {projects?.map((p) => (
       <StaggerItem key={p.title} className={p?.span}>
         <TiltCard className="group relative h-full min-h-[280px] rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
@@ -121,22 +121,22 @@ export default function CaseStudyPage() {
 </section>
     
           {/* CASE STUDIES */}
-          <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+          <section className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35 ">
             <SectionHead eyebrow="Case Studies" title={<>Stories behind the <span className="text-gradient-purple">outcomes</span></>} />
             <div className="mt-14 w-full space-y-6">
               {caseStudies?.map((cs, i) => (
                 <Reveal key={cs.t} delay={i * 0.1}>
                   <div className="group relative grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden glass hover-glow-card">
-                    <div className={`relative h-72 md:h-[420px] overflow-hidden ${i % 2 ? "md:order-2" : ""}`}>
+                    <div className={`relative h-72 md:h-full overflow-hidden ${i % 2 ? "md:order-2" : ""}`}>
                       <Image width={500} height={500} src={cs?.img} alt={cs?.t}   loading="eager"
                         className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                     </div>
-                    <div className="p-8 md:p-12 flex flex-col justify-center">
-                      <div className="text-[11px] font-mono uppercase tracking-[0.25em] text-primary font-bold">{cs?.c}</div>
-                      <h3 className="mt-3 text-3xl font-extrabold tracking-tight leading-tight">{cs?.t}</h3>
-                      <p className="mt-4 text-foreground/75 font-medium">{cs?.d}</p>
-                      <div className="mt-6">
+                    <div className="p-8 lg:p-10 xl:p-12 flex flex-col lg:justify-center">
+                      <div className="text-[10px] lg:text-[11px] font-mono uppercase tracking-[0.25em] text-primary font-bold">{cs?.c}</div>
+                      <h3 className="mt-1 lg:mt-3 text-xl md:text-[28px] lg:text-3xl font-extrabold tracking-tight leading-tight">{cs?.t}</h3>
+                      <p className="mt-4 text-foreground/75 font-medium text-sm lg:text-base">{cs?.d}</p>
+                      <div className="mt-4 lg:mt-6">
                         <GhostButton href={cs?.href}>Read Case Study</GhostButton>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export default function CaseStudyPage() {
           </section>
 
       {/* INDUSTRIES */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
+      <section className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35 ">
         <SectionHead eyebrow="Industries Served" title="Trusted across every vertical" />
         <Stagger className="mt-14 w-full flex flex-wrap justify-center gap-3">
           {industries.map((ind) => (
@@ -161,7 +161,7 @@ export default function CaseStudyPage() {
       </section>
 
       {/* METRICS */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden">
+      <section className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35  overflow-hidden">
         <Parallax speed={50} className="absolute inset-0 -z-10">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px]" />
         </Parallax>
@@ -169,12 +169,12 @@ export default function CaseStudyPage() {
         <Stagger className="mt-14 w-full grid grid-cols-2 md:grid-cols-4 gap-4">
           {metrics?.map((m) => (
             <StaggerItem key={m.l}>
-              <div className="glass rounded-2xl p-7 text-center hover-glow-card">
+              <div className="glass rounded-2xl p-5 lg:p-7 text-center hover-glow-card">
                 <m.Icon className="size-5 w-full  text-primary mb-3" />
-                <div className="text-4xl md:text-5xl font-extrabold tracking-tight text-gradient-purple">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gradient-purple">
                   <Counter to={m.v} suffix={m.suf} />
                 </div>
-                <div className="mt-2 text-sm text-foreground/70 font-medium">{m.l}</div>
+                <div className="mt-2 text-[11px] md:text-xs lg:text-sm text-foreground/70 font-medium">{m.l}</div>
               </div>
             </StaggerItem>
           ))}
@@ -182,15 +182,15 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25">
-        <div className="relative w-full glass rounded-[2.5rem] p-12 md:p-16 text-center overflow-hidden ring-purple">
+      <section className="relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35  ">
+        <div className="relative w-full glass rounded-2xl p-5 md:p-12 lg:p-16 text-center overflow-hidden ring-purple">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-accent/25 pointer-events-none" />
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[140px] animate-pulse-glow pointer-events-none" />
           <div className="relative">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-extrabold tracking-tight">
               Have a project in mind? <span className="text-gradient-purple">Let's build it.</span>
             </h2>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-4 md:mt-8 flex flex-wrap items-center justify-center gap-3">
               <PrimaryButton>Start a Project</PrimaryButton>
               <GhostButton>View All Work</GhostButton>
             </div>

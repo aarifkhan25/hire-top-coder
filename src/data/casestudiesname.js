@@ -229,7 +229,7 @@ export const allCaseStudiesData = {
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/speakable/img4.png",
@@ -363,12 +363,12 @@ Ensure authentication protocols comply with industry standards to protect user d
          desktopOffset:"lg:translate-y-0"
         },
          {
-          src: "/assets/case-studies/mkgo/img2.png",
+          src: "/assets/case-studies/mkgo/img6.png",
            desktopOffset:"lg:translate-y-8"
     
         },
         {
-        src: "/assets/case-studies/mkgo/img3.png",
+        src: "/assets/case-studies/mkgo/img5.png",
          desktopOffset:"lg:translate-y-25"
         },
         {
@@ -376,11 +376,11 @@ Ensure authentication protocols comply with industry standards to protect user d
         desktopOffset:"lg:translate-y-10"
         },
         {
-     src: "/assets/case-studies/mkgo/img5.png",
+     src: "/assets/case-studies/mkgo/img3.png",
       desktopOffset:"lg:translate-y-25"
         },
         {
-        src: "/assets/case-studies/mkgo/img6.png",
+        src: "/assets/case-studies/mkgo/img2.png",
          desktopOffset:"lg:translate-y-12"
         },
        
@@ -403,7 +403,7 @@ Ensure authentication protocols comply with industry standards to protect user d
   },
 ],
       role:"mobile",
-      desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
+     
     },
     {
       casestudiename: "cherish-dating-app",
@@ -478,27 +478,49 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
       techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
-      gallery: [
+       gallery: [
         {
           src: "/assets/case-studies/cherish/img2.png",
-       
+    desktopOffset:"lg:translate-y-0"
         },
         {
-           src: "/assets/case-studies/cherish/img3.png",
-         
+        src: "/assets/case-studies/cherish/img3.png",
+         desktopOffset:"lg:translate-y-12"
         },
         {
-        src: "/assets/case-studies/cherish/img4.png",
-        
+       src: "/assets/case-studies/cherish/img4.png",
+        desktopOffset:"lg:translate-y-0"
         },
         {
-           src: "/assets/case-studies/cherish/img5.png",
-         
+     src: "/assets/case-studies/cherish/img5.png",
+      desktopOffset:"lg:translate-y-16"
         },
         {
         src: "/assets/case-studies/cherish/img6.png",
+         desktopOffset:"lg:translate-y-0"
         },
-      
+         {
+          src: "/assets/case-studies/cherish/img6.png",
+           desktopOffset:"lg:translate-y-8"
+    
+        },
+        {
+        src: "/assets/case-studies/cherish/img5.png",
+         desktopOffset:"lg:translate-y-25"
+        },
+        {
+       src: "/assets/case-studies/cherish/img4.png",
+        desktopOffset:"lg:translate-y-10"
+        },
+        {
+     src: "/assets/case-studies/cherish/img3.png",
+      desktopOffset:"lg:translate-y-25"
+        },
+        {
+        src: "/assets/case-studies/cherish/img2.png",
+         desktopOffset:"lg:translate-y-12"
+        },
+       
       ],
       outcome: [
   {
@@ -518,7 +540,7 @@ Ensure authentication protocols comply with industry standards to protect user d
   },
 ],
       role:"mobile",
-            desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
+          
 
     },
     {
@@ -574,7 +596,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/casino/img2.png",
@@ -680,7 +702,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/brainlylingo/img2.png",
@@ -780,7 +802,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/case-studies/ai/img2.png",
@@ -993,7 +1015,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         
         {
@@ -1163,7 +1185,7 @@ Ensure authentication protocols comply with industry standards to protect user d
       title: "Micro Mitti",
       subtitle:
         "An Real Estate investment application. It is, Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.",
-      image: "/assets/case-studies/mircromitti/img1.png",
+      image: "/assets/case-studies/micromitti/img1.png",
       imageAlt: "micro mitti  App",
       info: [
         { label: "Client", value: "Confidential" },
@@ -1236,24 +1258,45 @@ Ensure authentication protocols comply with industry standards to protect user d
       techstack: ["Flutter Flow", "Firebase","MongoDB","Express","AWS","Tailwind Css"],
       gallery: [
         {
-          src: "/assets/case-studies/mircromitti/img2.png",
+          src: "/assets/case-studies/micromitti/img2.png",
+    desktopOffset:"lg:translate-y-0"
+        },
+        {
+        src: "/assets/case-studies/micromitti/img3.png",
+         desktopOffset:"lg:translate-y-12"
+        },
+        {
+       src: "/assets/case-studies/micromitti/img4.png",
+        desktopOffset:"lg:translate-y-0"
+        },
+        {
+     src: "/assets/case-studies/micromitti/img5.jpg",
+      desktopOffset:"lg:translate-y-16"
+        },
+        {
+        src: "/assets/case-studies/micromitti/img6.png",
+         desktopOffset:"lg:translate-y-0"
+        },
+         {
+          src: "/assets/case-studies/micromitti/img6.png",
+           desktopOffset:"lg:translate-y-8"
     
         },
         {
-      src: "/assets/case-studies/mircromitti/img3.png",
-         
+        src: "/assets/case-studies/micromitti/img5.jpg",
+         desktopOffset:"lg:translate-y-25"
         },
         {
-  src: "/assets/case-studies/mircromitti/img4.png",
-        
+       src: "/assets/case-studies/micromitti/img4.png",
+        desktopOffset:"lg:translate-y-10"
         },
         {
-      src: "/assets/case-studies/mircromitti/img5.jpg",
-       
+     src: "/assets/case-studies/micromitti/img3.png",
+      desktopOffset:"lg:translate-y-25"
         },
         {
-      src: "/assets/case-studies/mircromitti/img6.png",
-          
+        src: "/assets/case-studies/micromitti/img2.png",
+         desktopOffset:"lg:translate-y-12"
         },
        
       ],
@@ -1359,43 +1402,44 @@ Ensure authentication protocols comply with industry standards to protect user d
       gallery: [
         {
           src: "/assets/case-studies/parakh/img2.png",
-          alt: "Parakh Jewellers  screen",
-        },
-          {
-          src: "/assets/case-studies/parakh/img8.png",
-          alt: "Parakh Jewellers start now screen",
-        },
-          {
-          src: "/assets/case-studies/parakh/img9.png",
-          alt: "Parakh Jewellers start now screen",
-        },
-          {
-          src: "/assets/case-studies/parakh/img10.png",
-          alt: "Parakh Jewellers start now screen",
+    desktopOffset:"lg:translate-y-0"
         },
         {
-          src: "/assets/case-studies/parakh/img3.png",
-          alt: "Parakh Jewellers start now screen",
+        src: "/assets/case-studies/parakh/img3.png",
+         desktopOffset:"lg:translate-y-12"
         },
         {
-          src: "/assets/case-studies/parakh/img4.png",
-          alt: " Parakh Jewellersce what's new screen",
+       src: "/assets/case-studies/parakh/img4.png",
+        desktopOffset:"lg:translate-y-0"
+        },
+        {
+     src: "/assets/case-studies/parakh/img5.png",
+      desktopOffset:"lg:translate-y-16"
+        },
+        {
+        src: "/assets/case-studies/parakh/img6.png",
+         desktopOffset:"lg:translate-y-0"
         },
          {
-          src: "/assets/case-studies/parakh/img7.png",
-          alt: "Parakh Jewellers rewards screen",
+          src: "/assets/case-studies/parakh/img9.png",
+           desktopOffset:"lg:translate-y-8"
+    
         },
         {
-          src: "/assets/case-studies/parakh/img5.png",
-          alt: "Parakh Jewellers invest Gold or Silver screen",
+        src: "/assets/case-studies/parakh/img7.png",
+         desktopOffset:"lg:translate-y-25"
         },
         {
-          src: "/assets/case-studies/parakh/img6.png",
-          alt: "Parakh Jewellers dashboard screen",
+       src: "/assets/case-studies/parakh/img8.png",
+        desktopOffset:"lg:translate-y-10"
         },
         {
-          src: "/assets/case-studies/parakh/img11.png",
-          alt: "Parakh Jewellers dashboard screen",
+     src: "/assets/case-studies/parakh/img10.png",
+      desktopOffset:"lg:translate-y-25"
+        },
+        {
+        src: "/assets/case-studies/parakh/img11.png",
+         desktopOffset:"lg:translate-y-12"
         },
        
       ],
@@ -1417,7 +1461,6 @@ Ensure authentication protocols comply with industry standards to protect user d
   },
 ],
       role:"mobile",
-            desktopOffset:["lg:translate-y-0","lg:translate-y-12","lg:translate-y-0","lg:translate-y-16","lg:translate-y-0","lg:translate-y-8","lg:translate-y-0","lg:translate-y-10","lg:translate-y-0","lg:translate-y-12"]
 
     },
      {
@@ -1492,7 +1535,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1605,7 +1648,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1715,7 +1758,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1827,7 +1870,7 @@ Ensure authentication protocols comply with industry standards to protect user d
         },
       ],
 
-      techstack: ["React.js", "Node.js", "Express","MongoDB","Tailwind Css","AWS"],
+      techstack: ["React.js", "Node.js", "Express","MongoDB","AWS","Tailwind Css"],
       gallery: [
         {
           src: "/assets/logo1.png",
@@ -1929,23 +1972,44 @@ Ensure authentication protocols comply with industry standards to protect user d
       gallery: [
         {
           src: "/assets/case-studies/tellwhom/img2.png",
+    desktopOffset:"lg:translate-y-0"
+        },
+        {
+        src: "/assets/case-studies/tellwhom/img3.png",
+         desktopOffset:"lg:translate-y-12"
+        },
+        {
+       src: "/assets/case-studies/tellwhom/img4.png",
+        desktopOffset:"lg:translate-y-0"
+        },
+        {
+     src: "/assets/case-studies/tellwhom/img5.png",
+      desktopOffset:"lg:translate-y-16"
+        },
+        {
+        src: "/assets/case-studies/tellwhom/img6.png",
+         desktopOffset:"lg:translate-y-0"
+        },
+         {
+          src: "/assets/case-studies/tellwhom/img6.png",
+           desktopOffset:"lg:translate-y-8"
     
         },
         {
-      src: "/assets/case-studies/tellwhom/img3.png",
-         
+        src: "/assets/case-studies/tellwhom/img5.png",
+         desktopOffset:"lg:translate-y-25"
         },
         {
-  src: "/assets/case-studies/tellwhom/img4.png",
-        
+       src: "/assets/case-studies/tellwhom/img4.png",
+        desktopOffset:"lg:translate-y-10"
         },
         {
-      src: "/assets/case-studies/tellwhom/img5.png",
-       
+     src: "/assets/case-studies/tellwhom/img3.png",
+      desktopOffset:"lg:translate-y-25"
         },
         {
-      src: "/assets/case-studies/tellwhom/img6.png",
-          
+        src: "/assets/case-studies/tellwhom/img2.png",
+         desktopOffset:"lg:translate-y-12"
         },
        
       ],
@@ -2032,23 +2096,44 @@ Ensure authentication protocols comply with industry standards to protect user d
       gallery: [
         {
           src: "/assets/case-studies/soulmatex/img2.png",
+    desktopOffset:"lg:translate-y-0"
+        },
+        {
+        src: "/assets/case-studies/soulmatex/img3.png",
+         desktopOffset:"lg:translate-y-12"
+        },
+        {
+       src: "/assets/case-studies/soulmatex/img4.jpg",
+        desktopOffset:"lg:translate-y-0"
+        },
+        {
+     src: "/assets/case-studies/soulmatex/img5.png",
+      desktopOffset:"lg:translate-y-16"
+        },
+        {
+        src: "/assets/case-studies/soulmatex/img6.jpg",
+         desktopOffset:"lg:translate-y-0"
+        },
+         {
+          src: "/assets/case-studies/soulmatex/img6.jpg",
+           desktopOffset:"lg:translate-y-8"
     
         },
         {
-      src: "/assets/case-studies/soulmatex/img3.png",
-         
+        src: "/assets/case-studies/soulmatex/img5.png",
+         desktopOffset:"lg:translate-y-25"
         },
         {
-  src: "/assets/case-studies/soulmatex/img4.jpg",
-        
+       src: "/assets/case-studies/soulmatex/img4.jpg",
+        desktopOffset:"lg:translate-y-10"
         },
         {
-      src: "/assets/case-studies/soulmatex/img5.png",
-       
+     src: "/assets/case-studies/soulmatex/img3.png",
+      desktopOffset:"lg:translate-y-25"
         },
         {
-      src: "/assets/case-studies/soulmatex/img6.jpg",
-          
+        src: "/assets/case-studies/soulmatex/img2.png",
+         desktopOffset:"lg:translate-y-12"
         },
        
       ],

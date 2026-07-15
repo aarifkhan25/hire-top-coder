@@ -255,7 +255,7 @@ export function CTABanner({
   return (
     <section className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35   ">
       <Reveal>
-      <div className="mx-auto max-w-5xl relative rounded-3xl glass p-5 md:p-12 lg:p-16 text-center overflow-hidden glow-purple-strong">
+      <div className="mx-auto max-w-5xl relative rounded-2xl glass p-5 md:p-12 lg:p-16 text-center overflow-hidden glow-purple-strong">
                 <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
         <div className="relative text-center">
           <h3 className="text-[26px] md:text-4xl lg:text-5xl font-extrabold text-gradient-purple leading-tight">{title}</h3>
@@ -465,13 +465,13 @@ export function OutcomeGrid({
   }
   
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:grid-cols-3 md:px-10 xl:px-20 2xl:px-30">
       {outcomeItems.map((it, i) => {
         const Icon = OUTCOME_ICONS[i % OUTCOME_ICONS.length];
         const parsed = parseStat(it.metric);
         return (
           <Reveal key={it.title} >
-            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group relative h-full overflow-hidden p-7">
+            <div className="bg-gradient-to-t from-black/80 to-transparent rounded-[16px] border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card group relative h-full overflow-hidden p-4 lg:p-7">
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 opacity-60"
@@ -485,7 +485,7 @@ export function OutcomeGrid({
                   <Icon size={22} className="text-primary"  />
                 </div> */}
                 {it.metric && (
-                  <div className="mt-5 text-3xl font-bold text-primary">
+                  <div className="mt-5 text-2xl lg:text-3xl font-bold text-primary">
                       {parsed.num !== null && Number.isInteger(parsed.num) && parsed.num <= 9999 ? (
                   <CountUp value={parsed.num} prefix={parsed.prefix} suffix={parsed.suffix} />
                 ) : (
@@ -493,9 +493,9 @@ export function OutcomeGrid({
                 )}
                     %</div>
                 )}
-                <div className="mt-3 text-lg font-semibold text-white">{it.title}</div>
-                <p className="mt-2 text-sm leading-relaxed text-white/35">{it.body}</p>
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-primary/40 via-primary/10 to-transparent" />
+                <div className="mt-3 text-base lg:text-lg font-semibold text-white">{it.title}</div>
+                <p className="mt-2 text-xs  lg:text-sm leading-relaxed text-white/35">{it.body}</p>
+
               </div>
             </div>
           </Reveal>
@@ -537,29 +537,20 @@ export function OutcomeGrid({
 
 export function Gallery({ images, role }) {
 
-  const cul_breakPoints =
-    role === "mobile"
-      ? { 350: 2, 750: 3, 1200: 5 }
-      : { 350: 1, 750: 2,};
+  const cul_breakPoints ={ 350: 1, 650: 2,};
 
 
-  const gutt_breakPoints =role === "mobile"? {350: "40px",
-
-    750: "60px",
-    1200:"90px"
-   
-
-  }: {
+  const gutt_breakPoints ={
     350: "12px",
-    750: "50px",
-    900: "24px",
+    750: "25px",
+   
     1200: "50px",
   };
 
   return (<>
     {role==="mobile"? (<section className="h-full py-10    flex items-center justify-center">
      
-      <div className="w-full  grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 2xl:gap-10 items-start justify-center">
+      <div className="w-full  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 2xl:gap-10 items-start justify-center">
         {images.map((screen,i) => (
           <div
             key={i}
@@ -609,14 +600,14 @@ export function Gallery({ images, role }) {
 
 export function TechStack({ items }) {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-1 md:gap-3">
       {items.map((t, i) => {
         const Icon = TECH_ICONS[t.toLowerCase()] ?? Wrench;
         return (
           <Reveal key={t} >
-            <div className="w-full flex gap-2 justify-center items-center shrink-0 border border-white/10  bg-primary/10 transition-colors hover:border-primary px-3 py-2 rounded-full" >
-              <Icon  className="text-primary text-base md:text-2xl" />
-             <span className="text-sm md:text-base">{t}</span> 
+            <div className="w-full flex gap-1 sm:gap-2 justify-center items-center shrink-0 border border-white/10  bg-primary/10 transition-colors hover:border-primary px-2 py-1.5 sm:px-3 sm:py-2 rounded-full" >
+              <Icon  className="text-primary text-[10px] sm:text-base lg:text-2xl" />
+             <span className="text-[13px] sm:text-sm lg:text-base">{t}</span> 
             </div>
           </Reveal>
         );
@@ -628,7 +619,7 @@ export function FeatureGrid({
   items,
 }) {
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 md:px-10 xl:px-20 2xl:px-30">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:px-10 xl:px-20 2xl:px-30">
       {items.map((f, i) => {
         const Icon = typeof f.icon === "string"
           ? ICONS[f.icon.toLowerCase()] ?? CheckCircle2
@@ -712,10 +703,10 @@ export function Section1({
 }) {
   return (
     <section id={id} className={`w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 ${className}`}>
-    <div className={`  gap-10 lg:gap-20 ${pos==="flex"?"flex ":"grid text-center"} `}>
+    <div className={`  gap-5 md:gap-8 lg:gap-20 ${pos==="flex"?"grid md:flex ":" grid text-center"} `}>
     <div> {label && (
         <Reveal>
-          <div className="text-[11px] md:text-xs  font-semibold uppercase tracking-[0.18em] text-primary">
+          <div className="text-[10px]   lg:text-[11px]  font-semibold uppercase tracking-[0.18em] text-primary">
             {label}
           </div>
         </Reveal>
@@ -724,7 +715,7 @@ export function Section1({
         <Reveal >
         <div>
 
-          <h2 className=" text-xl md:text-2xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className=" text-lg md:text-[23px] 1xl:text-[25px] font-bold tracking-tight text-white">
             {heading}
           </h2>
         </div>

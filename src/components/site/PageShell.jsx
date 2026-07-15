@@ -31,7 +31,7 @@ export function PrimaryButton({
   ...rest
 }) {
   return (
-     <Link href={href} className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-3 py-2  md:px-8 md:py-4 text-xs md:text-base 1xl:text-lg ${className}`}>
+     <Link href={href} className={`group inline-flex items-center gap-2 expert-btn text-[#381385] font-bold tracking-tight rounded-full px-3 py-2 md:px-6 md:py-3  lg:px-8 lg:py-4 text-xs md:text-[15px] lg:text-base 1xl:text-lg  2xl:text-[22px] ${className}`}>
       {children}
       <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
     </Link >
@@ -47,9 +47,10 @@ export function GhostButton({
   return (
     <Link href={href}
       {...rest}
-      className={`inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-3 py-2   md:px-8 md:py-4 text-xs md:text-base  1xl:text-lg ${className}`}
+      className={`group inline-flex items-center gap-2 btn-glass text-white font-bold tracking-tight rounded-full px-3 py-2 md:px-6 md:py-3  lg:px-8 lg:py-4 text-xs md:text-[15px] lg:text-base  1xl:text-lg 2xl:text-[22px] ${className}`}
     >
-      {children}
+      {children}      <LuArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+
     </Link>
   );
 }
@@ -88,7 +89,7 @@ export function SectionHead({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-         className="mt-4 text-foreground/75  text-xs md:text-base lg:text-xl  font-normal"
+         className=" md:mt-4 text-foreground/75  text-xs md:text-base lg:text-xl  font-normal"
         >
           {sub}
         </motion.p>

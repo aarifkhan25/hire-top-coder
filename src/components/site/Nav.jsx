@@ -149,7 +149,7 @@ const pathname = usePathname()
                           <div className="relative w-full  z-10 text-left">
                             {/* 🛠️ कंडीशनल रेंडरिंग: नया स्पेशल Resources टेम्पलेट (As per resources.png) */}
                             {item.isResourcesTemplate ? (
-                              <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 2xl:gap-15 items-stretch">
+                              <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 2xl:gap-15 items-stretch">
                                 {/* 1. Left Section: Title + Delivery Models Links */}
                                 <div className="flex flex-col w-full justify-start text-left">
                                   <div>
