@@ -149,39 +149,39 @@ const pathname = usePathname()
                           <div className="relative w-full  z-10 text-left">
                             {/* 🛠️ कंडीशनल रेंडरिंग: नया स्पेशल Resources टेम्पलेट (As per resources.png) */}
                             {item.isResourcesTemplate ? (
-                              <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10 md:pr-25 lg:pr-0 2xl:gap-15 items-stretch">
+                              <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-10  2xl:gap-15 items-stretch">
                                 {/* 1. Left Section: Title + Delivery Models Links */}
                                 <div className="flex flex-col w-full justify-start text-left">
                                   <div>
-                                    <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-2">
+                                    <h3 className="text-lg xl:text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-2">
                                       {item.dropdownTitle}
                                     </h3>
-                                    <p className="text-xs 2xl:text-sm text-gray-400 font-medium leading-relaxed font-mulish mb-8">
+                                    <p className="text-[10px] xl:text-xs 2xl:text-sm text-gray-400 font-medium leading-relaxed font-mulish mb-8">
                                       {item.dropdownDesc}
                                     </p>
                                   </div>
 
                                   {/* एक्स्ट्रा सब-यूनिट: Delivery Models */}
-                                  <div className="flex flex-col gap-10 mt-2">
-                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                  <div className="flex flex-col gap-5 md:gap-10 mt-2">
+                                    <h4 className="text-[11px] xl:text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
                                       {item.leftSubTitle}
                                     </h4>
-                                    <div className="flex flex-col gap-10">
+                                    <div className="flex flex-col gap-5 xl:gap-10">
                                       {item.leftLinks?.map((link, lIdx) => (
                                         <Link
                                           key={lIdx}
                                           href={link.href}
                                           onClick={() => setHoveredIndex(null)}
-                                          className="flex items-start gap-5 group text-left w-full"
+                                          className="flex items-start gap-3 xl:gap-5 group text-left w-full"
                                         >
- <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+ <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
 
-                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          <span className="text-lg xl:text-2xl text-primary">{link.icon}</span>
                                           </div>                                          <div className="flex-1">
-                                            <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                            <h5 className="text-xs xl:text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
                                               {link.name}
                                             </h5>
-                                            <p className="text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
+                                            <p className="text-[10px] xl:text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
                                               {link.desc}
                                             </p>
                                           </div>
@@ -195,12 +195,12 @@ const pathname = usePathname()
                                 {item.columns?.map((col, colIdx) => (
                                   <div
                                     key={colIdx}
-                                    className="flex flex-col gap-10 text-left w-full"
+                                    className="flex flex-col  gap-5 xl:gap-10 text-left w-full"
                                   >
-                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                    <h4 className="text-[11px] xl:text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
                                       {col.title}
                                     </h4>
-                                    <div className="flex flex-col gap-10">
+                                    <div className="flex flex-col gap-5 xl:gap-10">
                                       {col.links?.map((link, linkIdx) => (
                                         <Link
                                           key={linkIdx}
@@ -209,15 +209,15 @@ const pathname = usePathname()
                                           className="flex items-start gap-5 group text-left w-full"
                                         >
                                           
-                                          <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+                                          <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
 
-                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          <span className="text-lg xl:text-2xl text-primary">{link.icon}</span>
                                           </div>
                                           <div className="flex-1">
-                                            <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
+                                            <h5 className="text-xs xl:text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish leading-tight">
                                               {link.name}
                                             </h5>
-                                            <p className="text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
+                                            <p className="text-[10px] xl:text-xs 2xl:text-sm text-gray-400 mt-1 font-medium group-hover:text-white">
                                               {link.desc}
                                             </p>
                                           </div>
@@ -228,33 +228,33 @@ const pathname = usePathname()
                                 ))}
 
                                 {/* 3. Right Section: PROOF AND COMPARISION 2x2 Grid (Takes 2 Columns of layout) */}
-                                <div className="lg:col-span-2 flex flex-col gap-5 w-full">
-                                  <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
+                                <div className=" lg:col-span-2 flex flex-col gap-5 w-full">
+                                  <h4 className="text-[11px] xl:text-xs 2xl:text-sm font-semibold tracking-wider text-white uppercase font-sans">
                                     {item.proofSection.title}
                                   </h4>
-                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 ">
+                                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-1.5 xl:gap-3 ">
                                     {item.proofSection.cards?.map(
                                       (card, cIdx) => (
                                         <div
                                           key={cIdx}
-                                          className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-5 flex flex-col justify-between items-start text-left min-h-[160px]  transition-all group"
+                                          className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-3 xl:p-5 flex flex-col justify-between items-start text-left   transition-all group"
                                         >
                                           <div className="w-full">
-                                            <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase block mb-1">
+                                            <span className="text-[8px] xl:text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase block mb-1">
                                               {card.tag}
                                             </span>
-                                            <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish mb-2 ">
+                                            <h4 className=" text-[10px] xl:text-xs xl:text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish mb-2 ">
                                               {card.title}
                                             </h4>
                                             {card.meta && (
-                                              <p className="text-xs 2xl:text-sm text-gray-500 font-medium font-sans flex items-center gap-1.5 ">
+                                              <p className="  text-[8px] xl:text-[10px} xl:text-xs 2xl:text-sm text-gray-500 font-medium font-sans flex items-center gap-1.5 ">
                                                 {card.meta}
                                               </p>
                                             )}
                                           </div>
                                           <Link
                                             href={card.href}
-                                            className="text-[11px] 2xl:text-xs  font-bold text-primary hover:underline mt-4 inline-block"
+                                            className="text-[9px] xl:text-[11px] 2xl:text-xs  font-bold text-primary hover:underline xl:mt-4 inline-block"
                                           >
                                             Read case study
                                           </Link>
@@ -266,31 +266,31 @@ const pathname = usePathname()
                               </div>
                             ) : (
                               /* 🌟 पुराने ऑप्शंस (Services & Hire Developers) का मूल 4-कॉलम लेआउट सुरक्षित */
-                              <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 2xl:gap-15 items-stretch">
+                              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 xl:gap-10 2xl:gap-15 items-stretch">
                                 <div className="border-r border-white/10 pr-10 2xl:pr-5 flex flex-col w-full text-left">
                                   <div>
-                                    <h3 className="text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-1">
+                                    <h3 className="text-lg xl:text-xl 2xl:text-[22px] font-bold text-white tracking-tight font-mulish mb-1">
                                       {item.dropdownTitle}
                                     </h3>
-                                    <p className="text-xs 2xl:text-sm text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
+                                    <p className="text-[10px] xl:text-xs 2xl:text-sm text-gray-400 hover:text-white font-medium leading-relaxed font-mulish mb-6">
                                       {item.dropdownDesc}
                                     </p>
                                   </div>
 
                                   {item.featuredCard && (
-                                    <div className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-4 flex flex-col gap-2.5 text-left">
-                                      <span className="text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
+                                    <div className="bg-black border border-[oklch(0.62_0.26_305/0.15)] rounded-[8px] p-2 xl:p-4 flex flex-col gap-1.5 xl:gap-2.5 text-left">
+                                      <span className="text-[8px] xl:text-[10px] 2xl:text-xs font-bold text-primary tracking-wider uppercase">
                                         {item.featuredCard.tag}
                                       </span>
-                                      <h4 className="text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish">
+                                      <h4 className="text-xs xl:text-sm 2xl:text-base font-semibold text-white leading-snug font-mulish">
                                         {item.featuredCard.title}
                                       </h4>
-                                      <p className="text-xs 2xl:text-sm text-gray-400 font-medium font-sans">
+                                      <p className="text-[10px] xl:text-xs 2xl:text-sm text-gray-400 font-medium font-sans">
                                         {item.featuredCard.desc}
                                       </p>
                                       <Link
                                         href={item.featuredCard.href}
-                                        className="text-[11px] 2xl:text-xs font-bold text-primary hover:underline mt-2 inline-block"
+                                        className=" text-[9px] xl:text-[11px] 2xl:text-xs font-bold text-primary hover:underline lg:mt-2 inline-block"
                                       >
                                         {item.featuredCard.actionText}
                                       </Link>
@@ -301,15 +301,15 @@ const pathname = usePathname()
                                 {item.columns?.map((col, colIdx) => (
                                   <div
                                     key={colIdx}
-                                    className="flex flex-col gap-10 text-left w-full"
+                                    className="flex flex-col gap-5 xl:gap-10 text-left w-full"
                                   >
-                                    <h4 className="text-xs 2xl:text-sm font-semibold tracking-wider text-white/90 uppercase font-sans">
+                                    <h4 className="text-[11px] xl:text-xs 2xl:text-sm font-semibold tracking-wider text-white/90 uppercase font-sans">
                                       {col.title}
                                     </h4>
 
                                     {col.title === "Hire By Technology" ? (
-                                      <div className="flex md:mt-3 1xl:mt-0 gap-10">
-                                        <div className="flex flex-col gap-10">
+                                      <div className="grid xl:flex md:mt-3 1xl:mt-0 gap-5 xl:gap-10">
+                                        <div className="flex flex-col gap-5 xl:gap-10">
                                           {col?.links?.map((link, linkIdx) => (
                                             <Link
                                               key={linkIdx}
@@ -319,12 +319,12 @@ const pathname = usePathname()
                                               }
                                               className="flex  items-center gap-3 group text-left"
                                             >
-                                             <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+                                             <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
 
-                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          <span className="text-lg xl:text-2xl text-primary">{link.icon}</span>
                                           </div>
                                               <div>
-                                                <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                                <h5 className="text-xs xl:text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
                                                   {link.name}
                                                 </h5>
                                                 
@@ -332,7 +332,7 @@ const pathname = usePathname()
                                             </Link>
                                           ))}
                                         </div>
-                                        <div className="flex flex-col gap-10">
+                                        <div className="flex flex-col gap-5 xl:gap-10">
                                           {col?.links1?.map((link, linkIdx) => (
                                             <Link
                                               key={linkIdx}
@@ -342,12 +342,12 @@ const pathname = usePathname()
                                               }
                                               className="flex items-center gap-3 group text-left"
                                             >
-                                             <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+                                             <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
 
-                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          <span className="text-lg xl:text-2xl text-primary">{link.icon}</span>
                                           </div>
                                               <div>
-                                                <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                                <h5 className="text-xs xl:text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
                                                   {link.name}
                                                 </h5>
                                               </div>
@@ -366,12 +366,12 @@ const pathname = usePathname()
                                             }
                                             className="flex items-center gap-3 group text-left"
                                           >
-                                           <div className="w-10 h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+                                           <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
 
-                                          <span className="text-2xl text-primary">{link.icon}</span>
+                                          <span className="text-[17px] xl:text-2xl text-primary">{link.icon}</span>
                                           </div>
                                             <div>
-                                              <h5 className="text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
+                                              <h5 className="text-[11px] xl:text-sm 2xl:text-base font-semibold text-white group-hover:text-primary transition-colors font-mulish">
                                                 {link.name}
                                               </h5>
                                               <p className="text-xs 2xl:text-sm text-gray-400 mt-0.5 font-medium group-hover:text-white">
