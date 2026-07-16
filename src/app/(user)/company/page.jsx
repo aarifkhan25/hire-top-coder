@@ -61,7 +61,7 @@ export default function CompanyPage() {
             <span className="text-gradient-purple"><WordReveal text="Excellence Globally" /></span>
           </h1>
           <Reveal delay={0.3}>
-        <p className="mt-3 md:mt-5 text-xs sm:text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="mt-3 md:mt-5 text-sm  md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
               HireTopCoder is a curated network of elite digital experts helping the
               world's most ambitious teams design, build and scale.
             </p>
@@ -79,7 +79,7 @@ export default function CompanyPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="space-y-4 text-foreground/75 text-xs md:text-sm lg:text-lg  font-normal">
+            <div className="space-y-4 text-foreground/75 text-sm md:text-base lg:text-xl  font-normal">
               <p>
                 HireTopCoder started in 2019 as a tiny collective of designers and
                 engineers shipping products for venture-backed startups. Within
