@@ -1,5 +1,5 @@
-import { PageShell } from "@/components/site/PageShell.jsx";
-import ScrollToTop from "@/components/site/ScrollToTop.jsx";
+import { PageShell } from "../../components/site/PageShell.jsx";
+import ScrollToTop from "../../components/site/ScrollToTop.jsx";
 import "../globals.css";
 export const metadata = {
   title: {

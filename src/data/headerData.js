@@ -20,7 +20,7 @@ export const headerData={
       "End-to end digital engineering built around your product goals.",
     featuredCard: {
       tag: "Case Study SAAS",
-      title: "Broker Remarks - listing Platform Rebuild",
+      title: "Broker Remarks - Real State Platform",
       desc: "Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture.",
       actionText: "Read case study",
       href: "/case-studies/brokerremarks",
@@ -171,9 +171,9 @@ export const headerData={
       cards: [
         {
           tag: "CASE STUDY",
-          title: "Broker Remarks - listing Platform Rebuild",
+          title: "Mirco Mitti-Real Estate Investment Platform",
           meta: <>Flutter - Firebase <span className="text-primary">•</span>6 weeks</>,
-          href: "/case-studies/brokerremarks",
+          href: "/case-studies/mircromitti",
         },
         {
           tag: "GUIDE 2025",

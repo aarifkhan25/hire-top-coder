@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { LuArrowRight, LuClock, LuStar } from "react-icons/lu";
 
-import { GhostButton, PrimaryButton } from "@/components/site/PageShell.jsx";
-import { Reveal } from "@/components/site/Reveal.jsx";
-import { homeData } from "@/data/home/homeData.js";
+import { GhostButton, PrimaryButton } from "../../components/site/PageShell.jsx";
+import { Reveal } from "../../components/site/Reveal.jsx";
+import { homeData } from "../../data/home/homeData.js";
 
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
@@ -29,7 +29,7 @@ export default function HomePage() {
 
         <Testimonials />
         <Blog />
-        <CTA />
+        <CTA title={<> Your next hire is  <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span></>} des="  Join thousands of teams shipping faster with the world's most curated talent network." btn1name="Start Hiring Talent" btn1href="/" btn2name="Become an Expert" btn2href="/" />
      
       </motion.main>
     </div>
@@ -116,8 +116,8 @@ function ExpertCard({ expert }) {
         <Image width={500} height={500}
           src={expert.img}
           alt={`${expert.name}, ${expert.role}`}
-          width={640}
           height={800}
+          width={640}
           loading="lazy"
           className="w-full aspect-[4/5] object-cover"
         />
@@ -209,7 +209,7 @@ function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative py-20 lg: py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
+      className="relative px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 overflow-hidden bg-[#0A0A0A]"
     >
       <div className="absolute top-1/3 -left-32 size-[500px] rounded-full bg-primary/15 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 -right-32 size-[500px] rounded-full bg-accent/15 blur-[140px] pointer-events-none" />
@@ -410,7 +410,7 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden bg-[#0A0A0A]"
+      className="relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 overflow-hidden bg-[#0A0A0A]"
     >
       
       <div className="w-full">
@@ -522,7 +522,7 @@ function Blog() {
   return (
     <section
       id="blog"
-      className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 overflow-hidden  bg-[#0A0A0A]   "
+      className="relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20 overflow-hidden  bg-[#0A0A0A]   "
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
         <Reveal> <div className="relative w-full">
@@ -589,24 +589,22 @@ function Blog() {
   );
 }
 
-function CTA() {
+export  function CTA({title,des,btn1name,btn1href,btn2name,btn2href}) {
   return (
-    <section className="relative  py-10  lg:py-28 2xl:py-35 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25    ">
+    <section className="relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20    ">
       <Reveal>
         <div className="mx-auto max-w-5xl relative rounded-3xl glass p-8 md:p-12 lg:p-16 text-center overflow-hidden glow-purple-strong">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
           <div className="relative">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-extrabold leading-tight">
-              Your next hire is 
-              <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span>
+{title}
             </h2>
-            <p className="mt-3 md:mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-xs md:text-sm lg:text-base 1xl:text-xl ">
-              Join thousands of teams shipping faster with the world's most
-              curated talent network.
-            </p>
+            {des && <p className="mt-3 md:mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-xs md:text-sm lg:text-base 1xl:text-xl ">
+            {des}
+            </p> }
             <div className="mt-5 md:mt-9 flex flex-wrap gap-3 justify-center">
-              <PrimaryButton>Start Hiring Talent</PrimaryButton>
-              <GhostButton>Become an Expert</GhostButton>
+              <PrimaryButton href={btn1href} >{btn1name}</PrimaryButton>
+              <GhostButton href={btn2href} >{btn2name}</GhostButton>
             </div>
           </div>
         </div>
@@ -615,20 +613,35 @@ function CTA() {
   );
 }
 
-function SectionHead({ eyebrow, title, sub }) {
+ export function SectionHead({ eyebrow, title, sub }) {
   return (
    
       <div className="text-center max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
+        <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        
+        className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-2 xl:mb-4 font-bold">
           <span className="size-1 rounded-full bg-primary" /> {eyebrow}
-        </div>
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.05]">
+        </motion.div>
+        < motion.h2
+        initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+         className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.05]">
           {title}
-        </h2>
+        </motion.h2>
         {sub && (
-          <p className="mt-4 text-foreground/75 text-xs md:text-base lg:text-xl  font-normal">
+          <motion.p initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+           className="mt-2 xl:mt-4 text-foreground/75 text-[13px] md:text-base lg:text-xl  font-normal">
             {sub}
-          </p>
+          </motion.p>
         )}
       </div>
     
