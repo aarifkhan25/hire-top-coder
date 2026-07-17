@@ -10,7 +10,7 @@ import {
   FiTag,
   FiUser
 } from "react-icons/fi";
-import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Question1, Question4 } from "../ai-design-future/page.jsx";
+import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Question1, Question4 } from "../ai-design-future/ai.jsx";
 
 
 

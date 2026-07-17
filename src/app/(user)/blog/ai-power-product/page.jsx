@@ -2,7 +2,7 @@
 import { FadeUp } from "@/components/site/FadeUp";
 import { Breadcrumb, CTABanner } from "@/components/site/Shared";
 import { useState } from "react";
-import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Keywords, Question1, Question4 } from "../ai-design-future/page.jsx";
+import { ArticleAuthorCard, Cards, Conclusion, HeroHead, Keywords, Question1, Question4 } from "../ai-design-future/ai.jsx";
 import { KeyInsides, Pillar1, Pillar2 } from "../premium-saas-experiences/page.jsx";
 // import {   } from "@/components/site/ ";
 import { FaPlus as Plus } from "react-icons/fa6";
