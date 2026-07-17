@@ -1,5 +1,6 @@
 "use client";
 import { FadeUp } from "@/components/site/FadeUp";
+import { animate } from "framer-motion";
 import {
   BarChart4,
   Brain,
@@ -43,26 +44,6 @@ const cardsContent = [
     { name: "Conclusion", icon: CheckCircle2 },
   ];
 
-const questionsContent={
-  article:"  In This Article",
-   TOC : [
-  { id: "what", label: "What Is Adaptive AI Design?" },
-  {
-    id: "why",
-    label: "Why Generative Interfaces Are Reshaping Product Surfaces",
-  },
-  {
-    id: "role",
-    label: "The Role of AI Model Development in Interface Intelligence",
-  },
-  { id: "metrics", label: "How Adaptive Design Improves Key SaaS Metrics" },
-  {
-    id: "framework",
-    label: "Implementing Adaptive AI Design: A Practical Framework",
-  },
-  { id: "faq", label: "Frequently Asked Questions" },
-]
-};
 
 const ques1Content={
   question:"What Is Adaptive AI Design?",
@@ -96,74 +77,20 @@ const ques2Content={
 }
 
 
-const ques3Content={question:"The Role of AI Model Development in Interface Intelligence",
-  answer:["Adaptive AI design is only as powerful as the model behind it. AI model development teams are now responsible not just for training accurate models, but for ensuring those models can communicate intent, uncertainty, and suggestions through the interface layer.", "This has created a new discipline: model-aware UX design. In this  approach, designers work directly with the model's output space —  understanding what the model knows, what it can infer, and how to  present model-generated content in ways that feel natural, trustworthy, and useful.","The most successful AI products in 2025 — from productivity tools to  enterprise analytics platforms — share a common trait: the interface is designed as a direct extension of the model. Every suggestion, every auto-completed field, every reordered dashboard widget is a model output expressed through design language."]}
-
 
 
   const ques4Content = {
     question: "Business Benefits",
-    answer:
-      "Beyond the theoretical elegance, adaptive AI design delivers measurable results across the metrics that matter most to SaaS businesses:",
     tr: ["Object", "Metric Improment"],
     td: [
-      ["Time to first value", "4–7 days", "Under 24 hours", "High"],
-      ["Feature discovery rate", "23%", "67%", "High"],
-      ["Support ticket volume", "Baseline", "–38% average", "High"],
-      ["30-day user retention", "Baseline", "+62% uplift", "High"],
-      ["Onboarding completion rate", "34%", "71%", "Medium"],
-    ],
-    answer1:
-      "These numbers are not accidents. They result from the fundamental alignment between what a user needs and what the interface presents. Adaptive design reduces cognitive load, eliminates irrelevant choices, and creates a sense of the product \"just working\" — which is the highest form of UX success.",
-  };
-
-  const ques5Content = {
-    question: "Implementing Adaptive AI Design: A Practical Framework",
-    answer:
-      "For teams ready to move from static to adaptive interfaces, the journey typically follows four phases:",
-    phase: [
-      {
-        name: "Phase 1 — Instrument your current interface",
-        content:
-          "Before you can adapt, you must understand how users actually navigate your product. Implement behavioral analytics, session recording, and intent signals across every surface. This data becomes the training signal for your adaptive layer.",
-      },
-      {
-        name: "Phase 2 — Define your context model",
-        content:
-          "Identify the key dimensions of user context that should drive adaptation: role, industry, workflow stage, expertise level, recent actions, and stated goals. These dimensions form the input space for your adaptive system.",
-      },
-      {
-        name: "Phase 3 — Build model-driven UI components",
-        content:
-          "Start with high-impact, low-risk surfaces: search results, onboarding flows, dashboard layouts, and notification systems. Replace static defaults with model-generated outputs. Test rigorously and measure against your baseline metrics.",
-      },
-      {
-        name: "Phase 4 — Close the feedback loop",
-        content:
-          "Adaptive design is not a one-time build. The model must continuously learn from user interactions, implicit signals, and explicit feedback. Build pipelines that update your context model and retrain your interface intelligence layer on a regular cadence.",
-      },
+      ["Faster onboarding", "Up to 3x faster"],
+      ["Feature discovery","67% increase"],
+      ["Support tickets", "38% fewer"],
+      ["User retention", "62% higher" ],
+   
     ],
   };
-
-
-
-
-const KEYWORDS = [
-  "adaptive AI design",
-  "generative UI",
-  "AI model development",
-  "AI product design 2025",
-  "intelligent interface design",
-  "AI SaaS UX",
-  "generative interface",
-  "AI-driven product surface",
-  "conversational UI trends",
-  "future of AI interfaces",
-  "context-aware UI",
-  "AI onboarding design",
-];
-
-
+const getting=[{id:"1",name:"Track behavior",des:"Implement telemetry to understand user intent sequences and common friction points in current static layouts."},{id:"2",name:"Build profiles",des:"Define personas based on technical proficiency and frequency of use rather than just demographic data."},{id:"3",name:"Introduce dashoboards",des:"Launch modular, widget-based views that users can personalize before the AI begins automated optimization."},{id:"4",name:"Continuosly optimize",des:`Use A/B testing specifically for AI-generated layouts to ensure the "adaptive" nature doesn't cause confusion.`},]
 
 const ques6faqcontent = [
   {
@@ -193,18 +120,18 @@ const conclusioncontent={
   answer:["The future of AI design is not about more buttons, better color palettes, or smoother animations. It is about interfaces that think —  that understand who is using them, what they are trying to accomplish, and how to help them get there faster and more confidently than any static design ever could.","Adaptive AI design and generative interfaces represent the next  fundamental shift in how software is experienced. For teams building  AI-powered products, the question is no longer whether to adopt adaptive  design — it is how quickly and how intelligently you can make the transition.","The products that win the next decade will not be the ones with the most powerful models. They will be the ones where the model and the interface become indistinguishable — where the design itself is intelligent."]
 }
 
-const authercontent={
-  word:"HT",heading:"HireTopCoder Team",subheading:" We write about AI model development, product design, and the future of intelligent software.",href:"/blog"
-}
+
 
 export default function AiDesignBlog() {
   return(<section className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 pt-20 md:pt-40 2xl:pt-50 pb-20 px-4">
   <Hero headContent={headContent}/>
 <Main cardsContent={cardsContent} tocItems={tocItems} ques1Content={ques1Content}/>
-    <div className=" max-w-4xl">
-<Question2 ques2Content={ques2Content}/>
-<Question6FAQ ques6faqcontent={ques6faqcontent} />
- <Conclusion conclusioncontent={conclusioncontent} />
+    <div className=" grid gap-10 max-w-4xl">
+<Question2 ques2Content={ques2Content}   />
+<Question4 ques4Content={ques4Content} />
+<Getting getting={getting} />
+<Question6FAQ ques6faqcontent={ques6faqcontent}  />
+ <Conclusion conclusioncontent={conclusioncontent}  />
     </div>
   </section>
   )
@@ -259,6 +186,29 @@ export function Hero({headContent}){
     export function Main({cardsContent,tocItems,ques1Content}){
       const [activeSection, setActiveSection] = useState("Introduction");
   const [email, setEmail] = useState("");
+ const handleScroll = (sectionName) => {
+    setActiveSection(sectionName);
+    
+    const targetId = sectionName.toLowerCase().replace(/\s+/g, "-");
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      // एलिमेंट की स्क्रीन पर सटीक पोजीशन पता करें
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      
+      
+      const navbarOffset = 120; 
+      const targetScrollY = elementPosition - navbarOffset;
+
+      
+      animate(window.scrollY, targetScrollY, {
+        type: "spring",
+        stiffness: 40,   
+        damping: 15,     
+        mass: 0.8,
+        onUpdate: (latest) => window.scrollTo(0, latest)       });
+    }
+  };
       return(<><div className="min-h-screen bg-[#07050a] text-[#938f99] font-sans antialiased selection:bg-[#a855f7]/30 selection:text-white">
       <div className="w-full px-4 py-8  grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         
@@ -299,9 +249,9 @@ export function Hero({headContent}){
           </div>
 
           {/* Typography Article Text Content Layout */}
-          <div className="mt-2 flex flex-col gap-4">
+          <div id="introduction"  className="mt-2 flex flex-col gap-4 scroll-mt-32">
             <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f4effa] font-sans">
-             {ques1Content.question}
+  {ques1Content.question}
             </h1>
 
            {ques1Content.answer.map((ans,i)=>{
@@ -337,7 +287,7 @@ export function Hero({headContent}){
                 return (
                   <button
                     key={index}
-                    onClick={() => setActiveSection(item.name)}
+         onClick={() => handleScroll(item.name)}
                     className={`w-full flex items-center gap-3 px-3 py-2.5 cursor-pointer rounded-sm text-sm font-medium transition-all text-left group
                       ${isActive 
                         ? "bg-[#251f30] text-primary" 
@@ -421,17 +371,17 @@ export function Hero({headContent}){
     }
 
     export function Question2({ques2Content}){
-      return(<div className="">
+      return(<div id="why-it-matters"className="scroll-mt-32">
         <FadeUp>
                 <h2
                   id="why"
-                  className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
+                  className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-5"
                 >
                   {ques2Content?.question}
                 </h2>
               </FadeUp>
               <FadeUp>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       { ques2Content?.FEATURES.map((f,i) => (
                         <div
                         key={i}
@@ -450,17 +400,103 @@ export function Hero({headContent}){
                         </FadeUp>
       </div>)
     }   
+    export const Question4 = ({ques4Content}) => {
+      return (
+        <div id="business-benefits" className="scroll-mt-32">
+          
+          <FadeUp>
+            <h2
+              id="metrics"
+              className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
+            >
+              {ques4Content?.question}
+            </h2>
+          </FadeUp>
+       
+          {/* Table Section */}
+        <div className="overflow-x-auto rounded-[8px] my-6 border border-white/50">
+  <table className="w-full border-collapse">
+    <thead>
+      <tr className="bg-[#141418] text-base 2xl:text-lg border-b border-white/50">
+        {ques4Content?.tr.map((h) => (
+          <th
+            key={h}
+            
+            className="px-4 py-[11px] text-primary text-[11px] xl:text-sm font-bold text-center tracking-wider  last:border-r-0"
+          >
+            {h}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {ques4Content?.td.map((row, i) => (
+        <tr
+          key={i}
+          className="border-b border-white/50 last:border-b-0 group hover:bg-[#141418]"
+        >
+          {row.map((cell, j) => (
+            <td
+              key={j}
+            
+              className="px-4 py-[11px] text-[13px] font-semibold group-hover:text-white text-white/90 text-center border-r border-white/5 last:border-r-0"
+            >
+              {cell}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+        </div>
+      );
+    };
+
+
+    export const Getting=({getting})=>{
+     return(<div id="getting-started" className="scroll-mt-32">
+        <FadeUp>
+                <h2
+                  id="why"
+                  className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4">
+                  Getting Started
+                </h2>
+              </FadeUp>
+              <FadeUp>
+              <div className="grid  gap-5 mt-5 ">
+                      { getting?.map((g) => (
+                        <div
+                        key={g.id}
+                          className="flex gap-3  items-center   "
+                        >
+                       <div className="w-10 h-10 xl:w-12 xl:h-12 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+
+                                          <span className="text-lg xl:text-2xl text-primary"> {g.id}</span>
+                                          </div>  
+                          
+                          <div className="flex flex-col gap-1  text-white/50 group-hover:text-white ">
+                            <span  className="text-base  2xl:text-xl text-white ">{g.name}</span>
+                            <span className="text-sm  2xl:text-lg">{g.des}</span>
+                            
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                        </FadeUp>
+      </div>)
+    }
     export const Question6FAQ = ({ques6faqcontent}) => {
       const [openFaq, setOpenFaq] = useState(0);
       return (
-        <>
+        <div>
           {" "}
           <h2
             id="faq"
-            className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
+            className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-7"
           >
            Frequently Asked Questions</h2>
-          <div className="mt-4 mb-8">
+          <div className="">
             {ques6faqcontent?.map((f, i) => {
               const isOpen = openFaq === i;
               return (
@@ -489,7 +525,7 @@ export function Hero({headContent}){
               );
             })}
           </div>
-        </>
+        </div>
       );
     };
 
@@ -497,9 +533,9 @@ export function Hero({headContent}){
 
     export const Conclusion = ({conclusioncontent}) => {
   return (
-    <div className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm p-10 ">
+    <div id="conclusion"  className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm p-10 scroll-mt-32">
       
-      <h2 className="text-2xl 2xl:text-3xl font-semibold text-white tracking-tight mb-4">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mb-4">
        {conclusioncontent?.question}
       </h2>
        {
