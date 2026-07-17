@@ -1,27 +1,32 @@
 "use client";
 import { FadeUp } from "@/components/site/FadeUp";
-import { Breadcrumb, CTABanner } from "@/components/site/Shared";
-// import {   } from "@/components/site/ ";
-import Link from "next/link";
+import {
+  BarChart4,
+  Brain,
+  CheckCircle2,
+  Hexagon,
+  Info,
+  Layers2,
+  MessagesSquare, Sparkles,
+  Zap
+} from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { FaPlus as Plus } from "react-icons/fa6";
 import {
   FiCalendar,
-  FiClock,
-  FiTag,
-  FiUser
+  FiClock
 } from "react-icons/fi";
-import { PiSparkleFill } from "react-icons/pi";
 
 const headContent = {
   title: "AI Sector · Model Development · June 2025",
-  heading: "The Future of AI Design Is Adaptive: How Generative Interfaces Are Reshaping Every Product Surface",
+  heading: <>The Future of AI Design Is <span className="text-gradient-purple">Adaptive</span> : How Generative Interfaces Are Reshaping Every Product Surface</>,
   subheading: "Generative interfaces are no longer a concept — they are the new standard for AI-powered products. Here's what adaptive AI design means, why it matters, and how your SaaS product can benefit right now.",
   catg: [
-    { icon: <FiUser />, name: "HireTopCoder Team" },
+    // { icon: <FiUser />, name: "HireTopCoder Team" },
     { icon: <FiCalendar />, name: "Published June 19, 2025" },
     { icon: <FiClock />, name: "8 min read" },
-    { icon: <FiTag />, name: " AI Design · SaaS · Model Development" },
+    // { icon: <FiTag />, name: " AI Design · SaaS · Model Development" },
   ],
 };
 
@@ -30,6 +35,13 @@ const cardsContent = [
             { n: "3×", l: "Faster adoption with adaptive UI" },
             { n: "+62%", l: "User retention uplift reported" },
           ];
+          const tocItems = [
+    { name: "Introduction", icon: Info },
+    { name: "Why It Matters", icon: BarChart4 },
+    { name: "Business Benefits", icon: Hexagon },
+    { name: "Getting Started", icon: Zap },
+    { name: "Conclusion", icon: CheckCircle2 },
+  ];
 
 const questionsContent={
   article:"  In This Article",
@@ -60,16 +72,26 @@ card: "Generative UI is not just about generating text — it's about generating
 
 
 const ques2Content={
-  question:"Why Generative Interfaces Are Reshaping Product Surfaces",
-  answer:["The shift from static to generative interfaces is being driven by three converging forces: the maturity of large language models, rising user  expectations for personalization, and the explosion of multi-modal AI applications."," Traditional UI design operates on assumptions — designers predict what users will need and build fixed paths. But real users behave unpredictably. They come from different industries, have different skill levels, and arrive at your product with wildly different goals. A static interface forces every user through the same tunnel, regardless of fit."," Generative interfaces dissolve this constraint entirely. Instead of a fixed tunnel, the product surface becomes a responsive environment — one that reads context, understands intent, and presents exactly what theuser needs in that moment."],
-  heading:"Key capabilities of generative interface design:",
+  question:"Why  Generative Interfaces Matter",
+ 
   FEATURES : [
-  "Context-aware layouts that rearrange based on task and role",
-  "AI-driven onboarding that adapts to user profile and industry",
-  "Conversational navigation replacing static menus",
-  "Predictive UI elements that surface before users search",
-  "Real-time content generation within the interface itself",
-  "Dynamic forms that simplify based on prior user answers",
+    {
+
+     name:"Context-aware layouts",des: "Context-aware layouts that rearrange based on task and role",icon:Layers2
+  },
+   {
+
+    name:"AI-driven onboarding",des: "AI-driven onboarding that adapts to user profile and industry",icon:Brain
+  },
+   {
+
+    name:"Conversational Navigation",des: "Conversational navigation replacing static menus",icon:MessagesSquare
+  },
+   {
+    name:"Predictive UI",des: "Predictive UI elements that surface before users search",icon:Sparkles
+
+  },
+
 ]
 }
 
@@ -80,10 +102,10 @@ const ques3Content={question:"The Role of AI Model Development in Interface Inte
 
 
   const ques4Content = {
-    question: "How Adaptive Design Improves Key SaaS Metrics",
+    question: "Business Benefits",
     answer:
       "Beyond the theoretical elegance, adaptive AI design delivers measurable results across the metrics that matter most to SaaS businesses:",
-    tr: ["Metric", "Traditional UI", "Adaptive AI UI", "Impact"],
+    tr: ["Object", "Metric Improment"],
     td: [
       ["Time to first value", "4–7 days", "Under 24 hours", "High"],
       ["Feature discovery rate", "23%", "67%", "High"],
@@ -167,7 +189,7 @@ const ques6faqcontent = [
 ]
 
 const conclusioncontent={
-  question:" Conclusion: Design Is Now a Model Problem",
+  question:" Conclusion",
   answer:["The future of AI design is not about more buttons, better color palettes, or smoother animations. It is about interfaces that think —  that understand who is using them, what they are trying to accomplish, and how to help them get there faster and more confidently than any static design ever could.","Adaptive AI design and generative interfaces represent the next  fundamental shift in how software is experienced. For teams building  AI-powered products, the question is no longer whether to adopt adaptive  design — it is how quickly and how intelligently you can make the transition.","The products that win the next decade will not be the ones with the most powerful models. They will be the ones where the model and the interface become indistinguishable — where the design itself is intelligent."]
 }
 
@@ -175,491 +197,309 @@ const authercontent={
   word:"HT",heading:"HireTopCoder Team",subheading:" We write about AI model development, product design, and the future of intelligent software.",href:"/blog"
 }
 
-const meta1 = [
-  {
-    title:
-      "The Future of AI Design Is Adaptive | Generative UI & AI Model Development 2025",
-  },
-  {
-    name: "description",
-    content:
-      "Discover how adaptive AI design and generative interfaces are reshaping every product surface in 2025. Learn the key strategies for AI model development, intelligent UI, and SaaS product design.",
-  },
-  {
-    name: "keywords",
-    content:
-      "adaptive AI design, generative UI, AI model development, intelligent interface design, AI SaaS UX, conversational UI, AI product design 2025, future of AI interfaces, generative interface, AI-driven product surface",
-  },
-  { name: "author", content: "HireTopCoder" },
-  { name: "robots", content: "index, follow" },
-  { property: "og:type", content: "article" },
-  {
-    property: "og:title",
-    content: "The Future of AI Design Is Adaptive | Generative Interfaces 2025",
-  },
-  {
-    property: "og:description",
-    content:
-      "How generative interfaces are reshaping every product surface — from dashboards to chat, onboarding to analytics.",
-  },
-  { property: "og:site_name", content: "HireTopCoder" },
-  { property: "og:url", content: "/blog/adaptive-ai-design-future" },
-  { property: "article:published_time", content: "2025-06-19T00:00:00Z" },
-  { property: "article:section", content: "AI & Technology" },
-  { name: "twitter:card", content: "summary_large_image" },
-  {
-    name: "twitter:title",
-    content: "The Future of AI Design Is Adaptive | Generative Interfaces 2025",
-  },
-  {
-    name: "twitter:description",
-    content:
-      "How generative interfaces are reshaping every product surface — from dashboards to chat, onboarding to analytics.",
-  },
-];
-const meta2 = [{ rel: "canonical", href: "/blog/adaptive-ai-design-future" }];
-const meta3 = [
-  {
-    type: "application/ld+json",
-    children: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline:
-        "The Future of AI Design Is Adaptive: How Generative Interfaces Are Reshaping Every Product Surface",
-      description:
-        "How adaptive AI design and generative interfaces are reshaping every product surface in 2025.",
-      author: { "@type": "Organization", name: "HireTopCoder" },
-      publisher: { "@type": "Organization", name: "HireTopCoder" },
-      datePublished: "2025-06-19",
-      wordCount: 1550,
-    }),
-  },
-  {
-    type: "application/ld+json",
-    children: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: ques6faqcontent.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    }),
-  },
-  {
-    type: "application/ld+json",
-    children: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Adaptive AI Design",
-          item: "/blog/adaptive-ai-design-future",
-        },
-      ],
-    }),
-  },
-];
+export default function AiDesignBlog() {
+  return(<section className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 pt-20 md:pt-40 2xl:pt-50 pb-20 px-4">
+  <Hero headContent={headContent}/>
+<Main cardsContent={cardsContent} tocItems={tocItems} ques1Content={ques1Content}/>
+    <div className=" max-w-4xl">
+<Question2 ques2Content={ques2Content}/>
+<Question6FAQ ques6faqcontent={ques6faqcontent} />
+ <Conclusion conclusioncontent={conclusioncontent} />
+    </div>
+  </section>
+  )
+}
 
-export default function BlogPost() {
-  return (
-    <>
-      <article className="mx-auto pt-30 max-w-[760px] px-5 pt-14 pb-20">
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Home", to: "/" },
-            { label: "Blog" },
-            { label: "Adaptive AI Design" },
-          ]}
-        />
-        <HeroHead headContent={headContent} />
-
-        {/* Stats */}
-        <Cards cardsContent={cardsContent} />
-
-        {/* TOC (Table of Contents) */}
-        <Questions questionsContent={questionsContent} />
-
-        {/* BODY */}
-        {/* questions*/}
-        <Question1 ques1Content={ques1Content} />
-
-        <Question2 ques2Content={ques2Content}/>
-        <Question3 ques3Content={ques3Content}/>
-        <Question4 ques4Content={ques4Content}/>
-        <Question5 ques5Content={ques5Content}/>
-
-        {/* Keyword pills */}
-        <Keywords KEYWORDS={KEYWORDS} />
-
-        {/* FAQ */}
-        <Question6FAQ ques6faqcontent={ques6faqcontent} />
-
-        {/* Conclusion */}
-        <Conclusion conclusioncontent={conclusioncontent} />
-
-        {/* CTA Box */}
-        <FadeUp>
-          <CTABanner
-            title="Ready to Build Adaptive AI Experiences?"
-            sub="Talk to our team about integrating intelligent, generative UI into your product today."
-            ctaLabel="Get in Touch"
-            to="/contact"
-          />
+export function Hero({headContent}){
+  return(<><div className="max-w-2xl">
+   <FadeUp>
+          <p className="text-[11px] 2xl:text-sm font-bold uppercase tracking-[1.5px]  text-primary">
+            {headContent.title}
+          </p>
         </FadeUp>
-        {/* Author Card */}
-        <ArticleAuthorCard authercontent={authercontent} />
-      </article>
-    </>
-  );
-}
-
-export function ImpactPill({ value }) {
-  const isHigh = value === "High" || value?.startsWith("+");
+        <FadeUp delay={0.05}>
+          <h1 className="text-[clamp(26px,4.5vw,34px)] 2xl:text-[clamp(28px,5vw,36px)] font-medium leading-tight text-white tracking-[-1px] mt-3.5">
+            {headContent.heading}
+          </h1>
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <p className="text-base text-white/50 leading-[1.7] mt-[18px]">
+            {headContent.subheading}
+          </p>
+        </FadeUp>
   
-  return (
-    <span
-      className={`text-[10px] px-2.5 py-0.5 rounded-full font-bold tracking-[0.5px] uppercase ${
-        isHigh 
-          ? "bg-green-500/12 text-[#4ade80]" 
-          : "bg-amber-500/12 text-[#fbbf24]"
-      }`}
-    >
-      {value}
-    </span>
-  );
-}
+  </div>
+  <div className="flex items-center gap-5 border-y border-white/50 py-5 mt-5">
+    <div className="flex gap-5">
+       <div className="w-8 h-8 xl:w-10 xl:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors hover:border-primary" >
 
-export const HeroHead = ({ headContent }) => {
-  return (
-    <>
-      {/* Header */}
-      <FadeUp>
-        <p className="text-[11px] 2xl:text-sm font-bold uppercase tracking-[1.5px]  text-primary">
-          {headContent.title}
-        </p>
-      </FadeUp>
-      <FadeUp delay={0.05}>
-        <h1 className="text-[clamp(26px,4.5vw,34px)] 2xl:text-[clamp(28px,5vw,36px)] font-medium leading-tight text-white tracking-[-1px] mt-3.5">
-          {headContent.heading}
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.1}>
-        <p className="text-base text-white/50 leading-[1.7] mt-[18px]">
-          {headContent.subheading}
-        </p>
-      </FadeUp>
-
-      {/* Meta row */}
-      <div className="flex flex-wrap gap-[18px] border-t border-b border-white/5 py-4 my-7 text-[12px] text-white/35">
+                                          <span className="text-lg xl:text-2xl text-primary">H</span>
+                                          </div>  
+                                          <div className="">
+                                            <h1 className="text-white text-sm xl:text-base">HireTopCoder Team</h1>
+                                            <p className="text-white/50 text-xs xl:text-sm"> Strategic Insights Group</p>
+                                          </div>
+    </div>
+    <div className=" flex gap-10">
       {headContent?.catg.map((c,i)=>(<span  key={i} className="inline-flex items-center gap-1.5 group">
-          <span  className=" text-primary text-base 2xl:text-xl">{c.icon}</span>
-          <span className="font-medium text-white/65 group-hover:text-white">{c.name}</span>
+          <span  className=" text-primary text-lg 2xl:text-2xl">{c.icon}</span>
+          <span className="font-medium text-white/65 group-hover:text-white text-xs xl:text-sm">{c.name}</span>
         </span>
       ))
+      
+    }
+  </div>
+  </div>
+  </>)
+}
 
-      }
+
+
+
+    export function Main({cardsContent,tocItems,ques1Content}){
+      const [activeSection, setActiveSection] = useState("Introduction");
+  const [email, setEmail] = useState("");
+      return(<><div className="min-h-screen bg-[#07050a] text-[#938f99] font-sans antialiased selection:bg-[#a855f7]/30 selection:text-white">
+      <div className="w-full px-4 py-8  grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         
-      </div>
-    </>
-  );
-};
-export const Cards = ({cardsContent}) => {
-  return (
-    <>
-      <FadeUp>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-[14px] mb-10">
-          {cardsContent?.map((s) => (
+        {/* LEFT COLUMN: Image, Metrics, Content */}
+        <div className="lg:col-span-2 flex flex-col gap-6 w-full">
+          
+          {/* Main 3D Tech Showcase Graphic Frame */}
+          <div className="relative w-full aspect-[16/10] rounded-xl border border-white/[0.06] bg-[#120e16] overflow-hidden shadow-2xl shadow-purple-950/20">
+            {/* 
+              Placeholder matching dark purple matrix structure seen in visual grid.
+              In production, replace with your local high-fidelity 3D layer compilation asset.
+            */}
+            <div className="absolute inset-0 bg-primary/10 z-10 pointer-events-none" />
+            <div className="w-full h-full relative flex items-center justify-center p-4">
+              <div className="absolute inset-0 bg-cover bg-center opacity-80" />
+              {/* Fallback structural content mockup layer */}
+              <Image width="500" height="500" src="/assets/blog-1.png" alt="img" loading="lazy" className="w-full h-full rounded-lg bg-black/40 backdrop-blur-xs border border-white/5   "/>
+   
+            
+            </div>
+          </div>
+
+          {/* Core Analytics Cards Block */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+           {cardsContent?.map((s) => (
             <div
               key={s.n}
-              className="text-center bg-gradient-to-t from-black/80 to-transparent border group border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-text-xs rounded-sm px-4 py-5"
+              className="text-center bg-gradient-to-t from-black/80 to-transparent border group border-[oklch(0.62_0.26_305/0.15)] hover-glow-card rounded-text-xs rounded-sm p-10"
             >
-              <div className="text-[26px] 2xl:text-4xl font-semibold  text-primary tracking-[-0.5px]">
+              <div className="text-3xl 2xl:text-5xl font-semibold  text-primary tracking-[-0.5px]">
                 {s.n}
               </div>
-              <div className="text-[11px] 2xl:text-base text-white/40 mt-3 font-semibold group-hover:text-white leading-normal">
+              <div className="text-xs 2xl:text-base text-white/40 mt-3 font-semibold group-hover:text-white leading-normal">
                 {s.l}
               </div>
             </div>
           ))}
-        </div>
-      </FadeUp>
-    </>
-  );
-};
-export const Questions = ({questionsContent}) => {
-  return (
-    <FadeUp>
-      <div className="bg-gradient-to-t from-black/80 to-transparent border border-[oklch(0.62_0.26_305/0.15)] hover-glow-card  rounded-xl px-5.5 py-5 mb-8">
-        <div className="text-[11px] lg:text-sm 2xl:text-base uppercase text-white tracking-[1.5px] font-bold">
-          {questionsContent?.article}
+          </div>
 
+          {/* Typography Article Text Content Layout */}
+          <div className="mt-2 flex flex-col gap-4">
+            <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#f4effa] font-sans">
+             {ques1Content.question}
+            </h1>
+
+           {ques1Content.answer.map((ans,i)=>{
+            return(
+ <p key={i} className="text-sm sm:text-base text-[#a6a0b0] leading-relaxed font-normal">
+            {ans}
+            </p>
+            )
+           }) 
+           
+            }
+          </div>
         </div>
-        <ul className="mt-3 flex flex-col gap-2">
-          {questionsContent?.TOC.map((t) => (
-            <li key={t.id}>
-              <a
-                href={`#${t.id}`}
-                className="text-[13px] 2xl:text-sm text-white/50 font-semibold hover:text-primary transition-colors"
-              >
-                {t.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </FadeUp>
-  );
-};
-export const Question1 = ({ques1Content}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <h2
-          id="what"
-          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-9 mb-4"
-        >
-        {ques1Content?.question}
-        </h2>
-      </FadeUp>
-       {
-ques1Content?.answer.map((a, i) => (
-        <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
-          {a}
-        </p>
-      ))}
-     
-      {/* Blockquote / Callout */}
-      <div className={`${ques1Content?.role==="hide"?"hidden":"block"} bg-[#a78bfa]/5 border-l-3 border-primary rounded-r-xl px-5.5 py-4.5 my-7 text-[15px] italic font-medium text-white/75 leading-[1.7]`}>
-       {ques1Content?.card} 
-      </div>
-    </>
-  );
-};
-export const Question2 = ({ques2Content}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <h2
-          id="why"
-          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
-        >
-          {ques2Content?.question}
-        </h2>
-      </FadeUp>
-      {
-ques2Content?.answer.map((a, i) => (
-        <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
-          {a}
-        </p>
-      ))}
-    
-      <h3 className="text-base font-semibold text-white/90 mt-7 mb-3">
-       {ques2Content?.heading}
-      </h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3 mb-8">
-        { ques2Content?.FEATURES.map((f) => (
-          <div
-            key={f}
-            className="flex gap-3 justify-center items-center bg-[#0d0d0d]  group border border-primary/30 rounded-[9px] px-3.5 py-3.5   "
-          >
-            <div className=" text-primary  w-7 h-7">
-              <PiSparkleFill className="  w-7 h-7" />
+
+        {/* RIGHT COLUMN: Sidebar Widgets (TOC, Bio, Subscription) */}
+        <div className="flex flex-col gap-6 w-full lg:sticky lg:top-8">
+          
+          {/* Box 1: Table of Contents */}
+          <div className="bg-primary/10 border border-white/[0.05] rounded-xl p-5 flex flex-col gap-4">
+            <div>
+              <h2 className="text-xl font-semibold text-white tracking-wide">
+                Table of Contents
+              </h2>
+              <p className="text-[10px] font-bold tracking-widest text-white/50 uppercase mt-0.5">
+                ARTICLE SECTIONS
+              </p>
             </div>
-            <div className="text-[13.5px] 2xl:text-base text-white/50 group-hover:text-white ">
-              {" "}
-              {f}
+
+            <nav className="flex flex-col gap-1">
+              {tocItems.map((item, index) => {
+                const IconComponent = item.icon;
+                const isActive = activeSection === item.name;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => setActiveSection(item.name)}
+                    className={`w-full flex items-center gap-3 px-3 py-2.5 cursor-pointer rounded-sm text-sm font-medium transition-all text-left group
+                      ${isActive 
+                        ? "bg-[#251f30] text-primary" 
+                        : "text-[#a6a1b0] hover:bg-primary/50 hover:text-[#e4daf5]"
+                      }`}
+                  >
+                    <IconComponent className={`w-4 h-4 shrink-0 transition-colors ${isActive ? "text-primary" : "text-[#7b7587] group-hover:text-purple-400"}`} />
+                    <span>{item.name}</span>
+                  </button>
+                );
+              })}
+            </nav>
+
+            <button className="w-full mt-2 py-2.5 px-4 bg-primary border border-ring/30 hover:border-ring text-xs xl:text-sm cursor-pointer font-semibold text-white rounded-sm tracking-wide hover:bg-accent active:scale-[0.99] transition-all">
+              Subscribe to Newsletter
+            </button>
+          </div>
+
+          {/* Box 2: Author Bio Card */}
+          <div className="bg-primary/10 border border-white/[0.05] rounded-xl p-5 flex flex-col gap-3">
+            <span className="text-xs font-semibold text-white">
+              Written by
+            </span>
+            <div className="flex items-center gap-3.5">
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-purple-950 border border-purple-500/20 shadow-inner shrink-0">
+              
+                <Image 
+                  src="/assets/blog-1.png" 
+                  alt="Alex Rivera"
+                  fill
+                  className="object-cover opacity-90  transition-all"
+                  onError={(e) => {
+                    // Fallback to stylized box safely if profile picture asset isn't mounted
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <div className="flex flex-col">
+                <h4 className="text-sm font-semibold text-white leading-tight">
+                  Alex Rivera
+                </h4>
+                <p className="text-xs text-white/50 font-medium mt-0.5">
+                  Lead Product Designer
+                </p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </>
-  );
-};
-export const Question3 = ({ques3Content}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <h2
-          id="role"
-          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
-        >
-          {ques3Content?.question}
-        </h2>
-      </FadeUp>
-      {
-ques3Content?.answer.map((a, i) => (
-        <p key={i} className="text-[15px] text-white/70 leading-[1.75] mb-5">
-          {a}
-        </p>
-      ))}
-     
-    </>
-  );
-};
-export const Question4 = ({ques4Content}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <h2
-          id="metrics"
-          className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
-        >
-          {ques4Content?.question}
-        </h2>
-      </FadeUp>
-      <p className="text-[15px] text-white/70 leading-[1.75] mb-4">
-       {ques4Content?.answer}
-      </p>
-      {/* Table Section */}
-      <div className="overflow-x-auto   my-6">
-        <table className="w-full border-collapse min-w-[560px]">
-          <thead>
-            <tr className="bg-[#141418] text-base 2xl:text-lg border-b border-primary">
-              {ques4Content?.tr.map(
-                (h) => (
-                  <th
-                    key={h}
-                    className="px-4 py-[11px]  text-primary text-[11px] uppercase font-bold text-left tracking-wider"
-                  >
-                    {h}
-                  </th>
-                ),
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {ques4Content?.td.map((row, i) => (
-              <tr
-                key={row[0]}
-                className={`border-b border-white/5 last:border-b-0 group hover:bg-[#141418] ${
-                  i % 2 === 1 ? "bg-white/[0.015]" : "bg-transparent"
-                }`}
-              >
-                {row.map((cell, j) => (
-                  <td
-                    key={j}
-                    className="px-4 py-[11px] text-[13px] font-semibold group-hover:text-white text-white/55"
-                  >
-                    {j === 3 ? <ImpactPill value={cell} /> : cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className={`${ques4Content?.role ==="hide"?"hidden":"block"} text-[15px] text-white/70 leading-[1.75] mb-8`}>
-       {ques4Content?.answer1}
-      </p>
-    </>
-  );
-};
-export const Question5 = ({ques5Content}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <h2
-          id="framework"
-          className="text-xl  2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
-        >
-          {ques5Content?.question}
-        </h2>
-      </FadeUp>
-      <p className="text-[15px] text-white/70 leading-[1.75] mb-5">
-        {ques5Content?.answer}
-      </p>
-      {ques5Content?.phase.map((curE, i) => (
-        <div key={i}>
-          <h3 className="text-base font-semibold text-white/90 mt-6 mb-2">
-            {curE.name}
-          </h3>
-          <p className="text-[15px] text-white/70 leading-[1.75] mb-5">
-            {curE.content}
-          </p>
-        </div>
-      ))}
-    </>
-  );
-};
 
-export const Keywords = ({KEYWORDS}) => {
-  return (
-    <>
-      {" "}
-      <h2 className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-3">
-        Target Keywords for This Article
-      </h2>
-      <div className="flex flex-wrap gap-2 mt-3.5 mb-7">
-        {KEYWORDS.map((k) => (
-          <span
-            key={k}
-            className="border border-white/10  bg-primary/10 transition-colors hover:border-primary text-primary  hover:text-[#F0EDFF] text-[12px] 2xl:text-sm font-semibold px-3.5 py-1.5 rounded-full"
-          >
-            {k}
-          </span>
-        ))}
+          {/* Box 3: Stay Informed Lead Gen Form */}
+          <div className="bg-primary/10 border border-white/[0.05] rounded-xl p-5 flex flex-col gap-4">
+            <div className="flex flex-col gap-1">
+              <h3 className="text-xl font-semibold text-white tracking-tight">
+                Stay Informed
+              </h3>
+              <p className="text-xs text-white/50 leading-relaxed font-medium">
+                Get the latest technical insights delivered weekly to your inbox.
+              </p>
+            </div>
+
+            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2.5">
+              <input
+                type="email"
+                placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-black border border-white/[0.08] focus:border-[#b487fc]/50 rounded-sm px-3.5 py-2.5 text-xs text-white placeholder-[#5d5866] focus:outline-hidden transition-all shadow-inner"
+                required
+              />
+              <button 
+                 className="w-full mt-2 py-2.5 px-4 bg-primary border border-ring/30 hover:border-ring text-xs xl:text-sm cursor-pointer font-semibold text-white rounded-sm tracking-wide hover:bg-accent active:scale-[0.99] transition-all">
+              
+                Subscribe Now
+              </button>
+            </form>
+          </div>
+
+        </div>
+
       </div>
-    </>
-  );
-};
-export const Question6FAQ = ({ques6faqcontent}) => {
-  const [openFaq, setOpenFaq] = useState(0);
-  return (
-    <>
-      {" "}
-      <h2
-        id="faq"
-        className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
-      >
-       Frequently Asked Questions</h2>
-      <div className="mt-4 mb-8">
-        {ques6faqcontent?.map((f, i) => {
-          const isOpen = openFaq === i;
-          return (
-            <FadeUp key={f.q} delay={i * 0.06}>
-              <div className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm mb-2.5 overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(isOpen ? -1 : i)}
-                  className="w-full flex justify-between items-center text-left px-4.5 py-4 font-medium text-white text-[14.5px] cursor-pointer"
+    </div></>)
+    }
+
+    export function Question2({ques2Content}){
+      return(<div className="">
+        <FadeUp>
+                <h2
+                  id="why"
+                  className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
                 >
-                  <span>{f.q}</span>
-                  <Plus
-                    size={18}
-                    className={` text-primary shrink-0 ml-3 transition-transform duration-250 ${
-                      isOpen ? "rotate-45" : "rotate-0"
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-4.5 pb-4 text-[13.5px] text-white/70 leading-[1.75]">
-                    {f.a}
+                  {ques2Content?.question}
+                </h2>
+              </FadeUp>
+              <FadeUp>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3 mb-8">
+                      { ques2Content?.FEATURES.map((f,i) => (
+                        <div
+                        key={i}
+                          className="flex gap-3  items-center bg-[#0d0d0d]  group border border-primary/30 rounded-[9px] px-3.5 py-3.5   "
+                        >
+                          <f.icon className=" text-primary  w-7 h-7"/>
+                          
+                          <div className="flex flex-col gap-1  text-white/50 group-hover:text-white ">
+                            <span  className="text-sm  2xl:text-lg text-white ">{f.name}</span>
+                            <span className="text-xs  2xl:text-base">{f.des}</span>
+                            
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                        </FadeUp>
+      </div>)
+    }   
+    export const Question6FAQ = ({ques6faqcontent}) => {
+      const [openFaq, setOpenFaq] = useState(0);
+      return (
+        <>
+          {" "}
+          <h2
+            id="faq"
+            className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4"
+          >
+           Frequently Asked Questions</h2>
+          <div className="mt-4 mb-8">
+            {ques6faqcontent?.map((f, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <FadeUp key={f.q} delay={i * 0.06}>
+                  <div className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm mb-2.5 overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                      className="w-full flex justify-between items-center text-left px-4.5 py-4 font-medium text-white text-[14.5px] cursor-pointer"
+                    >
+                      <span>{f.q}</span>
+                      <Plus
+                        size={18}
+                        className={` text-primary shrink-0 ml-3 transition-transform duration-250 ${
+                          isOpen ? "rotate-45" : "rotate-0"
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <div className="px-4.5 pb-4 text-[13.5px] text-white/70 leading-[1.75]">
+                        {f.a}
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </FadeUp>
-          );
-        })}
-      </div>
-    </>
-  );
-};
-export const Conclusion = ({conclusioncontent}) => {
+                </FadeUp>
+              );
+            })}
+          </div>
+        </>
+      );
+    };
+
+
+
+    export const Conclusion = ({conclusioncontent}) => {
   return (
-    <>
-      {" "}
-      <h2 className="text-xl 2xl:text-2xl font-semibold text-white tracking-tight mt-12 pt-6 border-t border-white/5 mb-4">
+    <div className="bg-[#0d0d0d] border border-[oklch(0.62_0.26_305/0.15)] rounded-sm p-10 ">
+      
+      <h2 className="text-2xl 2xl:text-3xl font-semibold text-white tracking-tight mb-4">
        {conclusioncontent?.question}
       </h2>
        {
@@ -669,38 +509,6 @@ conclusioncontent?.answer.map((a, i) => (
         </p>
       ))}
     
-    </>
-  );
-};
-
-export const ArticleAuthorCard = ({authercontent}) => {
-  return (
-    <>
-      {" "}
-      <FadeUp>
-        <div className="flex items-center gap-3.5 bg-[#0d0d0d] border border-primary rounded-xl p-5">
-          <div className="grid place-items-center shrink-0 w-12 h-12 2xl:w-15 2xl:h-15 border border-primary rounded-full bg-[#a78bfa]/15  text-primary font-semibold text-[14px] 2xl:text-lg">
-            {authercontent?.word}
-          </div>
-
-          <div className=" grid min-w-0">
-            <div className="text-[14px] 2xl:text-xl text-white font-medium">
-              {authercontent?.heading}
-            </div>
-            <div className="text-[12.5px] 2xl:text-base text-white/40 mt-0.5 font-semibold leading-[1.55]">
-             {authercontent?.subheading}
-            </div>
-            <div>
-              <Link
-                href={authercontent?.href}
-                className=" text-xs 2xl:text-sm font-semibold text-primary hover:underline"
-              >
-                Read more articles →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </FadeUp>
-    </>
+    </div>
   );
 };
