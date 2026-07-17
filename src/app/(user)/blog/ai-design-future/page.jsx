@@ -203,7 +203,7 @@ export function Hero({headContent}){
       
       animate(window.scrollY, targetScrollY, {
         type: "spring",
-        stiffness: 40,   
+        stiffness: 50,   
         damping: 15,     
         mass: 0.8,
         onUpdate: (latest) => window.scrollTo(0, latest)       });
