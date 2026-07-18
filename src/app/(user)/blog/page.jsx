@@ -129,12 +129,12 @@ export default function BlogPage() {
           <Reveal>
             <TiltCard className="group relative rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
               <div className="grid md:grid-cols-2 ">
-                <div className="relative aspect-[16/11] md:aspect-auto overflow-hidden order-2 md:order-1">
+                <div className=" relative aspect-[16/11] md:aspect-auto overflow-hidden ">
                   <Image width={500} height={500}   priority={false}  src={featured.img} alt={featured.title}
                     className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1400ms]" />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
                 </div>
-                <div className="p-6 md:p-8  xl:p-12 2xl:p-25  flex flex-col justify-center order-1 md:order-2   glass">
+                <div className=" p-6 md:p-8  xl:p-12 2xl:p-25  flex flex-col justify-center    glass">
                   <div className="text-[9px] md:text-[11px] xl:text-xs 2xl:text-base font-mono uppercase tracking-[0.25em] text-primary font-bold">Featured · {featured.cat}</div>
                   <h2 className="mt-2 md:mt-4 text-xl md:text-3xl lg:text-4xl 2xl:text-[38px] font-extrabold tracking-tight leading-tight">{featured.title}</h2>
                   <p className="mt-2 md:mt-4 text-foreground/75 text-[11px] md:text-xs lg:text-base 2xl:text-lg font-medium">{featured.desc}</p>
@@ -144,7 +144,7 @@ export default function BlogPage() {
                     <span className="text-xs  lg:text-base 2xl:text-lg">By the Hire Top Coder </span>
                   </div>
                   <div className="mt-5 md:mt-8">
-                    <PrimaryButton href="/blog ">Read the Report</PrimaryButton>
+                    <PrimaryButton href="/blog/ai-design ">Read the Report</PrimaryButton>
                   </div>
                 </div>
               </div>

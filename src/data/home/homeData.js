@@ -14,6 +14,8 @@ const blog2 = "/assets/blog-2.png";
 const blog3 = "/assets/blog-3.png";
 const blog4 = "/assets/blog-4.png";
 
+const port3image="/assets/case-studies/micromitti/img1.png";
+
 export const  homeData = {
  experts : [
 
@@ -231,7 +233,7 @@ export const  homeData = {
   },
   {
     id: 3,
-    image: "/assets/case-studies/mircromitti/img1.png", 
+    image: port3image, 
     title: "An Real Estate investment application. It is, Indore’s premier Prop-tech company.",
     paragraphs: [
       "Micro Mitti's is an Real Estate investment application. It is, Indore’s premier Prop-tech company, revolutionizing the landscape of real estate investments.",
