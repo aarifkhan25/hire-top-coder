@@ -13,8 +13,9 @@ export default function Page() {
       <div className="pt-20 md:pt-28   "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Dedicated Teams" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
-        title={<>Dedicated <span className="text-primary">Expert Teams</span></>}
+        title={<>Dedicated <span className="text-gradient-purple">Expert Teams</span></>}
         sub={<>A full-time developer assigned solely to your project — embedded <br className="hidden md:block"/> in your workflow, owning outcomes end-to-end.</>}
+      notpt="notpt"
       />
 
       <Section className="  ">
@@ -62,7 +63,7 @@ export default function Page() {
         <div className="absolute left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
       <div className="relative  w-full">
         <SectionTitle eyebrow="Proof" title="Real outcomes" />
-        <div className="max-w-2xl mx-auto"><Link href="/case-studies/broker-remarks" className="block"><Card className="hover:border-primary/30 transition">
+        <div className="max-w-2xl mx-auto"><Link href="/case-studies/brokerremarks" className="block"><Card className="hover:border-primary/30 transition">
           <PurplePill>Case Study · SaaS</PurplePill>
           <div className="mt-3 text-base md:text-xl text-white font-medium">Broker Remarks — Listing Platform Rebuild</div>
           <div className="mt-2 text-foreground/60 text-xs md:text-base leading-relaxed">Reduced agent onboarding time by 60% with a streamlined React + Firebase architecture, shipped in 12 weeks by a 2-engineer dedicated team.</div>

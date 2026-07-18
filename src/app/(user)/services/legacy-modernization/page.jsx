@@ -11,9 +11,9 @@ import { ArrowRight } from "lucide-react";
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Legacy Modernization" }]} /></div>
       <PageHero
         eyebrow="Engineering Service"
-        title={<>Zero-Downtime <span className="text-primary">Legacy Upgrades</span></>}
+        title={<>Zero-Downtime <span className="text-gradient-purple">Legacy Upgrades</span></>}
         sub={<>Modernize tired PHP, jQuery, or .NET stacks into cloud-native <br/> React/Node systems — without breaking production.</>}
-      />
+        notpt="notpt"  />
       <Section  className="   ">
         <SectionTitle eyebrow="Approach" title="Our Modernization Approach" />
         <Stepper steps={[

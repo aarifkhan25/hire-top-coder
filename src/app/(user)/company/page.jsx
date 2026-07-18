@@ -2,9 +2,9 @@
 import { Award, Compass, FileSignature, Flag, Gauge, Globe2, Heart, Network, ShieldCheck, Sparkles, Target, Users, Wallet } from "lucide-react";
 
 import Image from "next/image";
-import { AmbientGlow } from "../../../components/site/PageShell.jsx";
+import { AmbientGlow, CTA, SectionHead } from "../../../components/site/PageShell.jsx";
 import { Parallax, Reveal, Stagger, StaggerItem, TiltCard, WordReveal } from "../../../components/site/Reveal.jsx";
-import { CTA, SectionHead } from "../HomePage.jsx";
+
 
 
     // meta: [
@@ -46,22 +46,22 @@ export default function CompanyPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-20 md:pt-40 2xl:pt-50 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-20 md:pt-40 2xl:pt-50 pb-20  sm:px-4 overflow-hidden">
         <AmbientGlow />
 
-        <div className="relative mx-auto max-w-5xl text-center">
+        <div className="relative w-full text-center">
           <Reveal>
         <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5  font-semibold">
               Our Story
             </div>
           </Reveal>
-         <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.6rem,8vw,7rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
+           <h1 className="w-full font-display font-bold leading-[0.95] text-[clamp(2.6rem,8vw,7rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
             <WordReveal text="Building Digital" />
             <br />
             <span className="text-gradient-purple"><WordReveal text="Excellence Globally" /></span>
           </h1>
           <Reveal delay={0.3}>
-        <p className="mt-3 md:mt-5 text-sm  md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="mt-3 md:mt-5 text-sm  md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto  leading-relaxed font-normal">
               HireTopCoder is a curated network of elite digital experts helping the
               world's most ambitious teams design, build and scale.
             </p>
@@ -198,7 +198,7 @@ export default function CompanyPage() {
 
       {/* CTA */}
          
-        <CTA title={<>Let's build <span className="text-gradient-purple">something together</span></>}  btn1name="Start Hiring Talent" btn1href="/" btn2name="Join The Network" btn2href="/" />
+        <CTA title={<>Let's build <span className="text-gradient-purple">something together</span></>}  btn1name="Start Hiring Talent" btn1href="/" btn2name="Join The Network" btn2href="/contact" />
     
     </>
   );

@@ -10,7 +10,7 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   return (
     <   main className=" w-full"   >
-      <PageHero eyebrow="Get in Touch" title={<>Let's <span className="text-primary">Talk</span></>} sub="Tell us about your project. We'll respond within 24 hours with a shortlist or a call." />
+      <PageHero eyebrow="Get in Touch" title={<>Let's <span className="text-gradient-purple">Talk</span></>} sub="Tell us about your project. We'll respond within 24 hours with a shortlist or a call." />
       <Section>
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="md:p-8">
@@ -25,16 +25,16 @@ export default function ContactPage() {
                 <Field label="Work email" type="email" />
                 <Field label="Company" type="text" />
                 <div>
-                  <label className="text-[11px] uppercase tracking-[0.15em] text-foreground/50 font-bold">Project details</label>
+                  <label className="text-[11px] uppercase tracking-[0.15em] text-white font-bold">Project details</label>
                   <textarea rows={5} className="mt-2 w-full bg-black/40 border border-primary/50 rounded-lg px-3 py-2 text-white outline-none focus:border-primary" />
                 </div>
                 <div>
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-foreground/50 font-bold">Budget range</label>
-                  <select className="md:mt-2 w-full bg-black/40 border border-primary/50 rounded-[8px] text-xs md:text-base p-1.5 md:px-3 md:py-2 text-white outline-none focus:border-primary">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-white font-bold">Budget range</label>
+                  <select className="md:mt-2 w-full bg-black/40 border border-primary/50 rounded-[8px] text-xs md:text-base p-1.5 md:px-3 md:py-2 text-white outline-none focus:border-primary cursor-pointer">
                     <option>Under $25k</option><option>$25k – $75k</option><option>$75k – $200k</option><option>$200k+</option>
                   </select>
                 </div>
-                <button className="w-full bg-gradient-to-r from-primary to-accent text-white font-bold py-3 text-sm md:text-base rounded-full">Send message</button>
+                <button className="w-full bg-gradient-to-r from-primary to-accent text-white font-bold py-3 text-sm md:text-base rounded-xl cursor-pointer">Send message</button>
               </form>
             )}
           </Card>
@@ -71,7 +71,7 @@ export default function ContactPage() {
 function Field({ label, type }) {
   return (
     <div>
-      <label className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-foreground/50 font-bold">{label}</label>
+      <label className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-white font-bold">{label}</label>
       <input type={type} required className="md:mt-2 w-full bg-black/40 border border-primary/50 rounded-[8px] p-1.5  md:px-3 md:py-2 text-white outline-none focus:border-primary" />
     </div>
   );

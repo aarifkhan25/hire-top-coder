@@ -1,157 +1,39 @@
 "use client";
 import { FadeUp } from "@/components/site/FadeUp";
 import { animate } from "framer-motion";
-import {
-  BarChart4,
-  Brain,
-  CheckCircle2,
-  Hexagon,
-  Info,
-  Layers2,
-  MessagesSquare, Sparkles,
-  Zap
-} from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { FaPlus as Plus } from "react-icons/fa6";
-import {
-  FiCalendar,
-  FiClock
-} from "react-icons/fi";
 
-const headContent = {
-  title: "AI Sector · Model Development · June 2025",
-  heading: <>The Future of AI Design Is <span className="text-gradient-purple">Adaptive</span> : How Generative Interfaces Are Reshaping Every Product Surface</>,
-  subheading: "Generative interfaces are no longer a concept — they are the new standard for AI-powered products. Here's what adaptive AI design means, why it matters, and how your SaaS product can benefit right now.",
-  catg: [
-    // { icon: <FiUser />, name: "HireTopCoder Team" },
-    { icon: <FiCalendar />, name: "Published June 19, 2025" },
-    { icon: <FiClock />, name: "8 min read" },
-    // { icon: <FiTag />, name: " AI Design · SaaS · Model Development" },
-  ],
-};
-
-const cardsContent = [
-            { n: "$47B+", l: "AI design market projected by 2030" },
-            { n: "3×", l: "Faster adoption with adaptive UI" },
-            { n: "+62%", l: "User retention uplift reported" },
-          ];
-          const tocItems = [
-    { name: "Introduction", icon: Info },
-    { name: "Why It Matters", icon: BarChart4 },
-    { name: "Business Benefits", icon: Hexagon },
-    { name: "Getting Started", icon: Zap },
-    { name: "Conclusion", icon: CheckCircle2 },
-  ];
-
-
-const ques1Content={
-  question:"What Is Adaptive AI Design?",
-  answer:["Adaptive AI design refers to a new generation of product interfaces that change, personalize, and respond dynamically based on user behavior, intent signals, and the outputs of generative AI models. Unlike  traditional static UI — where every user sees the same buttons, menus, and layouts — an adaptive interface learns and evolves, making each  user's experience uniquely relevant to them."," At its core, adaptive AI design merges two disciplines: user experience  design and AI model development. The result is a product surface that  doesn't just display information — it anticipates needs, surfaces the  right actions, and restructures itself in real time to serve the user's  current goal.","  For SaaS companies and AI tool builders in 2025, this is no longer optional. As generative AI capabilities become commoditized, the produc experience layer — the interface — becomes the primary differentiator."],
-card: "Generative UI is not just about generating text — it's about generating the right interface, at the right moment, for the right user."
-}
-
-
-const ques2Content={
-  question:"Why  Generative Interfaces Matter",
- 
-  FEATURES : [
-    {
-
-     name:"Context-aware layouts",des: "Context-aware layouts that rearrange based on task and role",icon:Layers2
-  },
-   {
-
-    name:"AI-driven onboarding",des: "AI-driven onboarding that adapts to user profile and industry",icon:Brain
-  },
-   {
-
-    name:"Conversational Navigation",des: "Conversational navigation replacing static menus",icon:MessagesSquare
-  },
-   {
-    name:"Predictive UI",des: "Predictive UI elements that surface before users search",icon:Sparkles
-
-  },
-
-]
-}
+import NotFoundPage from "@/app/not-found";
+import { allblogsData } from "@/data/blogsData.js";
+import { use } from "react";
 
 
 
-
-  const ques4Content = {
-    question: "Business Benefits",
-    tr: ["Object", "Metric Improment"],
-    td: [
-      ["Faster onboarding", "Up to 3x faster"],
-      ["Feature discovery","67% increase"],
-      ["Support tickets", "38% fewer"],
-      ["User retention", "62% higher" ],
-   
-    ],
-  };
-const getting=[{id:"1",name:"Track behavior",des:"Implement telemetry to understand user intent sequences and common friction points in current static layouts."},{id:"2",name:"Build profiles",des:"Define personas based on technical proficiency and frequency of use rather than just demographic data."},{id:"3",name:"Introduce dashoboards",des:"Launch modular, widget-based views that users can personalize before the AI begins automated optimization."},{id:"4",name:"Continuosly optimize",des:`Use A/B testing specifically for AI-generated layouts to ensure the "adaptive" nature doesn't cause confusion.`},]
-
-const ques6faqcontent = [
-  {
-    q: "What is adaptive AI design?",
-    a: "Adaptive AI design refers to product interfaces that dynamically personalize and restructure themselves based on user behavior, intent signals, and generative model outputs — creating unique, context-aware experiences for each user rather than presenting everyone with the same static layout.",
-  },
-  {
-    q: "How does generative UI differ from traditional UI?",
-    a: "Traditional UI is static — the same layout is presented to every user. Generative UI, powered by AI models, creates and adapts interface components in real time, tailoring the experience to individual needs, workflows, and contexts. The interface becomes a living system rather than a fixed design artifact.",
-  },
-  {
-    q: "Why is adaptive design important for AI model development?",
-    a: "AI models are only as effective as the interfaces through which users interact with them. Adaptive design ensures the full capability of the model is accessible, discoverable, and personalized — dramatically improving usability, adoption, and long-term retention.",
-  },
-  {
-    q: "What are the key benefits of generative interfaces for SaaS?",
-    a: "Generative interfaces for SaaS products deliver faster onboarding, higher user retention, reduced support load, and stronger product-market fit by presenting users with exactly the features, actions, and information they need — exactly when they need them. Companies typically see 2–3× improvement in feature discovery and 40–60% improvement in 30-day retention.",
-  },
-  {
-    q: "Which industries benefit most from adaptive AI design?",
-    a: "SaaS platforms, healthcare technology, fintech, e-commerce, and enterprise software all see significant gains from adaptive AI design — particularly in reducing time-to-value and improving user engagement across complex, multi-step workflows.",
-  },
-]
-
-const conclusioncontent={
-  question:" Conclusion",
-  answer:["The future of AI design is not about more buttons, better color palettes, or smoother animations. It is about interfaces that think —  that understand who is using them, what they are trying to accomplish, and how to help them get there faster and more confidently than any static design ever could.","Adaptive AI design and generative interfaces represent the next  fundamental shift in how software is experienced. For teams building  AI-powered products, the question is no longer whether to adopt adaptive  design — it is how quickly and how intelligently you can make the transition.","The products that win the next decade will not be the ones with the most powerful models. They will be the ones where the model and the interface become indistinguishable — where the design itself is intelligent."]
-}
-
-
-
-export default function AiDesignBlog() {
+export default function AiDesignBlog({params}) {
+  const {blogsname}=use(params);
+  const filterblogs=allblogsData.blogs.filter((item)=>item.blogname===blogsname)
+  console.log(filterblogs);
+  
   return(<section className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 pt-20 md:pt-40 2xl:pt-50 pb-20 px-4">
-  <Hero headContent={headContent}/>
-<Main cardsContent={cardsContent} tocItems={tocItems} ques1Content={ques1Content}/>
-    <div className=" grid gap-10 max-w-4xl">
-<Question2 ques2Content={ques2Content}   />
-<Question4 ques4Content={ques4Content} />
-<Getting getting={getting} />
-<Question6FAQ ques6faqcontent={ques6faqcontent}  />
- <Conclusion conclusioncontent={conclusioncontent}  />
-    </div>
-  </section>
-  )
-}
-
-export function Hero({headContent}){
-  return(<><div className="max-w-2xl">
+ { filterblogs.length>0? (
+   filterblogs?.map((item) => (<div key={item.blogname}>
+ <>
+  <div className="max-w-2xl">
    <FadeUp>
           <p className="text-[11px] 2xl:text-sm font-bold uppercase tracking-[1.5px]  text-primary">
-            {headContent.title}
+            {item.title}
           </p>
         </FadeUp>
         <FadeUp delay={0.05}>
           <h1 className="text-[clamp(26px,4.5vw,34px)] 2xl:text-[clamp(28px,5vw,36px)] font-medium leading-tight text-white tracking-[-1px] mt-3.5">
-            {headContent.heading}
+            {item.heading}
           </h1>
         </FadeUp>
         <FadeUp delay={0.1}>
           <p className="text-base text-white/50 leading-[1.7] mt-[18px]">
-            {headContent.subheading}
+            {item.subheading}
           </p>
         </FadeUp>
   
@@ -168,7 +50,7 @@ export function Hero({headContent}){
                                           </div>
     </div>
     <div className=" flex gap-10">
-      {headContent?.catg.map((c,i)=>(<span  key={i} className="inline-flex items-center gap-1.5 group">
+      {item?.catg.map((c,i)=>(<span  key={i} className="inline-flex items-center gap-1.5 group">
           <span  className=" text-primary text-lg 2xl:text-2xl">{c.icon}</span>
           <span className="font-medium text-white/65 group-hover:text-white text-xs xl:text-sm">{c.name}</span>
         </span>
@@ -177,13 +59,26 @@ export function Hero({headContent}){
     }
   </div>
   </div>
-  </>)
+  </>
+<Main cardsContent={item.cardsContent} tocItems={item.tocItems} ques1Content={item.ques1Content} img={item.img}/>
+    <div className=" grid gap-10 max-w-4xl">
+<Question2 ques2Content={item.ques2Content}   />
+<Question4 ques4Content={item.ques4Content} />
+<Getting getting={item.getting} />
+<Question6FAQ ques6faqcontent={item.ques6faqcontent}  />
+ <Conclusion conclusioncontent={item.conclusioncontent}  />
+    </div>
+</div>))):(<NotFoundPage/>)}
+  </section>
+  )
 }
 
 
 
 
-    export function Main({cardsContent,tocItems,ques1Content}){
+
+
+    export function Main({cardsContent,tocItems,ques1Content,img}){
       const [activeSection, setActiveSection] = useState("Introduction");
   const [email, setEmail] = useState("");
  const handleScroll = (sectionName) => {
@@ -225,7 +120,7 @@ export function Hero({headContent}){
             <div className="w-full h-full relative flex items-center justify-center p-4">
               <div className="absolute inset-0 bg-cover bg-center opacity-80" />
               {/* Fallback structural content mockup layer */}
-              <Image width="500" height="500" src="/assets/blog-1.png" alt="img" loading="lazy" className="w-full h-full rounded-lg bg-black/40 backdrop-blur-xs border border-white/5   "/>
+              <Image width="500" height="500" src={img} alt="img" loading="lazy" className="w-full h-full rounded-lg bg-black/40 backdrop-blur-xs border border-white/5   "/>
    
             
             </div>
@@ -315,7 +210,7 @@ export function Hero({headContent}){
               <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-purple-950 border border-purple-500/20 shadow-inner shrink-0">
               
                 <Image 
-                  src="/assets/blog-1.png" 
+                  src={img} 
                   alt="Alex Rivera"
                   fill
                   className="object-cover opacity-90  transition-all"

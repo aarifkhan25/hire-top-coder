@@ -1,12 +1,18 @@
 "use client"
 import { AmbientGlow, GhostButton, PrimaryButton, SectionHead } from "@/components/site/PageShell";
 import { Reveal, Stagger, StaggerItem, TiltCard } from "@/components/site/Reveal";
-import { ArrowUpRight, BookOpen, Clock, Download } from "lucide-react";
+import { BookOpen, Clock, Download, FileSignature, Wrench } from "lucide-react";
 import Image from 'next/image';
+import Link from "next/link";
+import { LuArrowRight, LuClock } from "react-icons/lu";
 const blog1 = "/assets/blog-1.png";
 const blog2 = "/assets/blog-2.png";
 const blog3 = "/assets/blog-3.png";
 const blog4 = "/assets/blog-4.png";
+const blog5 = "/assets/blog-5.png";
+const blog6 = "/assets/blog-6.jfif";
+const blog7 = "/assets/blog-7.jfif";
+const blog8 = "/assets/blog-8.png"
 
 const categories = ["AI", "Product Design", "SaaS", "Branding", "Development", "Startups", "Automation"];
 
@@ -20,28 +26,59 @@ Generative interfaces are no longer a concept — they are the new standard for 
   img: blog1,
 };
 
-const articles = [
-  { c: "Product Design", t: "Designing for the agentic web",       d: "Patterns for interfaces where AI does the work.", img: blog2, time: "8 min" },
-  { c: "SaaS",            t: "Pricing in the era of AI margins",   d: "How leading SaaS teams are re-pricing.",         img: blog3, time: "11 min" },
-  { c: "Engineering",     t: "Shipping faster with small pods",    d: "Why six-person teams outperform.",               img: blog4, time: "6 min" },
-  { c: "Branding",        t: "The new luxury of restraint",        d: "Less is louder than ever.",                       img: blog2, time: "5 min" },
-  { c: "Startups",        t: "Hiring your first 10 with intention", d: "Compounding the culture you want.",              img: blog3, time: "9 min" },
-  { c: "Automation",      t: "From prompts to pipelines",          d: "Operationalizing AI inside the org.",            img: blog1, time: "7 min" },
+const posts = [
+{
+    cat: "AI Design",
+    title: "The Future of AI Design Is Adaptive",
+    excerpt: "How generative interfaces are reshaping every product surface.",
+    img: blog1,
+    read: "6 min",
+    to:"/blog/ai-design "
+  },
+  {
+    cat: "UX Trends",
+    title: "UX Trends Defining 2026",
+    excerpt: "Spatial layouts, kinetic type and ambient AI take center stage.",
+    img: blog2,
+    read: "5 min",
+     to:"/blog/ux-trends"
+  },
+  {
+    cat: "SaaS",
+    title: "Building Premium SaaS Experiences",
+    excerpt: "The craft framework behind today's most loved enterprise tools.",
+    img: blog3,
+    read: "8 min",
+     to:"/blog/premium-saas "
+  },
+  {
+    cat: "Product",
+    title: "AI-Powered Product Development",
+    excerpt:
+      "From discovery to ship — orchestrating AI across the build cycle.",
+    img: blog4,
+    read: "7 min",
+     to:"/blog/ai-product"
+  },
+  {cat: "Engineering",    title: "Shipping faster with small pods",    excerpt: "Why six-person teams outperform.",               img: blog6, read: "6 min" ,to:"/blog/shipping-faster"},
+  {cat: "Branding",       title: "The new luxury of restraint",        excerpt: "Less is louder than ever.",                       img: blog8, read: "5 min" ,to:"/blog/branding"},
+  {cat: "Startups",       title: "Hiring your first 10 with intention", excerpt: "Compounding the culture you want.",              img: blog7, read: "9 min",to:"/blog/hiring-intention" },
+  {cat: "Automation",     title: "From prompts to pipelines",          excerpt: "Operationalizing AI inside the org.",            img: blog5, read: "7 min" ,to:"/blog/prompt-to-pipelines"},
 ];
 
 const guides = [
-  { t: "The Founder's Hiring Playbook",   d: "A 40-page deep dive into building elite product teams.", tag: "PDF · 40 pages" },
-  { t: "AI Product Launch Checklist",      d: "Everything to ship a launch-worthy AI feature.",         tag: "Notion Template" },
-  { t: "Brand System Starter Kit",         d: "Tokens, typography, and component scaffolding.",         tag: "Figma File" },
+  { t: "The Founder's Hiring Playbook",   d: "A 40-page deep dive into building elite product teams.", tag: "PDF · 40 pages",icon:BookOpen },
+  { t: "AI Product Launch Checklist",      d: "Everything to ship a launch-worthy AI feature.",         tag: "Notion Template" ,icon:FileSignature},
+  { t: "Brand System Starter Kit",         d: "Tokens, typography, and component scaffolding.",         tag: "Figma File",icon: Wrench },
 ];
 
 export default function BlogPage() {
   return (
     <main className="px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 w-full">
       {/* HERO */}
-     <section className="relative pt-20 pb-10 lg:pt-40 lg:pb-20 overflow-hidden">
+     <section className="relative pt-20 pb-10 md:pt-40 lg:pb-20 overflow-hidden">
   <AmbientGlow />
-  <div className="relative w-full text-center ">
+  <div className="relative w-full  text-center ">
     
     {/* 1. बैज (Badge) सेक्शन */}
     <Reveal>
@@ -61,7 +98,6 @@ export default function BlogPage() {
   >
     Insights, Trends & <br />
     
-    {/* 🛠️ फ़िक्स: pb-4 और overflow-visible जोड़ा ताकि 'g' का निचला हिस्सा बिल्कुल न कटे */}
     <span 
       className="bg-clip-text text-transparent inline-block mt-2 md:mt-4 pb-4 overflow-visible"
       style={{
@@ -88,7 +124,7 @@ export default function BlogPage() {
 </section>
 
       {/* FEATURED ARTICLE */}
-      <section className="relative py-10 lg:py-28 2xl:py-35">
+      <section className="relative py-10 lg:py-20">
         <div className="w-full xl:px-20 2xl:px-40 ">
           <Reveal>
             <TiltCard className="group relative rounded-3xl overflow-hidden border border-border/40 hover-glow-card cursor-pointer">
@@ -131,43 +167,88 @@ export default function BlogPage() {
       </section>
 
       {/* LATEST BLOGS */}
-      <section className="relative py-10 lg:py-28 2xl:py-35">
-        <SectionHead eyebrow="Latest" title={<>Fresh from the <span className="text-gradient-purple">network</span></>} />
-        <Stagger className="mt-6 md:mt-14 w-full   grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {articles.map((a) => (
-            <StaggerItem key={a.t}>
-              <TiltCard className="group glass rounded-3xl overflow-hidden hover-glow-card cursor-pointer h-full">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image width={500} height={500}   priority={false}  src={a.img} alt={a.t}
-                    className="size-full object-cover scale-105 group-hover:scale-110 transition-transform duration-[1200ms]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                </div>
-                <div className="p-4 md:p-6">
-                  <div className="text-[8px] md:text-[11px] 2xl:text-sm font-mono uppercase tracking-[0.25em] text-primary font-bold">{a.c}</div>
-                  <h3 className="mt-3 text-base  md:text-xl 2xl:text-[22px] font-bold tracking-tight leading-snug">{a.t}</h3>
-                  <p className="mt-2 text-xs md:text-sm 2xl:text-base text-foreground/70 font-medium">{a.d}</p>
-                  <div className="mt-3 md:mt-5 flex items-center  justify-between text-sm">
-                    <span className="text-foreground/60 inline-flex text-sm  md:text-base 2xl:text-lg items-center gap-1.5"><Clock className="size-3 md:size-3.5" />{a.time}</span>
-                    <ArrowUpRight className="size-4 text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </div>
-                </div>
-              </TiltCard>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
+    <section
+          id="blog"
+          className=" py-10 lg:py-20 overflow-hidden  bg-[#0A0A0A]   "
+        >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[700px] rounded-full bg-primary/10 blur-[160px] pointer-events-none" />
+            <Reveal> <div className="relative w-full">
+            <SectionHead
+              eyebrow="Insights & innovation"
+              title={
+                <>
+                  Insights, trends &{" "}
+                  <span className="text-gradient-purple">digital innovation.</span>
+                </>
+              }
+              sub="Explore the latest thoughts on design, AI, branding, product development and modern digital experiences."
+            />
+         
+              <div className="mt-8 md:mt-14 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                {posts.map((p) => (
+                  <article
+                    key={p.title}
+                    className="group glass rounded-2xl hover-glow-card flex flex-col isolation-isolate"
+                  >
+                    <div className="aspect-[4/3] rounded-t-2xl overflow-hidden relative bg-[#0A0A0A] select-none">
+                      <Image
+                        priority={false}
+                        loading="lazy"
+                        src={p.img}
+                        alt={p.title}
+                        width={1024}
+                        height={1024}
+                        /* 3. 'will-change-transform' और 'style' में backface-visibility जोड़ने से ब्राउज़र पिक्सल को कभी मिस-अलाइन नहीं करेगा */
+                        className="size-full object-cover group-hover:scale-110 will-change-transform transition-transform duration-700 pointer-events-none"
+                        style={{
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden",
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                      <span className="absolute top-3 left-3 text-[8px] md:text-[10px] uppercase tracking-widest bg-primary/30 border border-primary/60 backdrop-blur text-white px-2.5 py-1 rounded-full font-bold">
+                        {p.cat}
+                      </span>
+                    </div>
+    
+                    <div className="p-3 md:p-5 flex-1 flex flex-col rounded-b-2xl bg-[#0A0A0A]/40 mt-[-2px] relative z-20 pt-[22px]">
+                      <h3 className=" text-base md:text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition">
+                        {p.title}
+                      </h3>
+                      <p className="mt-2 text-[10px] md:text-xs 2xl:text-sm text-foreground/75 font-medium leading-relaxed flex-1 group-hover:text-white">
+                        {p.excerpt}
+                      </p>
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="inline-flex items-center gap-1.5 text-[10px] md:text-xs text-foreground/60 font-medium">
+                          <LuClock className="size-3.5" /> {p.read}
+                        </span>
+                        <Link href={p.to} className="inline-flex items-center gap-1 text-xs md:text-sm font-bold text-primary group-hover:gap-2 transition-all">
+                          Read More <LuArrowRight className="size-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+          </div>
+            </Reveal>
+        
+       
+        </section>
 
       {/* GUIDES */}
-      <section className="relative py-10 lg:py-28 2xl:py-35">
+      <section className="relative py-10 lg:py-20">
         <SectionHead eyebrow="Guides & Resources" title="Tools your team can actually use" />
         <Stagger className="mt-6 md:mt-14 w-full   grid md:grid-cols-3 gap-4">
           {guides.map((g) => (
             <StaggerItem key={g.t}>
-              <TiltCard className="glass rounded-2xl p-5 md:p-7 h-full hover-glow-card flex flex-col">
-                <BookOpen className="size-5 md:size-6 text-primary mb-4" />
-                <div className="text-base md:text-lg  2xl:text-xl font-bold tracking-tight">{g.t}</div>
+              <TiltCard className="glass rounded-2xl p-5 lg:p-7 group h-full hover-glow-card flex flex-col">
+                <div className=" w-8 h-8 sm:w-10 sm:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-sm xl:rounded-md bg-primary/10 transition-colors group-hover:border-primary" >
+                  <g.icon className="text-sm p-1 md:p-0 md:text-lg xl:text-2xl text-primary" />
+                </div>
+                <div className="mt-3 text-base md:text-lg  2xl:text-xl font-bold tracking-tight">{g.t}</div>
                 <p className="mt-2 text-xs  md:text-sm 2xl:text-base text-foreground/70 font-medium flex-1">{g.d}</p>
-                <div className="mt-3 md:mt-6 flex items-center justify-between">
+                <div className="mt-3 lg:mt-6 flex items-center justify-between">
                   <span className="text-[8px] md:text-[11px] 2xl:text-sm font-mono uppercase tracking-[0.2em] text-primary font-bold">{g.tag}</span>
                   <button className="size-8 md:size-10 grid place-items-center rounded-full btn-glass text-white">
                     <Download className="size-3 md:size-4" />
@@ -180,7 +261,7 @@ export default function BlogPage() {
       </section>
 
       {/* NEWSLETTER */}
-   <section className="relative flex justify-center items-center py-10 lg:py-28 2xl:py-35">
+   <section className="relative flex justify-center items-center py-10 lg:py-20">
   <div className="relative w-full max-full max-w-3xl glass rounded-[2rem] p-7 md:p-14 text-center overflow-hidden ring-purple">
     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 pointer-events-none" />
     <div className="relative">

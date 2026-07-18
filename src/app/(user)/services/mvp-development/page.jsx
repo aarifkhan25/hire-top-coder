@@ -14,7 +14,7 @@ import Link from "next/link";
         eyebrow="Engineering Service"
         title={<>Investor-Ready <span className="text-primary">MVP in 12 Weeks</span></>}
         sub={<>Strategy, design, code, QA, and launch — one team, one timeline, <br/>one outcome you can show to investors.</>}
-      />
+         notpt="notpt" />
       <Section   className="   ">
         <SectionTitle eyebrow="Included" title="What's in the box" />
         <div className="grid md:grid-cols-3 gap-3 w-full mt-5 md:mt-10">

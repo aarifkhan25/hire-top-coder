@@ -108,7 +108,7 @@ export default function CaseStudyPage() {
             <h3 className="mt-2 text-2xl font-extrabold tracking-tight">{p?.title}</h3>
             <p className="mt-1 text-sm text-foreground/75 font-medium line-clamp-2">{p?.desc}</p>
             <div className="mt-4 flex items-center justify-between">
-              <span className="text-xs font-bold text-white/85 glass px-3 py-1 rounded-full">{p?.results}</span>
+              <span className="text-xs font-bold text-white/85 border border-white/10  bg-primary/10 transition-colors group-hover:border-primary rounded-full px-3 py-1 rounded-full">{p?.results}</span>
               <Link href={p?.href} className="size-9 grid place-items-center rounded-full glass text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2 transition-all">
                 <ArrowUpRight className="size-4" />
               </Link>

@@ -129,30 +129,29 @@ export function PageHero({
   title,
   sub,
   children,
+  notpt
 }) {
   return (
-    <section className="relative py-10 md:py-20  overflow-hidden">
+<section className={`relative  ${notpt==="notpt" ?"pt-7":" pt-20 md:pt-40 2xl:pt-50"}   px-4`}>
+    
       <div className="absolute  md:top-20 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-primary/15 blur-[160px] pointer-events-none" />
-      <div className="relative w-full text-center">
-        {eyebrow && (
- <div className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-sm 2xl:text-base font-sans uppercase tracking-[0.25em] text-primary mb-4 font-bold">
-            <span className="size-1 rounded-full bg-primary" /> {eyebrow}
-          </div>
-        )}
-        <Reveal>
-        <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.6rem,8vw,7rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
+
+         <div className="absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] pointer-events-none" />
+   
+         <div className="relative w-full text-center">
+           <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5 md:mb-10 font-semibold">
+             {eyebrow}
+           </div>
+   
+           <h1 className="font-display font-bold leading-[0.95] text-[clamp(2.6rem,8vw,7rem)] md:text-[clamp(2.75rem,8vw,7.5rem)] 2xl:text-[clamp(3rem,9vw,8.5rem)]">
             {title}
-          </h1>
-        </Reveal>
-        {sub && (
-          <Reveal delay={0.1}>
-           <p className="mt-6 md:mt-12 text-xs sm:text-sm lg:text-base 1xl:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
-              {sub}
-            </p>
-          </Reveal>
-        )}
-        {children && <div className="mt-10">{children}</div>}
-      </div>
+             
+           </h1>
+   
+           <p className="mt-6 md:mt-12 text-sm md:text-base lg:text-xl  text-[#b1afb8] max-w-3xl mx-auto leading-relaxed font-normal">
+{sub}           </p>
+         </div>
+      
     </section>
   );
 }
@@ -163,7 +162,7 @@ export function Section({
 }) {
   return (
    
-      <section className={`relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-28 2xl:py-35   ${className}`}>
+      <section className={`relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25   py-10  lg:py-20   ${className}`}>
         <div className="mx-auto max-w-7xl">{children}</div>
       </section>
    
@@ -340,8 +339,8 @@ export function Stepper({
     <div className="grid md:grid-cols-4 gap-2 md:gap-4">
       {steps.map((s, i) => (
         <Reveal key={i} delay={i * 0.08}>
-          <Card className="h-full">
-            <div className="w-8 h-8 md:w-10 md:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors hover:border-primary text-xs md:text-base mb-3 md:mb-5" >
+          <Card className="h-full group">
+            <div className="w-8 h-8 md:w-10 md:h-10 flex justify-center items-center shrink-0 border border-white/10 rounded-md bg-primary/10 transition-colors group-hover:border-primary text-xs md:text-base mb-3 md:mb-5" >
               {String(i + 1).padStart(2, "0")}
             </div>
             <div className="text-sm md:text-lg 2xl:text-xl font-semibold leading-snug group-hover:text-primary transition md:mb-2">{s.title}</div>
@@ -715,7 +714,7 @@ export function Section1({
         <Reveal >
         <div>
 
-          <h2 className=" text-lg md:text-[23px] 1xl:text-[25px] font-bold tracking-tight text-white">
+          <h2 className=" text-lg md:text-[23px] 1xl:text-3xl font-bold tracking-tight text-white">
             {heading}
           </h2>
         </div>

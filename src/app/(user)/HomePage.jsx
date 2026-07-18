@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { LuArrowRight, LuClock, LuStar } from "react-icons/lu";
 
-import { GhostButton, PrimaryButton } from "../../components/site/PageShell.jsx";
+import { CTA, GhostButton, PrimaryButton, SectionHead } from "../../components/site/PageShell.jsx";
 import { Reveal } from "../../components/site/Reveal.jsx";
 import { homeData } from "../../data/home/homeData.js";
 
@@ -29,7 +29,7 @@ export default function HomePage() {
 
         <Testimonials />
         <Blog />
-        <CTA title={<> Your next hire is  <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span></>} des="  Join thousands of teams shipping faster with the world's most curated talent network." btn1name="Start Hiring Talent" btn1href="/" btn2name="Become an Expert" btn2href="/" />
+        <CTA title={<> Your next hire is  <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span></>} des="  Join thousands of teams shipping faster with the world's most curated talent network." btn1name="Start Hiring Talent" btn1href="/" btn2name="Become an Expert" btn2href="/contact" />
      
       </motion.main>
     </div>
@@ -60,7 +60,7 @@ function Hero() {
 
         <div className="mt-5 md:mt-10 flex flex-wrap items-center justify-center gap-3">
           <PrimaryButton>Start Hiring</PrimaryButton>
-          <GhostButton>Talk to Experts</GhostButton>
+          <GhostButton href="/contact">Talk to Experts</GhostButton>
         </div>
 
         <div className=" mt-5 md:mt-10 flex items-center justify-center gap-3 text-sm 1xl:text-base text-foreground/60 font-medium">
@@ -541,7 +541,7 @@ function Blog() {
             {posts.map((p) => (
               <article
                 key={p.title}
-                className="group glass rounded-2xl hover-glow-card flex flex-col isolation-isolate"
+                className="group glass rounded-2xl hover-glow-card flex flex-col "
               >
                 <div className="aspect-[4/3] rounded-t-2xl overflow-hidden relative bg-[#0A0A0A] select-none">
                   <Image
@@ -585,65 +585,13 @@ function Blog() {
           </div>
       </div>
         </Reveal>
-    </section>
-  );
-}
-
-export  function CTA({title,des,btn1name,btn1href,btn2name,btn2href}) {
-  return (
-    <section className="relative  px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25 py-10 lg:py-20    ">
-      <Reveal>
-        <div className="mx-auto max-w-5xl relative rounded-3xl glass p-6 sm:p-8 md:p-12 lg:p-16 text-center overflow-hidden glow-purple-strong">
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[500px] rounded-full bg-primary/30 blur-[120px]" />
-          <div className="relative">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-extrabold leading-tight">
-{title}
-            </h2>
-            {des && <p className="mt-3 md:mt-5 text-foreground/80 max-w-xl mx-auto font-normal text-xs md:text-sm lg:text-base 1xl:text-xl ">
-            {des}
-            </p> }
-            <div className="mt-5 md:mt-9 flex flex-wrap gap-3 justify-center">
-              <PrimaryButton href={btn1href} >{btn1name}</PrimaryButton>
-              <GhostButton href={btn2href} >{btn2name}</GhostButton>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
- export function SectionHead({ eyebrow, title, sub }) {
-  return (
-   
-      <div className="text-center max-w-2xl mx-auto">
-        <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        
-        className="inline-flex items-center gap-2 text-[8px] md:text-[10px] lg:text-xs 2xl:text-sm font-sans uppercase tracking-[0.25em] text-primary mb-2 xl:mb-4 font-bold">
-          <span className="size-1 rounded-full bg-primary" /> {eyebrow}
-        </motion.div>
-        < motion.h2
-        initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-         className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.05]">
-          {title}
-        </motion.h2>
-        {sub && (
-          <motion.p initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-           className="xl:mt-4 text-foreground/75 text-xs md:text-base lg:text-xl  font-normal">
-            {sub}
-          </motion.p>
-        )}
-      </div>
     
+    <div className="mt-5 md:mt-12 flex justify-center">
+        
+          <PrimaryButton href="/blog">View All Blogs</PrimaryButton>
+       
+      </div>
+    </section>
   );
 }
+

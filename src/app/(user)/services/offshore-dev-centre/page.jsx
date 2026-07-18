@@ -13,7 +13,7 @@ export default function Page() {
         eyebrow="GCC Model"
         title={<>Offshore <span className="text-primary">Development Centre</span></>}
         sub={<>Set up your own Global Capability Centre in 90 days — talent, compliance <br/> infrastructure, and management, all run by us.</>}
-      />
+        notpt="notpt"  />
       <Section className="   ">
         <SectionTitle eyebrow="Model" title="The GCC Model Explained" />
         <div className="grid md:grid-cols-4 gap-5">

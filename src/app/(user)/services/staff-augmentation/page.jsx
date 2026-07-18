@@ -11,8 +11,9 @@ export default function Page() {
       <div className="pt-20 md:pt-28 "><Breadcrumb items={[{ label: "Home", to: "/" }, { label: "Services" }, { label: "Staff Augmentation" }]} /></div>
       <PageHero
         eyebrow="Delivery Model"
-        title={<>IT <span className="text-primary">Staff Augmentation</span></>}
+        title={<>IT <span className="text-gradient-purple">Staff Augmentation</span></>}
         sub={<>Plug vetted engineers directly into your existing  team — your <br className="hidden md:block" /> tools,  your process, your timeline.</>}
+           notpt="notpt"
       />
       <Section  className="   ">
         <SectionTitle eyebrow="When To Use" title="The right scenarios" />
