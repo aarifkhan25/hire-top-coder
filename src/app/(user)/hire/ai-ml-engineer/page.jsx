@@ -132,7 +132,7 @@ intelligent infrastructure.</>} btn1name="Shedule Technical Discovery" btn1href=
   
   <FeaturedEngineer/>
   <UseCases/>
-  <FAQ/>
+  <FAQ faqData={faqData} />
   <CTA title={<>Ready to scale <span className="text-gradient-purple"> your AI capabilities</span>?</>} des="Book a consultation with our technical talent directors to define your hiring
 roadmap and see matched profiles within 48 hours." btn1name="Hire an AI Expert" btn1href="/" btn2name="View Pricing Plans" btn2href="/" />
 </div>
@@ -407,7 +407,7 @@ export function UseCases(){
   </div>)
 }
 
-export function FAQ(){
+export function FAQ({faqData}){
   const [openId, setOpenId] = useState(1);
 
   const toggleFaq = (id) => {
