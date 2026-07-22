@@ -1,5 +1,5 @@
 "use client"
-import { AmbientGlow, GhostButton, PrimaryButton, SectionHead } from "@/components/site/PageShell";
+import { AmbientGlow, CTA, PrimaryButton, SectionHead } from "@/components/site/PageShell";
 import { Reveal, Stagger, StaggerItem, TiltCard } from "@/components/site/Reveal";
 import { BookOpen, Clock, Download, FileSignature, Wrench } from "lucide-react";
 import Image from 'next/image';
@@ -261,27 +261,8 @@ export default function BlogPage() {
       </section>
 
       {/* NEWSLETTER */}
-   <section className="relative flex justify-center items-center py-10 lg:py-20">
-  <div className="relative w-full max-full max-w-3xl glass rounded-[2rem] p-7 md:p-14 text-center overflow-hidden ring-purple">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 pointer-events-none" />
-    <div className="relative">
-      
-      <h2 className="text-[26px] md:text-4xl lg:text-5xl font-bold leading-[1.05]">
-         Ready to put these ideas to <span className="text-gradient-purple">work</span>
-      </h2>
-        <p className="mt-4 text-foreground/75 text-xs md:text-sm lg:text-base 1xl:text-xl  font-normal">
-        One sharp essay every Sunday. Built for operators.
-      </p>
-      
-    <div className="mt-5 md:mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton>Hire an Expert</PrimaryButton>
-            <GhostButton>Browse All Articles</GhostButton>
-          </div>
-     
-      
-    </div>
-  </div>
-</section>
+         <CTA title={<>Ready to put these ideas to  <span className="text-gradient-purple">work</span>?</>} des="  One sharp essay every Sunday. Built for operators." btn1name="Hire An Expert" btn1href="/"  btn2name="Talk To Expert" btn2href="/" className="py-10 lg:py-20" />
+  
     </main>
   );
 }

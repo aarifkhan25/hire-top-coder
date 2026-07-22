@@ -26,7 +26,7 @@ export  function Footer() {
     setCheckedItems((prev) => ({ ...prev, [id]: !prev[id] }));
   };
   return (
-<footer className="w-full bg-[#0A0A0A]] border-t border-white/[0.07] ">
+<footer className="w-full bg-[#0A0A0A]] border-t border-white/10 ">
 <div className="w-full px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25  pt-10">
 <div className=" w-full  md:mb-10 mx-auto grid grid-cols-1 md:grid-cols-12  md:gap-12 lg:gap-8 items-center">
         

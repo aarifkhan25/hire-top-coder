@@ -142,31 +142,31 @@ roadmap and see matched profiles within 48 hours." btn1name="Hire an AI Expert" 
 }
 
 
-export function Hero({title,heading,des,btn1href,btn1name,btn2href,btn2name,className}){
+export function Hero({title,heading,des,btn1href,btn1name,btn2href,btn2name,className,className1}){
   return(<div className={` ${className}`}>
     <div className=" ">
-      <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5  font-semibold">
+     { title && <div className="inline-flex items-center gap-2 rounded-full px-3 md:px-4 py-1.5 text-[8px] md:text-[10px] md:text-xs 2xl:text-sm font-sans uppercase tracking-[0.2em] text-primary border border-primary/40 bg-primary/10 mb-5  font-semibold">
           {title}
-        </div>
+        </div>}
          <h1  className="font-display text-2xl md:text-3xl lg:text-7xl font-bold leading-[1.05]">
        {heading}
         </h1>
                 <p className="mt-6  text-sm md:text-base lg:text-xl  text-[#b1afb8]  leading-relaxed font-normal">
                 {des}
                 </p>
-               { btn1href && <div className="mt-5 md:mt-10 flex flex-wrap items-center  gap-3">
-                          <PrimaryButton href={btn1href}>{btn1name}</PrimaryButton>
-                          <GhostButton href={btn2href}>{btn2name}</GhostButton>
+               { btn1href && <div className={`mt-5 md:mt-10 flex flex-wrap items-center  gap-3 ${className1}`}>
+                       { btn1name &&  <PrimaryButton href={btn1href}>{btn1name}</PrimaryButton>}
+                        {btn2name &&  <GhostButton href={btn2href}>{btn2name}</GhostButton>}
                         </div>}
     </div>
   </div>)
 }
 
-export function HeadSection({name,des,className}){
+export function HeadSection({title,name,des,className}){
   return(<Reveal>
 
    <div className={` grid ${className}`}>
- 
+ { title && <p className="text-primary font-bold ">{title}</p>}
   <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.05]" >{name}</h2>
    { des && <p className="mt-2 text-foreground/75 text-xs md:text-base lg:text-xl  font-normal">{des}</p>}
   

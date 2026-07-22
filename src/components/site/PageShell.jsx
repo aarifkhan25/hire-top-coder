@@ -116,8 +116,8 @@ export  function CTA({title,des,btn1name,btn1href,btn2name,btn2href}) {
             {des}
             </p> }
             <div className="mt-5 md:mt-9 flex flex-wrap gap-3 justify-center">
-              <PrimaryButton href={btn1href} >{btn1name}</PrimaryButton>
-              <GhostButton href={btn2href} >{btn2name}</GhostButton>
+             {btn1name && <PrimaryButton href={btn1href} >{btn1name}</PrimaryButton>}
+             {btn2name && <GhostButton href={btn2href} >{btn2name}</GhostButton>}
             </div>
           </div>
         </div>

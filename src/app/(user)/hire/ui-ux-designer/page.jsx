@@ -1,8 +1,11 @@
 
 "use client"
-import { ChevronDown, Code2, Compass, Gem, Layers, Paintbrush, Search, SlidersHorizontal } from "lucide-react";
+import { CTA } from "@/components/site/PageShell.jsx";
+import { Reveal } from "@/components/site/Reveal.jsx";
+import { CheckCircle2, ChevronDown, Code2, Compass, Gem, Layers, Paintbrush, Search, SlidersHorizontal } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
-import { HeadSection, Hero, } from "../ai-ml-engineer/page.jsx";
+import { FAQ, HeadSection, Hero } from "../ai-ml-engineer/page.jsx";
 import { EngineersCard } from "../full-stack-developer/Full-Stack-DeveloperPage";
 //  export const metadata= [{ title: "Hire UI/UX Designer — HireTopCoder" ,description: "Hire vetted UI/UX designers. Figma, prototyping,Photoshop, Canva,Lightroom, design systems." }]
 const stackItems = [
@@ -37,7 +40,50 @@ const engineers = [
   // आप परीक्षण के लिए और कार्ड्स भी जोड़ सकते हैं:
  
 ];
+const mainShowcase ={
+  category: "FinTech Dashboard",
+  title: "Global Asset Management System",
+  image:
+    "/assets/blog-2.png",
+};
 
+const sideShowcases=  [
+  {
+    title: "Retail Mobile UX",
+    image:
+      "/assets/blog-2.png",
+  },
+  {
+    title: "Design System Architecture",
+    image:
+      "/assets/blog-2.png",
+  },
+];
+const features= [
+  { text: "8+ Years Industry Experience" },
+  { text: "Full-stack UI & UX Capabilities" },
+  { text: "Native Level Communication" },
+  { text: "Project Lead Potential" },
+];
+const faqData = [
+  {
+    id: 1,
+    question: "How do you vet your UI/UX designers?",
+    answer:
+      "Our vetting process includes a portfolio review by senior design leads, a live visual design challenge, a technical UX case study presentation, and a communication and culture-fit interview. Only 3% of applicants are admitted.",
+  },
+  {
+    id: 2,
+    question: "Can I hire a whole squade of Ui/Ux Developer?",
+    answer:
+      "Yes, our engineers are globally distributed and flexible. We match you with technical leaders who guarantee a minimum of 4 hours of direct working overlap with your core team's local time zone.",
+  },
+  {
+    id: 3,
+    question: "Do you support specialized hardware stacks (NVIDIA/TPU)?",
+    answer:
+      "Absolutely. Our specialists have hands-on experience optimizing workloads across NVIDIA H100/A100 clusters, Google TPUs, and specialized edge hardware like AWS Inferentia and Apple Silicon.",
+  }]
 export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSeniority, setSelectedSeniority] = useState("Seniority");
@@ -132,7 +178,7 @@ conversion, technically sophisticated interfaces for global scale products.</>} 
           </div>
 
           {/* Vertical Divider (Hidden on mobile) */}
-          <div className="hidden md:block w-[1px] h-9 bg-white/[0.08]" />
+          <div className="hidden md:block w-[1px] h-9 bg-primary/50" />
 
           {/* Section 2: Seniority Dropdown Filter */}
           <div className="relative w-full md:w-auto min-w-[200px]">
@@ -203,7 +249,7 @@ conversion, technically sophisticated interfaces for global scale products.</>} 
                 className="flex items-center gap-2.5 sm:gap-3 text-[#F4EFFB] hover:text-primary border border-white/10 bg-primary/10 transition-colors hover:border-primary rounded-full px-2 py-1.5 sm:px-4 sm:py-3  transition-colors duration-200 group cursor-pointer"
               >
                 {/* Purple Tinted Icon */}
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#A855F7] stroke-[2] transition-transform duration-200 group-hover:scale-110" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary stroke-[2] transition-transform duration-200 group-hover:scale-110" />
 
                 {/* Tool Name */}
                 <span className="text-sm sm:text-base font-bold tracking-tight">
@@ -220,12 +266,179 @@ conversion, technically sophisticated interfaces for global scale products.</>} 
         <div>  <HeadSection name="Available Experts" des="Top designers available for immediate engagement." /></div>
         <div><p className="text-primary font-bold ">See All 120+ Expert</p></div>
       </div>
+      <Reveal>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
      <EngineersCard filteredEngineers={engineers}/>
-      </div>
+      </div></Reveal>
 </div>
 
+<div className="grid gap-15">
+    <HeadSection name="Crafted by Our Talent" des="Witness the precision and technical excellence of designs delivered through
+our network." className=" flex justify-center items-center  text-center max-w-2xl mx-auto" />
+<Reveal>
+<div className=" w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
+        
+        {/* ================= LEFT MAIN SHOWCASE CARD (Spans 2 columns) ================= */}
+        <div className="lg:col-span-2 relative group overflow-hidden rounded border border-primary/50 bg-[#100F15] h-[380px] sm:h-[460px] lg:h-[520px]">
+          {/* Background Image with Dark Grayscale / Ambient Effect */}
+          <Image
+            src={mainShowcase.image}
+            alt={mainShowcase.title}
+            fill
+            className="object-cover object-center grayscale contrast-125 brightness-[0.4] group-hover:scale-105 group-hover:brightness-[0.5] transition-all duration-500 ease-out"
+          />
 
+          {/* Dark Overlay Gradient for Text Contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#08070C] via-black/40 to-transparent pointer-events-none" />
+
+          {/* Content Positioned at Bottom Left */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10 z-10">
+            {/* Tag / Category */}
+            <span className="text-xs sm:text-sm font-semibold text-primary tracking-wide mb-2 block">
+              {mainShowcase.category}
+            </span>
+
+            {/* Main Title */}
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#F4EFFB] tracking-tight">
+              {mainShowcase.title}
+            </h3>
+          </div>
+        </div>
+
+        {/* ================= RIGHT SIDE CARDS (Stacked Vertically) ================= */}
+        <div className="lg:col-span-1 flex flex-col gap-5 h-full justify-between">
+          {sideShowcases.map((item, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded border border-primary/50 bg-[#100F15] h-[180px] sm:h-[220px] lg:h-[250px] w-full"
+            >
+              {/* Image */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover object-center grayscale contrast-125 brightness-[0.4] group-hover:scale-105 group-hover:brightness-[0.5] transition-all duration-500 ease-out"
+              />
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08070C]/90 via-black/30 to-transparent pointer-events-none" />
+
+              {/* Title Positioned at Bottom Left */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 z-10">
+                <h4 className="text-base sm:text-lg font-bold text-[#F4EFFB] tracking-tight">
+                  {item.title}
+                </h4>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div></Reveal>
+
+</div>
+<Reveal>
+<div className=" w-full mx-auto grid grid-cols-1 lg:grid-cols-2  items-center border-b border-white/50 pb-20">
+        
+        {/* ================= LEFT CONTENT SECTION ================= */}
+        <div className=" flex flex-col justify-center">
+          {/* Main Section Title */}
+        <HeadSection name="Transparent Engagement" des="We offer flexible engagement models tailored to your project scope.
+No hidden fees, just elite talent billed simply." />
+
+          {/* Step Items */}
+          <div className="space-y-8 mt-10">
+            {/* Step 1 */}
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#1A1821] text-white flex items-center justify-center font-semibold text-sm shrink-0 border border-primary/50">
+                1
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-[#F4EFFB] mb-1">
+                  Vetting Guaranteed
+                </h3>
+                <p className="text-xs sm:text-sm text-[#8E879A] leading-relaxed">
+                  Every designer passes a 4-stage visual and technical assessment.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#1A1821] text-white flex items-center justify-center font-semibold text-sm shrink-0 border border-primary/50">
+                2
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-[#F4EFFB] mb-1">
+                  Seamless Integration
+                </h3>
+                <p className="text-xs sm:text-sm text-[#8E879A] leading-relaxed">
+                  Talent joins your Slack, Jira, and Figma within 48 hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ================= RIGHT PRICING CARD ================= */}
+        
+        <div className=" flex justify-center lg:justify-end">
+          
+          <div className="relative w-full max-w-md bg-[#100F15] border border-primary/50 hover:border-primary rounded-sm p-8 sm:p-10 shadow-2xl overflow-hidden">
+            
+            {/* Top Right Badge: MOST POPULAR */}
+            <div className="absolute top-0 right-0">
+              <span className="bg-primary text-[#1D063A] text-[10px] font-bold tracking-wider uppercase px-3 py-1.5  block">
+                MOST POPULAR
+              </span>
+            </div>
+
+            {/* Card Heading */}
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#F4EFFB] mb-4">
+              Senior Designer Rate
+            </h3>
+
+            {/* Price & Unit */}
+            <div className="flex items-baseline gap-2 mb-8">
+              <span className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#F4EFFB]">
+                $85-125
+              </span>
+              <span className="text-sm text-[#8E879A] font-medium">
+                / hour
+              </span>
+            </div>
+
+            {/* Feature Checklist */}
+            <ul className="space-y-4 mb-8">
+              {features.map((item, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-xs sm:text-sm text-[#D1CBD8] hover:text-white font-normal">
+                    {item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Primary Action Button */}
+            <button
+              type="button"
+              className="w-full py-4 bg-primary hover:bg-[#9333EA] hover:text-white text-[#1D063A] font-bold text-sm sm:text-base rounded transition-all duration-200 active:scale-[0.99] cursor-pointer shadow-lg shadow-purple-950/30 mb-4"
+            >
+              Start Trial Now
+            </button>
+
+            {/* Disclaimer Subtext */}
+            <p className="text-[11px] sm:text-xs text-[#8E879A] text-center font-normal">
+              Risk-free trial period for first week of engagement.
+            </p>
+          </div>
+        </div>
+
+      </div></Reveal>
+
+      <FAQ faqData={faqData} />
+       <CTA title={<>Ready to elevate <span className="text-gradient-purple">  your product</span>?</>} des="Schedule a call with a talent expert today and get a curated
+shortlist of designers in 24 hours." btn1name="Book a Strategy Call" btn1href="/" btn2name="View All Designers" btn2href="/" />
 
 </div>
 </section>

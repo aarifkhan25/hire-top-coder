@@ -80,6 +80,7 @@ const features= [
       "One expert responsible for a feature from database schema to user interaction.",
   },
 ];
+const tableHeadData=["Capability","  Standard (Mid)","  Elite (Senior)","Architect"]
 const tableData = [
   {
     capability: "Hourly Rate Range",
@@ -232,7 +233,7 @@ lifecycle.</p>
 <div className="">
   <HeadSection name="Transparent Engineering Rates" des="No hidden fees. Premium talent at global market rates." className=" flex justify-center items-center  text-center max-w-2xl mx-auto" />
  <Reveal>
-  <CapabiliyTable tableData={tableData}/>
+  <CapabiliyTable tableHeadData={tableHeadData}  tableData={tableData}/>
   </Reveal> 
 </div>
 
@@ -380,7 +381,7 @@ return (<div className=" mt-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ga
         </div>)
 }
 
-export function CapabiliyTable({tableData}){
+export function CapabiliyTable({tableData,tableHeadData}){
   return(<div className="mt-15 w-full mx-auto overflow-hidden rounded border border-white/[0.08] shadow-2xl bg-[#0B090E]">
         {/* Table Container for horizontal scrolling on smaller screens */}
         <div className="overflow-x-auto">
@@ -388,18 +389,10 @@ export function CapabiliyTable({tableData}){
             {/* Table Header */}
             <thead>
               <tr className="bg-[#1A1821] text-[#F4EFFB] border-b border-white/[0.08]">
-                <th className="py-5 px-6 font-semibold text-base sm:text-lg tracking-tight w-1/4">
-                  Capability
-                </th>
-                <th className="py-5 px-6 font-semibold text-base sm:text-lg tracking-tight w-1/4">
-                  Standard (Mid)
-                </th>
-                <th className="py-5 px-6 font-semibold text-base sm:text-lg tracking-tight text-primary w-1/4">
-                  Elite (Senior)
-                </th>
-                <th className="py-5 px-6 font-semibold text-base sm:text-lg tracking-tight w-1/4">
-                  Architect
-                </th>
+               {tableHeadData.map((data,i)=>(<th key={i} className={`${data==="Elite (Senior)"?"text-primary":""} py-5 px-6 font-semibold text-base sm:text-lg tracking-tight w-1/4`}>
+                  {data}
+                </th>)) }
+                
               </tr>
             </thead>
 

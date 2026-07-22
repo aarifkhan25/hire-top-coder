@@ -27,15 +27,15 @@ export const footerData={
  
  companyLinks : [
 
-  { label: "About Us", to: "/about" },
+  { label: "About Us", to: "/company" },
 
   { label: "Our Portfolio", to: "/work" },
 
   { label: "Careers", to: "/careers" },
 
-  { label: "How We Vet", to: "/about" },
+  { label: "How We Vet", to: "/company" },
 
-  { label: "Blog & Insights", to: "/resources" },
+  { label: "Blog & Insights", to: "/blog" },
 
   { label: "Privacy Policy", to: "/privacy" },
 
