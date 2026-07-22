@@ -337,7 +337,7 @@ our network." className=" flex justify-center items-center  text-center max-w-2x
 
 </div>
 <Reveal>
-<div className=" w-full mx-auto grid grid-cols-1 lg:grid-cols-2  items-center border-b border-white/50 pb-20">
+<div className=" w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4  items-center border-b border-white/50 pb-20">
         
         {/* ================= LEFT CONTENT SECTION ================= */}
         <div className=" flex flex-col justify-center">
