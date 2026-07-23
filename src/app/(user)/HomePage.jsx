@@ -29,7 +29,7 @@ export default function HomePage() {
 
         <Testimonials />
         <Blog />
-        <CTA title={<> Your next hire is  <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span></>} des="  Join thousands of teams shipping faster with the world's most curated talent network." btn1name="Start Hiring Talent" btn1href="/" btn2name="Become an Expert" btn2href="/contact" />
+        <CTA title={<> Your next hire is  <span className="text-gradient-purple"> one <br className="hidden md:block"/> search away.</span></>} des="  Join thousands of teams shipping faster with the world's most curated talent network." btn1name="Start Hiring Talent" btn1href="/hire" btn2name="Become an Expert" btn2href="/contact" />
      
       </motion.main>
     </div>

@@ -261,7 +261,7 @@ export default function BlogPage() {
       </section>
 
       {/* NEWSLETTER */}
-         <CTA title={<>Ready to put these ideas to  <span className="text-gradient-purple">work</span>?</>} des="  One sharp essay every Sunday. Built for operators." btn1name="Hire An Expert" btn1href="/"  btn2name="Talk To Expert" btn2href="/" className="py-10 lg:py-20" />
+         <CTA title={<>Ready to put these ideas to  <span className="text-gradient-purple">work</span>?</>} des="  One sharp essay every Sunday. Built for operators." btn1name="Hire An Expert" btn1href="/hire"  btn2name="Talk To Expert" btn2href="/contact" className="py-10 lg:py-20" />
   
     </main>
   );

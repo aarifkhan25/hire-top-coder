@@ -2,6 +2,7 @@ import { CTA } from "@/components/site/PageShell.jsx";
 import { Reveal } from "@/components/site/Reveal.jsx";
 import { ArrowRight, CheckCircle2, Gauge, History, Network, Puzzle, Rocket, Search, TrendingUp } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FAQ, HeadSection, Hero } from "../../hire/ai-ml-engineer/page.jsx";
 const steps= [
   {
@@ -156,7 +157,7 @@ export default function Page() {
   //   </main>
   <section className="  w-full pt-30 md:pt-48 px-4 sm:px-6 lg:px-15 1xl:px-20 2xl:px-25" >
     <Hero  heading={<> Dedicated   <span className="text-gradient-purple">Expert Teams </span></>} des={<>Eliminate the friction of hiring. Get full-time, high-performance developer <br/>
-teams hand-selected for your technical ecosystem and cultural values.</>} btn1name="Build Your Team" btn1href="/" btn2name="View Process" btn2href="/" className=" flex justify-center items-center  text-center  mx-auto" className1="justify-center" />
+teams hand-selected for your technical ecosystem and cultural values.</>} btn1name="Build Your Team" btn1href="/hire" btn2name="View Process" btn2href="/" className=" flex justify-center items-center  text-center  mx-auto" className1="justify-center" />
   <div className="grid pt-10 pb-20 lg:mt-25 gap-15 lg:gap-30">
     <Reveal>
 <div className="grid justify-center items-center gap-15 pt-15 border-t border-white/50">
@@ -240,7 +241,7 @@ teams hand-selected for your technical ecosystem and cultural values.</>} btn1na
 <div className="grid gap-15 ">
          <div className="flex justify-between items-center">
         <div>  <HeadSection title="Case Study" name="Sucess With Broker Remarks" /></div>
-        <div><p className="text-primary font-bold ">Expore More Stories</p></div>
+        <div><Link href="/case-studies"  className="text-primary font-bold hover:underline ">Expore More Stories</Link></div>
       </div>
       <div className="">
         <div className="bg-[#121118] border border-primary/50 hover:border-primary rounded-2xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 min-h-[420px]">
@@ -318,7 +319,7 @@ teams hand-selected for your technical ecosystem and cultural values.</>} btn1na
       </div>
 
       <FAQ faqData={faqData} />
-        <CTA title={<>Ready to Build Your  <span className="text-gradient-purple">Elite Squad</span>?</>} des="Get a tailored proposal and team roadmap from our delivery experts within 24 hours." btn2name="Talk To Expert" btn2href="/" />
+        <CTA title={<>Ready to Build Your  <span className="text-gradient-purple">Elite Squad</span>?</>} des="Get a tailored proposal and team roadmap from our delivery experts within 24 hours." btn2name="Talk To Expert" btn2href="/contact" />
   </div>
   </section>
   );

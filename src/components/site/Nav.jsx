@@ -512,7 +512,7 @@ const pathname = usePathname()
             </div>
           ))}
           <Link
-            href="/starthiring"
+            href="/contact"
             onClick={closeMobileMenu}
             className="mt-6 sm:hidden bg-white text-black font-bold text-center py-2.5 px-6 rounded-full text-base cursor-pointer"
           >

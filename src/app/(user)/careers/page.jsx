@@ -28,7 +28,7 @@ export default function CareersPage() {
         borderRadius: 20,
         padding: "3px 10px",
         fontSize: 11,
-        color: purple ? "#a78bfa" : "rgba(255,255,255,0.6)",
+        color: purple ? "oklch(0.62 0.26 305)" : "rgba(255,255,255,0.6)",
         background: purple ? "rgba(167,139,250,0.08)" : "transparent",
       }}
     >
@@ -41,7 +41,7 @@ export default function CareersPage() {
       <div style={{ backgroundColor: "#070707", fontFamily: "Inter, sans-serif" }} className="px-4 sm:px-6 pt-[120px] pb-[100px]">
         {/* HERO */}
         <div className="max-w-3xl mx-auto text-center pb-12">
-          <div style={{ color: "#a78bfa", fontSize: 11, letterSpacing: 2, fontWeight: 600 }} className="uppercase">
+          <div style={{   fontSize: 11, letterSpacing: 2, fontWeight: 600 }} className="uppercase text-primary">
             JOIN OUR TEAM
           </div>
           <h1 style={{ fontSize: 48, fontWeight: 500, color: "#fff", letterSpacing: "-1.5px", marginTop: 16, lineHeight: 1.05 }}>
@@ -117,7 +117,7 @@ export default function CareersPage() {
           </div>
           <div className="text-center mt-8" style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>
             Don't see your role? Send your resume to{" "}
-            <a href="mailto:careers@hiretopcoder.com" style={{ color: "#a78bfa", fontWeight: 700 }}>
+            <a href="mailto:careers@hiretopcoder.com" style={{   fontWeight: 700 }} className="text-primary">
               careers@hiretopcoder.com
             </a>
           </div>

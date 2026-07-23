@@ -218,7 +218,7 @@ weekly.
 <div className=" text-[10px] md:text-[11px] text-white/35 uppercase tracking-wider">Response time</div>
 <div className="text-xs md:text-[13px] text-white font-medium mt-0.5">&lt; 2 hours</div>
 </div>
-<GhostButton className=" mt-2 md:mt-5">
+<GhostButton href="contact" className=" mt-2 md:mt-5">
 
               Book a Call 
 </GhostButton>

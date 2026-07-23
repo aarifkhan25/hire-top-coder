@@ -21,7 +21,7 @@ export const footerData={
 
   {name:"Hire Mobile Dev" ,to:"/hire/mobile-developer"}, {name:"Hire DevOps Engineer" ,to:"/hire/devops-engineer"}, {name:"Hire No-Code Dev" ,to:"/hire/no-code-developer"},
 
-  {name:"View All Roles →" ,to:"/"},
+  {name:"View All Roles →" ,to:"/hire"},
 
 ],
  
@@ -29,7 +29,7 @@ export const footerData={
 
   { label: "About Us", to: "/company" },
 
-  { label: "Our Portfolio", to: "/work" },
+  { label: "Our Portfolio", to: "/case-studies" },
 
   { label: "Careers", to: "/careers" },
 
@@ -70,7 +70,7 @@ export const footerData={
     id: 2,
     title: 'Engineering Hiring Insights',
     description: 'Monthly guide for CTOs, founders, and tech leads',
-     to:'/faq',
+     to:'/blog',
      icon:<BookOpen />
   },
   {
